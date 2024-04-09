@@ -1,0 +1,105 @@
+* {
+    text-align: justify;
+}
+
+body {
+    /* color: white; */
+    /* background-color: #151414 ; */
+    margin: 0 4rem 5rem 4rem;
+}
+
+section {
+    margin: 2rem 1rem 0 1rem; /* top right bottom left */
+}
+
+.orange {
+    color:  #d88a12;
+}
+
+.badge {
+    display: inline-block;
+    padding: 0.25em 0.4em;
+    padding-right: 0.4em;
+    padding-left: 0.4em;
+    font-size: 75%;
+    font-weight: 700;
+    line-height: 1;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+}
+
+.badge-pill {
+    padding-right: 0.6em;
+    padding-left: 0.6em;
+    border-radius: 10rem;
+    color: #fff;
+    background-color:#434E5E;
+}
+
+.badgesDiv {
+    margin-top: 1rem;
+}
+
+.navbar {
+    background-color:  #d88a12 !important;
+}
+
+h2 {
+    font: normal normal normal 25px/1.2em helvetica-w01-light,helvetica-w02-light,sans-serif ;color:#494949;
+}
+
+.linkCollapse {
+    margin-right: 1rem;
+}
+
+.fa-file-pdf {
+    color: red;
+}
+
+.right-align {
+    text-align: right;
+}
+
+.mybox {
+    border: 1px solid black; 
+    border-radius: 5px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+
+.anchor {
+    padding-top: 90px;
+}
+
+
+.social-icons a {
+    height: 3.5rem;
+    width: 3.5rem;
+    background-color: #495057;
+    color: #fff !important;
+    border-radius: 100%;
+    text-align: center;
+    font-size: 1.5rem;
+    line-height: 3.5rem;
+    margin-right: 1rem;
+    float: right;
+}
+
+#orcidLink {
+    background-color: rgb(174, 204, 84);
+    font-size: 0.8rem;
+}
+
+@media only screen and (max-width: 800px) {
+    #photo {
+        display: none;
+    }
+    #intro {
+        padding-right: 0;
+    }
+}
+
+.content {
+    font-size: 0.9rem;
+}
