@@ -16,6 +16,10 @@ section {
     color:  #d88a12;
 }
 
+.separated {
+    margin-left: 2rem;
+}
+
 .badge {
     display: inline-block;
     padding: 0.25em 0.4em;

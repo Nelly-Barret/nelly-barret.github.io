@@ -22,6 +22,7 @@
 
     <!-- Our custom CSS -->
     <link rel="stylesheet" href="styles.css"/>
+    <link rel="stylesheet" href="w3schools-styles.css"/>
 </head>
     
 <body>
@@ -61,142 +62,97 @@
         </div>
     </nav>
 
-    <section id="research" class="anchor">
-        <h2 class="sectionTitle">Research</h2>
-        <hr>
+    <section class="light">
+    <div class="container py-2">
+        <div class="h1 text-center text-dark" id="pageHeaderTitle">Research</div>
 
-        <div class="mybox" data-toggle="collapse" href="#collapseRI1" aria-expanded="true" aria-controls="collapseRI1">
-            <div class="row">
-                <div class="col-sm-9">
-                    <h5 class="orange">Postdoc: Better real-world health-data distributed analytics research</h5>
+        <article class="postcard light blue">
+            <div class="postcard__text t-dark">
+                <h1 class="postcard__title blue">Postdoc: Better real-world health-data distributed analytics research</h1>
+                <div class="postcard__subtitle">
+                    <i class="fa fa-map-pin mr-2"></i>DEIB, Milano (IT) 
+                    <i class="fas fa-calendar-alt mr-2 separated"></i>Apr. 2024 - now 
+                    <i class="fa fa-user mr-2 separated"></i><a href="https://www4.ceda.polimi.it/manifesti/manifesti/controller/ricerche/RicercaPerDocentiPublic.do?EVN_PRODOTTI=evento&k_doc=263190&lang=EN&polij_device_category=DESKTOP&__pj0=0&__pj1=f45459bb88514a878df01bd82b3e563a" target="_blank">Pr. Pietro Pinoli</a>, <a href="https://annabernasconi.faculty.polimi.it/" target="_blank">Pr. Anna Bernasconi</a>, European project
                 </div>
-                <div class="col-sm-3">
-                    <h6 class="right-align orange">DEIB, Milano (IT)</h6>
-                </div>
+                <div class="postcard__bar"></div>
+                <div class="postcard__preview-txt">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi, fugiat asperiores inventore beatae accusamus odit minima enim, commodi quia, doloribus eius! Ducimus nemo accusantium maiores velit corrupti tempora reiciendis molestiae repellat vero. Eveniet ipsam adipisci illo iusto quibusdam, sunt neque nulla unde ipsum dolores nobis enim quidem excepturi, illum quos!</div>
+                <ul class="postcard__tagbox">
+                    <li class="tag__item play blue"><i class="fas fa-hashtag mr-2"></i>clinical data</li>
+                    <li class="tag__item play blue"><i class="fas fa-hashtag mr-2"></i>heterogeneity</li>
+                    <li class="tag__item play blue"><i class="fas fa-hashtag mr-2"></i>modeling</li>
+                    <li class="tag__item play blue"><i class="fas fa-hashtag mr-2"></i>FAIR</li>
+                </ul>
             </div>
+        </article>
 
-            <div class="row">
-                <div class="col-sm-9">
-                    <i>With <a href="https://www4.ceda.polimi.it/manifesti/manifesti/controller/ricerche/RicercaPerDocentiPublic.do?EVN_PRODOTTI=evento&k_doc=263190&lang=EN&polij_device_category=DESKTOP&__pj0=0&__pj1=f45459bb88514a878df01bd82b3e563a" target="_blank">Pr. Pietro Pinoli</a> and <a href="https://annabernasconi.faculty.polimi.it/" target="_blank">Pr. Anna Bernasconi</a></i>
+        <article class="postcard light red">
+            <div class="postcard__text t-dark">
+                <h1 class="postcard__title red">PhD: User-oriented exploration of semi-structured datasets</h1>
+                <div class="postcard__subtitle">
+                    <i class="fa fa-map-pin mr-2"></i>Inria Saclay (FR) 
+                    <i class="fas fa-calendar-alt mr-2 separated"></i>Jan. 2021 - March 2024 
+                    <i class="fa fa-user mr-2 separated"></i><a href="https://pages.saclay.inria.fr/ioana.manolescu/" target="_blank">Pr. Ioana Manolescu</a>, SME <a href="https://wedodata.fr/" target="_blank">WeDoData</a>
                 </div>
-                <div class="col-sm-3 right-align">
-                    Now - Apr. 2024
-                </div>
-            </div>
-
-            <div class="row collapse show" id="collapseRI1">
-                <div class="col-sm-12">
-                    <span class="badge badge-pill">clinical data</span>
-                    <span class="badge badge-pill">heterogeneity</span>
-                    <span class="badge badge-pill">modeling</span>
-                    <span class="badge badge-pill">FAIR</span>
-                </div>
-            </div>
-        </div>
-
-        <div class="mybox" data-toggle="collapse" data-target="#collapseRI2" aria-expanded="false" aria-controls="collapseRI2">
-            <div class="row">
-                <div class="col-sm-9">
-                    <h5 class="orange">PhD: User-oriented exploration of semi-structured datasets</h5>
-                </div>
-                <div class="col-sm-3">
-                    <h6 class="right-align orange">Inria Saclay (FR)</h6>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-sm-9">
-                    <i>Supervised by <a href="https://pages.saclay.inria.fr/ioana.manolescu/" target="_blank">Pr. Ioana Manolescu</a>, in collaboration with the SME <a href="https://wedodata.fr/" target="_blank">WeDoData</a></i>
-                </div>
-                <div class="col-sm-3 right-align">
-                    Jan. 2021 - March 2024
-                </div>
-            </div>
-  
-
-            <div class="row collapse" id="collapseRI2">
-                <div class="col-sm-12">
-                    <ul>
+                <div class="postcard__bar"></div>
+                <div class="postcard__preview-txt"><ul>
                         <li><b>Main achievements</b>: 
                             <ul>
                                 <li>Entity-Relationship-like summaries out of semi-structured datasets (system <a href="https://team.inria.fr/cedar/projects/abstra/" target="_blank">Abstra</a>)</li>
                                 <li>Entity path enumeration between entities of interest in heterogeneous data (system <a href="https://team.inria.fr/cedar/projects/pathways/" target="_blank">PathWays</a>)</li> 
                             </ul>
                         </li>
-                        <li>Giving talks about my thesis to different audiences - see Talks section
+                        <li>Giving talks about my thesis to different audiences - see <a href="./talks.html">Talks section</a>
                         </li>
-                        <li>Student co-supervision</li>
-                        <li><b>Scientific training</b>: <a href="https://www.hi-paris.fr/2021/06/21/hi-paris-summer-school/">HiParis summer school 2021</a>, <a href="https://bda2021.inria.fr/files/2021/10/MDD-School-Poster-surplace.pdf">MDD summer school 2022</a>, <a href="https://summerschool.hi-paris.fr/">HiParis summer school 2023</a></li>
-                        <li><b>Transversal training</b>: "Teaching at university", "Public speaking: captivate, convince and unite your audience" and English courses </li>
+                        <li>Student co-supervision - see <a href="./teaching.html">Teaching section</a></li>
+                        <li><b>Summer schools</b>: <a href="https://www.hi-paris.fr/2021/06/21/hi-paris-summer-school/">HiParis 2021</a>, <a href="https://bda2021.inria.fr/files/2021/10/MDD-School-Poster-surplace.pdf">MDD 2022</a>, <a href="https://summerschool.hi-paris.fr/">HiParis 2023</a></li>
+                        <li><b>Transversal training</b>: "Teaching at university", "Public speaking" and English courses </li>
                     </ul>
-
-                    <span class="badge badge-pill">semi-structured data</span>
-                    <span class="badge badge-pill">data summarization</span>
-                    <span class="badge badge-pill">E-R model</span>
-                    <span class="badge badge-pill">entity extraction</span>
-                    <span class="badge badge-pill">interesting connections</span>
-                    <span class="badge badge-pill">Java</span>
                 </div>
+                <ul class="postcard__tagbox">
+                    <li class="tag__item play red"><i class="fas fa-hashtag mr-2"></i>semi-structured data</li>
+                    <li class="tag__item play red"><i class="fas fa-hashtag mr-2"></i>data summarization</li>
+                    <li class="tag__item play red"><i class="fas fa-hashtag mr-2"></i>E-R model</li>
+                    <li class="tag__item play red"><i class="fas fa-hashtag mr-2"></i>entity extraction</li>
+                    <li class="tag__item play red"><i class="fas fa-hashtag mr-2"></i>interesting connections</li>
+                    <li class="tag__item play red"><i class="fas fa-code mr-2"></i>Java</li>
+                </ul>
             </div>
-        </div>
-        
-        <div class="mybox" data-toggle="collapse" href="#collapseRI3" aria-expanded="false" aria-controls="collapseRI3">
-            <div class="row">
-                <div class="col-sm-9">
-                    <h5 class="orange">Short-term contract: Macro-views of ConnectionLens graphs</h5>
+        </article>
+        <article class="postcard light blue">
+            <div class="postcard__text t-dark">
+                <h1 class="postcard__title blue">Short-term contract: Macro-views of ConnectionLens graphs</h1>
+                <div class="postcard__subtitle">
+                    <i class="fa fa-map-pin mr-2"></i>Inria Saclay (FR) 
+                    <i class="fas fa-calendar-alt mr-2 separated"></i>Oct. 2020 - Dec. 2020 
+                    <i class="fa fa-user mr-2 separated"></i><a href="https://pages.saclay.inria.fr/ioana.manolescu/" target="_blank">Pr. Ioana Manolescu</a>
                 </div>
-                
-                <div class="col-sm-3">
-                    <h6 class="right-align orange">Inria Saclay (FR)</h6>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-sm-9">
-                    <i>Supervised by Pr. Ioana Manolescu</i>
-                </div>
-                <div class="col-sm-3 right-align">
-                    Oct. 2020 - Dec. 2020
-                </div>
-            </div>
-          
-            <div class="row collapse" id="collapseRI3">
-                <div class="col-sm-12">
+                <div class="postcard__bar"></div>
+                <div class="postcard__preview-txt">
                     <ul>
                         <li>Familiarize with <a href="https://gitlab.inria.fr/cedar/connectionlens" target="_blank">ConnectionLens</a> and propose refactoring operations</li>
                         <li>Improve the scalability of the macro-views modules</li>
                     </ul>
-
-                    <span class="badge badge-pill">graphs</span>
-                    <span class="badge badge-pill">data understanding</span>
-                    <span class="badge badge-pill">summarization</span>
-                    <span class="badge badge-pill">Java</span>
                 </div>
+                <ul class="postcard__tagbox">
+                    <li class="tag__item play blue"><i class="fas fa-hashtag mr-2"></i>graphs</li>
+                    <li class="tag__item play blue"><i class="fas fa-hashtag mr-2"></i>data understanding</li>
+                    <li class="tag__item play blue"><i class="fas fa-hashtag mr-2"></i>summarization
+                    </li>
+                    <li class="tag__item play blue"><i class="fas fa-code mr-2"></i>Java</li>
+                </ul>
             </div>
-        </div>
+        </article>
 
-        <div class="mybox" data-toggle="collapse" href="#collapseRI4" aria-expanded="false" aria-controls="collapseRI4">
-            <div class="row">
-                <div class="col-sm-9">
-                    <h5 class="orange">Internship: Predicting the environment of a neighborhood</h5>
+        <article class="postcard light red">
+            <div class="postcard__text t-dark">
+                <h1 class="postcard__title red">Internship: Predicting the environment of a neighborhood</h1>
+                <div class="postcard__subtitle">
+                    <i class="fa fa-map-pin mr-2"></i>LIRIS (FR) 
+                    <i class="fas fa-calendar-alt mr-2 separated"></i>Feb. 2020 - July 2020 
+                    <i class="fa fa-user mr-2 separated"></i><a href="https://perso.liris.cnrs.fr/fabien.duchateau/">Fabien Duchateau</a>, Franck Favetta, start-up <a href="https://homeinlove.fr/" target="_blank">Home in Love</a>
                 </div>
-                
-                <div class="col-sm-3">
-                    <h6 class="right-align orange">LIRIS (FR)</h6>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-sm-9">
-                    <i>Supervised by <a href="https://perso.liris.cnrs.fr/fabien.duchateau/">Fabien Duchateau</a> and Franck Favetta, in collaboration with the startup <a href="https://homeinlove.fr/" target="_blank">Home in Love</a></i>
-                </div>
-                <div class="col-sm-3 right-align">
-                    Feb. 2020 - July 2020
-                </div>
-            </div>
-            
-            <div class="row collapse" id="collapseRI4">
-                <div class="col-sm-12">
+                <div class="postcard__bar"></div>
+                <div class="postcard__preview-txt">
                     <ul>
                         <li>Propose an algorithm to select top-k features about neighborhoods to help the prediction</li>
                         <li>Predict a set of <i>environment variables</i>, e.g., the landscape, or the wealth of a neighborhood</li>
@@ -205,40 +161,26 @@
                     </ul>
 
                     <a href="docs/rapport-M2.pdf" target="_blank">Internship report (in French)</a>
-                    <br/>
-
-                    <span class="badge badge-pill">variable selection</span>
-                    <span class="badge badge-pill">prediction algorithms</span>
-                    <span class="badge badge-pill">experimental evaluation</span>
-                    <span class="badge badge-pill">Python</span>
                 </div>
+                <ul class="postcard__tagbox">
+                    <li class="tag__item play red"><i class="fas fa-hashtag mr-2"></i>variable selection</li>
+                    <li class="tag__item play red"><i class="fas fa-hashtag mr-2"></i>prediction algorithms</li>
+                    <li class="tag__item play red"><i class="fas fa-hashtag mr-2"></i>experimental evaluation</li>
+                    <li class="tag__item play red"><i class="fas fa-code mr-2"></i>Python</li>
+                </ul>
             </div>
+        </article>
 
-            
-        </div>
-        
-        
-        <div class="mybox" data-toggle="collapse" href="#collapseRI5" aria-expanded="false" aria-controls="collapseRI5">
-            <div class="row">
-                <div class="col-sm-9">
-                    <h5 class="orange">Research project: Matching and merging geographic entities</h5>
+        <article class="postcard light blue">
+            <div class="postcard__text t-dark">
+                <h1 class="postcard__title blue">Research project: Matching and merging geographic entities</h1>
+                <div class="postcard__subtitle">
+                    <i class="fa fa-map-pin mr-2"></i>LIRIS (FR) 
+                    <i class="fas fa-calendar-alt mr-2 separated"></i>Jan. 2019 - June 2019 
+                    <i class="fa fa-user mr-2 separated"></i><a href="https://perso.liris.cnrs.fr/fabien.duchateau/">Fabien Duchateau</a>, Franck Favetta
                 </div>
-                <div class="col-sm-3">
-                    <h6 class="right-align orange">LIRIS (FR)</h6>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-sm-9">
-                    <i>Supervised by Fabien Duchateau and Franck Favetta</i>
-                </div>
-                <div class="col-sm-3 right-align">
-                    Jan. 2019 - June 2019
-                </div>
-            </div>
-            
-            <div class="row collapse" id="collapseRI5">
-                <div class="col-sm-12">
+                <div class="postcard__bar"></div>
+                <div class="postcard__preview-txt">
                     <ul>
                         <li>Integrate heterogeneous cartographic data from Geonames, Bing, Here and Open Street Maps</li>
                         <li>Create a global schema based on individual data providers schemas</li>
@@ -246,39 +188,27 @@
                         <li>Merge correspondences (different strategies)</li>
                         <li>Develop an interface for matching and merging correspondences between points of interest (geographic entities) with an estimation of the quality</li>
                     </ul>
+                </div>
+                <ul class="postcard__tagbox">
+                    <li class="tag__item play blue"><i class="fas fa-hashtag mr-2"></i>entity matching</li>
+                    <li class="tag__item play blue"><i class="fas fa-hashtag mr-2"></i>entity merging</li>
+                    <li class="tag__item play blue"><i class="fas fa-hashtag mr-2"></i>similarity measures</li>
+                    <li class="tag__item play blue"><i class="fas fa-code mr-2"></i>PHP</li>
+                    <li class="tag__item play blue"><i class="fas fa-code mr-2"></i>JavaScript</li>
+                </ul>
+            </div>
+        </article>
 
-                    <span class="badge badge-pill">entity matching</span>
-                    <span class="badge badge-pill">entity merging</span>
-                    <span class="badge badge-pill">similarity measures</span>
-                    <span class="badge badge-pill">PHP</span>
-                    <span class="badge badge-pill">JavaScript</span>
+        <article class="postcard light red">
+            <div class="postcard__text t-dark">
+                <h1 class="postcard__title red">Internship: User-oriented real estate recommendations</h1>
+                <div class="postcard__subtitle">
+                    <i class="fa fa-map-pin mr-2"></i>LIRIS (FR) 
+                    <i class="fas fa-calendar-alt mr-2 separated"></i>May 2018 - July 2018 
+                    <i class="fa fa-user mr-2 separated"></i>Fabien Duchateau, Franck Favetta, start-up <a href="https://homeinlove.fr/" target="_blank">Home in Love</a>
                 </div>
-            </div>
-        </div>
-        
-        <div class="mybox" data-toggle="collapse" href="#collapseRI6" aria-expanded="false" aria-controls="collapseRI6">
-            <div class="row">
-                <div class="col-sm-9">
-                    <h5 class="orange">Internship: User-oriented real estate recommendations</h5>
-                </div>
-                
-                <div class="col-sm-3">
-                    <h6 class="right-align orange">LIRIS (FR)</h6>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-sm-9">
-                    <i>Supervised by Fabien Duchateau and Franck Favetta, in collaboration with the startup <a href="https://homeinlove.fr/" target="_blank">Home in Love</a></i>
-                </div>
-                
-                <div class="col-sm-3 right-align">
-                    May 2019 - July 2019
-                </div>
-            </div>
-            
-            <div class="row collapse" id="collapseRI6">
-                <div class="col-sm-12">
+                <div class="postcard__bar"></div>
+                <div class="postcard__preview-txt">
                     <ul>
                         <li>Integrate data from heterogeneous sources (Excel, JSON, GeoJSON...)</li>
                         <li>Use prediction algorithms to recommend neighborhoods based on few criteria</li>
@@ -287,15 +217,17 @@
                     </ul>
 
                     <a href="docs/rapport-L3.pdf" target="_blank">Internship report (in French)</a>
-                    <br/>
-
-                    <span class="badge badge-pill">recommendation algorithms</span>
-                    <span class="badge badge-pill">user interface</span>
-                    <span class="badge badge-pill">Python</span>
-                    <span class="badge badge-pill">JavaScript</span>
                 </div>
+                <ul class="postcard__tagbox">
+                    <li class="tag__item play red"><i class="fas fa-hashtag mr-2"></i>recommendation algorithms</li>
+                    <li class="tag__item play red"><i class="fas fa-hashtag mr-2"></i>user interface</li>
+                    <li class="tag__item play red"><i class="fas fa-hashtag mr-2"></i>similarity measures</li>
+                    <li class="tag__item play red"><i class="fas fa-code mr-2"></i>Python</li>
+                    <li class="tag__item play red"><i class="fas fa-code mr-2"></i>JavaScript</li>
+                </ul>
             </div>
-        </div>
+        </article>
+    </div>
     </section>
 </body>
 </html>
