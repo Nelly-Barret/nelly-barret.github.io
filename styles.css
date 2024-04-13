@@ -5,7 +5,7 @@
 body {
     /* color: white; */
     /* background-color: #151414 ; */
-    margin: 0 4rem 5rem 4rem;
+    /*margin: 0 4rem 5rem 4rem;*/
 }
 
 section {
@@ -107,4 +107,13 @@ h2 {
 
 .content {
     font-size: 0.9rem;
+}
+
+.rotatedImage {
+    transform: rotate(90deg);
+}
+
+.myImage {
+    height: 100%;
+    width: 100%;
 }
