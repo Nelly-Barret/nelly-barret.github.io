@@ -119,18 +119,36 @@
 
 <script type="text/javascript">
     $( document ).ready(function() {
+        // $.ajax({
+        //   url: "https://sandbox.orcid.org/oauth/token",
+        //   type: "POST",
+        //   data: {client_id: "APP-RTJXQ4UTGLVPI8ZN",
+        //             client_secret: "5245359c-5cff-423f-8862-43a0c92bfea6",
+        //             grant_type: "client_credentials",
+        //             scope: "read-public"},
+        //   dataType: "html",
+        //   header: "Accept: application/json"
+        // }).done(function(response) {
+        //     console.log(response);
+        // });
+
         $.ajax({
-          url: "https://sandbox.orcid.org/oauth/token",
-          type: "POST",
-          data: {client_id: "APP-RTJXQ4UTGLVPI8ZN",
-                    client_secret: "5245359c-5cff-423f-8862-43a0c92bfea6",
-                    grant_type: "client_credentials",
-                    scope: "/read-public"},
-          dataType: "html",
-          header: "Accept: application/json"
-        }).done(function(response) {
-            console.log(response);
-        });
+    headers: {
+        Accept: "application/json"
+    },
+    type: "GET",
+    url: "https://pub.orcid.org/v2.0_rc1/0000-0003-0902-4386/activities",
+    success: function (data) {
+        if (data) {
+            console.log(data);
+        } else {
+            console.log("no result...");
+        }
+    },
+    error: function (jqXHR, textStatus, errorThrown) {
+        console.log("error: " + textStatus);
+    }
+});
     });
     
 </script>
