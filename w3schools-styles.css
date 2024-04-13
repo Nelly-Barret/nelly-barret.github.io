@@ -3,7 +3,6 @@
 body {
   font-family: "Baloo 2", cursive;
   font-size: 16px;
-  color: #ffffff;
   text-rendering: optimizeLegibility;
   font-weight: initial;
 }
@@ -12,13 +11,10 @@ body {
   background: #110f16;
 }
 
-.light {
-  background: #f3f5f7;
-}
 
 a, a:hover {
-  text-decoration: none;
   transition: color 0.3s ease-in-out;
+  text-decoration: underline;
 }
 
 #pageHeaderTitle {
@@ -138,12 +134,12 @@ a, a:hover {
     justify-content: start;
   }
   .postcard .postcard__img {
-    max-width: 300px;
+    max-width: 200px;
     max-height: 100%;
     transition: transform 0.3s ease;
   }
   .postcard .postcard__text {
-    padding: 3rem;
+    padding: 1.5rem;
     width: 100%;
   }
   .postcard .media.postcard__text:before {
@@ -166,25 +162,16 @@ a, a:hover {
   }
   .postcard:nth-child(2n+1) .postcard__text::before {
     left: -12px !important;
-    transform: rotate(4deg);
+    transform: rotate(0deg);
   }
   .postcard:nth-child(2n+0) .postcard__text::before {
     right: -12px !important;
-    transform: rotate(-4deg);
+    transform: rotate(-0deg);
   }
 }
 @media screen and (min-width: 1024px) {
   .postcard__text {
     padding: 2rem 3.5rem;
-  }
-
-  .postcard__text:before {
-    content: "";
-    position: absolute;
-    display: block;
-    top: -20%;
-    height: 130%;
-    width: 55px;
   }
 
   .postcard.dark .postcard__text:before {

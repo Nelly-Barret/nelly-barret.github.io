@@ -26,19 +26,19 @@
 </head>
     
 <body>
-    <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">Nelly Barret</a>
+    <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#" style="color: white;">Nelly Barret</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="true" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
       
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
+            <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
                     <a class="nav-link" href="./index.html">About me</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="./research.html">Research</a>
+                    <a class="nav-link active" href="./research.html">Research</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="./teaching.html">Teaching</a>
@@ -64,10 +64,12 @@
 
     <section class="light">
     <div class="container py-2">
-        <div class="h1 text-center text-dark" id="pageHeaderTitle">Research</div>
+        <div class="h1 text-center text-dark" id="pageHeaderTitle"></div>
 
         <article class="postcard light blue">
-            <img class="postcard__img rotatedImage" src="./docs/better.png" width="100%" alt="BETTER project logo" />
+            <div class="myImage postcard__img_link">
+                <img class="postcard__img" src="./docs/better-rotate.png" alt="BETTER project logo" />
+            </div>
             <div class="postcard__text t-dark">
                 <h1 class="postcard__title blue">Postdoc: Better real-world health-data distributed analytics research</h1>
                 <div class="postcard__subtitle">
@@ -116,15 +118,14 @@
                     <li class="tag__item play red"><i class="fas fa-hashtag mr-2"></i>semi-structured data</li>
                     <li class="tag__item play red"><i class="fas fa-hashtag mr-2"></i>data summarization</li>
                     <li class="tag__item play red"><i class="fas fa-hashtag mr-2"></i>E-R model</li>
-                    <li class="tag__item play red"><i class="fas fa-hashtag mr-2"></i>entity extraction</li>
                     <li class="tag__item play red"><i class="fas fa-hashtag mr-2"></i>interesting connections</li>
                     <li class="tag__item play red"><i class="fas fa-code mr-2"></i>Java</li>
                 </ul>
             </div>
         </article>
         <article class="postcard light blue">
-            <div class="myImage">
-                <img class="postcard__img rotatedImage" src="./docs/cl.png" alt="ConnectionLens project logo" />
+            <div class="myImage postcard__img_link">
+                <img class="postcard__img" src="./docs/cl.png" alt="ConnectionLens project logo" />
             </div>
             <div class="postcard__text t-dark">
                 <h1 class="postcard__title blue">Short-term contract: Macro-views of ConnectionLens graphs</h1>
@@ -151,6 +152,9 @@
         </article>
 
         <article class="postcard light red">
+            <div class="myImage postcard__img_link">
+                <img class="postcard__img" src="./docs/cl.png" alt="ConnectionLens project logo" />
+            </div>
             <div class="postcard__text t-dark">
                 <h1 class="postcard__title red">Internship: Predicting the environment of a neighborhood</h1>
                 <div class="postcard__subtitle">
@@ -179,6 +183,9 @@
         </article>
 
         <article class="postcard light blue">
+            <div class="myImage postcard__img_link">
+                <img class="postcard__img" src="./docs/cl.png" alt="ConnectionLens project logo" />
+            </div>
             <div class="postcard__text t-dark">
                 <h1 class="postcard__title blue">Research project: Matching and merging geographic entities</h1>
                 <div class="postcard__subtitle">
@@ -207,6 +214,9 @@
         </article>
 
         <article class="postcard light red">
+            <div class="myImage postcard__img_link">
+                <img class="postcard__img" src="./docs/cl.png" alt="ConnectionLens project logo" />
+            </div>
             <div class="postcard__text t-dark">
                 <h1 class="postcard__title red">Internship: User-oriented real estate recommendations</h1>
                 <div class="postcard__subtitle">
