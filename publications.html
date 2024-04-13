@@ -90,10 +90,10 @@
                 <a href="https://gitlab.com/fduchate/predihood" target="_blank">Predihood</a>: Python-based tool for predicting the environment of any neighborhood in France
             </li>
             <li>
-                <a href="https://geoalign.liris.cnrs.fr/" target="_blank">GeoAlign</a>: Python-based interface for entity matching of geographic entities (points of interest - POI)
+                <a href="https://perso.liris.cnrs.fr/fabien.duchateau/?page=GeoAlign/" target="_blank">GeoAlign</a>: Python-based interface for entity matching of geographic entities (points of interest - POI)
             </li>
             <li>
-                <a href="https://perso.liris.cnrs.fr/fabien.duchateau/index.php?page=research/tools/vizliris/index.php" target="_blank">VizLIRIS</a>: Python-based interface for grouping and recommending neighborhoods in France
+                <a href="https://perso.liris.cnrs.fr/fabien.duchateau/?page=VizLIRIS/" target="_blank">VizLIRIS</a>: Python-based interface for grouping and recommending neighborhoods in France
             </li>
         </ul>
 
@@ -116,3 +116,21 @@
     </section>
 </body>
 </html>
+
+<script type="text/javascript">
+    $( document ).ready(function() {
+        $.ajax({
+          url: "https://sandbox.orcid.org/oauth/token",
+          type: "POST",
+          data: {client_id: "APP-RTJXQ4UTGLVPI8ZN",
+                    client_secret: "5245359c-5cff-423f-8862-43a0c92bfea6",
+                    grant_type: "client_credentials",
+                    scope: "/read-public"},
+          dataType: "html",
+          header: "Accept: application/json"
+        }).done(function(response) {
+            console.log(response);
+        });
+    });
+    
+</script>
