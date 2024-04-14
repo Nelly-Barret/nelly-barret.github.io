@@ -119,18 +119,25 @@
 
 <script type="text/javascript">
     $( document ).ready(function() {
+
         $.ajax({
-          url: "https://orcid.org/oauth2/token",
-          type: "POST",
-          data: {client_id: "APP-RTJXQ4UTGLVPI8ZN",
-                    client_secret: "5245359c-5cff-423f-8862-43a0c92bfea6",
-                    grant_type: "client_credentials",
-                    scope: "read-public"},
-          dataType: "html",
-          header: "Accept: application/json"
+            url: "https://orcid.org/0000-0002-3469-4149/worksExtendedPage.json?offset=0&sort=date&sortAsc=false&pageSize=50",
+            type: "GET"
         }).done(function(response) {
             console.log(response);
         });
+        // $.ajax({
+        //   url: "https://orcid.org/oauth2/token",
+        //   type: "POST",
+        //   data: {client_id: "APP-RTJXQ4UTGLVPI8ZN",
+        //             client_secret: "5245359c-5cff-423f-8862-43a0c92bfea6",
+        //             grant_type: "client_credentials",
+        //             scope: "read-public"},
+        //   dataType: "html",
+        //   header: "Accept: application/json"
+        // }).done(function(response) {
+        //     console.log(response);
+        // });
 
 //         $.ajax({
 //     headers: {
