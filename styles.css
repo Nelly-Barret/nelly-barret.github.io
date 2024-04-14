@@ -82,3 +82,30 @@ section {
     height: 100%;
     width: 100%;
 }
+
+table tr td {
+    padding: 0.3rem;
+}
+
+table tr th {
+    padding: 0.3rem;
+}
+
+table.rounded-corners {
+  border-spacing: 0;
+  border-collapse: separate;
+  border-radius: 10px;
+  border: 1px solid black;
+}
+
+/* Apply a border to the right of all but the last column */
+table.rounded-corners th:not(:last-child),
+table.rounded-corners td:not(:last-child) {
+ border-right: 1px solid black;
+}
+
+/* Apply a border to the bottom of all but the last row */
+table.rounded-corners>tbody>tr:not(:last-child)>th,
+table.rounded-corners>tbody>tr:not(:last-child)>td {
+ border-bottom: 1px solid black;
+}
