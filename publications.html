@@ -120,6 +120,8 @@
 <script type="text/javascript">
     $( document ).ready(function() {
 
+        console.log("new");
+
 fetch('https://orcid.org/0000-0002-3469-4149/worksExtendedPage.json?offset=0&sort=date&sortAsc=false&pageSize=50')
   .then((response) => response.text())
   .then((responseText) => {
