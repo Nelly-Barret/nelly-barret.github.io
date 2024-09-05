@@ -2,6 +2,14 @@ section {
     margin: 2rem 1rem 0 1rem; /* top right bottom left */
 }
 
+p {
+    font-size: 16px !important;
+}
+
+a:not(.nav-link, .navbar-brand) {
+    color: rgb(0, 0, 255) !important;
+}
+
 .orange {
     color:  #d88a12;
 }
@@ -42,6 +50,11 @@ section {
     padding-top: 90px;
 }
 
+.social-icons {
+    display: flex;
+    justify-content: center;
+}
+
 
 .social-icons a {
     height: 3.5rem;
@@ -52,13 +65,17 @@ section {
     text-align: center;
     font-size: 1.5rem;
     line-height: 3.5rem;
-    margin-right: 1rem;
-    float: right;
+    margin-inline: 0.5rem;
 }
 
 #orcidLink {
     background-color: rgb(174, 204, 84);
     font-size: 0.8rem;
+}
+
+#linkedinLink {
+    background-color: rgb(44, 102, 188) !important;
+
 }
 
 @media only screen and (max-width: 800px) {
