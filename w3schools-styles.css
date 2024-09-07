@@ -35,6 +35,16 @@ a, a:hover {
   position: relative;
   color: #ffffff;
 }
+.half-postcard {
+  width: 50%;
+  margin-right: 2rem;
+  float: left;
+}
+.third-postcard {
+  width: 30%;
+  margin-right: 2rem;
+  float: left;
+}
 .postcard.dark {
   background-color: #18151f;
 }
@@ -85,7 +95,6 @@ a, a:hover {
   overflow: hidden;
   text-overflow: ellipsis;
   text-align: justify;
-  height: 100%;
 }
 .postcard .postcard__tagbox {
   display: flex;
@@ -121,6 +130,11 @@ a, a:hover {
 }
 .postcard:hover .postcard__bar {
   width: 100px;
+}
+
+.postcard:hover .postcard__text .postcard__abstract {
+  visibility: visible;
+  background-color: red;
 }
 
 @media screen and (min-width: 769px) {
