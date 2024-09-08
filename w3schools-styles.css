@@ -35,15 +35,9 @@ a, a:hover {
   position: relative;
   color: #ffffff;
 }
-.half-postcard {
-  width: 50%;
+
+.mr-2 {
   margin-right: 2rem;
-  float: left;
-}
-.third-postcard {
-  width: 30%;
-  margin-right: 2rem;
-  float: left;
 }
 .postcard.dark {
   background-color: #18151f;
@@ -132,10 +126,13 @@ a, a:hover {
   width: 100px;
 }
 
-.postcard:hover .postcard__text .postcard__abstract {
-  visibility: visible;
-  background-color: red;
+/*.postcard .postcard__text .postcard__abstract {
+  display: none;
 }
+
+.postcard:hover .postcard__text .postcard__abstract {
+  display: initial;
+}*/
 
 @media screen and (min-width: 769px) {
   .postcard {
