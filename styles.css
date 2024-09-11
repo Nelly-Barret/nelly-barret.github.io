@@ -10,11 +10,11 @@ a:not(.nav-link, .navbar-brand) {
     color: rgb(0, 0, 255) !important;
 }
 
-.orange {
-    color:  #d88a12;
+.mr-2 {
+  margin-right: 2rem;
 }
 
-.separated {
+.ml-2 {
     margin-left: 2rem;
 }
 
@@ -29,7 +29,7 @@ a:not(.nav-link, .navbar-brand) {
 }
 
 .active {
-    background-color: white;
+    background-color: #ff8000;
     color: black !important;
     border-radius: 5px;
 }
