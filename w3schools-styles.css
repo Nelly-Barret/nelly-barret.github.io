@@ -22,6 +22,7 @@ a, a:hover {
   position: relative;
   color: #18151f;
   background-color: #F0ECE3;
+  margin-right: 2rem;
 }
 
 .postcard:before {
@@ -82,7 +83,7 @@ a, a:hover {
   text-align: justify;
 }
 .postcard .postcard__tagbox {
-  display: flex;
+  /*display: flex;*/
   flex-flow: row wrap;
   font-size: 14px;
   margin: 20px 0 0 0;

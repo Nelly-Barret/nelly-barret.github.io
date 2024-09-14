@@ -10,12 +10,12 @@ a:not(.nav-link, .navbar-brand) {
     color: rgb(0, 0, 255) !important;
 }
 
-.mr-2 {
-  margin-right: 2rem;
+.ml-i {
+    margin-left: 1.5rem !important;
 }
 
-.ml-2 {
-    margin-left: 2rem;
+.mr-i {
+    margin-right: 0.3rem !important;
 }
 
 .navbar {
