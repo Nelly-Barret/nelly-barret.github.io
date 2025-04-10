@@ -1,5 +1,5 @@
 section {
-    margin: 2rem 1rem 0 1rem; /* top right bottom left */
+    margin: 2rem 2rem 0 2rem; /* top right bottom left */
 }
 
 p {
@@ -85,6 +85,11 @@ a:not(.nav-link, .navbar-brand) {
     #intro {
         padding-right: 0;
     }
+}
+.img_home {
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
 }
 
 .content {
