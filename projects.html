@@ -37,17 +37,24 @@
                 <li class="nav-item">
                     <a class="nav-link" href="./index.html">About me</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link active" href="./research.html">Research</a>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarResearchMenu" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Research
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarResearchMenu">
+                    <a class="dropdown-item" href="./projects.html">Projects</a>
+                    <a class="dropdown-item" href="./publications.html">Publications and tools</a>
+                    <a class="dropdown-item" href="./talks.html">Talks</a>
+                </div>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="./teaching.html">Teaching</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="./publications.html">Publications and tools</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="./talks.html">Talks</a>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarTeachingMenu" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Teaching
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarTeachingMenu">
+                    <a class="dropdown-item" href="./courses.html">Courses</a>
+                    <a class="dropdown-item" href="./students.html">Students</a>
+                    </div>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="./service.html">Service</a>
@@ -68,15 +75,55 @@
     <section class="anchor light">
     <div class="container py-2">
 
+	<h3 class="currentpast">Current projects</h3>
+
+        <article class="postcard light blue">
+            <div class="myImage postcard__img_link">
+                <img class="postcard__img" src="" alt="" />
+            </div>
+            <div class="postcard__text t-dark">
+                <h1 class="postcard__title">Stay tuned!</h1>
+                <div class="postcard__subtitle">
+                    <i class="fa fa-map-pin mr-i"></i>LIRIS (FR) 
+                    <i class="fas fa-calendar-alt mr-i ml-i"></i>Sept. 2025 - now 
+                    <!--<i class="fa fa-user mr-i ml-i"></i><a href="https://www4.ceda.polimi.it/manifesti/manifesti/controller/ricerche/RicercaPerDocentiPublic.do?EVN_PRODOTTI=evento&k_doc=263190&lang=EN&polij_device_category=DESKTOP&__pj0=0&__pj1=f45459bb88514a878df01bd82b3e563a" target="_blank">Pietro Pinoli</a>, <a href="https://annabernasconi.faculty.polimi.it/" target="_blank">Anna Bernasconi</a>-->
+                </div>
+                <div class="postcard__bar"></div>
+                <div class="postcard__preview-txt">
+                    <!--<ul>
+                        <li><a href="https://www.better-health-project.eu/" target="_blank">https://www.better-health-project.eu/</a></li>
+                        <li><b>Main achievements</b>:
+                            <ul>
+                                <li>Propose a general interoperable data model for handling different health data</li>
+                                <li>Define a set of metadata for each dataset and align it with existing healthcare ontologies</li>
+                                <li>Propose and implement an ETL pipeline to integrate and FAIRify such data</li>
+                                <li>Expose the integrated data in a decentralized structure following the PHT (Personal Health Train) for researchers to analyze data and find possible causes of 3 rare diseases (intellectual disability, eye distrophies, and suicidal behaviors for autistic patients)</li>
+                            </ul>
+                        </li>
+                    </ul>-->
+                </div>
+                <ul class="postcard__tagbox">
+                    <li class="tag__item play"><i class="fas fa-hashtag mr-2"></i>data lakes</li>
+                    <li class="tag__item play"><i class="fas fa-hashtag mr-2"></i>multimodal learning</li>
+                    <li class="tag__item play"><i class="fas fa-hashtag mr-2"></i>heterogeneous data</li>
+                    <li class="tag__item play"><i class="fas fa-hashtag mr-2"></i>FAIR</li>
+                    <!--<li class="tag__item play"><i class="fas fa-code mr-2"></i>Python</li>-->
+                </ul>
+            </div>
+        </article>
+
+	<div style="border-top: 1px solid black; margin-bottom: 1rem;"></div>
+	<h3 class="currentpast">Past projects</h3>
+
         <article class="postcard light blue">
             <div class="myImage postcard__img_link">
                 <img class="postcard__img" src="./docs/better-rotate.png" alt="BETTER project logo" />
             </div>
             <div class="postcard__text t-dark">
-                <h1 class="postcard__title">Postdoc: Better real-world health-data distributed analytics research</h1>
+                <h1 class="postcard__title">Better real-world health-data distributed analytics research</h1>
                 <div class="postcard__subtitle">
                     <i class="fa fa-map-pin mr-i"></i>Politecnico di Milano (IT) 
-                    <i class="fas fa-calendar-alt mr-i ml-i"></i>Apr. 2024 - now 
+                    <i class="fas fa-calendar-alt mr-i ml-i"></i>Apr. 2024 - July 2025 
                     <i class="fa fa-user mr-i ml-i"></i><a href="https://www4.ceda.polimi.it/manifesti/manifesti/controller/ricerche/RicercaPerDocentiPublic.do?EVN_PRODOTTI=evento&k_doc=263190&lang=EN&polij_device_category=DESKTOP&__pj0=0&__pj1=f45459bb88514a878df01bd82b3e563a" target="_blank">Pietro Pinoli</a>, <a href="https://annabernasconi.faculty.polimi.it/" target="_blank">Anna Bernasconi</a>
                 </div>
                 <div class="postcard__bar"></div>
@@ -108,7 +155,7 @@
                 <img class="postcard__img" src="./docs/abstra.png" alt="Abstra entity-relationship diagram" />
             </div>
             <div class="postcard__text t-dark">
-                <h1 class="postcard__title">PhD: User-oriented exploration of semi-structured datasets</h1>
+                <h1 class="postcard__title">User-oriented exploration of semi-structured datasets</h1>
                 <div class="postcard__subtitle">
                     <i class="fa fa-map-pin mr-i"></i>Institut Polytechnique de Paris & Inria Saclay (FR)
                     <i class="fas fa-calendar-alt mr-i ml-i"></i>Jan. 2021 - March 2024 
@@ -179,7 +226,7 @@ Jury:
                 <img class="postcard__img" src="./docs/predihood.png" alt="Predihood project logo" />
             </div>
             <div class="postcard__text t-dark">
-                <h1 class="postcard__title blue">Internship: Predicting the environment of a neighborhood</h1>
+                <h1 class="postcard__title blue">Predicting the environment of a neighborhood</h1>
                 <div class="postcard__subtitle">
                     <i class="fa fa-map-pin mr-i"></i>LIRIS (FR) 
                     <i class="fas fa-calendar-alt mr-i ml-i"></i>Feb. 2020 - July 2020 
@@ -210,7 +257,7 @@ Jury:
                 <img class="postcard__img" src="./docs/geoalign.png" alt="GeoAlign map" />
             </div>
             <div class="postcard__text t-dark">
-                <h1 class="postcard__title blue">Research project: Matching and merging geographic entities</h1>
+                <h1 class="postcard__title blue">Matching and merging geographic entities</h1>
                 <div class="postcard__subtitle">
                     <i class="fa fa-map-pin mr-i"></i>LIRIS (FR) 
                     <i class="fas fa-calendar-alt mr-i ml-i"></i>Jan. 2019 - June 2019 
