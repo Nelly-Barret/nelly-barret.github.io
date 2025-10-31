@@ -26,51 +26,7 @@
 </head>
     
 <body>
-    <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" style="color: white;">Nelly Barret</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="true" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-      
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="./index.html">About me</a>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarResearchMenu" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Research
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarResearchMenu">
-                    <a class="dropdown-item" href="./projects.html">Projects</a>
-                    <a class="dropdown-item" href="./publications.html">Publications and tools</a>
-                    <a class="dropdown-item" href="./talks.html">Talks</a>
-                </div>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarTeachingMenu" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Teaching
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarTeachingMenu">
-                    <a class="dropdown-item" href="./courses.html">Courses</a>
-                    <a class="dropdown-item" href="./students.html">Students</a>
-                    </div>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="./service.html">Service</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="./education.html">Education</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="./skills.html">Skills</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="./personal.html">Personal</a>
-                </li>
-            </ul>
-        </div>
-    </nav>
+    <div id="my-navbar"></div>
 
 
     <!-- SECTION EDUCATION -->
@@ -79,26 +35,46 @@
 
         <article class="postcard">
             <div class="postcard__text">
-                <h1 class="postcard__title">PhD degree</h1>
+                <h4 class="postcard__title">Institut Polytechnique de Paris | PhD degree</h4>
                 <div class="postcard__subtitle">
                     <i class="fa fa-map-pin mr-i"></i>Institut Polytechnique de Paris & Inria Saclay (FR)
-                    <i class="fas fa-calendar-alt mr-i ml-i"></i>Jan. 2021 - March 2024
+                    <i class="fas fa-calendar-alt mr-i ml-i"></i>Jan. 2021 – March 2024
                 </div>
                 <div class="postcard__bar"></div>
-                <div class="postcard__preview-txt">Supervised by Ioana Manolescu, on the topic "User-oriented exploration of semi-structured datasets". See <a href="research.html">my research about it</a>.<br/>
-                <i class="fas fa-medal" style="color:red"></i> My PhD work received the <i>accessit</i> (2nd place) for the prize given to PhDs with significant contributions to the data management community. </div>
+                <div class="postcard__preview-txt">
+                    Major: Computer Science, Data and Artificial Intelligence
+                </div>
+
+
+                <a href="https://theses.hal.science/tel-04672899" target="_blank"><i class="far fa-file-pdf" style="color:blue"></i> PhD manuscript</a><br/><a href="https://easychair.org/smart-slide/slide/rkdZ#{sn:1}" target="_blank"><i class="far fa-file-pdf" style="color:blue"></i> Defense slides</a><br/>
+                Jury: 
+                <ul>
+                    <li>Présidente: <a href="https://www.lri.fr/~sais/" target="_blank">Fatiha Sais</a></li>
+                    <li>Rapporteurs: <a href="https://liris.cnrs.fr/page-membre/jean-marc-petit" target="_blank">Jean-Marc Petit</a> et <a href="https://www.irit.fr/~Olivier.Teste/" target="_blank">Olivier Teste</a></li>
+                    <li>Examinateurs: <a href="https://www.dbai.tuwien.ac.at/staff/khose/About_me.html" target="_blank">Katja Hose</a>, <a href="https://ceri.faculty.polimi.it" target="_blank">Stefano Ceri</a> et <a href="https://fnargesian.com" target="_blank">Fatemeh Nargesian</a></li>
+                    <li>Direction de thèse: <a href="https://pages.saclay.inria.fr/ioana.manolescu/" target="_blank">Ioana Manolescu</a> (directrice de thèse) et <a href="https://wedodata.fr/notre-equipe/" target="_blank">Karen Bastien</a> (co-encadrante de thèse)</li>
+                </ul>
+
+                PhD activities:
+                <ul>
+                    <li><b>Summer schools</b>: <a href="https://www.hi-paris.fr/2021/06/21/hi-paris-summer-school/" target="_blank">HiParis 2021</a>, <a href="https://bda2021.inria.fr/files/2021/10/MDD-School-Poster-surplace.pdf" target="_blank">MDD 2022</a>, <a href="https://summerschool.hi-paris.fr/" target="_blank">HiParis 2023</a></li>
+                    <li><b>Transversal training</b>: "Teaching at university", "Public speaking" and English courses </li>
+                    <li>See also <a href="./talks.html">Talks</a> and <a href="./teaching.html">Teaching</a> sections</li>
+                </ul>
+                
             </div>
         </article>
 
         <article class="postcard">
             <div class="postcard__text">
-                <h1 class="postcard__title">Master degree (Computer science, AI track)</h1>
+                <h4 class="postcard__title">Université Claude Bernard Lyon 1 | Master’s degree</h4>
                 <div class="postcard__subtitle">
                     <i class="fa fa-map-pin mr-i"></i>Universit&eacute; Lyon 1 (FR)
                     <i class="fas fa-calendar-alt mr-i ml-i"></i>Sept. 2018 - July 2020
                 </div>
                 <div class="postcard__bar"></div>
                 <div class="postcard__preview-txt">
+                    Major: Computer Science | Minor: Artificial Intelligence
                     <ul>
                         <li><b>Artificial intelligence</b>: machine learning, multi-agents systems, neural networks</li>
                         <li><b>Web programming</b> (Web and mobile applications): HTML, CSS, JavaScript</li>
@@ -112,13 +88,14 @@
         </article>
         <article class="postcard">
             <div class="postcard__text">
-                <h1 class="postcard__title">Bachelor degree (Computer science)</h1>
+                <h4 class="postcard__title">Université Claude Bernard Lyon 1 | Bachelor’s degree</h4>
                 <div class="postcard__subtitle">
                     <i class="fa fa-map-pin mr-i"></i>Universit&eacute; Lyon 1 (FR)
                     <i class="fas fa-calendar-alt mr-i ml-i"></i>Sept. 2015 - July 2018
                 </div>
                 <div class="postcard__bar"></div>
                 <div class="postcard__preview-txt">
+                    Major: Computer Science
                     <ul>
                         <li><b>Web programming</b>: HTML, CSS, JavaScript, Bootstrap</li>
                         <li><b>Databases</b>: MySQL</li>
@@ -133,3 +110,10 @@
     </section>
 </body>
 </html>
+
+<script> 
+$(function(){
+  $("#my-navbar").load("https://nelly-barret.github.io/navbar.html"); 
+  console.log("here")
+});
+</script> 

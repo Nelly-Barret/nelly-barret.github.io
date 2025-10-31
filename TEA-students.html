@@ -1,0 +1,81 @@
+
+<!DOCTYPE html>
+
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+ 
+    <title>Nelly Barret</title>
+
+    <!--JQuery-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">	
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+    <!-- Our custom CSS -->
+    <link rel="stylesheet" href="styles.css"/>
+    <link rel="stylesheet" href="w3schools-styles.css"/>
+</head>
+
+<body>
+    <div id="my-navbar"></div>
+
+    <!-- SECTION TEACHING -->
+    <section class="anchor light">
+    <div class="container py-2">
+
+        <article class="postcard">
+            <div class="postcard__text t-dark">
+                <h4 class="postcard__title blue">Master students</h4>
+                <div class="postcard__subtitle">
+                    <i class="fa fa-map-pin mr-i"></i>Inria Saclay (FR)
+                    <i class="fas fa-calendar-alt mr-i ml-i"></i> 2022 - 2023
+                </div>
+                <div class="postcard__bar"></div>
+                <div class="postcard__preview-txt">
+                    <ul>
+                        <li>Ahmed Bel Hadj Youssef. “FADE : vers des lacs de données plus FAIR” (fall 2025, INSA Lyon, engineer 5th year)</li>
+                        <li>Antoine Gauquier. “Path exploration of ConnectionLens graphs” (summer 2022, IMT Nord-Europe, master 1st year)</li>
+                    </ul>
+                </div>
+            </div>
+        </article>
+
+
+        <article class="postcard">
+            <div class="postcard__text t-dark">
+                <h4 class="postcard__title blue">Bachelor students</h4>
+                <div class="postcard__subtitle">
+                    <i class="fa fa-map-pin mr-i"></i>Inria Saclay (FR)
+                    <i class="fas fa-calendar-alt mr-i ml-i"></i> 2022 - 2023
+                </div>
+                <div class="postcard__bar"></div>
+                <div class="postcard__preview-txt">
+                    <ul>
+                        <li>Shay Pripstein. “Target data acquisition in open repositories” (winter 2023, École Polytechnique, bachelor 3rd year)</li>
+                        <li>Tudor Enache. “From simple to property graphs” (winter 2023, École Polytechnique, bachelor 3rd year)</li>
+                        <li>Nikola Dobricic. “Graph queries for abstractions” (summer 2023, Ecole Polytechnique, bachelor 2nd year)</li>
+                        <li>Jia-Jean Law. “Optimization of entity-to-entity data paths” (winter 2022, Ecole Polytechnique, bachelor 3rd year)</li>
+                    </ul>
+                </div>
+            </div>
+        </article>
+    </div>
+    </section>
+</body>
+</html>
+
+<script> 
+$(function(){
+  $("#my-navbar").load("https://nelly-barret.github.io/navbar.html"); 
+  console.log("here")
+});
+</script> 
