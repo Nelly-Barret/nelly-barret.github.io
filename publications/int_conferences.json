@@ -1,0 +1,38 @@
+[
+    {
+        "authors": "N. Barret, A. Bernasconi, C. Cappiello, G. Palu, P. Pinoli",
+        "title": "Leveraging profiling to bridge healthcare silos for federated analyses", 
+        "venue": "International Conference on Advanced Information Systems Engineering (Forum track)",
+        "year": 2025
+    },
+    {
+        "authors": "N. Barret, I. Manolescu, P. Upadhyay",
+        "title": "Computing generic abstractions from application datasets", 
+        "venue": "International Conference on Extending Database Technology",
+        "year": 2024
+    },
+    {
+        "authors": "N. Barret, S. Ebel, T. Galizzi, I. Manolescu, M. Mohanty",
+        "title": "User-friendly exploration of highly heterogeneous data lakes", 
+        "venue": "International Conference on Cooperative Information Systems",
+        "year": 2023
+    },
+    {
+        "authors": "N. Barret, A. Gauquier, J.J. Law, I. Manolescu",
+        "title": "Exploring heterogeneous data graphs through their entity paths", 
+        "venue": "European Conference on Advances in Databases and Information Systems",
+        "year": 2023
+    },
+    {
+        "authors": "N. Barret, I. Manolescu, P. Upadhyay",
+        "title": "Abstra: toward generic abstractions for data of any model", 
+        "venue": "ACM International Conference on Information & Knowledge Management",
+        "year": 2022
+    },
+    {
+         "authors": "N. Barret, F. Duchateau, F. Favetta, L. Bonneval",
+        "title": "Predicting the environment of a neighbourhood: a use case for France", 
+        "venue": "International Conference on Data Science, Technology and Applications",
+        "year": 2020
+    }
+]
