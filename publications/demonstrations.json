@@ -1,0 +1,20 @@
+[
+    {
+        "authors": "N. Barret, A. Gauquier, J. J. Law, I. Manolescu",
+        "title": "PathWays: entity-focused exploration of heterogeneous data graphs", 
+        "venue": "The Semantic Web: ESWC Satellite Events",
+        "year": 2023
+    },
+    {
+        "authors": "N. Barret",
+        "title": "Facilitating heterogeneous dataset understanding", 
+        "venue": "Conférence sur la Gestion de Données – Principes, Technologies et Applications",
+        "year": 2020
+    },
+    {
+        "authors": "N. Barret, F. Duchateau, F. Favetta, L. Moncla",
+        "title": "Spatial entity matching with GeoAlign", 
+        "venue": "ACM SIGSPATIAL International Conference on Advances in Geographic Information Systems",
+        "year": 2019
+    }
+]

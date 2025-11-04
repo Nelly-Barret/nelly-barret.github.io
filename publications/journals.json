@@ -1,0 +1,27 @@
+[
+    {
+        "authors": "N. Barret, A. Bernasconi, B. Bikbov, P. Pinoli",
+        "title": "I-ETL: an interoperability-aware health (meta)data pipeline to enable federated analyses", 
+        "venue": "BMC Medical Informatics and Decision Making", 
+        "year": 2025
+    },
+    {
+        
+        "authors": "N. Barret, A. Gauquier, J.J. Law, I. Manolescu",
+        "title": "Finding meaningful paths in heterogeneous graphs with PathWays", 
+        "venue": "Information Systems",
+        "year": 2025
+    }, 
+    {
+        "authors": "N. Barret, F. Duchateau, F. Favetta",
+        "title": "Predihood: an open-source tool for predicting neighbourhoods' information", 
+        "venue": "Journal of Open Source Software", 
+        "year": 2021
+    },
+    {
+        "authors": "N. Barret, F. Duchateau, F. Favetta, A. Gentil, L. Bonneval",
+        "title": "An Environmental Study of French Neighbourhood.", 
+        "venue": "Communications in Computer and Information Science", 
+        "year": 2021
+    }
+]
