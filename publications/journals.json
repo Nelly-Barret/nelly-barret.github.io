@@ -10,18 +10,21 @@
         "authors": "N. Barret, A. Gauquier, J.J. Law, I. Manolescu",
         "title": "Finding meaningful paths in heterogeneous graphs with PathWays", 
         "venue": "Information Systems",
-        "year": 2025
+        "year": 2025,
+        "url": "https://www.sciencedirect.com/science/article/abs/pii/S0306437924001212"
     }, 
     {
         "authors": "N. Barret, F. Duchateau, F. Favetta",
         "title": "Predihood: an open-source tool for predicting neighbourhoods' information", 
         "venue": "Journal of Open Source Software", 
-        "year": 2021
+        "year": 2021,
+        "url": "https://joss.theoj.org/papers/10.21105/joss.02805"
     },
     {
         "authors": "N. Barret, F. Duchateau, F. Favetta, A. Gentil, L. Bonneval",
         "title": "An Environmental Study of French Neighbourhood.", 
         "venue": "Communications in Computer and Information Science", 
-        "year": 2021
+        "year": 2021,
+        "url": "https://link.springer.com/chapter/10.1007/978-3-030-83014-4_13"
     }
 ]

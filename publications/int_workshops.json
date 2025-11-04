@@ -3,12 +3,14 @@
         "authors": "N. Barret, T. Enache, I. Manolescu, M. Mohanty",
         "title": "Finding the PG schema of any (semi) structured dataset: a tale of graphs and abstraction", 
         "venue": "SEAGRAPH workshop in International Conference on Data Engineering",
-        "year": 2024
+        "year": 2024,
+        "url": "https://inria.hal.science/hal-04591933"
     },
     {
         "authors": "O. Balalau, N. Barret, S. Ebel, T. Galizzi, I. Manolescu, M. Mohanty",
         "title": "Graph lenses over any data: the ConnectionLens experience", 
         "venue": "SEAGRAPH workshop in International Conference on Data Engineering",
-        "year": 2024
+        "year": 2024,
+        "url": "https://inria.hal.science/hal-04591897"
     }
 ]
