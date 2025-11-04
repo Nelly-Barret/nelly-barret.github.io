@@ -1,0 +1,160 @@
+
+<!DOCTYPE html>
+
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+ 
+    <title>Nelly Barret</title>
+
+    <!--JQuery-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">	
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+    <!-- Our custom CSS -->
+    <link rel="stylesheet" href="styles.css"/>
+    <link rel="stylesheet" href="w3schools-styles.css"/>
+</head>
+    
+<body>
+    <div id="my-navbar"></div>
+
+
+    <!-- SECTION PUBLICATIONS -->
+    <section id="publications" class="anchor light">
+
+    <div class="container py-2">
+        <label for="sort_publis">Sort by:</label>
+        <select name="sort_publis" id="sort_publis">
+            <option value="year">Year</option>
+            <option value="category">Category</option>
+        </select>
+        <div id="main_publis">
+        </div>
+    </div>
+    </section>
+</body>
+</html>
+
+<script> 
+
+// add navbar
+$(function(){
+  $("#my-navbar").load("https://nelly-barret.github.io/navbar.html"); 
+});
+
+// define categories
+var CATEGORIES = {
+    "JOURNAL": "Peer-reviewed international journals",
+    "INT_CONFERENCES": "Peer-reviewed international conferences",
+    "INT_WORKSHOPS": "Peer-reviewed international workshops",
+    "NAT_CONFERENCES": "Peer-reviewed national conferences",
+    "DEMONSTRATIONS": "Demonstrations",
+    "MANUSCRIPTS": "Manuscripts"
+}
+
+// first time to load the page: show publications by year (first and default value of sort)
+show_publications();
+
+// add event on sort button to update the publication list every time the sort changes
+$("#sort_publis").click(function() {
+    show_publications()
+});
+
+function get_json_data(url) {
+    return (function () {
+        var json = null;
+        $.ajax({
+            'async': false,
+            'global': false,
+            'url': url,
+            'dataType': "json",
+            'success': function (data) {
+                json = data;
+            }
+        });
+        return json;
+    })();
+}
+
+function get_all_publications() {
+    var journals = get_json_data("https://nelly-barret.github.io/publications/journals.json")
+    journals.forEach(function (element) { element["category"] = CATEGORIES["JOURNAL"]; });
+    var int_conferences = get_json_data("https://nelly-barret.github.io/publications/int_conferences.json")
+    int_conferences.forEach(function (element) { element["category"] = CATEGORIES["INT_CONFERENCES"]; });
+    var int_workshops = get_json_data("https://nelly-barret.github.io/publications/int_workshops.json");
+    int_workshops.forEach(function (element) { element["category"] = CATEGORIES["INT_WORKSHOPS"]; });
+    var nat_conferences = get_json_data("https://nelly-barret.github.io/publications/nat_conferences.json");
+    nat_conferences.forEach(function (element) { element["category"] = CATEGORIES["NAT_CONFERENCES"]; });
+    var demonstrations = get_json_data("https://nelly-barret.github.io/publications/demonstrations.json");
+    demonstrations.forEach(function (element) { element["category"] = CATEGORIES["DEMONSTRATIONS"]; });
+    var manuscripts = get_json_data("https://nelly-barret.github.io/publications/manuscripts.json");
+    manuscripts.forEach(function (element) { element["category"] = CATEGORIES["MANUSCRIPTS"]; });
+    
+    all_publications = [];
+    all_publications = all_publications.concat(journals);
+    all_publications = all_publications.concat(int_conferences);
+    all_publications = all_publications.concat(int_workshops);
+    all_publications = all_publications.concat(nat_conferences);
+    all_publications = all_publications.concat(demonstrations);
+    all_publications = all_publications.concat(manuscripts);
+    return all_publications;
+}
+
+function sort_array(sort_order, the_array) {
+    the_array_sorted = the_array.sort((a, b)=>{
+        return  b[sort_order] - a[sort_order]  // year or category
+    });
+    return the_array;
+}
+
+function create_html(sort_order, the_array) {
+    $("#main_publis").empty();
+    all_values = [];
+    for(one_element of the_array) {
+        all_values.push(one_element[sort_order]);
+    }
+    all_distinct_values = [...new Set(all_values)];
+    for (iteration of all_distinct_values) { // distinct years or categories
+        current_publis = "<ol>";
+        console.log(iteration); // year or category
+        for(publi of all_publications_sorted) {
+            if(publi[sort_order] == iteration) {
+                current_publis += "<li>";
+                current_publis += publi["authors"] + ". ";
+                if(publi["url"] != undefined && publi["url"] != "") {
+                    current_publis += "<b><a href=\"" + publi["url"] + "\" target='_blank'>" + publi["title"] + ".</a></b> ";
+                } else {
+                    current_publis += "<b>" + publi["title"] + ".</b> ";
+                }
+                current_publis += "<i>" + publi["venue"] + ".</i> ";
+                current_publis += publi["year"] + ".";
+                current_publis += "</li>";
+            }
+            
+        }
+        current_publis += "</ol>";
+        console.log(current_publis);
+        $("#main_publis").append("<article class='postcard'><div class='postcard__text'><h4 class='postcard__title'>" + iteration + "</h1><div class='postcard__subtitle'></div><div class='postcard__bar'></div><div class='postcard__preview-txt' style='min-height: 10em;'>" + current_publis + "</div></div></article>");
+    }
+}
+
+function show_publications() {
+    console.log($("#sort_publis"));
+    sort_order = $("#sort_publis").find(":selected").val(); // $("#sort_button").value TODO
+    console.log("Sort order is " + sort_order);
+
+    all_publications = get_all_publications();
+    all_publications_sorted = sort_array(sort_order, all_publications);
+    create_html(sort_order, all_publications_sorted);
+}
+</script> 

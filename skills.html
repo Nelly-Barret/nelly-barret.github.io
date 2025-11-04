@@ -26,51 +26,7 @@
 </head>
 
 <body>
-    <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" style="color: white;">Nelly Barret</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="true" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-      
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="./index.html">About me</a>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarResearchMenu" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Research
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarResearchMenu">
-                    <a class="dropdown-item" href="./projects.html">Projects</a>
-                    <a class="dropdown-item" href="./publications.html">Publications and tools</a>
-                    <a class="dropdown-item" href="./talks.html">Talks</a>
-                </div>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarTeachingMenu" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Teaching
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarTeachingMenu">
-                    <a class="dropdown-item" href="./courses.html">Courses</a>
-                    <a class="dropdown-item" href="./students.html">Students</a>
-                    </div>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="./service.html">Service</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="./education.html">Education</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="./skills.html">Skills</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="./personal.html">Personal</a>
-                </li>
-            </ul>
-        </div>
-    </nav>
+    <div id="my-navbar"></div>
 
 
     <!-- SECTION SKILLS -->
@@ -80,7 +36,7 @@
         <div class="col-lg-4 col-md-6 col-sm-12">
         <article class="postcard mr-2">
             <div class="postcard__text">
-                <h1 class="postcard__title">Programming</h1>
+                <h4 class="postcard__title">Programming</h1>
                 <div class="postcard__subtitle">
                 </div>
                 <div class="postcard__bar"></div>
@@ -99,7 +55,7 @@
         <div class="col-lg-4 col-md-6 col-sm-12">
         <article class="postcard mr-2">
             <div class="postcard__text">
-                <h1 class="postcard__title">Databases</h1>
+                <h4 class="postcard__title">Databases</h1>
                 <div class="postcard__subtitle">
                 </div>
                 <div class="postcard__bar"></div>
@@ -117,7 +73,7 @@
 <div class="col-lg-4 col-md-6 col-sm-12">
         <article class="postcard mr-2">
             <div class="postcard__text">
-                <h1 class="postcard__title">Web</h1>
+                <h4 class="postcard__title">Web</h1>
                 <div class="postcard__subtitle">
                 </div>
                 <div class="postcard__bar"></div>
@@ -135,7 +91,7 @@
 <div class="col-lg-4 col-md-6 col-sm-12">
          <article class="postcard mr-2 third-postcard">
             <div class="postcard__text">
-                <h1 class="postcard__title">Frameworks</h1>
+                <h4 class="postcard__title">Frameworks</h1>
                 <div class="postcard__subtitle">
                 </div>
                 <div class="postcard__bar"></div>
@@ -153,7 +109,7 @@
 <div class="col-lg-4 col-md-6 col-sm-12">
         <article class="postcard mr-2">
             <div class="postcard__text">
-                <h1 class="postcard__title">Tools</h1>
+                <h4 class="postcard__title">Tools</h1>
                 <div class="postcard__subtitle">
                 </div>
                 <div class="postcard__bar"></div>
@@ -171,7 +127,7 @@
 <div class="col-lg-4 col-md-6 col-sm-12">
         <article class="postcard mr-2">
             <div class="postcard__text">
-                <h1 class="postcard__title">Languages</h1>
+                <h4 class="postcard__title">Languages</h1>
                 <div class="postcard__subtitle">
                 </div>
                 <div class="postcard__bar"></div>
@@ -189,7 +145,7 @@
 <div class="col-lg-4 col-md-6 col-sm-12">
         <article class="postcard mr-2">
             <div class="postcard__text">
-                <h1 class="postcard__title">Soft skills</h1>
+                <h4 class="postcard__title">Soft skills</h1>
                 <div class="postcard__subtitle">
                 </div>
                 <div class="postcard__bar"></div>
@@ -208,7 +164,7 @@
 <div class="col-lg-4 col-md-6 col-sm-12">
         <article class="postcard mr-2">
             <div class="postcard__text">
-                <h1 class="postcard__title">Certifications</h1>
+                <h4 class="postcard__title">Certifications</h1>
                 <div class="postcard__subtitle">
                 </div>
                 <div class="postcard__bar"></div>
@@ -226,3 +182,10 @@
     </section>
 </body>
 </html>
+
+<script> 
+$(function(){
+  $("#my-navbar").load("https://nelly-barret.github.io/navbar.html"); 
+  console.log("here")
+});
+</script> 

@@ -9,30 +9,35 @@
         "authors": "N. Barret, I. Manolescu, P. Upadhyay",
         "title": "Computing generic abstractions from application datasets", 
         "venue": "International Conference on Extending Database Technology",
-        "year": 2024
+        "year": 2024,
+        "url": "https://hal.science/hal-04131974"
     },
     {
         "authors": "N. Barret, S. Ebel, T. Galizzi, I. Manolescu, M. Mohanty",
         "title": "User-friendly exploration of highly heterogeneous data lakes", 
         "venue": "International Conference on Cooperative Information Systems",
-        "year": 2023
+        "year": 2023,
+        "url": "https://hal.science/hal-04185938"
     },
     {
         "authors": "N. Barret, A. Gauquier, J.J. Law, I. Manolescu",
         "title": "Exploring heterogeneous data graphs through their entity paths", 
         "venue": "European Conference on Advances in Databases and Information Systems",
-        "year": 2023
+        "year": 2023,
+        "url": "https://hal.science/hal-04131977"
     },
     {
         "authors": "N. Barret, I. Manolescu, P. Upadhyay",
         "title": "Abstra: toward generic abstractions for data of any model", 
         "venue": "ACM International Conference on Information & Knowledge Management",
-        "year": 2022
+        "year": 2022,
+        "url": "https://dl.acm.org/doi/10.1145/3511808.3557179"
     },
     {
          "authors": "N. Barret, F. Duchateau, F. Favetta, L. Bonneval",
         "title": "Predicting the environment of a neighbourhood: a use case for France", 
         "venue": "International Conference on Data Science, Technology and Applications",
-        "year": 2020
+        "year": 2020,
+        "url": "https://www.scitepress.org/PublicationsDetail.aspx?ID=YRZoV7ChM6U=&t=1"
     }
 ]

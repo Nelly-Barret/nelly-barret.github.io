@@ -46,10 +46,6 @@ a:not(.nav-link, .navbar-brand) {
     margin-right: 1rem;
 }
 
-.fa-file-pdf {
-    color: red;
-}
-
 .right-align {
     text-align: right;
 }
