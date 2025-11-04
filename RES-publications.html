@@ -31,12 +31,15 @@
 
     <!-- SECTION PUBLICATIONS -->
     <section id="publications" class="anchor light">
-    <div class="container py-2" id="main_publis">
+
+    <div class="container py-2">
         <label for="sort_publis">Sort by:</label>
         <select name="sort_publis" id="sort_publis">
             <option value="year">Year</option>
             <option value="category">Category</option>
         </select>
+        <div id="main_publis">
+        </div>
     </div>
     </section>
 </body>
@@ -49,6 +52,16 @@ $(function(){
   $("#my-navbar").load("https://nelly-barret.github.io/navbar.html"); 
 });
 
+// define categories
+var CATEGORIES = {
+    "JOURNAL": "Peer-reviewed international journals",
+    "INT_CONFERENCES": "Peer-reviewed international conferences",
+    "INT_WORKSHOPS": "Peer-reviewed international workshops",
+    "NAT_CONFERENCES": "Peer-reviewed national conferences",
+    "DEMONSTRATIONS": "Demonstrations",
+    "MANUSCRIPTS": "Manuscripts"
+}
+
 // first time to load the page: show publications by year (first and default value of sort)
 show_publications();
 
@@ -57,11 +70,36 @@ $("#sort_publis").click(function() {
     show_publications()
 });
 
+function get_json_data(url) {
+    return (function () {
+        var json = null;
+        $.ajax({
+            'async': false,
+            'global': false,
+            'url': url,
+            'dataType': "json",
+            'success': function (data) {
+                json = data;
+            }
+        });
+        return json;
+    })();
+}
+
 function get_all_publications() {
-    journals = $.getJSON("https://nelly-barret.github.io/publications/journals.json", function(json) {
-        console.log(json); // this will show the info it in firebug console
-        journals = json
-    });
+    var journals = get_json_data("https://nelly-barret.github.io/publications/journals.json")
+    journals.forEach(function (element) { element["category"] = CATEGORIES["JOURNAL"]; });
+    var int_conferences = get_json_data("https://nelly-barret.github.io/publications/int_conferences.json")
+    int_conferences.forEach(function (element) { element["category"] = CATEGORIES["INT_CONFERENCES"]; });
+    var int_workshops = get_json_data("https://nelly-barret.github.io/publications/int_workshops.json");
+    int_workshops.forEach(function (element) { element["category"] = CATEGORIES["INT_WORKSHOPS"]; });
+    var nat_conferences = get_json_data("https://nelly-barret.github.io/publications/nat_conferences.json");
+    nat_conferences.forEach(function (element) { element["category"] = CATEGORIES["NAT_CONFERENCES"]; });
+    var demonstrations = get_json_data("https://nelly-barret.github.io/publications/demonstrations.json");
+    demonstrations.forEach(function (element) { element["category"] = CATEGORIES["DEMONSTRATIONS"]; });
+    var manuscripts = get_json_data("https://nelly-barret.github.io/publications/manuscripts.json");
+    manuscripts.forEach(function (element) { element["category"] = CATEGORIES["MANUSCRIPTS"]; });
+    
     all_publications = [];
     all_publications = all_publications.concat(journals);
     all_publications = all_publications.concat(int_conferences);
@@ -80,24 +118,24 @@ function sort_array(sort_order, the_array) {
 }
 
 function create_html(sort_order, the_array) {
-    all_values = []
+    $("#main_publis").empty();
+    all_values = [];
     for(one_element of the_array) {
-        all_values.push(one_element[sort_order])
+        all_values.push(one_element[sort_order]);
     }
     all_distinct_values = [...new Set(all_values)];
     for (iteration of all_distinct_values) { // distinct years or categories
-        current_publis = "<ul>"
-        console.log(iteration) // year or category
+        current_publis = "<ol>";
+        console.log(iteration); // year or category
         for(publi of all_publications_sorted) {
             if(publi[sort_order] == iteration) {
-                console.log(publi);
-                current_publis += "<li>" + publi["authors"] + ". " + publi["title"] + ". " + publi["venue"] + ". " + publi["year"] + "</li>"
+                current_publis += "<li>" + publi["authors"] + ". <b>" + publi["title"] + ".</b> <i>" + publi["venue"] + "</i>. " + publi["year"] + "</li>";
             }
             
         }
-        current_publis += "</ul>"
-        console.log(current_publis)
-        $("#main_publis").append("<article class='postcard'><div class='postcard__text'><h4 class='postcard__title'>" + iteration + "</h1><div class='postcard__subtitle'></div><div class='postcard__bar'></div><div class='postcard__preview-txt' style='min-height: 10em;'>" + current_publis + "</div></div></article>")
+        current_publis += "</ol>";
+        console.log(current_publis);
+        $("#main_publis").append("<article class='postcard'><div class='postcard__text'><h4 class='postcard__title'>" + iteration + "</h1><div class='postcard__subtitle'></div><div class='postcard__bar'></div><div class='postcard__preview-txt' style='min-height: 10em;'>" + current_publis + "</div></div></article>");
     }
 }
 
