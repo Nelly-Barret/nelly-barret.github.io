@@ -32,214 +32,82 @@
     <!-- SECTION PUBLICATIONS -->
     <section id="publications" class="anchor light">
     <div class="container py-2" id="main_publis">
+        <label for="sort_publis">Sort by:</label>
+        <select name="sort_publis" id="sort_publis">
+            <option value="year">Year</option>
+            <option value="category">Category</option>
+        </select>
     </div>
     </section>
 </body>
 </html>
 
 <script> 
+
+// add navbar
 $(function(){
   $("#my-navbar").load("https://nelly-barret.github.io/navbar.html"); 
 });
 
-// Peer-reviewed international journals
-journals = [
-    {
-        "authors": "N. Barret, A. Bernasconi, B. Bikbov, P. Pinoli",
-        "title": "I-ETL: an interoperability-aware health (meta)data pipeline to enable federated analyses", 
-        "journal": "BMC Medical Informatics and Decision Making", 
-        "year": 2025,
-        "category": "journal"
-    },
-    {
-        
-        "authors": "N. Barret, A. Gauquier, J.J. Law, I. Manolescu",
-        "title": "Finding meaningful paths in heterogeneous graphs with PathWays", 
-        "journal": "Information Systems",
-        "year": 2025,
-        "category": "journal"
-    }, 
-    {
-        "authors": "N. Barret, F. Duchateau, F. Favetta",
-        "title": "Predihood: an open-source tool for predicting neighbourhoods' information", 
-        "journal": "Journal of Open Source Software", 
-        "year": 2021,
-        "category": "journal"
-    },
-    {
-        "authors": "N. Barret, F. Duchateau, F. Favetta, A. Gentil, L. Bonneval",
-        "title": "An Environmental Study of French Neighbourhood.", 
-        "journal": "Communications in Computer and Information Science", 
-        "year": 2021,
-        "category": "journal"
-    }
-]
+// first time to load the page: show publications by year (first and default value of sort)
+show_publications();
 
-// Peer-reviewed international conferences
-int_conferences = [
-    {
-        "authors": "N. Barret, A. Bernasconi, C. Cappiello, G. Palu, P. Pinoli",
-        "title": "Leveraging profiling to bridge healthcare silos for federated analyses", 
-        "journal": "International Conference on Advanced Information Systems Engineering (Forum track)",
-        "year": 2025,
-        "category": "int_conferences"
-    },
-    {
-        "authors": "N. Barret, I. Manolescu, P. Upadhyay",
-        "title": "Computing generic abstractions from application datasets", 
-        "journal": "International Conference on Extending Database Technology",
-        "year": 2024,
-        "category": "int_conferences"
-    },
-    {
-        "authors": "N. Barret, S. Ebel, T. Galizzi, I. Manolescu, M. Mohanty",
-        "title": "User-friendly exploration of highly heterogeneous data lakes", 
-        "journal": "International Conference on Cooperative Information Systems",
-        "year": 2023,
-        "category": "int_conferences"
-    },
-    {
-        "authors": "N. Barret, A. Gauquier, J.J. Law, I. Manolescu",
-        "title": "Exploring heterogeneous data graphs through their entity paths", 
-        "journal": "European Conference on Advances in Databases and Information Systems",
-        "year": 2023,
-        "category": "int_conferences"
-    },
-    {
-        "authors": "N. Barret, I. Manolescu, P. Upadhyay",
-        "title": "Abstra: toward generic abstractions for data of any model", 
-        "journal": "ACM International Conference on Information & Knowledge Management",
-        "year": 2022,
-        "category": "int_conferences"
-    },
-    {
-         "authors": "N. Barret, F. Duchateau, F. Favetta, L. Bonneval",
-        "title": "Predicting the environment of a neighbourhood: a use case for France", 
-        "journal": "International Conference on Data Science, Technology and Applications",
-        "year": 2020,
-        "category": "int_conferences"
-    }
-]
-        
-// Peer-reviewed international workshops
-int_workshops = [
-    {
-        "authors": "N. Barret, T. Enache, I. Manolescu, M. Mohanty",
-        "title": "Finding the PG schema of any (semi) structured dataset: a tale of graphs and abstraction", 
-        "journal": "SEAGRAPH workshop in International Conference on Data Engineering",
-        "year": 2024,
-        "category": "int_workshops"
-    },
-    {
-        "authors": "O. Balalau, N. Barret, S. Ebel, T. Galizzi, I. Manolescu, M. Mohanty",
-        "title": "Graph lenses over any data: the ConnectionLens experience", 
-        "journal": "SEAGRAPH workshop in International Conference on Data Engineering",
-        "year": 2024,
-        "category": "int_workshops"
-    }
-]
-
-// Peer-reviewed national conferences
-nat_conferences= [
-    {
-        "authors": "N. Barret, S. Ebel, T. Galizzi, I. Manolescu, M. Mohanty",
-        "title": "Exploration utilisateur de lacs de données très hétérogènes", 
-        "journal": "Conférence Francophone sur l'Extraction et la Gestion des Connaissances",
-        "year": 2024,
-        "category": "nat_conferences"
-    },
-    {
-        "authors": "N. Barret, F. Duchateau, F. Favetta, M. Miquel, A. Gentil, L. Bonneval",
-        "title": "À la recherche du quartier idéal", 
-        "journal": "Conférence Francophone sur l'Extraction et la Gestion des Connaissances",
-        "year": 2019,
-        "category": "nat_conferences"
-
-    }
-]
-	
-// Demonstrations
-demonstrations = [
-    {
-        "authors": "N. Barret, A. Gauquier, J. J. Law, I. Manolescu",
-        "title": "PathWays: entity-focused exploration of heterogeneous data graphs", 
-        "journal": "The Semantic Web: ESWC Satellite Events",
-        "year": 2023,
-        "category": "demonstrations"
-    },
-    {
-        "authors": "N. Barret",
-        "title": "Facilitating heterogeneous dataset understanding", 
-        "journal": "Conférence sur la Gestion de Données – Principes, Technologies et Applications",
-        "year": 2020,
-        "category": "demonstrations"
-    },
-    {
-        "authors": "N. Barret, F. Duchateau, F. Favetta, L. Moncla",
-        "title": "Spatial entity matching with GeoAlign", 
-        "journal": "ACM SIGSPATIAL International Conference on Advances in Geographic Information Systems",
-        "year": 2019,
-        "category": "demonstrations"
-    }
-]
-
-// Manuscripts
-manuscripts = [
-    {
-        "authors": "N. Barret",
-        "title": "User-oriented exploration of semi-structured datasets", 
-        "journal": "Institut Polytechnique de Paris",
-        "year": 2024,
-        "category": "manuscripts"
-    }
-]
-
-all_publications = []
-all_publications = all_publications.concat(journals)
-all_publications = all_publications.concat(int_conferences)
-all_publications = all_publications.concat(int_workshops)
-all_publications = all_publications.concat(nat_conferences)
-all_publications = all_publications.concat(demonstrations)
-all_publications = all_publications.concat(manuscripts)
-
-sort_order = "category" // $("#sort_button").value TODO
-
-all_publications_sorted = all_publications.sort((a, b)=>{
-    return  b[sort_order] - a[sort_order]  // year or category
+// add event on sort button to update the publication list every time the sort changes
+$("#sort_publis").click(function() {
+    show_publications()
 });
 
-
-
-all_years = []
-for(publi of all_publications_sorted) {
-    all_years.push(publi["year"])
-}
-all_years = [...new Set(all_years)];
-
-all_categories = []
-for(publi of all_publications_sorted) {
-    all_categories.push(publi["category"])
-}
-all_categories = [...new Set(all_categories)];
-
-if(sort_order == "year") {
-    iterated_array = all_years
-} else if(sort_order == "category") {
-    iterated_array = all_categories
+function get_all_publications() {
+    journals = $.getJSON("https://nelly-barret.github.io/publications/journals.json", function(json) {
+        console.log(json); // this will show the info it in firebug console
+        journals = json
+    });
+    all_publications = [];
+    all_publications = all_publications.concat(journals);
+    all_publications = all_publications.concat(int_conferences);
+    all_publications = all_publications.concat(int_workshops);
+    all_publications = all_publications.concat(nat_conferences);
+    all_publications = all_publications.concat(demonstrations);
+    all_publications = all_publications.concat(manuscripts);
+    return all_publications;
 }
 
-for (iteration of iterated_array) { // sitinct years or categories
-    current_publis = "<ul>"
-    console.log(iteration) // year or category
-    for(publi of all_publications_sorted) {
-        if(publi[sort_order] == iteration) {
-            console.log(publi);
-            current_publis += "<li>" + publi["authors"] + ". " + publi["title"] + ". " + publi["journal"] + ". " + publi["year"] + "</li>"
-        }
-        
+function sort_array(sort_order, the_array) {
+    the_array_sorted = the_array.sort((a, b)=>{
+        return  b[sort_order] - a[sort_order]  // year or category
+    });
+    return the_array;
+}
+
+function create_html(sort_order, the_array) {
+    all_values = []
+    for(one_element of the_array) {
+        all_values.push(one_element[sort_order])
     }
-    current_publis += "</ul>"
-    console.log(current_publis)
-    $("#main_publis").append("<article class='postcard'><div class='postcard__text'><h4 class='postcard__title'>" + iteration + "</h1><div class='postcard__subtitle'></div><div class='postcard__bar'></div><div class='postcard__preview-txt' style='min-height: 10em;'>" + current_publis + "</div></div></article>")
+    all_distinct_values = [...new Set(all_values)];
+    for (iteration of all_distinct_values) { // distinct years or categories
+        current_publis = "<ul>"
+        console.log(iteration) // year or category
+        for(publi of all_publications_sorted) {
+            if(publi[sort_order] == iteration) {
+                console.log(publi);
+                current_publis += "<li>" + publi["authors"] + ". " + publi["title"] + ". " + publi["venue"] + ". " + publi["year"] + "</li>"
+            }
+            
+        }
+        current_publis += "</ul>"
+        console.log(current_publis)
+        $("#main_publis").append("<article class='postcard'><div class='postcard__text'><h4 class='postcard__title'>" + iteration + "</h1><div class='postcard__subtitle'></div><div class='postcard__bar'></div><div class='postcard__preview-txt' style='min-height: 10em;'>" + current_publis + "</div></div></article>")
+    }
+}
+
+function show_publications() {
+    console.log($("#sort_publis"));
+    sort_order = $("#sort_publis").find(":selected").val(); // $("#sort_button").value TODO
+    console.log("Sort order is " + sort_order);
+
+    all_publications = get_all_publications();
+    all_publications_sorted = sort_array(sort_order, all_publications);
+    create_html(sort_order, all_publications_sorted);
 }
 </script> 
