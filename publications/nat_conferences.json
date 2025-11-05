@@ -1,13 +1,26 @@
 [
     {
-        "authors": "N. Barret, S. Ebel, T. Galizzi, I. Manolescu, M. Mohanty",
+        "authors": [
+            {"first": "Nelly", "last": "Barret"}, 
+            {"first": "Simon", "last": "Ebel"}, 
+            {"first": "Théo", "last": "Galizzi"},
+            {"first": "Ioana", "last": "Manolescu"},
+            {"first": "Madhulika", "last": "Mohanty"}
+        ],
         "title": "Exploration utilisateur de lacs de données très hétérogènes", 
         "venue": "Conférence Francophone sur l'Extraction et la Gestion des Connaissances",
         "year": 2024,
         "url": "https://hal.science/hal-04388609"
     },
     {
-        "authors": "N. Barret, F. Duchateau, F. Favetta, M. Miquel, A. Gentil, L. Bonneval",
+        "authors":  [
+            {"first": "Nelly", "last": "Barret"}, 
+            {"first": "Fabien", "last": "Duchateau"}, 
+            {"first": "Franck", "last": "Favetta"}, 
+            {"first": "Maryvonne", "last": "Miquel"},
+            {"first": "Aurélien", "last": "Gentil"},
+            {"first": "Loïc", "last": "Bonneval"}
+        ],
         "title": "À la recherche du quartier idéal", 
         "venue": "Conférence Francophone sur l'Extraction et la Gestion des Connaissances",
         "year": 2019,

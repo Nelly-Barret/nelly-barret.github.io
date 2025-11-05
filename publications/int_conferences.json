@@ -1,40 +1,70 @@
 [
     {
-        "authors": "N. Barret, A. Bernasconi, C. Cappiello, G. Palu, P. Pinoli",
+        "authors": [
+            {"first": "Nelly", "last": "Barret"}, 
+            {"first": "Anna", "last": "Bernasconi"}, 
+            {"first": "Cinzia", "last": "Cappiello"}, 
+            {"first": "Giaccomo", "last": "Palu"}, 
+            {"first": "Pietro", "last": "Pinoli"}
+        ],
         "title": "Leveraging profiling to bridge healthcare silos for federated analyses", 
         "venue": "International Conference on Advanced Information Systems Engineering (Forum track)",
         "year": 2025
     },
     {
-        "authors": "N. Barret, I. Manolescu, P. Upadhyay",
+        "authors": [
+            {"first": "Nelly", "last": "Barret"}, 
+            {"first": "Ioana", "last": "Manolescu"}, 
+            {"first": "Prajna", "last": "Upadhyay"}
+        ],
         "title": "Computing generic abstractions from application datasets", 
         "venue": "International Conference on Extending Database Technology",
         "year": 2024,
         "url": "https://hal.science/hal-04131974"
     },
     {
-        "authors": "N. Barret, S. Ebel, T. Galizzi, I. Manolescu, M. Mohanty",
+        "authors": [
+            {"first": "Nelly", "last": "Barret"}, 
+            {"first": "Simon", "last": "Ebel"}, 
+            {"first": "Théo", "last": "Galizzi"},
+            {"first": "Ioana", "last": "Manolescu"},
+            {"first": "Madhulika", "last": "Mohanty"}
+        ],
         "title": "User-friendly exploration of highly heterogeneous data lakes", 
         "venue": "International Conference on Cooperative Information Systems",
         "year": 2023,
         "url": "https://hal.science/hal-04185938"
     },
     {
-        "authors": "N. Barret, A. Gauquier, J.J. Law, I. Manolescu",
+        "authors":  [
+            {"first": "Nelly", "last": "Barret"}, 
+            {"first": "Antoine", "last": "Gauquier"}, 
+            {"first": "Jia-Jean", "last": "Law"}, 
+            {"first": "Ioana", "last": "Manolescu"}
+        ],
         "title": "Exploring heterogeneous data graphs through their entity paths", 
         "venue": "European Conference on Advances in Databases and Information Systems",
         "year": 2023,
         "url": "https://hal.science/hal-04131977"
     },
     {
-        "authors": "N. Barret, I. Manolescu, P. Upadhyay",
+        "authors": [
+            {"first": "Nelly", "last": "Barret"}, 
+            {"first": "Ioana", "last": "Manolescu"}, 
+            {"first": "Prajna", "last": "Upadhyay"}
+        ],
         "title": "Abstra: toward generic abstractions for data of any model", 
         "venue": "ACM International Conference on Information & Knowledge Management",
         "year": 2022,
         "url": "https://dl.acm.org/doi/10.1145/3511808.3557179"
     },
     {
-         "authors": "N. Barret, F. Duchateau, F. Favetta, L. Bonneval",
+        "authors": [
+            {"first": "Nelly", "last": "Barret"}, 
+            {"first": "Fabien", "last": "Duchateau"}, 
+            {"first": "Franck", "last": "Favetta"}, 
+            {"first": "Loïc", "last": "Bonneval"}
+        ],
         "title": "Predicting the environment of a neighbourhood: a use case for France", 
         "venue": "International Conference on Data Science, Technology and Applications",
         "year": 2020,

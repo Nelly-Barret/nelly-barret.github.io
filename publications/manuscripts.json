@@ -1,6 +1,8 @@
 [
     {
-        "authors": "N. Barret",
+        "authors": [
+            {"first": "Nelly", "last": "Barret"}
+        ],
         "title": "User-oriented exploration of semi-structured datasets", 
         "venue": "Institut Polytechnique de Paris",
         "year": 2024,

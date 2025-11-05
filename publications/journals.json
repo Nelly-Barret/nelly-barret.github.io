@@ -1,27 +1,68 @@
 [
     {
-        "authors": "N. Barret, A. Bernasconi, B. Bikbov, P. Pinoli",
+        "authors": [
+            {"first": "Nelly", "last": "Barret"}, 
+            {"first": "Sourav", "last": "Bhowmick"}, 
+            {"first": "Angela", "last": "Bonifati"}, 
+            {"first": "Barbara", "last": "Catania"}, 
+            {"first": "Stratos", "last": "Idreos"}, 
+            {"first": "Ekaterini", "last": "Ioannou"}, 
+            {"first": "Madhulika", "last": "Mohanty"}, 
+            {"first": "Sana", "last": "Sellami"}, 
+            {"first": "Roee", "last": "Shraga"}, 
+            {"first": "Utku", "last": "Sirin"}, 
+            {"first": "Juno", "last": "Steegmans"}, 
+            {"first": "Pınar", "last": "Tözün"}, 
+            {"first": "Soror", "last": "Sahri"}, 
+            {"first": "Genoveva", "last": "Vargas-Solar"}
+        ],
+        "title": "Diversity, Equity and Inclusion Activities in DatabaseConferences: A 2024 Report",
+        "venue": "ACM SIGMOD Record",
+        "year": 2025,
+        "url": "https://sigmodrecord.org/publications/sigmodRecord/2509/pdfs/08_Reports_Barret.pdf"
+    },
+    {
+        "authors": [
+            {"first": "Nelly", "last": "Barret"}, 
+            {"first": "Anna", "last": "Bernasconi"}, 
+            {"first": "Boris", "last": "Bikbov"}, 
+            {"first": "Pietro", "last": "Pinoli"}
+        ],
         "title": "I-ETL: an interoperability-aware health (meta)data pipeline to enable federated analyses", 
         "venue": "BMC Medical Informatics and Decision Making", 
         "year": 2025
     },
     {
-        
-        "authors": "N. Barret, A. Gauquier, J.J. Law, I. Manolescu",
+        "authors":  [
+            {"first": "Nelly", "last": "Barret"}, 
+            {"first": "Antoine", "last": "Gauquier"}, 
+            {"first": "Jia-Jean", "last": "Law"}, 
+            {"first": "Ioana", "last": "Manolescu"}
+        ],
         "title": "Finding meaningful paths in heterogeneous graphs with PathWays", 
         "venue": "Information Systems",
         "year": 2025,
         "url": "https://www.sciencedirect.com/science/article/abs/pii/S0306437924001212"
     }, 
     {
-        "authors": "N. Barret, F. Duchateau, F. Favetta",
+        "authors": [
+            {"first": "Nelly", "last": "Barret"}, 
+            {"first": "Fabien", "last": "Duchateau"}, 
+            {"first": "Franck", "last": "Favetta"}
+        ],
         "title": "Predihood: an open-source tool for predicting neighbourhoods' information", 
         "venue": "Journal of Open Source Software", 
         "year": 2021,
         "url": "https://joss.theoj.org/papers/10.21105/joss.02805"
     },
     {
-        "authors": "N. Barret, F. Duchateau, F. Favetta, A. Gentil, L. Bonneval",
+        "authors": [
+            {"first": "Nelly", "last": "Barret"}, 
+            {"first": "Fabien", "last": "Duchateau"}, 
+            {"first": "Franck", "last": "Favetta"}, 
+            {"first": "Aurélien", "last": "Gentil"},
+            {"first": "Loïc", "last": "Bonneval"}
+        ],
         "title": "An Environmental Study of French Neighbourhood.", 
         "venue": "Communications in Computer and Information Science", 
         "year": 2021,
