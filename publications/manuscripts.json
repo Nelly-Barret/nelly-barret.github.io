@@ -6,6 +6,7 @@
         "title": "User-oriented exploration of semi-structured datasets", 
         "venue": "Institut Polytechnique de Paris",
         "year": 2024,
-        "url": "https://theses.fr/2024IPPAX001"
+        "url": "https://theses.fr/2024IPPAX001",
+        "main_author": true
     }
 ]

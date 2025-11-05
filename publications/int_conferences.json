@@ -9,7 +9,8 @@
         ],
         "title": "Leveraging profiling to bridge healthcare silos for federated analyses", 
         "venue": "International Conference on Advanced Information Systems Engineering (Forum track)",
-        "year": 2025
+        "year": 2025,
+        "main_author": true
     },
     {
         "authors": [
@@ -20,7 +21,8 @@
         "title": "Computing generic abstractions from application datasets", 
         "venue": "International Conference on Extending Database Technology",
         "year": 2024,
-        "url": "https://hal.science/hal-04131974"
+        "url": "https://hal.science/hal-04131974",
+        "main_author": true
     },
     {
         "authors": [
@@ -33,7 +35,8 @@
         "title": "User-friendly exploration of highly heterogeneous data lakes", 
         "venue": "International Conference on Cooperative Information Systems",
         "year": 2023,
-        "url": "https://hal.science/hal-04185938"
+        "url": "https://hal.science/hal-04185938",
+        "main_author": false
     },
     {
         "authors":  [
@@ -45,7 +48,8 @@
         "title": "Exploring heterogeneous data graphs through their entity paths", 
         "venue": "European Conference on Advances in Databases and Information Systems",
         "year": 2023,
-        "url": "https://hal.science/hal-04131977"
+        "url": "https://hal.science/hal-04131977",
+        "main_author": true
     },
     {
         "authors": [
@@ -56,7 +60,8 @@
         "title": "Abstra: toward generic abstractions for data of any model", 
         "venue": "ACM International Conference on Information & Knowledge Management",
         "year": 2022,
-        "url": "https://dl.acm.org/doi/10.1145/3511808.3557179"
+        "url": "https://dl.acm.org/doi/10.1145/3511808.3557179",
+        "main_author": true
     },
     {
         "authors": [
@@ -68,6 +73,7 @@
         "title": "Predicting the environment of a neighbourhood: a use case for France", 
         "venue": "International Conference on Data Science, Technology and Applications",
         "year": 2020,
-        "url": "https://www.scitepress.org/PublicationsDetail.aspx?ID=YRZoV7ChM6U=&t=1"
+        "url": "https://www.scitepress.org/PublicationsDetail.aspx?ID=YRZoV7ChM6U=&t=1",
+        "main_author": true
     }
 ]

@@ -23,6 +23,7 @@
         "title": "Graph lenses over any data: the ConnectionLens experience", 
         "venue": "SEAGRAPH workshop in International Conference on Data Engineering",
         "year": 2024,
-        "url": "https://inria.hal.science/hal-04591897"
+        "url": "https://inria.hal.science/hal-04591897",
+        "main_author": false
     }
 ]
