@@ -82,6 +82,25 @@ a:not(.nav-link, .navbar-brand) {
 
 }
 
+.my-icon-first {
+    height: 1.25rem;
+    margin-right: 0.2rem;
+    margin-bottom: 0.4rem;
+}
+
+.my-icon {
+    height: 1.25rem;
+    margin-right: 0.2rem;
+    margin-left: 0.6rem;
+    margin-bottom: 0.4rem;
+}
+
+.my-tag {
+    height: 1.15rem;
+    margin-right: 0.2rem;
+    margin-bottom: 0.2rem;
+}
+
 @media only screen and (max-width: 800px) {
     #photo {
         display: none;
