@@ -278,15 +278,13 @@
   "professional_service": [
     {
       "title": "Member of organization committees",
-      "description": [ // Venue: workshops
+      "description": [ 
         "2025: Conceptual Modeling for Life Sciences [CMLS – A] (workshop co-chair)"
       ]
     }, {
       "title": "Member of program committees",
       "description": [
-        // Venue: conferences
-        "2025: International Conference on Advances in Databases, Knowledge, and Data Applications [DBKDA – N/A], European Conference on Advances in Databases and Information Systems [ADBIS – C], BDA Gestion de Données – Principes, Technologies et Applications [BDA – N/A] (demonstrations only)"
-        // Venue: workshops
+        "2025: International Conference on Advances in Databases, Knowledge, and Data Applications [DBKDA – N/A], European Conference on Advances in Databases and Information Systems [ADBIS – C], BDA Gestion de Données – Principes, Technologies et Applications [BDA – N/A] (demonstrations only)",
         "2025: Information Systems and AI for Life Sciences [iSAILS – A]"
       ]
     }
