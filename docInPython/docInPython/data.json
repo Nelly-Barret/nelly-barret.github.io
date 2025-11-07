@@ -50,20 +50,20 @@
       "title": "Institut Polytechnique de Paris | PhD degree",
       "date": "Jan. 2021 – March 2024",
       "subtitle": [
-        {"graduation-cap": "Major: Computer Science, Data and Artificial Intelligence"}
+        ["graduation-cap", "Major: Computer Science, Data and Artificial Intelligence"]
       ]
     }, {
       "title": "Université Claude Bernard Lyon 1 | Master’s degree",
       "date": "Sept. 2018 – July 2020",
       "subtitle": [
-        {"graduation-cap": "Major: Computer Science"},
-        {"graduation-cap": "Minor: Artificial Intelligence"}
+        ["graduation-cap", "Major: Computer Science"],
+        ["graduation-cap", "Minor: Artificial Intelligence"]
       ]
     }, {
       "title": "Université Claude Bernard Lyon 1 | Bachelor’s degree",
       "date": "Sept. 2015 – July 2018",
       "subtitle": [
-        {"graduation-cap": "Major: Computer Science"}
+        ["graduation-cap", "Major: Computer Science"]
       ]
     }
   ],
@@ -78,7 +78,7 @@
       "title": "BDA conference | PhD thesis award",
       "date": "Oct. 2024",
       "subtitle": [
-        {"map-pin": "Link: https://bda2024.sciencesconf.org/resource/page/id/10"}
+        ["map-pin", "Link: https://bda2024.sciencesconf.org/resource/page/id/10"]
       ],
       "description": [
         "My PhD work won the 2nd prize for the PhD award delivered by the BDA conference, awarding one or two PhD with significant contributions in the French data management community."
@@ -90,89 +90,135 @@
       "title": "BETTER: real-world health-data distributed analytics research platform",
       "date": "Apr. 2024 – July 2025",
       "subtitle": [
-        {"person": "Role: contributor (tasks 4.1, 4.2)"},
-        {"dollar": "Grant: Horizon Europe (2022 – 2027)"},
-        {"group": "Partners: 7 European hospitals"},
-        {"website": "Website: better-health-project.eu"}
+        ["person", "contributor (tasks 4.1, 4.2)"],
+        ["dollar", "Horizon Europe (2022 – 2027)"],
+        ["group", "7 European hospitals"],
+        ["website", "better-health-project.eu"]
       ],
       "description": [
         "Main scientific contributions: (1) two conceptual models for data and metadata respectively, both general, able to represent various multi-modal healthcare data, allowing the usage of ontologies, and extensible to various healthcare scenarios; (2) an ETL algorithm to fully automatically convert existing data and metadata to instances of our models, resulting in an interoperable database; (3) a metadata and data catalogue for exploration and ease federated learning algorithm design.",
         "Main practical achievements: (1) each hospital has an interoperable database, part of the global BETTER network; (2) federated learning algorithms are co-created and implemented by researchers and practitioners; (3) the catalogue implementation for the 3 use-cases (genetic rare diseases)."
+      ], 
+      "tags": [
+        ["hashtag", "heterogeneous data"],
+        ["hashtag", "E/R model"],
+        ["hashtag", "FAIR principles"],
+        ["hashtag", "clinical data"],
+        ["code", "Python"]
       ]
     }, {
       "title": "CONNECTIONSTUDIO: user data exploration of heterogeneous data",
       "date": "March 2023 – March 2024",
       "subtitle": [
-        {"person": "Role: contributor"},
-        {"dollar": "Grant: ANR SourcesSay project (2020 – 2024)"},
-        {"website": "Website: connectionstudio.inria.fr"}
+        ["person", "contributor"],
+        ["dollar", "ANR SourcesSay project (2020 – 2024)"],
+        ["website", "connectionstudio.inria.fr"]
       ],
       "description": [
         "Main scientific contribution: a user-oriented methodology for querying a relational data lake by selecting data pieces of interest instead of formulating SQL queries.",
         "Main practical achievement: a software suite for the data exploration of the underlying data lake."
+      ], 
+      "tags": [
+        ["hashtag", "data integration"],
+        ["hashtag", "data exploration"],
+        ["hashtag", "user interface"],
+        ["code", "Javascript"],
+        ["code", "Java"]
       ]
     }, {
       "title": "PATHWAYS: find interesting entity-to-entity paths in heterogeneous data",
       "date": "May 2022 – March 2024",
       "subtitle": [
-        {"person": "Role: co-leader"},
-        {"dollar": "Grant: DIM RFSI PHD 2020-01"},
-        {"website": "Website: team.inria.fr/cedar/projects/pathways"}
+        ["person", "co-leader"],
+        ["dollar", "DIM RFSI PHD 2020-01"],
+        ["website", "team.inria.fr/cedar/projects/pathways"]
       ],
       "description": [
         "Main scientific contributions: (1) efficiently enumerate all paths connecting named entities appearing in multi-modal and heterogeneous data by relying on an intermediate summary graph and a view-based algorithm; (2) the ranking of paths based on their interestingness, a quantitative measure based on entity confidence and information dilution.",
         "Main practical achievements: (1) a novel ChatGPT-based module for entity extraction; (2) the efficient evaluation of paths by using a dedicated multi-query optimization algorithm."
+      ], 
+      "tags": [
+        ["hashtag", "interesting connections"],
+        ["hashtag", "entity extraction"],
+        ["hashtag", "data journalism"],
+        ["code", "Java"]
       ]
     }, {
       "title": "ABSTRA: Entity-Relationship summaries from semi-structured data",
       "date": "Jan. 2021 – March 2024",
       "subtitle": [
-        {"person": "Role: leader"},
-        {"dollar": "Grant: DIM RFSI PHD 2020-01"},
-        {"group": "Partner: WeDoData start-up"},
-        {"website": "Website: team.inria.fr/cedar/projects/abstra"}
+        ["person", "leader"],
+        ["dollar", "DIM RFSI PHD 2020-01"],
+        ["group", "WeDoData start-up"],
+        ["website", "team.inria.fr/cedar/projects/abstra"]
       ],
       "description": [
         "Main scientific contributions: (1) a novel model-agnostic data summarization method relying on data kinds instead of specific model features; (2) the selection of most representative entities, their attributes and relationships from the data summary by relying on a graph representation and PageRank node scores.",
         "Main practical achievement: (1) an end-to-end pipeline to summarize any (set of) heterogeneous datasets; (2) an interface to visualize summaries as Entity-Relationship diagrams.",
         "Partner: WeDoData is a French SME specializing in data journalism and data visualization."
+      ], 
+      "tags": [
+        ["hashtag", "semi-structured data"],
+        ["hashtag", "data summarization"],
+        ["hashtag", "E-R model"],
+        ["code", "Java"]
       ]
     }, {
       "title": "PREDIHOOD: supervised prediction of the environment of neighborhoods",
       "date": "Feb. 2020 – July 2020",
       "subtitle": [
-        {"person": "Role: leader"},
-        {"grant": "Grant: LabEx IMU (Intelligences des Mondes Urbains)"},
-        {"group": "Partner: HomeInLove start-up"}
+        ["person", "leader"],
+        ["grant", "LabEx IMU (Intelligences des Mondes Urbains)"],
+        ["group", "HomeInLove start-up"]
       ],
       "description": [
         "Main scientific contributions: (1) an algorithm to automatically select the most useful subset of indicators among the hundreds collected ones; (2) an algorithm to automatically predict in a supervised manner the environment of any French neighborhood based on several subsets of indicators.",
         "Main practical achievements: (1) collect and process cartographic and urban data from public data such as INSEE; (2) an interface for predicting the environment of any French neighborhood; (3) a general interface for testing, evaluating and comparing AI algorithms.",
         "Partner: HomeInLove is a French start-up helping people in case of professional mobilities to find a new place to live based on their criteria and needs (neighborhood, family, hobbies, ...)."
+      ], 
+      "tags": [
+        ["hashtag", "variable selection"],
+        ["hashtag", "prediction algorithms"],
+        ["hashtag", "experimental evaluation"],
+        ["code", "Python"]
       ]
     }, {
       "title": "GEOALIGN: matching and merging geographic entities",
       "date": "Jan. 2019 – June 2019",
       "subtitle": [
-        {"person": "Role: leader"},
-        {"dollar": "Grant: Master 1 project"}
+        ["person", "leader"],
+        ["dollar", "Master 1 project"]
       ],
       "description": [
         "Main scientific contributions: (1) a customizable similarity formula for estimating the matching similarity between geographic entities; (2) the computation of the estimated quality of the matching without ground truth.",
         "Main practical achievements: (1) a map interface for find, matching and merging similar geographic entities."
+      ], 
+      "tags": [
+        ["hashtag", "entity matching"],
+        ["hashtag", "entity merging"],
+        ["hashtag", "similarity measures"],
+        ["code", "PHP"],
+        ["code", "Javascript"]
       ]
     }, {
       "title": "VIZLIRIS: recommending and clustering French neighborhoods",
       "date": "May 2018 – July 2018",
       "subtitle": [
-        {"person": "Role: leader"},
-        {"dollar": "Grant: LabEx IMU (Intelligences des Mondes Urbains)"},
-        {"group": "Partner: HomeInLove start-up"},
-        {"website": "Website: perso.liris.cnrs.fr/fabien.duchateau/?page=VizLIRIS/"}
+        ["person", "leader"],
+        ["dollar", "LabEx IMU (Intelligences des Mondes Urbains)"],
+        ["group", "HomeInLove start-up"],
+        ["website", "perso.liris.cnrs.fr/fabien.duchateau/?page=VizLIRIS/"]
       ],
       "description": [
         "Main scientific contribution: a data integration pipeline for integrating cartographic and INSEE data.",
         "Main practical achievements: (1) a map interface for recommending and clustering French neighborhoods based on well-known ML algorithms; (2) a use-case validation with HomeInLove data."
+      ], 
+      "tags": [
+        ["hashtag", "recommendation algorithms"],
+        ["hashtag", "user interface"],
+        ["hashtag", "similarity measures"],
+        ["code", "Python"],
+        ["code", "Javascript"]
       ]
     }
   ],
@@ -181,71 +227,71 @@
       "title": "I-ETL",
       "date": "Apr. 2024 – July 2025",
       "subtitle": [
-        {"person": "Role: developer"},
-        {"update": "Time: 1 year"},
-        {"language": "Language: Python"},
-        {"code": "LOC: 6k"},
-        {"code-branch": "Repository: https://github.com/DEIB-GECO/i-etl"}
+        ["person", "developer"],
+        ["update", "1 year"],
+        ["language", "Language: Python"],
+        ["code", "6k"],
+        ["code-branch", "https://github.com/DEIB-GECO/i-etl"]
       ]
     }, {
       "title": "ConnectionStudio",
       "date": "March 2023 – March 2024",
       "subtitle": [
-        {"person": "Role: contributor"},
-        {"update": "Time: 1 year"},
-        {"language": "Languages: Java, Javascript"},
-        {"code": "LOC: 25k"},
-        {"code-branch": "Repository: gitlab.inria.fr/cedar/connection-studio"}
+        ["person", "contributor"],
+        ["update", "1 year"],
+        ["language", "Languages: Java, Javascript"],
+        ["code", "25k"],
+        ["code-branch", "gitlab.inria.fr/cedar/connection-studio"]
       ]
     }, {
       "title": "PathWays",
       "date": "May 2022 – March 2024",
       "subtitle": [
-        {"person": "Role: main developer"},
-        {"update": "Time: 2 years"},
-        {"language": "Language: Java"},
-        {"code": "LOC: 4k"},
-        {"code-branch": "Repository: gitlab.inria.fr/cedar/pathways"}
+        ["person", "main developer"],
+        ["update", "2 years"],
+        ["language", "Language: Java"],
+        ["code", "4k"],
+        ["code-branch", "gitlab.inria.fr/cedar/pathways"]
       ]
     }, {
       "title": "Abstra",
       "date": "Jan. 2021 – March 2024",
       "subtitle": [
-        {"person": "Role: developer"}, 
-        {"update": "Time: 3 years"},
-        {"language": "Language: Java"},
-        {"code": "LOC: 10k"},
-        {"code-branch": "Repository: gitlab.inria.fr/cedar/abstra"}
+        ["person", "developer"], 
+        ["update", "3 years"],
+        ["language", "Language: Java"],
+        ["code", "10k"],
+        ["code-branch", "gitlab.inria.fr/cedar/abstra"]
       ]
     }, {
       "title": "Predihood",
       "date": "Feb. 2020 – July 2020",
       "subtitle": [
-        {"person": "Role: main developer"},
-        {"update": "Time: 6 months"},
-        {"language": "Languages: Python, JavaScript"},
-        {"code": "LOC: 3k"},
-        {"code-branch": "Repository: gitlab.com/fduchate/predihood"}
+        ["person", "main developer"],
+        ["update", "6 months"],
+        ["language", "Languages: Python, JavaScript"],
+        ["code", "3k"],
+        ["code-branch", "gitlab.com/fduchate/predihood"]
       ]
     }, {
       "title": "GeoAlign",
       "date": "Jan. 2019 – June 2019",
       "subtitle": [
-        {"person": "Role: main developer"},
-        {"update": "Time: 6 months"},
-        {"language": "Languages: PHP, JavaScript"},
-        {"code": "LOC: 4k"},
-        {"code-branch": "Repository: private"}
+        ["person", "main developer"],
+        ["update", "6 months"],
+        ["language", "Languages: PHP, JavaScript"],
+        ["code", "4k"],
+        ["code-branch", "private"]
       ]
     }, {
       "title": "VizLIRIS",
       "date": "May 2018 – July 2018",
       "subtitle": [
-        {"person": "Role: main developer"},
-        {"update": "Time: 3 months"},
-        {"language": "Languages: Python, JavaScript"},
-        {"code": "LOC: 1k"},
-        {"code-branch": "Repository: forge.univ-lyon1.fr/stage-Nelly/HiL-recommender"}
+        ["person", "main developer"],
+        ["update", "3 months"],
+        ["language", "Languages: Python, JavaScript"],
+        ["code", "1k"],
+        ["code-branch", "forge.univ-lyon1.fr/stage-Nelly/HiL-recommender"]
       ]
     }
   ],
@@ -254,8 +300,8 @@
       "title": "Diversity, Equity and Inclusion",
       "date": "Apr. 2023 – now",
       "subtitle": [
-        {"person": "Role: active member"},
-        {"website": "Website: dbdni.github.io/"}
+        ["person", "active member"],
+        ["website", "dbdni.github.io/"]
       ],
       "description": [
         "I co-lead the SCOUT action with Madhulika Mohanty (researcher, Inria Saclay) and Sujaya Maiyya (assistant professor, Univ. of Waterloo, USA). It aims at facilitating DEI efforts in the database community. My main proposal is a checklist to easily comply with inclusive submission guidelines; it will be integrated into EasyChair and CMT."
@@ -264,8 +310,8 @@
       "title": "FAIRification of genomic annotations",
       "date": "Dec. 2024 – now",
       "subtitle": [
-        {"person": "Role: active member"},
-        {"website": "Website: www.rd-alliance.org/groups/fairification-genomic-annotations-wg/activity/"}
+        ["person", "active member"],
+        ["website", "www.rd-alliance.org/groups/fairification-genomic-annotations-wg/activity/"]
       ],
       "description": [
         "We aim at defining novel methods to make genomic annotations and data more interoperable. I co-lead two actions: (1) define a strategy to publicly and permanently store harmonized genomic metadata with Sveinung Gundersen (computer scientist, ELIXIR) and Evan Christensen (PhD in bio-informatics, Univ. d’Utah, CA); and (2) define new models for representing genomic annotations with Sveinung Gundersen and Adam Wright (researcher, Cancer institute of Ontario, USA)."
@@ -278,7 +324,7 @@
   "professional_service": [
     {
       "title": "Member of organization committees",
-      "description": [ 
+      "description": [
         "2025: Conceptual Modeling for Life Sciences [CMLS – A] (workshop co-chair)"
       ]
     }, {
@@ -310,8 +356,8 @@
       "title": "LinkedIn page maintainer",
       "date": "April. 2024 – July 2025",
       "subtitle": [
-        {"person": "Role: main maintainer"},
-        {"website": "Website: linkedin.com/company/polimi-data-science-group"}
+        ["person", "main maintainer"],
+        ["website", "linkedin.com/company/polimi-data-science-group"]
       ],
       "description": [
         "Manage the LinkedIn page of the “Data Science” group at DEIB, Politecnico di Milano."
@@ -320,7 +366,7 @@
       "title": "PhD representative",
       "date": "Jan. 2023 – March 2024",
       "subtitle": [
-        {"person": "Role: main representative"}
+        ["person", "main representative"]
       ],
       "description": [
         "Represent Inria Saclay PhD students in Institut Polytechnique de Paris."
@@ -329,8 +375,8 @@
       "title": "Team seminar organizer",
       "date": "Jan. 2021 – March 2024",
       "subtitle": [
-        {"person": "Role: main organizer"},
-        {"website": "Website: team.inria.fr/cedar/category/seminar"}
+        ["person", "main organizer"],
+        ["website", "team.inria.fr/cedar/category/seminar"]
       ],
       "description": [
         "Organize and disseminate the CEDAR team seminars at Inria Saclay."
@@ -339,8 +385,8 @@
       "title": "Internship application website contributor",
       "date": "Jan. 2021 – Dec. 2021",
       "subtitle": [
-        {"person": "Role: active contributor"},
-        {"website": "Website: stages.dix.polytechnique.fr/home"}
+        ["person", "active contributor"],
+        ["website", "stages.dix.polytechnique.fr/home"]
       ],
       "description": [
         "Co-develop and deploy the website for internships at École Polytechnique, in collaboration with École Polytechnique IT team."
@@ -385,7 +431,7 @@
       "title": "Recurring courses",
       "date": "Sept. 2025 – now",
       "subtitle": [
-        {"person": "Role: magistral and lab courses"}
+        ["person", "magistral and lab courses"]
       ],
       "description": [
         "ISN1: informatique et société numérique (INSA Lyon, engineer 1st year, in French)",
@@ -395,7 +441,7 @@
       "title": "Involvement in teaching teams",
       "date": "Sept. 2025 – now",
       "subtitle": [
-        {"person": "Role: contributor"}
+        ["person", "contributor"]
       ],
       "description": [
         "ISN2: new student project topic and “network” module redesign"
