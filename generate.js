@@ -54,18 +54,11 @@ function generate_one_article(article_data) {
         html_1 += "<div class='postcard__subtitle'>";
         i = 0;
         for(subtitle of article_data["subtitle"]) {
-            // only one (key, value) in each cell element, but have to iterate because we does not know which key is used
-            // TODO: transform such dicts to arrays of two element
             if(i === 1) {
-                for(const [key, value] of Object.entries(subtitle)) {
-                    html_1 += `<img src="images/${key}.svg" class="my-icon-first"/>${subtitle[key]}`;
-                }
+                html_1 += `<img src="images/${subtitle[0]}.svg" class="my-icon-first"/>${subtitle[1]}`;
             } else {
-                for(const [key, value] of Object.entries(subtitle)) {
-                    html_1 += `<img src="images/${key}.svg" class="my-icon"/>${subtitle[key]}`;
-                }
+                html_1 += `<img src="images/${subtitle[0]}.svg" class="my-icon"/>${subtitle[1]}`;
             }
-            
             i = i + 1;
         }
         html_1 += "</div>";
@@ -91,11 +84,7 @@ function generate_one_article(article_data) {
     if("tags" in article_data) {
         html_1 += "<ul class='postcard__tagbox'>";
         for(tag of article_data["tags"]) {
-            // only one (key, value) in each cell element, but have to iterate because we does not know which key is used
-            // TODO: transform such dicts to arrays of two element
-            for(const [key, value] of Object.entries(subtitle)) {
-                html_1 += `<li class="tag__item play"><img src="images/${key}.svg" class="my-tag"/${tag[key]}</li>`;
-            }
+            html_1 += `<li class="tag__item play"><img src="images/${tag[0]}.svg" class="my-tag"/>${tag[1]}</li>`;
         }
         html_1 += "</ul>";
     }
