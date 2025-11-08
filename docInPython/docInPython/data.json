@@ -168,7 +168,7 @@
       "date": "Feb. 2020 – July 2020",
       "subtitles": [
         ["person", "leader"],
-        ["grant", "LabEx IMU (Intelligences des Mondes Urbains)"],
+        ["dollar", "LabEx IMU (Intelligences des Mondes Urbains)"],
         ["group", "HomeInLove start-up"]
       ],
       "descriptions": [
@@ -222,7 +222,7 @@
       ]
     }
   ],
-  "Research_software_and_tools": [
+  "research_software_and_tools": [
     {
       "title": "I-ETL",
       "date": "Apr. 2024 – July 2025",

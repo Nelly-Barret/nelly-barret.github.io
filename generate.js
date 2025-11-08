@@ -53,7 +53,7 @@ function generate_one_article(article_data) {
     if("subtitles" in article_data) {
         html_1 += "<div class='postcard__subtitle'>";
         i = 0;
-        for(subtitle of article_data["subtitle"]) {
+        for(subtitle of article_data["subtitles"]) {
             if(i === 1) {
                 html_1 += `<img src="images/${subtitle[0]}.svg" class="my-icon-first"/>${subtitle[1]}`;
             } else {
@@ -69,10 +69,10 @@ function generate_one_article(article_data) {
     html_1 += "<div class='postcard__bar'></div>";
 
     // description
-    if("description" in article_data) {
+    if("descriptions" in article_data) {
         html_1 += "<div class='postcard__preview-txt'>";
         html_1 += "<ul>"
-        for(description of article_data["description"]) {
+        for(description of article_data["descriptions"]) {
             html_1 += `<li>${description}</li>`;
         }
         html_1 += "</ul>"
