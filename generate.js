@@ -1,11 +1,11 @@
-function generate_all_articles_of_a_page(page_data) {
+function generate_all_articles_of_a_page(page_data, publications) {
     console.log("generate all articles");
     console.log(page_data);
 
     var html = "";
 
     for(one_article_data of page_data) {
-        const html_one_page = generate_one_article(one_article_data);
+        const html_one_page = generate_one_article(one_article_data, publications);
         console.log(html_one_page);
         html += html_one_page;
     }
@@ -38,7 +38,7 @@ function generate_all_articles_of_a_page(page_data) {
 //     </div>
 // </article>
 
-function generate_one_article(article_data) {
+function generate_one_article(article_data, publications) {
     console.log("generate one article");
     console.log(article_data);
 
@@ -71,11 +71,18 @@ function generate_one_article(article_data) {
     // description
     if("descriptions" in article_data) {
         html_1 += "<div class='postcard__preview-txt'>";
-        html_1 += "<ul>"
-        for(description of article_data["descriptions"]) {
-            html_1 += `<li>${description}</li>`;
+
+        if(publications) {
+            sort_order = $("#sort_publis").find(":selected").val();
+            create_html(article_data["descriptions"], sort_order);
+        } else {
+            html_1 += "<ul>"
+            for(description of article_data["descriptions"]) {
+                html_1 += `<li>${description}</li>`;
+            }
+            html_1 += "</ul>"
         }
-        html_1 += "</ul>"
+
         html_1 += "</div>"        
     }
 
@@ -113,47 +120,6 @@ function get_json_data(url) {
         return data;
     });
     return data;
-    // return (function () {
-    //     console.log("ici");
-    //     var json = null;
-    //     let xhttp = new XMLHttpRequest();
-    //     xhttp.open("GET", url, false);
-    //     // $.ajax({
-    //     //     'async': false,
-    //     //     'global': false,
-    //     //     'url': url,
-    //     //     'dataType': "json",
-    //     //     'success': function (data) {
-    //     //         console.log(data);
-    //     //         json = data;
-    //     //     }
-    //     // });
-    //     return json;
-    // })();
-}
-
-function get_all_publications() {
-    var journals = get_json_data("https://nelly-barret.github.io/publications/journals.json")
-    journals.forEach(function (element) { element["category"] = CATEGORIES["JOURNAL"]; });
-    var int_conferences = get_json_data("https://nelly-barret.github.io/publications/int_conferences.json")
-    int_conferences.forEach(function (element) { element["category"] = CATEGORIES["INT_CONFERENCES"]; });
-    var int_workshops = get_json_data("https://nelly-barret.github.io/publications/int_workshops.json");
-    int_workshops.forEach(function (element) { element["category"] = CATEGORIES["INT_WORKSHOPS"]; });
-    var nat_conferences = get_json_data("https://nelly-barret.github.io/publications/nat_conferences.json");
-    nat_conferences.forEach(function (element) { element["category"] = CATEGORIES["NAT_CONFERENCES"]; });
-    var demonstrations = get_json_data("https://nelly-barret.github.io/publications/demonstrations.json");
-    demonstrations.forEach(function (element) { element["category"] = CATEGORIES["DEMONSTRATIONS"]; });
-    var manuscripts = get_json_data("https://nelly-barret.github.io/publications/manuscripts.json");
-    manuscripts.forEach(function (element) { element["category"] = CATEGORIES["MANUSCRIPTS"]; });
-    
-    all_publications = [];
-    all_publications = all_publications.concat(journals);
-    all_publications = all_publications.concat(int_conferences);
-    all_publications = all_publications.concat(int_workshops);
-    all_publications = all_publications.concat(nat_conferences);
-    all_publications = all_publications.concat(demonstrations);
-    all_publications = all_publications.concat(manuscripts);
-    return all_publications;
 }
 
 function sort_array(sort_order, the_array) {
@@ -191,7 +157,6 @@ function display_authors(author_list, style, main_author) {
 }
 
 function create_html(sort_order, the_array) {
-    $("#main_publis").empty();
     all_values = [];
     for(one_element of the_array) {
         all_values.push(one_element[sort_order]);
@@ -218,7 +183,6 @@ function create_html(sort_order, the_array) {
         }
         current_publis += "</ol>";
         console.log(current_publis);
-        $("#main_publis").append("<article class='postcard'><div class='postcard__text'><h4 class='postcard__title'>" + iteration + "</h1><div class='postcard__subtitle'></div><div class='postcard__bar'></div><div class='postcard__preview-txt' style='min-height: 10em;'>" + current_publis + "</div></div></article>");
     }
 }
 
