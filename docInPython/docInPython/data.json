@@ -27,11 +27,14 @@
         ["map-pin", "Politecnico di Milano (IT)"]
       ]
     }, {
-      "title": "Institut Polytechnique de Paris & Inria Saclay | PhD student",
+      "title": "PhD student",
       "date": "Jan. 2021 – March 2024",
       "descriptions": [
         "PhD thesis title: “User-oriented exploration of semi-structured datasets”",
         "PhD defense jury: Fatiha Sais (présidente – professor, Univ. Paris-Saclay and LISN), Jean-Marc Petit (rapporteur – professor, at INSA Lyon and LIRIS), Olivier Teste (rapporteur – professor, Univ. Toulouse Jean Jaurès and IRIT), Katja Hose (examinatrice – professor, TU Wien, AT), Stefano Ceri (examinateur – professor, Politecnico di Milano, IT), Fatemeh Nargesian (examinatrice – associate professor, Univ. Rochester, USA), Ioana Manolescu (advisor – research director, Ecole Polytechnique and Inria Saclay), Karen Bastien (co-advisor – WeDoData CEO)."
+      ], 
+      "subtitles": [
+        ["map-pin", "Institut Polytechnique de Paris & Inria Saclay (FR)"]
       ]
     }, {
       "title": "Master intern",
@@ -59,22 +62,25 @@
   ],
   "education": [
     {
-      "title": "Institut Polytechnique de Paris | PhD degree",
+      "title": "PhD degree",
       "date": "Jan. 2021 – March 2024",
       "subtitles": [
+        ["map-pin", "Institut Polytechnique de Paris"],
         ["graduation-cap", "Major: Computer Science, Data and Artificial Intelligence"]
       ]
     }, {
-      "title": "Université Claude Bernard Lyon 1 | Master’s degree",
+      "title": "Master’s degree",
       "date": "Sept. 2018 – July 2020",
       "subtitles": [
+        ["map-pin", "Université Claude Bernard Lyon 1"],
         ["graduation-cap", "Major: Computer Science"],
         ["graduation-cap", "Minor: Artificial Intelligence"]
       ]
     }, {
-      "title": "Université Claude Bernard Lyon 1 | Bachelor’s degree",
+      "title": "Bachelor’s degree",
       "date": "Sept. 2015 – July 2018",
       "subtitles": [
+        ["map-pin", "Université Claude Bernard Lyon 1"],
         ["graduation-cap", "Major: Computer Science"]
       ]
     }
@@ -87,10 +93,11 @@
   ],
   "awards": [
     {
-      "title": "BDA conference | PhD thesis award",
+      "title": "PhD thesis award",
       "date": "Oct. 2024",
       "subtitles": [
-        ["map-pin", "Link: https://bda2024.sciencesconf.org/resource/page/id/10"]
+        ["pin-map", "BDA conference"],
+        ["award", "https://bda2024.sciencesconf.org/resource/page/id/10"]
       ],
       "descriptions": [
         "My PhD work won the 2nd prize for the PhD award delivered by the BDA conference, awarding one or two PhD with significant contributions in the French data management community."

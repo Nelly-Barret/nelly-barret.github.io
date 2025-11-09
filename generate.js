@@ -29,7 +29,7 @@ function generate_current_page(page_data) {
 
     var html = "";
     for(one_article_data of page_data) {
-        html += generate_one_article(one_article_data, publications);
+        html += generate_one_article(one_article_data, false);
     }
     return html;
 }
@@ -109,14 +109,20 @@ function generate_one_article(article_data, publications) {
         html_1 += "<article class='postcard'>";
         html_1 += "<div class='myImage postcard__img_link'></div>";
         html_1 += "<div class='postcard__text t-dark'>";
+        html_1 += "<div style='display: flex; justify-content: space-between;'>";
         html_1 += `<h4 class="postcard__title">${article_data["title"]}</h4>`;
+        if(article_data["date"] != undefined && article_data["date"] != null) {
+            html_1 += `<p style='float: right;'>${article_data["date"]}</p>`;
+        }
+        
+        html_1 += "</div>";
         
         // subtitles
         if("subtitles" in article_data) {
             html_1 += "<div class='postcard__subtitle'>";
             i = 0;
             for(subtitle of article_data["subtitles"]) {
-                if(i === 1) {
+                if(i === 0) {
                     html_1 += `<img src="images/${subtitle[0]}.svg" class="my-icon-first"/>${subtitle[1]}`;
                 } else {
                     html_1 += `<img src="images/${subtitle[0]}.svg" class="my-icon"/>${subtitle[1]}`;

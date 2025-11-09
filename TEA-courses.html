@@ -9,6 +9,9 @@
  
     <title>Nelly Barret</title>
 
+    <!--My functions to generate the website-->
+    <script src="generate.js"></script> 
+
     <!--JQuery-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
@@ -31,63 +34,8 @@
     <!-- SECTION TEACHING -->
     <section class="anchor light">
     <div class="container py-2">
-
-	
-<p>This page is in French for convenience and uses INSA acronyms</p>
-
-       <article class="postcard">
-            <div class="postcard__text t-dark">
-                <h4 class="postcard__title blue">Recurring courses</h1>
-                <div class="postcard__subtitle">
-                    <img src="images/map-pin.svg" class="my-icon-first"/>INSA Lyon (FR) 
-                    <img src="images/calendar.svg" class="my-icon"/>Sept. 2025 – now
-                </div>
-                <div class="postcard__bar"></div>
-                <div class="postcard__preview-txt">
-                    Role: magistral and lab courses
-                    <ul>
-                        <li>ISN1: informatique et société numérique (INSA Lyon, engineer 1st year, in French)</li>
-                        <li>SOL: systèmes et outils logiciels (INSA Lyon, engineer 1st year, in French)</li>
-                    </ul>
-                </div>
-            </div>
-        </article>
-
-       <article class="postcard">
-            <div class="postcard__text t-dark">
-                <h4 class="postcard__title blue">Involvement in teaching teams</h1>
-                <div class="postcard__subtitle">
-                    <img src="images/map-pin.svg" class="my-icon-first"/>INSA Lyon (FR) 
-                    <img src="images/calendar.svg" class="my-icon"/>Sept. 2025 - now
-                </div>
-                <div class="postcard__bar"></div>
-                <div class="postcard__preview-txt">
-                    Role: contributor
-                    <ul>
-                        <li>ISN2: new student project topic and “network” module redesign</li>
-                    </ul>
-                </div>
-            </div>
-        </article>
-
-        <article class="postcard">
-            <div class="postcard__text t-dark">
-                <h4 class="postcard__title blue">Previous courses</h1>
-                <div class="postcard__subtitle">
-                    <img src="images/map-pin.svg" class="my-icon-first"/>&Eacute;cole Polytechnique (FR) 
-                    <img src="images/calendar.svg" class="my-icon"/>Feb. 2022 – May 2024
-                </div>
-                <div class="postcard__bar"></div>
-                <div class="postcard__preview-txt">
-                    <ul>
-                        <li>CSE203: CS project (spring 2024, Ecole Polytechnique, bachelor 2nd year, in English)</li>
-                        <li>CSE204: Machine Learning (spring 2023, Ecole Polytechnique, bachelor 2nd year, in English)</li>
-                        <li>INF411: bases de programmation et d'algorithmique (fall 2022, Ecole Polytechnique, engineer 2nd year, in French) <a href="https://synapses.polytechnique.fr/catalogue/2022-2023/ue/267/INF411-les-bases-de-la-programmation-et-de-l-algorithmique" target="_blank">INF411 page</a></li>
-                        <li>INF371: mécanismes de la programmation orientée objet (spring 2022, Ecole Polytechnique, engineer 1st year, in French) <a href="https://synapses.polytechnique.fr/catalogue/2021-2022/ue/126/INF371-mecanismes-de-la-programmation-orientee-objet" target="_blank">INF371 page</a></li>
-                    </ul>
-                </div>
-            </div>
-        </article>
+        <div class="container py-2" id="container-teaching">
+        </div>
     </div>
     </section>
 </body>
@@ -96,6 +44,9 @@
 <script> 
 $(function(){
   $("#my-navbar").load("https://nelly-barret.github.io/navbar.html"); 
-  console.log("here")
 });
+
+my_whole_data = get_json_data("https://nelly-barret.github.io/docInPython/docInPython/data.json");
+html = generate_current_page(my_whole_data["teaching_responsibilities"]);
+$("#container-teaching").append(html);
 </script> 
