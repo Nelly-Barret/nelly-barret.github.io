@@ -355,7 +355,8 @@
               "venue": "ACM SIGMOD Record",
               "year": 2025,
               "url": "https://sigmodrecord.org/publications/sigmodRecord/2509/pdfs/08_Reports_Barret.pdf",
-              "main_author": false
+              "main_author": false, 
+              "category": "journal"
           },
           {
               "authors": [
@@ -368,7 +369,8 @@
               "venue": "BMC Medical Informatics and Decision Making", 
               "year": 2025,
               "url": "https://www.researchgate.net/publication/396456781_I-ETL_an_interoperability-aware_health_metadata_pipeline_to_enable_federated_analyses",
-              "main_author": true
+              "main_author": true, 
+              "category": "journal"
           },
           {
               "authors":  [
@@ -381,7 +383,8 @@
               "venue": "Information Systems",
               "year": 2025,
               "url": "https://www.sciencedirect.com/science/article/abs/pii/S0306437924001212",
-              "main_author": true
+              "main_author": true, 
+              "category": "journal"
           }, 
           {
               "authors": [
@@ -393,7 +396,8 @@
               "venue": "Journal of Open Source Software", 
               "year": 2021,
               "url": "https://joss.theoj.org/papers/10.21105/joss.02805",
-              "main_author": true
+              "main_author": true, 
+              "category": "journal"
           },
           {
               "authors": [
@@ -407,7 +411,8 @@
               "venue": "Communications in Computer and Information Science", 
               "year": 2021,
               "url": "https://link.springer.com/chapter/10.1007/978-3-030-83014-4_13",
-              "main_author": true
+              "main_author": true, 
+              "category": "journal"
           }
       ]
     }, 
@@ -425,7 +430,8 @@
             "title": "Leveraging profiling to bridge healthcare silos for federated analyses", 
             "venue": "International Conference on Advanced Information Systems Engineering (Forum track)",
             "year": 2025,
-            "main_author": true
+            "main_author": true, 
+            "category": "int_conf"
         },
         {
             "authors": [
@@ -437,7 +443,8 @@
             "venue": "International Conference on Extending Database Technology",
             "year": 2024,
             "url": "https://hal.science/hal-04131974",
-            "main_author": true
+            "main_author": true, 
+            "category": "int_conf"
         },
         {
             "authors": [
@@ -451,7 +458,8 @@
             "venue": "International Conference on Cooperative Information Systems",
             "year": 2023,
             "url": "https://hal.science/hal-04185938",
-            "main_author": false
+            "main_author": false, 
+            "category": "int_conf"
         },
         {
             "authors":  [
@@ -464,7 +472,8 @@
             "venue": "European Conference on Advances in Databases and Information Systems",
             "year": 2023,
             "url": "https://hal.science/hal-04131977",
-            "main_author": true
+            "main_author": true, 
+            "category": "int_conf"
         },
         {
             "authors": [
@@ -476,7 +485,8 @@
             "venue": "ACM International Conference on Information & Knowledge Management",
             "year": 2022,
             "url": "https://dl.acm.org/doi/10.1145/3511808.3557179",
-            "main_author": true
+            "main_author": true, 
+            "category": "int_conf"
         },
         {
             "authors": [
@@ -489,7 +499,8 @@
             "venue": "International Conference on Data Science, Technology and Applications",
             "year": 2020,
             "url": "https://www.scitepress.org/PublicationsDetail.aspx?ID=YRZoV7ChM6U=&t=1",
-            "main_author": true
+            "main_author": true, 
+            "category": "int_conf"
         }
       ]
     }, {
@@ -505,7 +516,8 @@
               "title": "Finding the PG schema of any (semi) structured dataset: a tale of graphs and abstraction", 
               "venue": "SEAGRAPH workshop in International Conference on Data Engineering",
               "year": 2024,
-              "url": "https://inria.hal.science/hal-04591933"
+              "url": "https://inria.hal.science/hal-04591933", 
+            "category": "int_work"
           },
           {
               "authors": [
@@ -520,7 +532,8 @@
               "venue": "SEAGRAPH workshop in International Conference on Data Engineering",
               "year": 2024,
               "url": "https://inria.hal.science/hal-04591897",
-              "main_author": false
+              "main_author": false, 
+            "category": "int_work"
           }
       ]
     }, {
@@ -538,7 +551,8 @@
               "venue": "Conférence Francophone sur l'Extraction et la Gestion des Connaissances",
               "year": 2024,
               "url": "https://hal.science/hal-04388609",
-              "main_author": true
+              "main_author": true, 
+            "category": "nat_conf"
           },
           {
               "authors":  [
@@ -553,7 +567,8 @@
               "venue": "Conférence Francophone sur l'Extraction et la Gestion des Connaissances",
               "year": 2019,
               "url": "https://editions-rnti.fr/?inprocid=1002526",
-              "main_author": true
+              "main_author": true, 
+            "category": "nat_conf"
           }
       ]
     }, {
@@ -570,7 +585,8 @@
               "venue": "The Semantic Web: ESWC Satellite Events",
               "year": 2023,
               "url": "https://hal.science/hal-04131977",
-              "main_author": true
+              "main_author": true, 
+              "category": "demo"
           },
           {
               "authors":  [
@@ -580,7 +596,8 @@
               "venue": "Conférence sur la Gestion de Données – Principes, Technologies et Applications",
               "year": 2020,
               "url": "https://hal.science/hal-03344102/document",
-              "main_author": true
+              "main_author": true, 
+              "category": "demo"
           },
           {
               "authors": [
@@ -593,7 +610,8 @@
               "venue": "ACM SIGSPATIAL International Conference on Advances in Geographic Information Systems",
               "year": 2019,
               "url": "https://dl.acm.org/doi/10.1145/3347146.3359345",
-              "main_author": true
+              "main_author": true, 
+              "category": "demo"
           }
       ]
     }, {
@@ -607,7 +625,8 @@
               "venue": "Institut Polytechnique de Paris",
               "year": 2024,
               "url": "https://theses.fr/2024IPPAX001",
-              "main_author": true
+              "main_author": true, 
+              "category": "manuscript"
           }
       ]
     }
