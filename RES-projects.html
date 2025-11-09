@@ -33,7 +33,7 @@
     <div id="my-navbar"></div>
 
     <section class="anchor light">
-    <div class="container py-2" id="mcontainer-projects">
+    <div class="container py-2" id="container-projects">
 
         <!-- <article class="postcard">
             <div class="myImage postcard__img_link">
@@ -292,6 +292,6 @@ $(function(){
 });
 
 my_whole_data = get_json_data("https://nelly-barret.github.io/docInPython/docInPython/data.json");
-html = generate_curent_page_articles(my_whole_data["research_projects"]);
+html = generate_current_page(my_whole_data["research_projects"]);
 $("#container-projects").append(html);
 </script> 

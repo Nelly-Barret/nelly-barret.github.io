@@ -33,7 +33,7 @@
 
     <!-- SECTION SERVICE -->
     <section class="light anchor">
-    <div class="container py-2" id="container-pc-member">
+    <div class="container py-2" id="container-servicer">
     </div>
     </section>
 </body>
@@ -45,6 +45,6 @@ $(function(){
 });
 
 my_whole_data = get_json_data("https://nelly-barret.github.io/docInPython/docInPython/data.json");
-html = generate_curent_page_articles(my_whole_data["reviewing_activities"]);
-$("#container-pc-member").append(html);
+html = generate_current_page(my_whole_data["professional_service"]);
+$("#container-service").append(html);
 </script> 
