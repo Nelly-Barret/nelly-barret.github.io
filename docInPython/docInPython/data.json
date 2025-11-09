@@ -430,6 +430,7 @@
             "title": "Leveraging profiling to bridge healthcare silos for federated analyses", 
             "venue": "International Conference on Advanced Information Systems Engineering (Forum track)",
             "year": 2025,
+            "url": "https://www.researchgate.net/publication/392478298_Leveraging_Profiling_to_Bridge_Healthcare_Silos_for_Federated_Analyses",
             "main_author": true, 
             "category": "int_conf"
         },
@@ -594,7 +595,7 @@
               ],
               "title": "Facilitating heterogeneous dataset understanding", 
               "venue": "Conférence sur la Gestion de Données – Principes, Technologies et Applications",
-              "year": 2020,
+              "year": 2021,
               "url": "https://hal.science/hal-03344102/document",
               "main_author": true, 
               "category": "demo"

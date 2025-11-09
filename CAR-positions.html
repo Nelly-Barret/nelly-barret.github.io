@@ -9,6 +9,9 @@
  
     <title>Nelly Barret</title>
 
+    <!--My functions to generate the website-->
+    <script src="generate.js"></script> 
+
     <!--JQuery-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
@@ -30,91 +33,7 @@
 
     <!-- SECTION POSITIONS -->
     <section class="anchor light">
-    <div class="container py-2">
-
-        <article class="postcard">
-            <div class="postcard__text">
-                <h4 class="postcard__title">Assistant Professor</h4>
-                <div class="postcard__subtitle">
-                    <img src="images/map-pin.svg" class="my-icon-first"/>INSA Lyon & LIRIS (FR)
-                    <img src="images/calendar.svg" class="my-icon"/>Sept. 2025 - now
-                </div>
-                <div class="postcard__bar"></div>
-                <div class="postcard__preview-txt">
-                    <ul>
-                        <li>Research: part of the DRIM team, focusing on document engineering and distributed systems.</li>
-                        <li>Teaching: 1st and 2nd year courses at the engineer school INSA Lyon.</li>
-                    </ul>
-                </div>
-            </div>
-        </article>
-
-        <article class="postcard">
-            <div class="postcard__text">
-                <h4 class="postcard__title">Postdoctoral researcher</h4>
-                <div class="postcard__subtitle">
-                    <img src="images/map-pin.svg" class="my-icon-first"/>Politecnico di Milano (IT)
-                    <img src="images/calendar.svg" class="my-icon"/>Apr. 2024 – July 2025
-                </div>
-                <div class="postcard__bar"></div>
-                <div class="postcard__preview-txt">
-                    <ul>
-                        <li>Horizon Europe project: “Better real-world health-data distributed analytics research platform”.</li>
-                        <li>Close collaborators: Pietro Pinoli (associate professor, Politecnico di Milano, IT), Anna Bernasconi (assistant professor, Politecnico di Milano, IT), Boris Bikbov (medical doctor, Politecnico di Milano, IT).</li>
-                    </ul>
-                </div>
-            </div>
-        </article>
-        <article class="postcard">
-            <div class="postcard__text">
-                <h4 class="postcard__title">PhD student</h4>
-                <div class="postcard__subtitle">
-                    <img src="images/map-pin.svg" class="my-icon-first"/>Institut Polytechnique de Paris & Inria Saclay (FR)
-                    <img src="images/calendar.svg" class="my-icon"/>Jan. 2021 – March 2024
-                </div>
-                <div class="postcard__bar"></div>
-                <div class="postcard__preview-txt">
-                    <ul>
-                        <li>PhD thesis title: “User-oriented exploration of semi-structured datasets”</li>
-                        <li>PhD defense jury: Fatiha Sais (présidente – professor, Univ. Paris-Saclay and LISN), Jean-Marc Petit (rapporteur – professor, at INSA Lyon and LIRIS), Olivier Teste (rapporteur – professor, Univ. Toulouse Jean Jaurès and IRIT), Katja Hose (examinatrice – professor, TU Wien, AT), Stefano Ceri (examinateur – professor, Politecnico di Milano, IT), Fatemeh Nargesian (examinatrice – associate professor, Univ. Rochester, USA), Ioana Manolescu (advisor – research director, Ecole Polytechnique and Inria Saclay), Karen Bastien (co-advisor – WeDoData CEO).</li>
-                    </ul>
-                </div>
-            </div>
-        </article>
-        <article class="postcard">
-            <div class="postcard__text">
-                <h4 class="postcard__title">Master intern</h4>
-                <div class="postcard__subtitle">
-                    <img src="images/map-pin.svg" class="my-icon-first"/>LIRIS (FR)
-                    <img src="images/calendar.svg" class="my-icon"/>Feb. 2020 – July 2020
-                </div>
-                <div class="postcard__bar"></div>
-                <div class="postcard__preview-txt">
-                    <ul>
-                        <li>Master thesis title (in French): “Prédiction de l’environnement d’un quartier”.</li>
-                        <li>Advisors: Fabien Duchateau (associate professor, Univ. Lyon 1 and LIRIS) and Franck Favetta (associate professor, Univ. de Lyon and LIRIS).</li>
-                        <li>Other collaborators: Nelly Duong (CEO, Home in Love), Behnaz Jullien (intern in psychology, Univ. Lyon 2), Wissame Laddada (post-doctoral researcher, LIRIS), and Ludovic Moncla (associate professor, computer science at INSA Lyon).</li>
-                    </ul>
-                </div>
-            </div>
-        </article>
-        <article class="postcard">
-            <div class="postcard__text">
-                <h4 class="postcard__title">Bachelor intern</h4>
-                <div class="postcard__subtitle">
-                    <img src="images/map-pin.svg" class="my-icon-first"/>LIRIS (FR)
-                    <img src="images/calendar.svg" class="my-icon"/>May 2018 – July 2018
-                </div>
-                <div class="postcard__bar"></div>
-                <div class="postcard__preview-txt">
-                    <ul>
-                        <li>Bachelor thesis title (in French): “Intégration de données géographiques pour la recommandation de quartiers”.</li>
-                        <li>Advisors: Fabien Duchateau (associate professor, Univ. Lyon 1 and LIRIS) and Franck Favetta (associate professor, Univ. de Lyon and LIRIS).</li>
-                        <li>Other collaborators: Nelly Duong (CEO, Home in Love), Loic Bonneval (associate professor in sociology, Univ. Lyon 2) and Aurélien Gentil (PhD student in sociology, Univ. Lyon 2).</li>
-                    </ul>
-                </div>
-            </div>
-        </article>
+    <div class="container py-2" id="container-position">
     </div>
     </section>
 </body>
@@ -123,6 +42,9 @@
 <script> 
 $(function(){
   $("#my-navbar").load("https://nelly-barret.github.io/navbar.html"); 
-  console.log("here")
 });
+
+my_whole_data = get_json_data("https://nelly-barret.github.io/docInPython/docInPython/data.json");
+html = generate_curent_page_articles(my_whole_data["academic_positions"]);
+$("#container-position").append(html);
 </script> 

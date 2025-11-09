@@ -27,24 +27,14 @@
     
 <body>
     <div id="my-navbar"></div>
+
+    <!--My functions to generate the website-->
+    <script src="generate.js"></script> 
     
     <!-- SECTION TALKS -->
     <section class="anchor light">
-    <div class="container py-2">
-        <div class="row">
-	       <div class="col-md-12 col-sm-12">
-                <article class="postcard">
-                    <div class="postcard__text t-dark">
-                        <h4 class="postcard__title">Institut de Recherche en Informatique de Toulouse</h4>
-                        <div class="postcard__bar"></div>
-                        <div class="postcard__subtitle">
-                            <img src="images/map-pin.svg" class="my-icon-first"/>Toulouse (FR)
-                            <img src="images/calendar.svg" class="my-icon"/>Oct. 2025 (2 days)
-                        </div>
-                    </div>
-                </article>
-            </div>
-        </div>
+    <div class="container py-2" id="container-visits">
+    </div>
     </section>
 </body>
 </html>
@@ -52,6 +42,9 @@
 <script> 
 $(function(){
   $("#my-navbar").load("https://nelly-barret.github.io/navbar.html"); 
-  console.log("here")
 });
+
+my_whole_data = get_json_data("https://nelly-barret.github.io/docInPython/docInPython/data.json");
+html = generate_curent_page_articles(my_whole_data["research_visits"]);
+$("#container-visits").append(html);
 </script> 

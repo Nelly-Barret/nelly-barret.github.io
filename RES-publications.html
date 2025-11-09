@@ -9,6 +9,9 @@
  
     <title>Nelly Barret</title>
 
+    <!--My functions to generate the website-->
+    <script src="generate.js"></script> 
+
     <!--JQuery-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
@@ -38,7 +41,7 @@
             <option value="year">Year</option>
             <option value="category">Category</option>
         </select>
-        <div id="main_publis">
+        <div id="container-publis">
         </div>
     </div>
     </section>
@@ -52,21 +55,17 @@ $(function(){
   $("#my-navbar").load("https://nelly-barret.github.io/navbar.html"); 
 });
 
-// define categories
-var CATEGORIES = {
-    "JOURNAL": "Peer-reviewed international journals",
-    "INT_CONFERENCES": "Peer-reviewed international conferences",
-    "INT_WORKSHOPS": "Peer-reviewed international workshops",
-    "NAT_CONFERENCES": "Peer-reviewed national conferences",
-    "DEMONSTRATIONS": "Demonstrations",
-    "MANUSCRIPTS": "Manuscripts"
-}
-
 // first time to load the page: show publications by year (first and default value of sort)
-show_publications();
+my_whole_data = get_json_data("https://nelly-barret.github.io/docInPython/docInPython/data.json");
+html = generate_publication_page(my_whole_data["publications"], $("#sort_publis").val());
+$("#container-publis").append(html);
 
 // add event on sort button to update the publication list every time the sort changes
 $("#sort_publis").click(function() {
-    show_publications()
+    $("#container-publis").empty();
+    console.log("regenerate");
+    console.log(my_whole_data["publications"]);
+    html = generate_publication_page(my_whole_data["publications"], $("#sort_publis").val());
+    $("#container-publis").append(html);
 });
 </script> 

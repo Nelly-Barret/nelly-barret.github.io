@@ -9,6 +9,9 @@
  
     <title>Nelly Barret</title>
 
+    <!--My functions to generate the website-->
+    <script src="generate.js"></script> 
+
     <!--JQuery-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
@@ -30,87 +33,7 @@
 
     <!-- SECTION SERVICE -->
     <section class="light anchor">
-    <div class="container py-2">
-
-        <article class="postcard">
-            <div class="postcard__text">
-                <h4 class="postcard__title">DRIM page maintainer</h1>
-                <div class="postcard__subtitle">
-                    Nov. 2025 - now
-                </div>
-                <div class="postcard__bar"></div>
-                <div class="postcard__preview-txt">
-                    Role: main maintainer | Website: <a href="https://liris.cnrs.fr/equipe/drim" target="_blank">liris.cnrs.fr/equipe/drim</a>
-                    <ul>
-                        <li>Manage the institutional page of the DRIM team of LIRIS.</li>
-                    </ul>
-                </div>
-            </div>
-        </article>
-
-        <article class="postcard">
-            <div class="postcard__text">
-                <h4 class="postcard__title">LinkedIn page maintainer</h1>
-                <div class="postcard__subtitle">
-                    April. 2024 – July 2025
-                </div>
-                <div class="postcard__bar"></div>
-                <div class="postcard__preview-txt">
-                    Role: main maintainer | Website: <a href="https://linkedin.com/company/polimi-data-science-group" target="_blank">linkedin.com/company/polimi-data-science-group</a>
-                    <ul>
-                        <li>Manage the LinkedIn page of the “Data Science” group at DEIB, Politecnico di Milano.</li>
-                    </ul>
-                </div>
-            </div>
-        </article>
-
-        <article class="postcard">
-            <div class="postcard__text">
-                <h4 class="postcard__title">PhD representative</h1>
-                <div class="postcard__subtitle">
-                    Jan. 2023 – March 2024
-                </div>
-                <div class="postcard__bar"></div>
-                <div class="postcard__preview-txt">
-                    Role: main representative 
-                    <ul>
-                        <li>Represent Inria Saclay PhD students in Institut Polytechnique de Paris.</li>
-                    </ul>
-                </div>
-            </div>
-        </article>
-
-        <article class="postcard">
-            <div class="postcard__text">
-                <h4 class="postcard__title">Team seminar organizer</h1>
-                <div class="postcard__subtitle">
-                    Jan. 2021 – March 2024
-                </div>
-                <div class="postcard__bar"></div>
-                <div class="postcard__preview-txt">
-                    Role: main organizer | Website: <a href="https://team.inria.fr/cedar/category/seminar" target="_blank">team.inria.fr/cedar/category/seminar</a>
-                    <ul>
-                        <li>Organize and disseminate the CEDAR team seminars at Inria Saclay.</li>
-                    </ul>
-                </div>
-            </div>
-        </article>
-
-        <article class="postcard">
-            <div class="postcard__text">
-                <h4 class="postcard__title">Internship application website contributor</h1>
-                <div class="postcard__subtitle">
-                    Jan. 2021 – Dec. 2021
-                </div>
-                <div class="postcard__bar"></div>
-                <div class="postcard__preview-txt">
-                    Role: active contributor | Website: <a href="https://stages.dix.polytechnique.fr/home" target="_blank">stages.dix.polytechnique.fr/home</a>
-                    <ul>
-                        <li>Co-develop and deploy the website for internships at École Polytechnique, in collaboration with École Polytechnique IT team.</li>
-                    </ul>
-                </div>
-            </div>
-        </article>
+    <div class="container py-2" id="container-inst-duties">
     </div>
     </section>
 </body>
@@ -119,6 +42,9 @@
 <script> 
 $(function(){
   $("#my-navbar").load("https://nelly-barret.github.io/navbar.html"); 
-  console.log("here")
 });
+
+my_whole_data = get_json_data("https://nelly-barret.github.io/docInPython/docInPython/data.json");
+html = generate_curent_page_articles(my_whole_data["institutional_responsibilities"]);
+$("#container-inst-duties").append(html);
 </script> 

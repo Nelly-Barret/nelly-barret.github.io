@@ -1,105 +1,4 @@
-function generate_all_articles_of_a_page(page_data, publications) {
-    console.log("generate all articles");
-    console.log(page_data);
-
-    var html = "";
-
-    for(one_article_data of page_data) {
-        const html_one_page = generate_one_article(one_article_data, publications);
-        console.log(html_one_page);
-        html += html_one_page;
-    }
-
-    return html;
-}
-
-// <article class="postcard">
-//     <div class="myImage postcard__img_link">
-//     </div>
-//     <div class="postcard__text t-dark">
-//         <h4 class="postcard__title">Young researcher project</h4>
-//         <div class="postcard__subtitle">
-//             <img src="images/calendar.svg" class="my-icon-first"/>Sept. 2025 - now 
-//             <img src="images/person.svg" class="my-icon"/>leader
-//             <img src="images/dollar.svg" class="my-icon"/>ANR JCJC (2026 – 2030)?
-//         </div>
-//         <div class="postcard__bar"></div>
-//         <div class="postcard__preview-txt">
-//             <ul>
-//                 <li>Preparing a young researcher project about data lakes and federated learning.</li>
-//                 <li>First proposal sent in Oct. 2025. Full proposal to be sent in March 2026.</li>
-//             </ul>
-//         </div>
-//         <ul class="postcard__tagbox">
-//             <li class="tag__item play"><img src="images/hashtag.svg" class="my-tag"/>data lake</li>
-//             <li class="tag__item play"><img src="images/hashtag.svg" class="my-tag"/>FAIR data</li>
-//             <li class="tag__item play"><img src="images/hashtag.svg" class="my-tag"/>federated learning</li>
-//         </ul>
-//     </div>
-// </article>
-
-function generate_one_article(article_data, publications) {
-    console.log("generate one article");
-    console.log(article_data);
-
-    var html_1 = "";
-
-    html_1 += "<article class='postcard'>";
-    html_1 += "<div class='myImage postcard__img_link'></div>";
-    html_1 += "<div class='postcard__text t-dark'>";
-    html_1 += `<h4 class="postcard__title">${article_data["title"]}</h4>`;
-   
-    // subtitles
-    if("subtitles" in article_data) {
-        html_1 += "<div class='postcard__subtitle'>";
-        i = 0;
-        for(subtitle of article_data["subtitles"]) {
-            if(i === 1) {
-                html_1 += `<img src="images/${subtitle[0]}.svg" class="my-icon-first"/>${subtitle[1]}`;
-            } else {
-                html_1 += `<img src="images/${subtitle[0]}.svg" class="my-icon"/>${subtitle[1]}`;
-            }
-            i = i + 1;
-        }
-        html_1 += "</div>";
-    }
-
-
-    // orange bar
-    html_1 += "<div class='postcard__bar'></div>";
-
-    // description
-    if("descriptions" in article_data) {
-        html_1 += "<div class='postcard__preview-txt'>";
-
-        if(publications) {
-            sort_order = $("#sort_publis").find(":selected").val();
-            create_html(article_data["descriptions"], sort_order);
-        } else {
-            html_1 += "<ul>"
-            for(description of article_data["descriptions"]) {
-                html_1 += `<li>${description}</li>`;
-            }
-            html_1 += "</ul>"
-        }
-
-        html_1 += "</div>"        
-    }
-
-
-    // tags
-    if("tags" in article_data) {
-        html_1 += "<ul class='postcard__tagbox'>";
-        for(tag of article_data["tags"]) {
-            html_1 += `<li class="tag__item play"><img src="images/${tag[0]}.svg" class="my-tag"/>${tag[1]}</li>`;
-        }
-        html_1 += "</ul>";
-    }
-    html_1 += "</article>"
-
-    return html_1;
-}
-
+/* Auxiliary functions for files */
 function readTextFile(file, callback) {
     var rawFile = new XMLHttpRequest();
     rawFile.overrideMimeType("application/json");
@@ -122,6 +21,156 @@ function get_json_data(url) {
     return data;
 }
 
+/* Main functions: generate one page (page of publications and other pages) */
+// for all pages except the publications
+function generate_current_page(page_data) {
+    console.log("generate all articles");
+    console.log(page_data);
+
+    var html = "";
+    for(one_article_data of page_data) {
+        html += generate_one_article(one_article_data, publications);
+    }
+    return html;
+}
+
+// for the publication page
+// page data: { category1: { ... all publis in category ...}, category2: { ... }, ... }
+// associate each category/year with its respective publications
+// then, generate one article per category/year
+function generate_publication_page(page_data, sort_order) {
+    var titles = {
+        "journal": "Peer-reviewed international journals", "int_conf": "Peer-reviewed international conferences", "int_work": "Peer-reviewed international workshops", "nat_conf": "Peer-reviewed national conferences", "demo": "Demonstrations", "manuscript": "Manuscripts"
+    };
+    
+    map_publication_sort = {};
+    console.log(sort_order);
+    // sort order is CATEGORY or YEAR
+    for(category in page_data) {
+        console.log(category);
+        console.log(page_data[category]["descriptions"]);
+        for(publication of page_data[category]["descriptions"]) {
+            console.log(publication);
+            publication_sort_value = publication[sort_order]; // a year or a category
+            console.log(publication_sort_value);
+            if(!(publication_sort_value in map_publication_sort)) {
+                map_publication_sort[publication_sort_value] = [];
+            }
+            map_publication_sort[publication_sort_value].push(publication); 
+        }
+        console.log(map_publication_sort);
+    }
+    console.log(map_publication_sort);
+
+    // then build the keys in order
+    // for year: sort them by decreasing order
+    // for categories, we already know the reight order
+    sort_in_order = []
+    if(sort_order == "category") {
+        sort_in_order = ["journal", "int_conf", "int_work", "nat_conf", "demo", "manuscript"]
+    } else if(sort_order == "year") {
+        sort_in_order = Object.keys(map_publication_sort);
+        // keys are now strings, we need to convert them to integer (match data.json)
+        sort_in_order = sort_in_order.map((element) => parseInt(element));
+        sort_in_order = sort_in_order.sort((a, b) => b-a); // decreasing order
+    }
+    console.log(sort_in_order);
+    
+    var current_publis = "";
+    for(key of sort_in_order) { // iterate over the sorted categories/years
+        console.log(key);
+        var article_title = "";
+        if(sort_order == "category") {
+            article_title = titles[key]; // the pretty-print category
+        } else {
+            article_title = key; // the year
+        }
+        var group_of_publis = {
+            "title": article_title,
+            "descriptions": map_publication_sort[key]
+        };
+        console.log(group_of_publis);
+        
+        current_publis += generate_one_article(group_of_publis, true);
+    }
+    
+    return current_publis;
+}
+
+/* individual functions */
+// title is used for publication article titles only (which can be the cateogry or the year of publication)
+function generate_one_article(article_data, publications) {
+    console.log("generate one article");
+    console.log(article_data);
+
+    var html_1 = "";
+
+    if(article_data != undefined && article_data != null) {
+        html_1 += "<article class='postcard'>";
+        html_1 += "<div class='myImage postcard__img_link'></div>";
+        html_1 += "<div class='postcard__text t-dark'>";
+        html_1 += `<h4 class="postcard__title">${article_data["title"]}</h4>`;
+        
+        // subtitles
+        if("subtitles" in article_data) {
+            html_1 += "<div class='postcard__subtitle'>";
+            i = 0;
+            for(subtitle of article_data["subtitles"]) {
+                if(i === 1) {
+                    html_1 += `<img src="images/${subtitle[0]}.svg" class="my-icon-first"/>${subtitle[1]}`;
+                } else {
+                    html_1 += `<img src="images/${subtitle[0]}.svg" class="my-icon"/>${subtitle[1]}`;
+                }
+                i = i + 1;
+            }
+            html_1 += "</div>";
+        }
+
+
+        // orange bar
+        html_1 += "<div class='postcard__bar'></div>";
+
+        // description
+        if("descriptions" in article_data) {
+            console.log("ici");
+            html_1 += "<div class='postcard__preview-txt'>";
+
+            if(publications) {
+                sort_order = $("#sort_publis").find(":selected").val();
+                console.log(article_data["descriptions"])
+                html_1 += "<ol>";
+                for(description of article_data["descriptions"]) {
+                    html_1 += format_publication(description);
+                }
+                html_1 += "</ol>"
+                
+            } else {
+                html_1 += "<ul>"
+                for(description of article_data["descriptions"]) {
+                    html_1 += `<li>${description}</li>`;
+                }
+                html_1 += "</ul>"
+            }
+
+            html_1 += "</div>"        
+        }
+
+        // tags
+        if("tags" in article_data) {
+            html_1 += "<ul class='postcard__tagbox'>";
+            for(tag of article_data["tags"]) {
+                html_1 += `<li class="tag__item play"><img src="images/${tag[0]}.svg" class="my-tag"/>${tag[1]}</li>`;
+            }
+            html_1 += "</ul>";
+        }
+        html_1 += "</article>"
+
+    }
+
+    return html_1;
+}
+
+/* Publication-related functions */
 function sort_array(sort_order, the_array) {
     the_array_sorted = the_array.sort((a, b)=>{
         return  b[sort_order] - a[sort_order]  // year or category
@@ -129,11 +178,24 @@ function sort_array(sort_order, the_array) {
     return the_array;
 }
 
+function format_publication(publi) {
+    var publi_as_html = "<li>";
+    publi_as_html += display_authors(publi["authors"], 1, publi["main_author"]) + ". ";
+    if(publi["url"] != undefined && publi["url"] != "") {
+        publi_as_html += "<b><a href=\"" + publi["url"] + "\" target='_blank'>" + publi["title"] + ".</a></b> ";
+    } else {
+        publi_as_html += "<b>" + publi["title"] + ".</b> ";
+    }
+    publi_as_html += "<i>" + publi["venue"] + ".</i> ";
+    publi_as_html += publi["year"] + ".";
+    publi_as_html += "</li>";
+    return publi_as_html;
+}
+
 function display_authors(author_list, style, main_author) {
     author_string = ""
     for(author of author_list) {
-        // author is a JSON with two fields: first and last
-        console.log(main_author);
+        // author is a JSON with two fields: first and last names
         if(main_author) {
             author_string += "<u>"
         }
@@ -154,44 +216,4 @@ function display_authors(author_list, style, main_author) {
     }
     author_string = author_string.substring(0, author_string.length-2);
     return author_string;
-}
-
-function create_html(sort_order, the_array) {
-    all_values = [];
-    for(one_element of the_array) {
-        all_values.push(one_element[sort_order]);
-    }
-    all_distinct_values = [...new Set(all_values)];
-    for (iteration of all_distinct_values) { // distinct years or categories
-        current_publis = "<ol>";
-        console.log(iteration); // year or category
-        for(publi of all_publications_sorted) {
-            if(publi[sort_order] == iteration) {
-                console.log(publi);
-                current_publis += "<li>";
-                current_publis += display_authors(publi["authors"], 1, publi["main_author"]) + ". ";
-                if(publi["url"] != undefined && publi["url"] != "") {
-                    current_publis += "<b><a href=\"" + publi["url"] + "\" target='_blank'>" + publi["title"] + ".</a></b> ";
-                } else {
-                    current_publis += "<b>" + publi["title"] + ".</b> ";
-                }
-                current_publis += "<i>" + publi["venue"] + ".</i> ";
-                current_publis += publi["year"] + ".";
-                current_publis += "</li>";
-            }
-            
-        }
-        current_publis += "</ol>";
-        console.log(current_publis);
-    }
-}
-
-function show_publications() {
-    console.log($("#sort_publis"));
-    sort_order = $("#sort_publis").find(":selected").val(); // $("#sort_button").value TODO
-    console.log("Sort order is " + sort_order);
-
-    all_publications = get_all_publications();
-    all_publications_sorted = sort_array(sort_order, all_publications);
-    create_html(sort_order, all_publications_sorted);
 }

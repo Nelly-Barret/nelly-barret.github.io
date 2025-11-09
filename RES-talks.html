@@ -10,7 +10,7 @@
     <title>Nelly Barret</title>
 
     <!--My functions to generate the website-->
-    <script src="test.js"></script> 
+    <script src="generate.js"></script> 
 
     <!--JQuery-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
@@ -33,90 +33,8 @@
     
     <!-- SECTION TALKS -->
     <section class="anchor light">
-    <div class="container py-2">
-	<h3 class="currentpast"></h3>
-        <div class="row">
-            <div class="col-md-12 col-sm-12">
-                <article class="postcard">
-                    <div class="postcard__text">
-                        <h4 class="postcard__title">Scientific talks (seminars)</h4>
-                        <div class="postcard__subtitle">
-                        </div>
-                        <div class="postcard__bar"></div>
-                        <div class="postcard__preview-txt">
-                            <ul>
-                                <li>“Multimodal data without borders: integration and exploration to the rescue” (Oct. 2025 – IRIT, Toulouse, FR) <a href="https://easychair.org/my/slide_version.cgi?version=27611" target="_blank">Slides</a></li>
-                                <li>“Leveraging profiling to bridge healthcare silos” (June 2025 – FIL, Lyon, FR) <a href="https://easychair.org/my/slide_version.cgi?version=27612" target="_blank">Slides</a></li>
-                                <li>“Entrepôts de santé : de l’intégration à l’analyse fédérée” (May 2025 – GDR MaDICS, Toulouse, FR)</li>
-                                <li>“Real-world health-data distributed analytics across hospitals”* (Oct. 2024 – DEIB, Milan, IT)</li>
-                                <li>“Heterogeneous datasets: a tale of integration and exploration” (April 2024 – LIRIS, Lyon, FR)</li>
-                                <li>“Integrating and exploring heterogeneous datasets” (April 2024 – Politecnico di Milano, Milan, IT) <a href="https://easychair.org/smart-slide/slide/7xmG#{sn:1}" target="_blank">Slides</a></li>
-                                <li>“Semi-structured data user exploration” (Jan. 2024 – LIB, Dijon, FR)</li>
-                                <li>“Semi-structured data user exploration” (Oct. 2023 – LISN, Paris, FR) <a href="https://easychair.org/smart-slide/slide/8Qm85#{sn:1}" target="_blank">Slides</a></li>
-
-                        </div>
-                    </div>
-                </article>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-md-12 col-sm-12">
-                <article class="postcard">
-                    <div class="postcard__text">
-                        <h4 class="postcard__title">Panels</h4>
-                        <div class="postcard__subtitle">
-                        </div>
-                        <div class="postcard__bar"></div>
-                        <div class="postcard__preview-txt">
-                            <ul>
-                                <li>“Quand l’intelligence artificielle hérite de nos préjugés” (Oct. 2025 – Fête de la Science, Lyon, FR).</li>
-                            </ul>
-                        </div>
-                    </div>
-                </article>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-md-12 col-sm-12">
-                <article class="postcard">
-                    <div class="postcard__text">
-                        <h4 class="postcard__title">Vulgarization talks</h4>
-                        <div class="postcard__subtitle">
-                        </div>
-                        <div class="postcard__bar"></div>
-                        <div class="postcard__preview-txt">
-                            <ul>
-                                <li>“From data to journalism” (interactive course, Jan. 2024 – Lycée international de Palaiseau, Palaiseau, FR) <a href="https://easychair.org/smart-slide/slide/T9Pc#{sn:1}" target="_blank">Slides</a></li>
-                                <li>“Intelligence artificielle : un outil pour le journalisme” (seminar, July 2023 – CFI forum, Paris, FR) <a href="https://easychair.org/smart-slide/slide/bZkZ#{sn:1}" target="_blank">Slides (in French)</a></li>
-                                <li>“ConnectionStudio : des données au journalisme” (forum, May 2023 – DataJournos, Paris, FR)</li>
-                                <li>“Recherche en integration de données : le cas de ConnectionLens”* (seminar, March 2022 – online) <a href="https://easychair.org/smart-slide/slide/ljvS#{sn:1}" target="_blank">Slides (in French)</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </article>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-md-12 col-sm-12">
-                <article class="postcard">
-                    <div class="postcard__text">
-                        <h4 class="postcard__title">Female empowerment talks</h4>
-                        <div class="postcard__subtitle">
-                        </div>
-                        <div class="postcard__bar"></div>
-                        <div class="postcard__preview-txt">
-                            Scientific or vulgarization talks marked with * have been presented in events promoting women in science, namely Girls@CSE and RJMI (Rencontres Jeunes Mathématiciennes et Informaticiennes). Other venues:
-                            <ul>
-                                <li>Journée Filles, Mathématiques, Informatique (speed meetings, Nov. 2025 – Lyon, FR)</li>
-                            </ul>
-                        </div>
-                    </div>
-                </article>
-            </div>
-        </div>
+    <div class="container py-2" id="container-talks">
+    </div>
     </section>
 </body>
 </html>
@@ -126,5 +44,7 @@ $(function(){
   $("#my-navbar").load("https://nelly-barret.github.io/navbar.html");
 });
 
-mytest();
+my_whole_data = get_json_data("https://nelly-barret.github.io/docInPython/docInPython/data.json");
+html = generate_curent_page_articles(my_whole_data["talks"]);
+$("#container-talks").append(html);
 </script> 
