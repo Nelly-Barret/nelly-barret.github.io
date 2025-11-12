@@ -688,6 +688,27 @@
     ],
     "working_groups": [
         {
+            "title": "Commission égalité femme/homme",
+            "date": "Nov. 2025 – now",
+            "subtitles": [
+                [
+                    "map-pin",
+                    "LIRIS"
+                ],
+                [
+                    "person",
+                    "permanent and active member"
+                ],
+                [
+                    "website",
+                    "https://vargas-solar.com/aequitas"
+                ]
+            ],
+            "descriptions": [
+                "The aim of this commission is to work towards building a more equitable scientific community by: (a) increasing knowledge about the scientific contributions of the female community by promoting the visibility of women at LIRIS, (b) increase communication in the lab to raise awareness on F/M equality questions, and (c) studying women's participation in the data science and artificial intelligence workforce."
+            ]
+        },
+        {
             "title": "Diversity, Equity and Inclusion",
             "date": "Apr. 2023 – now",
             "subtitles": [
@@ -1413,7 +1434,7 @@
         {
             "title": "Female empowerment talks",
             "descriptions": [
-                "Women in STEM (round table, Nov. 2025 – Lyon, FR)",
+                "Femmes scientifiques (round table for middle school students, Nov. 2025 – Lyon, FR)",
                 "Journée Filles, Mathématiques, Informatique (speed meetings, Nov. 2025 – Lyon, FR)"
             ]
         }
