@@ -5,7 +5,6 @@ from docx import Document
 from docx.enum.dml import MSO_THEME_COLOR_INDEX
 from docx.enum.style import WD_STYLE_TYPE
 from docx.shared import Inches
-
 from constants import IMAGE_SECTIONS, IMAGES_MAP
 from utils import insert_horizontal_rule, add_hyperlink
 
@@ -33,7 +32,7 @@ def generate_cv(template, data_file):
         for page_name in page_names:
             heading = generated_doc.add_heading()
             run_heading = heading.add_run()
-            run_heading.add_picture(f"images/{IMAGE_SECTIONS[page_name]}.png", width=Inches(0.25))
+            run_heading.add_picture(f"../images/{IMAGE_SECTIONS[page_name]}.png", width=Inches(0.25))
             run_heading.add_text(f" {pretty_page_names[page_name]}")  # keep a space after the section image
             #generated_doc.add_heading(pretty_page_names[page_name], level=1)
             paragraph_horizontal_rule = generated_doc.add_paragraph()
@@ -75,7 +74,7 @@ def generate_cv(template, data_file):
                                         subtitle_img = one_subtitle[0]
                                         subtitle_text = one_subtitle[1]
                                         run_text = paragraph.add_run()
-                                        # run.add_picture(f"images/{subtitle_img}.png", width=Inches(0.15))
+                                        # run.add_picture(f"../images/{subtitle_img}.png", width=Inches(0.15))
                                         run_text.add_text(f"{IMAGES_MAP[subtitle_img]}: ")  # Role, Grant, Website, etc
                                         run_text.italic = True
                                         if subtitle_img in ["website", "code-branch"] and subtitle_text.startswith("https://"):
@@ -149,26 +148,3 @@ def format_publication(document, publi):
 
 if __name__ == "__main__":
     generate_cv("empty-doc-with-styles.docx", "data.json")
-# document.add_heading('Document Title', 0)
-#
-# p = document.add_paragraph('A plain paragraph having some ')
-# p.add_run('bold').bold = True
-# p.add_run(' and some ')
-# p.add_run('italic.').italic = True
-#
-# document.add_heading('Heading, level 1', level=1)
-# document.add_paragraph('Intense quote', style='Intense Quote')
-#
-# document.add_paragraph(
-#     'first item in unordered list', style='List Bullet'
-# )
-# document.add_paragraph(
-#     'first item in ordered list', style='List Number'
-# )
-#
-# #document.add_picture('monty-truth.png', width=Inches(1.25))
-#
-
-# document.add_page_break()
-#
-# document.save('demo.docx')

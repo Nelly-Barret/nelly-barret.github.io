@@ -56,7 +56,7 @@ $(function(){
 });
 
 // first time to load the page: show publications by year (first and default value of sort)
-my_whole_data = get_json_data("https://nelly-barret.github.io/docInPython/docInPython/data.json");
+my_whole_data = get_json_data("https://nelly-barret.github.io/data/data.json");
 html = generate_publication_page(my_whole_data["publications"], $("#sort_publis").val());
 $("#container-publis").append(html);
 
