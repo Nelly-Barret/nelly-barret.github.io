@@ -122,10 +122,17 @@ function generate_one_article(article_data, publications) {
             html_1 += "<div class='postcard__subtitle'>";
             i = 0;
             for(subtitle of article_data["subtitles"]) {
-                if(i === 0) {
-                    html_1 += `<img src="images/${subtitle[0]}.svg" class="my-icon-first"/>${subtitle[1]}`;
+                // check whether the text of the subtitle should be converted to a <a> element or not
+                if(subtitle[1].startsWith("http")) {
+                    subtitle_text = `<a href='${subtitle[1]} target='_blank'>${subtitle[1]}</a>`
                 } else {
-                    html_1 += `<img src="images/${subtitle[0]}.svg" class="my-icon"/>${subtitle[1]}`;
+                    subtitle_text = subtitle[1]
+                }
+                // create the subtitle with its image
+                if(i === 0) {
+                    html_1 += `<img src="images/${subtitle[0]}.svg" class="my-icon-first"/>${subtitle_text}`;
+                } else {
+                    html_1 += `<img src="images/${subtitle[0]}.svg" class="my-icon"/>${subtitle_text}`;
                 }
                 i = i + 1;
             }
