@@ -31,4 +31,5 @@ jobs:
     - name: Run main
       run: |
         python3 --version
+        cd generate-cv/generate-cv/
         python3 main.py
