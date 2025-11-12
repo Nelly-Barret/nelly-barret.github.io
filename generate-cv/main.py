@@ -1,21 +1,21 @@
 import json
+import urllib.request
 
-import docx
 from docx import Document
-from docx.enum.dml import MSO_THEME_COLOR_INDEX
-from docx.enum.style import WD_STYLE_TYPE
 from docx.shared import Inches
+
 from constants import IMAGE_SECTIONS, IMAGES_MAP
 from utils import insert_horizontal_rule, add_hyperlink
 
 
-
 # 1. create template for NINJA, i.e., the Word document wit the NINJA tags ({{tag}})
-def generate_cv(template, data_file):
+def generate_long_cv(template, data_file_url, generated_filename):
     generated_doc = Document(template)
 
-    with open(data_file, encoding="utf8") as fp:
-        data = json.load(fp)
+
+    with urllib.request.urlopen(data_file_url) as url:
+        data = json.load(url)
+        print(data)
         page_names = list(data.keys())
         page_names.remove("header")  # remove the header info because it should not be part of the main loop
         pretty_page_names = {page_name: page_name.replace("_", " ").capitalize() for page_name in page_names}
@@ -93,7 +93,7 @@ def generate_cv(template, data_file):
                             else:
                                 for one_description in section["descriptions"]:
                                     generated_doc.add_paragraph(f"{one_description}", style='List Bullet')
-        generated_doc.save("generated-cv.docx")
+        generated_doc.save(generated_filename)
         print("Generate cv: done.")
 
 
@@ -147,4 +147,4 @@ def format_publication(document, publi):
 
 
 if __name__ == "__main__":
-    generate_cv("empty-doc-with-styles.docx", "data.json")
+    generate_long_cv("empty-doc-with-styles.docx", "https://nelly-barret.github.io/data/data.json", "cv-long-nelly-barret.docx")
