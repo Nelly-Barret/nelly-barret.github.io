@@ -1,0 +1,1480 @@
+{
+    "header": {
+        "current_name": "Nelly Barret",
+        "current_position": "Assistant Professor at Insa Lyon and LIRIS",
+        "current_address": "Blaise Pascal building, 7 Avenue Jean Capelle, 69100 Villeurbanne, France",
+        "current_office": "Office 502.3.21",
+        "current_emailaddress": "nelly.barret@insa-lyon.fr",
+        "current_orcid": "https://orcid.org/0000-0002-3469-4149"
+    },
+    "research_interests": [
+      {
+        "title": null,
+        "descriptions": [
+          "I work in the broad field of data management, and more precisely lmy research interests focus on heterogeneous and/or multimodal data, data integration systems, and data exploration. Recently, I also added Federated Learning to my research interests. The projects that I worked on have always been part of multidisciplinary contexts, including urban planning, journalism, and health, and have been exemplified on large, complex, and often real-world data. "
+        ]
+      }
+    ],
+    "academic_positions": [
+        {
+            "title": "Assistant Professor",
+            "date": "Sept. 2025 – now",
+            "descriptions": [
+                "Research: part of the DRIM team, focusing on document engineering and distributed systems.",
+                "Teaching: 1st and 2nd year courses at the engineer school INSA Lyon."
+            ],
+            "subtitles": [
+                [
+                    "map-pin",
+                    "INSA Lyon & LIRIS (FR)"
+                ]
+            ]
+        },
+        {
+            "title": "Postdoctoral researcher",
+            "date": "Apr. 2024 – July 2025",
+            "descriptions": [
+                "Horizon Europe project: “Better real-world health-data distributed analytics research platform”.",
+                "Close collaborators: Pietro Pinoli (associate professor, Politecnico di Milano, IT), Anna Bernasconi (assistant professor, Politecnico di Milano, IT), Boris Bikbov (medical doctor, Politecnico di Milano, IT)."
+            ],
+            "subtitles": [
+                [
+                    "map-pin",
+                    "Politecnico di Milano (IT)"
+                ]
+            ]
+        },
+        {
+            "title": "PhD student",
+            "date": "Jan. 2021 – March 2024",
+            "descriptions": [
+                "PhD thesis title: “User-oriented exploration of semi-structured datasets”",
+                "PhD defense jury: Fatiha Sais (présidente – professor, Univ. Paris-Saclay and LISN), Jean-Marc Petit (rapporteur – professor, at INSA Lyon and LIRIS), Olivier Teste (rapporteur – professor, Univ. Toulouse Jean Jaurès and IRIT), Katja Hose (examinatrice – professor, TU Wien, AT), Stefano Ceri (examinateur – professor, Politecnico di Milano, IT), Fatemeh Nargesian (examinatrice – associate professor, Univ. Rochester, USA), Ioana Manolescu (advisor – research director, Ecole Polytechnique and Inria Saclay), Karen Bastien (co-advisor – WeDoData CEO)."
+            ],
+            "subtitles": [
+                [
+                    "map-pin",
+                    "Institut Polytechnique de Paris & Inria Saclay (FR)"
+                ]
+            ]
+        },
+        {
+            "title": "Master intern",
+            "date": "Feb. 2020 – July 2020",
+            "descriptions": [
+                "Master thesis title (in French): “Prédiction de l’environnement d’un quartier”.",
+                "Advisors: Fabien Duchateau (associate professor, Univ. Lyon 1 and LIRIS) and Franck Favetta (associate professor, Univ. de Lyon and LIRIS).",
+                "Other collaborators: Nelly Duong (CEO, Home in Love), Behnaz Jullien (intern in psychology, Univ. Lyon 2), Wissame Laddada (post-doctoral researcher, LIRIS), and Ludovic Moncla (associate professor, computer science at INSA Lyon)."
+            ],
+            "subtitles": [
+                [
+                    "map-pin",
+                    "LIRIS (FR)"
+                ]
+            ]
+        },
+        {
+            "title": "Bachelor intern",
+            "date": "May 2018 – July 2018",
+            "descriptions": [
+                "Bachelor thesis title (in French): “Intégration de données géographiques pour la recommandation de quartiers”.",
+                "Advisors: Fabien Duchateau (associate professor, Univ. Lyon 1 and LIRIS) and Franck Favetta (associate professor, Univ. de Lyon and LIRIS).",
+                "Other collaborators: Nelly Duong (CEO, Home in Love), Loic Bonneval (associate professor in sociology, Univ. Lyon 2) and Aurélien Gentil (PhD student in sociology, Univ. Lyon 2)."
+            ],
+            "subtitles": [
+                [
+                    "map-pin",
+                    "LIRIS (FR)"
+                ]
+            ]
+        }
+    ],
+    "education": [
+        {
+            "title": "PhD degree",
+            "date": "Jan. 2021 – March 2024",
+            "subtitles": [
+                [
+                    "map-pin",
+                    "Institut Polytechnique de Paris"
+                ],
+                [
+                    "graduation-cap",
+                    "Computer Science, Data and Artificial Intelligence"
+                ]
+            ]
+        },
+        {
+            "title": "Master’s degree",
+            "date": "Sept. 2018 – July 2020",
+            "subtitles": [
+                [
+                    "map-pin",
+                    "Université Claude Bernard Lyon 1"
+                ],
+                [
+                    "graduation-cap",
+                    "Computer Science"
+                ],
+                [
+                    "graduation-cap-2",
+                    "Artificial Intelligence"
+                ]
+            ]
+        },
+        {
+            "title": "Bachelor’s degree",
+            "date": "Sept. 2015 – July 2018",
+            "subtitles": [
+                [
+                    "map-pin",
+                    "Université Claude Bernard Lyon 1"
+                ],
+                [
+                    "graduation-cap",
+                    "Computer Science"
+                ]
+            ]
+        }
+    ],
+    "research_visits": [
+        {
+            "title": "Institut de Recherche en Informatique de Toulouse",
+            "date": "Oct. 2025 (2 days)"
+        }
+    ],
+    "awards": [
+        {
+            "title": "PhD thesis award",
+            "date": "Oct. 2024",
+            "subtitles": [
+                [
+                    "map-pin",
+                    "BDA conference"
+                ],
+                [
+                    "website",
+                    "https://bda2024.sciencesconf.org/resource/page/id/10"
+                ]
+            ],
+            "descriptions": [
+                "My PhD work won the 2nd prize for the PhD award delivered by the BDA conference, awarding one or two PhD with significant contributions in the French data management community."
+            ]
+        }
+    ],
+    "research_projects": [
+        {
+            "title": "Stay tuned",
+            "date": "Sept. 2025 - now",
+            "subtitles": [
+                [
+                    "person",
+                    "leader"
+                ],
+                [
+                    "dollar",
+                    "ANR JCJC (2026-2030)?"
+                ]
+            ],
+            "descriptions": [
+                "I prepare a 4 years young researcher project on data lakes and federated learning.",
+                "I sent the pre-proposal in October 2025. The full proposal (to be accepted or not) will be sent by March 2026."
+            ],
+            "tags": [
+                [
+                    "hashtag",
+                    "data lake"
+                ],
+                [
+                    "hashtag",
+                    "multimodal data"
+                ],
+                [
+                    "hashtag",
+                    "federated learning"
+                ]
+            ]
+        },
+        {
+            "title": "BETTER: real-world health-data distributed analytics research platform",
+            "date": "Apr. 2024 – July 2025",
+            "subtitles": [
+                [
+                    "person",
+                    "contributor (tasks 4.1, 4.2)"
+                ],
+                [
+                    "dollar",
+                    "Horizon Europe (2022 – 2027)"
+                ],
+                [
+                    "group",
+                    "7 European hospitals"
+                ],
+                [
+                    "website",
+                    "https://better-health-project.eu"
+                ]
+            ],
+            "descriptions": [
+                "Main scientific contributions: (1) two conceptual models for data and metadata respectively, both general, able to represent various multi-modal healthcare data, allowing the usage of ontologies, and extensible to various healthcare scenarios; (2) an ETL algorithm to fully automatically convert existing data and metadata to instances of our models, resulting in an interoperable database; (3) a metadata and data catalogue for exploration and ease federated learning algorithm design.",
+                "Main practical achievements: (1) each hospital has an interoperable database, part of the global BETTER network; (2) federated learning algorithms are co-created and implemented by researchers and practitioners; (3) the catalogue implementation for the 3 use-cases (genetic rare diseases)."
+            ],
+            "tags": [
+                [
+                    "hashtag",
+                    "heterogeneous data"
+                ],
+                [
+                    "hashtag",
+                    "E/R model"
+                ],
+                [
+                    "hashtag",
+                    "FAIR principles"
+                ],
+                [
+                    "hashtag",
+                    "clinical data"
+                ],
+                [
+                    "code",
+                    "Python"
+                ]
+            ]
+        },
+        {
+            "title": "CONNECTIONSTUDIO: user data exploration of heterogeneous data",
+            "date": "March 2023 – March 2024",
+            "subtitles": [
+                [
+                    "person",
+                    "contributor"
+                ],
+                [
+                    "dollar",
+                    "ANR SourcesSay project (2020 – 2024)"
+                ],
+                [
+                    "website",
+                    "https://connectionstudio.inria.fr"
+                ]
+            ],
+            "descriptions": [
+                "Main scientific contribution: a user-oriented methodology for querying a relational data lake by selecting data pieces of interest instead of formulating SQL queries.",
+                "Main practical achievement: a software suite for the data exploration of the underlying data lake."
+            ],
+            "tags": [
+                [
+                    "hashtag",
+                    "data integration"
+                ],
+                [
+                    "hashtag",
+                    "data exploration"
+                ],
+                [
+                    "hashtag",
+                    "user interface"
+                ],
+                [
+                    "code",
+                    "Javascript"
+                ],
+                [
+                    "code",
+                    "Java"
+                ]
+            ]
+        },
+        {
+            "title": "PATHWAYS: find interesting entity-to-entity paths in heterogeneous data",
+            "date": "May 2022 – March 2024",
+            "subtitles": [
+                [
+                    "person",
+                    "co-leader"
+                ],
+                [
+                    "dollar",
+                    "DIM RFSI PHD 2020-01"
+                ],
+                [
+                    "website",
+                    "https://team.inria.fr/cedar/projects/pathways"
+                ]
+            ],
+            "descriptions": [
+                "Main scientific contributions: (1) efficiently enumerate all paths connecting named entities appearing in multi-modal and heterogeneous data by relying on an intermediate summary graph and a view-based algorithm; (2) the ranking of paths based on their interestingness, a quantitative measure based on entity confidence and information dilution.",
+                "Main practical achievements: (1) a novel ChatGPT-based module for entity extraction; (2) the efficient evaluation of paths by using a dedicated multi-query optimization algorithm."
+            ],
+            "tags": [
+                [
+                    "hashtag",
+                    "interesting connections"
+                ],
+                [
+                    "hashtag",
+                    "entity extraction"
+                ],
+                [
+                    "hashtag",
+                    "data journalism"
+                ],
+                [
+                    "code",
+                    "Java"
+                ]
+            ]
+        },
+        {
+            "title": "ABSTRA: Entity-Relationship summaries from semi-structured data",
+            "date": "Jan. 2021 – March 2024",
+            "subtitles": [
+                [
+                    "person",
+                    "leader"
+                ],
+                [
+                    "dollar",
+                    "DIM RFSI PHD 2020-01"
+                ],
+                [
+                    "group",
+                    "WeDoData start-up"
+                ],
+                [
+                    "website",
+                    "https://team.inria.fr/cedar/projects/abstra"
+                ]
+            ],
+            "descriptions": [
+                "Main scientific contributions: (1) a novel model-agnostic data summarization method relying on data kinds instead of specific model features; (2) the selection of most representative entities, their attributes and relationships from the data summary by relying on a graph representation and PageRank node scores.",
+                "Main practical achievement: (1) an end-to-end pipeline to summarize any (set of) heterogeneous datasets; (2) an interface to visualize summaries as Entity-Relationship diagrams.",
+                "Partner: WeDoData is a French SME specializing in data journalism and data visualization."
+            ],
+            "tags": [
+                [
+                    "hashtag",
+                    "semi-structured data"
+                ],
+                [
+                    "hashtag",
+                    "data summarization"
+                ],
+                [
+                    "hashtag",
+                    "E-R model"
+                ],
+                [
+                    "code",
+                    "Java"
+                ]
+            ]
+        },
+        {
+            "title": "PREDIHOOD: supervised prediction of the environment of neighborhoods",
+            "date": "Feb. 2020 – July 2020",
+            "subtitles": [
+                [
+                    "person",
+                    "leader"
+                ],
+                [
+                    "dollar",
+                    "LabEx IMU (Intelligences des Mondes Urbains)"
+                ],
+                [
+                    "group",
+                    "HomeInLove start-up"
+                ]
+            ],
+            "descriptions": [
+                "Main scientific contributions: (1) an algorithm to automatically select the most useful subset of indicators among the hundreds collected ones; (2) an algorithm to automatically predict in a supervised manner the environment of any French neighborhood based on several subsets of indicators.",
+                "Main practical achievements: (1) collect and process cartographic and urban data from public data such as INSEE; (2) an interface for predicting the environment of any French neighborhood; (3) a general interface for testing, evaluating and comparing AI algorithms.",
+                "Partner: HomeInLove is a French start-up helping people in case of professional mobilities to find a new place to live based on their criteria and needs (neighborhood, family, hobbies, ...)."
+            ],
+            "tags": [
+                [
+                    "hashtag",
+                    "variable selection"
+                ],
+                [
+                    "hashtag",
+                    "prediction algorithms"
+                ],
+                [
+                    "hashtag",
+                    "experimental evaluation"
+                ],
+                [
+                    "code",
+                    "Python"
+                ]
+            ]
+        },
+        {
+            "title": "GEOALIGN: matching and merging geographic entities",
+            "date": "Jan. 2019 – June 2019",
+            "subtitles": [
+                [
+                    "person",
+                    "leader"
+                ],
+                [
+                    "dollar",
+                    "Master 1 project"
+                ]
+            ],
+            "descriptions": [
+                "Main scientific contributions: (1) a customizable similarity formula for estimating the matching similarity between geographic entities; (2) the computation of the estimated quality of the matching without ground truth.",
+                "Main practical achievements: (1) a map interface for find, matching and merging similar geographic entities."
+            ],
+            "tags": [
+                [
+                    "hashtag",
+                    "entity matching"
+                ],
+                [
+                    "hashtag",
+                    "entity merging"
+                ],
+                [
+                    "hashtag",
+                    "similarity measures"
+                ],
+                [
+                    "code",
+                    "PHP"
+                ],
+                [
+                    "code",
+                    "Javascript"
+                ]
+            ]
+        },
+        {
+            "title": "VIZLIRIS: recommending and clustering French neighborhoods",
+            "date": "May 2018 – July 2018",
+            "subtitles": [
+                [
+                    "person",
+                    "leader"
+                ],
+                [
+                    "dollar",
+                    "LabEx IMU (Intelligences des Mondes Urbains)"
+                ],
+                [
+                    "group",
+                    "HomeInLove start-up"
+                ],
+                [
+                    "website",
+                    "https://perso.liris.cnrs.fr/fabien.duchateau/?page=VizLIRIS/"
+                ]
+            ],
+            "descriptions": [
+                "Main scientific contribution: a data integration pipeline for integrating cartographic and INSEE data.",
+                "Main practical achievements: (1) a map interface for recommending and clustering French neighborhoods based on well-known ML algorithms; (2) a use-case validation with HomeInLove data."
+            ],
+            "tags": [
+                [
+                    "hashtag",
+                    "recommendation algorithms"
+                ],
+                [
+                    "hashtag",
+                    "user interface"
+                ],
+                [
+                    "hashtag",
+                    "similarity measures"
+                ],
+                [
+                    "code",
+                    "Python"
+                ],
+                [
+                    "code",
+                    "Javascript"
+                ]
+            ]
+        }
+    ],
+    "research_software_and_tools": [
+        {
+            "title": "I-ETL",
+            "date": "Apr. 2024 – July 2025",
+            "subtitles": [
+                [
+                    "person",
+                    "developer"
+                ],
+                [
+                    "update",
+                    "1 year"
+                ],
+                [
+                    "language",
+                    "Language: Python"
+                ],
+                [
+                    "code",
+                    "6k"
+                ],
+                [
+                    "code-branch",
+                    "https://github.com/DEIB-GECO/i-etl"
+                ]
+            ]
+        },
+        {
+            "title": "ConnectionStudio",
+            "date": "March 2023 – March 2024",
+            "subtitles": [
+                [
+                    "person",
+                    "contributor"
+                ],
+                [
+                    "update",
+                    "1 year"
+                ],
+                [
+                    "language",
+                    "Languages: Java, Javascript"
+                ],
+                [
+                    "code",
+                    "25k"
+                ],
+                [
+                    "code-branch",
+                    "https://gitlab.inria.fr/cedar/connection-studio"
+                ]
+            ]
+        },
+        {
+            "title": "PathWays",
+            "date": "May 2022 – March 2024",
+            "subtitles": [
+                [
+                    "person",
+                    "main developer"
+                ],
+                [
+                    "update",
+                    "2 years"
+                ],
+                [
+                    "language",
+                    "Language: Java"
+                ],
+                [
+                    "code",
+                    "4k"
+                ],
+                [
+                    "code-branch",
+                    "https://gitlab.inria.fr/cedar/pathways"
+                ]
+            ]
+        },
+        {
+            "title": "Abstra",
+            "date": "Jan. 2021 – March 2024",
+            "subtitles": [
+                [
+                    "person",
+                    "developer"
+                ],
+                [
+                    "update",
+                    "3 years"
+                ],
+                [
+                    "language",
+                    "Language: Java"
+                ],
+                [
+                    "code",
+                    "10k"
+                ],
+                [
+                    "code-branch",
+                    "https://gitlab.inria.fr/cedar/abstra"
+                ]
+            ]
+        },
+        {
+            "title": "Predihood",
+            "date": "Feb. 2020 – July 2020",
+            "subtitles": [
+                [
+                    "person",
+                    "main developer"
+                ],
+                [
+                    "update",
+                    "6 months"
+                ],
+                [
+                    "language",
+                    "Languages: Python, JavaScript"
+                ],
+                [
+                    "code",
+                    "3k"
+                ],
+                [
+                    "code-branch",
+                    "https://gitlab.com/fduchate/predihood"
+                ]
+            ]
+        },
+        {
+            "title": "GeoAlign",
+            "date": "Jan. 2019 – June 2019",
+            "subtitles": [
+                [
+                    "person",
+                    "main developer"
+                ],
+                [
+                    "update",
+                    "6 months"
+                ],
+                [
+                    "language",
+                    "Languages: PHP, JavaScript"
+                ],
+                [
+                    "code",
+                    "4k"
+                ],
+                [
+                    "code-branch",
+                    "private"
+                ]
+            ]
+        },
+        {
+            "title": "VizLIRIS",
+            "date": "May 2018 – July 2018",
+            "subtitles": [
+                [
+                    "person",
+                    "main developer"
+                ],
+                [
+                    "update",
+                    "3 months"
+                ],
+                [
+                    "language",
+                    "Languages: Python, JavaScript"
+                ],
+                [
+                    "code",
+                    "1k"
+                ],
+                [
+                    "code-branch",
+                    "https://forge.univ-lyon1.fr/stage-Nelly/HiL-recommender"
+                ]
+            ]
+        }
+    ],
+    "working_groups": [
+        {
+            "title": "Diversity, Equity and Inclusion",
+            "date": "Apr. 2023 – now",
+            "subtitles": [
+                [
+                    "person",
+                    "active member"
+                ],
+                [
+                    "website",
+                    "https://dbdni.github.io/"
+                ]
+            ],
+            "descriptions": [
+                "I co-lead the SCOUT action with Madhulika Mohanty (researcher, Inria Saclay) and Sujaya Maiyya (assistant professor, Univ. of Waterloo, USA). It aims at facilitating DEI efforts in the database community. My main proposal is a checklist to easily comply with inclusive submission guidelines; it will be integrated into EasyChair and CMT."
+            ]
+        },
+        {
+            "title": "FAIRification of genomic annotations",
+            "date": "Dec. 2024 – now",
+            "subtitles": [
+                [
+                    "person",
+                    "active member"
+                ],
+                [
+                    "website",
+                    "https://www.rd-alliance.org/groups/fairification-genomic-annotations-wg/activity/"
+                ]
+            ],
+            "descriptions": [
+                "We aim at defining novel methods to make genomic annotations and data more interoperable. I co-lead two actions: (1) define a strategy to publicly and permanently store harmonized genomic metadata with Sveinung Gundersen (computer scientist, ELIXIR) and Evan Christensen (PhD in bio-informatics, Univ. d’Utah, CA); and (2) define new models for representing genomic annotations with Sveinung Gundersen and Adam Wright (researcher, Cancer institute of Ontario, USA)."
+            ]
+        }
+    ],
+    "publications": [
+        {
+            "title": "Peer-reviewed international journals",
+            "descriptions": [
+                {
+                    "authors": [
+                        {
+                            "first": "Nelly",
+                            "last": "Barret"
+                        },
+                        {
+                            "first": "Sourav",
+                            "last": "Bhowmick"
+                        },
+                        {
+                            "first": "Angela",
+                            "last": "Bonifati"
+                        },
+                        {
+                            "first": "Barbara",
+                            "last": "Catania"
+                        },
+                        {
+                            "first": "Stratos",
+                            "last": "Idreos"
+                        },
+                        {
+                            "first": "Ekaterini",
+                            "last": "Ioannou"
+                        },
+                        {
+                            "first": "Madhulika",
+                            "last": "Mohanty"
+                        },
+                        {
+                            "first": "Sana",
+                            "last": "Sellami"
+                        },
+                        {
+                            "first": "Roee",
+                            "last": "Shraga"
+                        },
+                        {
+                            "first": "Utku",
+                            "last": "Sirin"
+                        },
+                        {
+                            "first": "Juno",
+                            "last": "Steegmans"
+                        },
+                        {
+                            "first": "Pınar",
+                            "last": "Tözün"
+                        },
+                        {
+                            "first": "Soror",
+                            "last": "Sahri"
+                        },
+                        {
+                            "first": "Genoveva",
+                            "last": "Vargas-Solar"
+                        }
+                    ],
+                    "title": "Diversity, Equity and Inclusion Activities in DatabaseConferences: A 2024 Report",
+                    "venue": "ACM SIGMOD Record",
+                    "year": 2025,
+                    "url": "https://sigmodrecord.org/publications/sigmodRecord/2509/pdfs/08_Reports_Barret.pdf",
+                    "main_author": false,
+                    "category": "journal"
+                },
+                {
+                    "authors": [
+                        {
+                            "first": "Nelly",
+                            "last": "Barret"
+                        },
+                        {
+                            "first": "Anna",
+                            "last": "Bernasconi"
+                        },
+                        {
+                            "first": "Boris",
+                            "last": "Bikbov"
+                        },
+                        {
+                            "first": "Pietro",
+                            "last": "Pinoli"
+                        }
+                    ],
+                    "title": "I-ETL: an interoperability-aware health (meta)data pipeline to enable federated analyses",
+                    "venue": "BMC Medical Informatics and Decision Making",
+                    "year": 2025,
+                    "url": "https://www.researchgate.net/publication/396456781_I-ETL_an_interoperability-aware_health_metadata_pipeline_to_enable_federated_analyses",
+                    "main_author": true,
+                    "category": "journal"
+                },
+                {
+                    "authors": [
+                        {
+                            "first": "Nelly",
+                            "last": "Barret"
+                        },
+                        {
+                            "first": "Antoine",
+                            "last": "Gauquier"
+                        },
+                        {
+                            "first": "Jia-Jean",
+                            "last": "Law"
+                        },
+                        {
+                            "first": "Ioana",
+                            "last": "Manolescu"
+                        }
+                    ],
+                    "title": "Finding meaningful paths in heterogeneous graphs with PathWays",
+                    "venue": "Information Systems",
+                    "year": 2025,
+                    "url": "https://www.sciencedirect.com/science/article/abs/pii/S0306437924001212",
+                    "main_author": true,
+                    "category": "journal"
+                },
+                {
+                    "authors": [
+                        {
+                            "first": "Nelly",
+                            "last": "Barret"
+                        },
+                        {
+                            "first": "Fabien",
+                            "last": "Duchateau"
+                        },
+                        {
+                            "first": "Franck",
+                            "last": "Favetta"
+                        }
+                    ],
+                    "title": "Predihood: an open-source tool for predicting neighbourhoods' information",
+                    "venue": "Journal of Open Source Software",
+                    "year": 2021,
+                    "url": "https://joss.theoj.org/papers/10.21105/joss.02805",
+                    "main_author": true,
+                    "category": "journal"
+                },
+                {
+                    "authors": [
+                        {
+                            "first": "Nelly",
+                            "last": "Barret"
+                        },
+                        {
+                            "first": "Fabien",
+                            "last": "Duchateau"
+                        },
+                        {
+                            "first": "Franck",
+                            "last": "Favetta"
+                        },
+                        {
+                            "first": "Aurélien",
+                            "last": "Gentil"
+                        },
+                        {
+                            "first": "Loïc",
+                            "last": "Bonneval"
+                        }
+                    ],
+                    "title": "An Environmental Study of French Neighbourhood.",
+                    "venue": "Communications in Computer and Information Science",
+                    "year": 2021,
+                    "url": "https://link.springer.com/chapter/10.1007/978-3-030-83014-4_13",
+                    "main_author": true,
+                    "category": "journal"
+                }
+            ]
+        },
+        {
+            "title": "Peer-reviewed international conferences",
+            "descriptions": [
+                {
+                    "authors": [
+                        {
+                            "first": "Nelly",
+                            "last": "Barret"
+                        },
+                        {
+                            "first": "Anna",
+                            "last": "Bernasconi"
+                        },
+                        {
+                            "first": "Cinzia",
+                            "last": "Cappiello"
+                        },
+                        {
+                            "first": "Giaccomo",
+                            "last": "Palu"
+                        },
+                        {
+                            "first": "Pietro",
+                            "last": "Pinoli"
+                        }
+                    ],
+                    "title": "Leveraging profiling to bridge healthcare silos for federated analyses",
+                    "venue": "International Conference on Advanced Information Systems Engineering (Forum track)",
+                    "year": 2025,
+                    "url": "https://www.researchgate.net/publication/392478298_Leveraging_Profiling_to_Bridge_Healthcare_Silos_for_Federated_Analyses",
+                    "main_author": true,
+                    "category": "int_conf"
+                },
+                {
+                    "authors": [
+                        {
+                            "first": "Nelly",
+                            "last": "Barret"
+                        },
+                        {
+                            "first": "Ioana",
+                            "last": "Manolescu"
+                        },
+                        {
+                            "first": "Prajna",
+                            "last": "Upadhyay"
+                        }
+                    ],
+                    "title": "Computing generic abstractions from application datasets",
+                    "venue": "International Conference on Extending Database Technology",
+                    "year": 2024,
+                    "url": "https://hal.science/hal-04131974",
+                    "main_author": true,
+                    "category": "int_conf"
+                },
+                {
+                    "authors": [
+                        {
+                            "first": "Nelly",
+                            "last": "Barret"
+                        },
+                        {
+                            "first": "Simon",
+                            "last": "Ebel"
+                        },
+                        {
+                            "first": "Théo",
+                            "last": "Galizzi"
+                        },
+                        {
+                            "first": "Ioana",
+                            "last": "Manolescu"
+                        },
+                        {
+                            "first": "Madhulika",
+                            "last": "Mohanty"
+                        }
+                    ],
+                    "title": "User-friendly exploration of highly heterogeneous data lakes",
+                    "venue": "International Conference on Cooperative Information Systems",
+                    "year": 2023,
+                    "url": "https://hal.science/hal-04185938",
+                    "main_author": false,
+                    "category": "int_conf"
+                },
+                {
+                    "authors": [
+                        {
+                            "first": "Nelly",
+                            "last": "Barret"
+                        },
+                        {
+                            "first": "Antoine",
+                            "last": "Gauquier"
+                        },
+                        {
+                            "first": "Jia-Jean",
+                            "last": "Law"
+                        },
+                        {
+                            "first": "Ioana",
+                            "last": "Manolescu"
+                        }
+                    ],
+                    "title": "Exploring heterogeneous data graphs through their entity paths",
+                    "venue": "European Conference on Advances in Databases and Information Systems",
+                    "year": 2023,
+                    "url": "https://hal.science/hal-04131977",
+                    "main_author": true,
+                    "category": "int_conf"
+                },
+                {
+                    "authors": [
+                        {
+                            "first": "Nelly",
+                            "last": "Barret"
+                        },
+                        {
+                            "first": "Ioana",
+                            "last": "Manolescu"
+                        },
+                        {
+                            "first": "Prajna",
+                            "last": "Upadhyay"
+                        }
+                    ],
+                    "title": "Abstra: toward generic abstractions for data of any model",
+                    "venue": "ACM International Conference on Information & Knowledge Management",
+                    "year": 2022,
+                    "url": "https://dl.acm.org/doi/10.1145/3511808.3557179",
+                    "main_author": true,
+                    "category": "int_conf"
+                },
+                {
+                    "authors": [
+                        {
+                            "first": "Nelly",
+                            "last": "Barret"
+                        },
+                        {
+                            "first": "Fabien",
+                            "last": "Duchateau"
+                        },
+                        {
+                            "first": "Franck",
+                            "last": "Favetta"
+                        },
+                        {
+                            "first": "Loïc",
+                            "last": "Bonneval"
+                        }
+                    ],
+                    "title": "Predicting the environment of a neighbourhood: a use case for France",
+                    "venue": "International Conference on Data Science, Technology and Applications",
+                    "year": 2020,
+                    "url": "https://www.scitepress.org/PublicationsDetail.aspx?ID=YRZoV7ChM6U=&t=1",
+                    "main_author": true,
+                    "category": "int_conf"
+                }
+            ]
+        },
+        {
+            "title": "Peer-reviewed international workshops",
+            "descriptions": [
+                {
+                    "authors": [
+                        {
+                            "first": "Nelly",
+                            "last": "Barret"
+                        },
+                        {
+                            "first": "Tudor",
+                            "last": "Enache"
+                        },
+                        {
+                            "first": "Ioana",
+                            "last": "Manolescu"
+                        },
+                        {
+                            "first": "Madhulika",
+                            "last": "Mohanty"
+                        }
+                    ],
+                    "title": "Finding the PG schema of any (semi) structured dataset: a tale of graphs and abstraction",
+                    "venue": "SEAGRAPH workshop in International Conference on Data Engineering",
+                    "year": 2024,
+                    "url": "https://inria.hal.science/hal-04591933",
+                    "category": "int_work"
+                },
+                {
+                    "authors": [
+                        {
+                            "first": "Oana",
+                            "last": "Balalau"
+                        },
+                        {
+                            "first": "Nelly",
+                            "last": "Barret"
+                        },
+                        {
+                            "first": "Simon",
+                            "last": "Ebel"
+                        },
+                        {
+                            "first": "Théo",
+                            "last": "Galizzi"
+                        },
+                        {
+                            "first": "Ioana",
+                            "last": "Manolescu"
+                        },
+                        {
+                            "first": "Madhulika",
+                            "last": "Mohanty"
+                        }
+                    ],
+                    "title": "Graph lenses over any data: the ConnectionLens experience",
+                    "venue": "SEAGRAPH workshop in International Conference on Data Engineering",
+                    "year": 2024,
+                    "url": "https://inria.hal.science/hal-04591897",
+                    "main_author": false,
+                    "category": "int_work"
+                }
+            ]
+        },
+        {
+            "title": "Peer-reviewed national conferences",
+            "descriptions": [
+                {
+                    "authors": [
+                        {
+                            "first": "Nelly",
+                            "last": "Barret"
+                        },
+                        {
+                            "first": "Simon",
+                            "last": "Ebel"
+                        },
+                        {
+                            "first": "Théo",
+                            "last": "Galizzi"
+                        },
+                        {
+                            "first": "Ioana",
+                            "last": "Manolescu"
+                        },
+                        {
+                            "first": "Madhulika",
+                            "last": "Mohanty"
+                        }
+                    ],
+                    "title": "Exploration utilisateur de lacs de données très hétérogènes",
+                    "venue": "Conférence Francophone sur l'Extraction et la Gestion des Connaissances",
+                    "year": 2024,
+                    "url": "https://hal.science/hal-04388609",
+                    "main_author": true,
+                    "category": "nat_conf"
+                },
+                {
+                    "authors": [
+                        {
+                            "first": "Nelly",
+                            "last": "Barret"
+                        },
+                        {
+                            "first": "Fabien",
+                            "last": "Duchateau"
+                        },
+                        {
+                            "first": "Franck",
+                            "last": "Favetta"
+                        },
+                        {
+                            "first": "Maryvonne",
+                            "last": "Miquel"
+                        },
+                        {
+                            "first": "Aurélien",
+                            "last": "Gentil"
+                        },
+                        {
+                            "first": "Loïc",
+                            "last": "Bonneval"
+                        }
+                    ],
+                    "title": "À la recherche du quartier idéal",
+                    "venue": "Conférence Francophone sur l'Extraction et la Gestion des Connaissances",
+                    "year": 2019,
+                    "url": "https://editions-rnti.fr/?inprocid=1002526",
+                    "main_author": true,
+                    "category": "nat_conf"
+                }
+            ]
+        },
+        {
+            "title": "Demonstrations",
+            "descriptions": [
+                {
+                    "authors": [
+                        {
+                            "first": "Nelly",
+                            "last": "Barret"
+                        },
+                        {
+                            "first": "Antoine",
+                            "last": "Gauquier"
+                        },
+                        {
+                            "first": "Jia-Jean",
+                            "last": "Law"
+                        },
+                        {
+                            "first": "Ioana",
+                            "last": "Manolescu"
+                        }
+                    ],
+                    "title": "PathWays: entity-focused exploration of heterogeneous data graphs",
+                    "venue": "The Semantic Web: ESWC Satellite Events",
+                    "year": 2023,
+                    "url": "https://hal.science/hal-04131977",
+                    "main_author": true,
+                    "category": "demo"
+                },
+                {
+                    "authors": [
+                        {
+                            "first": "Nelly",
+                            "last": "Barret"
+                        }
+                    ],
+                    "title": "Facilitating heterogeneous dataset understanding",
+                    "venue": "Conférence sur la Gestion de Données – Principes, Technologies et Applications",
+                    "year": 2021,
+                    "url": "https://hal.science/hal-03344102/document",
+                    "main_author": true,
+                    "category": "demo"
+                },
+                {
+                    "authors": [
+                        {
+                            "first": "Nelly",
+                            "last": "Barret"
+                        },
+                        {
+                            "first": "Fabien",
+                            "last": "Duchateau"
+                        },
+                        {
+                            "first": "Franck",
+                            "last": "Favetta"
+                        },
+                        {
+                            "first": "Ludovic",
+                            "last": "Moncla"
+                        }
+                    ],
+                    "title": "Spatial entity matching with GeoAlign",
+                    "venue": "ACM SIGSPATIAL International Conference on Advances in Geographic Information Systems",
+                    "year": 2019,
+                    "url": "https://dl.acm.org/doi/10.1145/3347146.3359345",
+                    "main_author": true,
+                    "category": "demo"
+                }
+            ]
+        },
+        {
+            "title": "Manuscripts",
+            "descriptions": [
+                {
+                    "authors": [
+                        {
+                            "first": "Nelly",
+                            "last": "Barret"
+                        }
+                    ],
+                    "title": "User-oriented exploration of semi-structured datasets",
+                    "venue": "Institut Polytechnique de Paris",
+                    "year": 2024,
+                    "url": "https://theses.fr/2024IPPAX001",
+                    "main_author": true,
+                    "category": "manuscript"
+                }
+            ]
+        }
+    ],
+    "professional_service": [
+        {
+            "title": "Member of organization committees",
+            "descriptions": [
+                "2025: Conceptual Modeling for Life Sciences [CMLS – A] (workshop co-chair)"
+            ]
+        },
+        {
+            "title": "Member of program committees",
+            "descriptions": [
+                "2025: International Conference on Advances in Databases, Knowledge, and Data Applications [DBKDA – N/A], European Conference on Advances in Databases and Information Systems [ADBIS – C], BDA Gestion de Données – Principes, Technologies et Applications [BDA – N/A] (demonstrations only)",
+                "2025: Information Systems and AI for Life Sciences [iSAILS – A]"
+            ]
+        }
+    ],
+    "reviewing_activities": [
+        {
+            "title": "Journal reviewer",
+            "descriptions": [
+                "2025: GigaScience [Q1], Journal of Data and Information Quality [JDIQ – Q2], Computers, Materials and Continua [CMC – Q2], Journal of Open Source Software [JOSS – N/A]",
+                "2024: PLoS One [Q1], BMC Medical informatics and Decision Making [Q1], Scientific Reports [Q1]"
+            ]
+        },
+        {
+            "title": "Conference reviewer",
+            "descriptions": [
+                "2025: International Conference on Data Engineering* [ICDE – A*]",
+                "2023: Conference on Innovative Data systems Research* [CIDR – A], Extending DataBase Technology* [EDBT – A]",
+                "2021: International Conference on Web Engineering* [ICWE – B]"
+            ]
+        }
+    ],
+    "institutional_responsibilities": [
+        {
+            "title": "LinkedIn page maintainer",
+            "date": "April. 2024 – July 2025",
+            "subtitles": [
+                [
+                    "person",
+                    "main maintainer"
+                ],
+                [
+                    "website",
+                    "https://linkedin.com/company/polimi-data-science-group"
+                ]
+            ],
+            "descriptions": [
+                "Manage the LinkedIn page of the “Data Science” group at DEIB, Politecnico di Milano."
+            ]
+        },
+        {
+            "title": "PhD representative",
+            "date": "Jan. 2023 – March 2024",
+            "subtitles": [
+                [
+                    "person",
+                    "main representative"
+                ]
+            ],
+            "descriptions": [
+                "Represent Inria Saclay PhD students in Institut Polytechnique de Paris."
+            ]
+        },
+        {
+            "title": "Team seminar organizer",
+            "date": "Jan. 2021 – March 2024",
+            "subtitles": [
+                [
+                    "person",
+                    "main organizer"
+                ],
+                [
+                    "website",
+                    "https://team.inria.fr/cedar/category/seminar"
+                ]
+            ],
+            "descriptions": [
+                "Organize and disseminate the CEDAR team seminars at Inria Saclay."
+            ]
+        },
+        {
+            "title": "Internship application website contributor",
+            "date": "Jan. 2021 – Dec. 2021",
+            "subtitles": [
+                [
+                    "person",
+                    "active contributor"
+                ],
+                [
+                    "website",
+                    "https://stages.dix.polytechnique.fr/home"
+                ]
+            ],
+            "descriptions": [
+                "Co-develop and deploy the website for internships at École Polytechnique, in collaboration with École Polytechnique IT team."
+            ]
+        }
+    ],
+    "talks": [
+        {
+            "title": "Scientific talks (seminars)",
+            "descriptions": [
+                "Multimodal data without borders: integration and exploration to the rescue (Oct. 2025 – IRIT, Toulouse, FR)",
+                "Leveraging profiling to bridge healthcare silos (June 2025 – FIL, Lyon, FR)",
+                "Entrepôts de santé : de l’intégration à l’analyse fédérée (May 2025 – GDR MaDICS, Toulouse, FR)",
+                "Real-world health-data distributed analytics across hospitals* (Oct. 2024 – DEIB, Milan, IT)",
+                "Heterogeneous datasets: a tale of integration and exploration (April 2024 – LIRIS, Lyon, FR)",
+                "Integrating and exploring heterogeneous datasets (April 2024 – Politecnico di Milano, Milan, IT)",
+                "Semi-structured data user exploration (Jan. 2024 – LIB, Dijon, FR)",
+                "Semi-structured data user exploration (Oct. 2023 – LISN, Paris, FR)"
+            ]
+        },
+        {
+            "title": "Panels",
+            "descriptions": [
+                "Quand l’intelligence artificielle hérite de nos préjugés (Oct. 2025 – Fête de la Science, Lyon, FR)."
+            ]
+        },
+        {
+            "title": "Vulgarization",
+            "descriptions": [
+                "From data to journalism (interactive course, Jan. 2024 – Lycée international de Palaiseau, Palaiseau, FR)",
+                "Intelligence artificielle : un outil pour le journalisme (seminar, July 2023 – CFI forum, Paris, FR)",
+                "ConnectionStudio : des données au journalisme (forum, May 2023 – DataJournos, Paris, FR)",
+                "Recherche en integration de données : le cas de ConnectionLens* (seminar, March 2022 – online)"
+            ]
+        },
+        {
+            "title": "Female empowerment talks",
+            "descriptions": [
+                "Women in STEM (round table, Nov. 2025 – Lyon, FR)",
+                "Journée Filles, Mathématiques, Informatique (speed meetings, Nov. 2025 – Lyon, FR)"
+            ]
+        }
+    ],
+    "teaching_responsibilities": [
+        {
+            "title": "Recurring courses",
+            "date": "Sept. 2025 – now",
+            "subtitles": [
+                [
+                    "person",
+                    "magistral and lab courses"
+                ]
+            ],
+            "descriptions": [
+                "ISN1: informatique et société numérique (fall, INSA Lyon, engineer 1st year, in French)",
+                "SOL: systèmes et outils logiciels (fall, INSA Lyon, engineer 1st year, in French)"
+            ]
+        },
+        {
+            "title": "Involvement in teaching teams",
+            "date": "Sept. 2025 – now",
+            "subtitles": [
+                [
+                    "person",
+                    "contributor"
+                ]
+            ],
+            "descriptions": [
+                "ISN2: new project topic",
+                "ISN2: network module redesign",
+                "CGA: member of the Animation and Management Committee (Comité de Gestion et d'Animation)"
+            ]
+        },
+        {
+            "title": "Previous courses",
+            "date": "Feb. 2022 – May 2024",
+            "descriptions": [
+                "CSE203: CS project (spring 2024, Ecole Polytechnique, bachelor 2nd year, in English)",
+                "CSE204: Machine Learning (spring 2023, Ecole Polytechnique, bachelor 2nd year, in English)",
+                "INF411: bases de programmation et d'algorithmique (fall 2022, Ecole Polytechnique, engineer 2nd year, in French)",
+                "INF371: mécanismes de la programmation orientée objet (spring 2022, Ecole Polytechnique, engineer 1st year, in French)"
+            ]
+        }
+    ],
+    "advising": [
+        {
+            "title": "Master students",
+            "descriptions": [
+                "Ahmed Bel Hadj Youssef. “FADE : vers des lacs de données plus FAIR” (fall 2025, INSA Lyon, engineer 5th year)",
+                "Antoine Gauquier. “Path exploration of ConnectionLens graphs” (summer 2022, IMT Nord-Europe, master 1st year)"
+            ]
+        },
+        {
+            "title": "Bachelor students",
+            "descriptions": [
+                "Shay Pripstein. “Target data acquisition in open repositories” (winter 2023, École Polytechnique, bachelor 3rd year)",
+                "Tudor Enache. “From simple to property graphs” (winter 2023, École Polytechnique, bachelor 3rd year)",
+                "Nikola Dobricic. “Graph queries for abstractions” (summer 2023, Ecole Polytechnique, bachelor 2nd year)",
+                "Jia-Jean Law. “Optimization of entity-to-entity data paths” (winter 2022, Ecole Polytechnique, bachelor 3rd year)"
+            ]
+        }
+    ]
+}
