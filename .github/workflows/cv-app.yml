@@ -3,12 +3,6 @@
 
 name: Compute latest website and CV document
 
-on:
-  push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
-
 permissions:
   contents: read
 
