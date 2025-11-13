@@ -6,6 +6,11 @@ name: Compute latest website and CV document
 permissions:
   contents: read
 
+on:
+  push:
+    branches:
+      - '**'
+      
 jobs:
   build:
 
