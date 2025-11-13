@@ -4,8 +4,8 @@
 name: Compute latest website and CV document
 
 permissions:
-  contents: read
-
+  contents: read, write
+  
 on:
   push:
     branches:
@@ -30,7 +30,12 @@ jobs:
     - name: Run main
       run: |
         python3 --version
-        pwd
-        ls
         cd generate-cv/
         python3 main.py
+    - name: Push generated CVs
+      run: |
+          git config --global user.name 'Nelly Barret'
+          git config --global user.email 'Nelly-Barret@users.noreply.github.com'
+          git add *.pdf
+          git commit -m "Automated CV generation"
+          git push
