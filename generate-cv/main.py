@@ -3,6 +3,7 @@ import urllib.request
 
 from docx import Document
 from docx.shared import Inches
+from docx2pdf import convert
 
 from constants import IMAGE_SECTIONS, IMAGES_MAP
 from utils import insert_horizontal_rule, add_hyperlink
@@ -94,7 +95,9 @@ def generate_long_cv(template, data_file_url, generated_filename):
                                 for one_description in section["descriptions"]:
                                     generated_doc.add_paragraph(f"{one_description}", style='List Bullet')
         generated_doc.save(generated_filename)
-        print("Generate cv: done.")
+        print("Generate long cv: done.")
+        convert(generated_filename, generated_filename.replace(".docx", ".pdf"))
+        print("Long cv saved as PDF: done.")
 
 
 def format_publication(document, publi):
