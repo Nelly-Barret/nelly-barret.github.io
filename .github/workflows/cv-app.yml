@@ -32,5 +32,5 @@ jobs:
         python3 --version
         pwd
         ls
-        cd generate-cv/generate-cv/
+        cd generate-cv/
         python3 main.py
