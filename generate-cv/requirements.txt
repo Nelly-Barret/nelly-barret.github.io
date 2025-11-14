@@ -1,7 +1,5 @@
 docx2pdf
 lxml
-pip
 python-docx
-pywin32
 setuptools
 typing-extensions
