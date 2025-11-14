@@ -32,6 +32,7 @@ jobs:
     - name: Generate PDFs
       run: |
           docx2pdf "cv-long-nelly-barret.docx" "cv-long-nelly-barret.pdf"
+          wait 10
     - name: Push generated CVs
       run: |
           git config --global user.name 'Nelly Barret'
