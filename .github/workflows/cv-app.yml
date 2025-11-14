@@ -31,8 +31,8 @@ jobs:
         python3 main.py
     - name: Generate PDFs
       run: |
-          docx2pdf "cv-long-nelly-barret.docx" "cv-long-nelly-barret.pdf"
-          wait 10
+          port install libreoffice
+          lowriter --convert-to pdf cv-long-nelly-barret.docx
     - name: Push generated CVs
       run: |
           git config --global user.name 'Nelly Barret'
