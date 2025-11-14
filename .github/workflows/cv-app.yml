@@ -1,6 +1,3 @@
-# This workflow will install Python dependencies, run tests and lint with a single version of Python
-# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-python
-
 name: Compute latest website and CV document
   
 on:
@@ -10,9 +7,7 @@ on:
       
 jobs:
   build:
-
     runs-on: macos-latest
-
     steps:
     - uses: actions/checkout@v4
     - name: Set up Python 3.12
@@ -32,7 +27,7 @@ jobs:
     - name: Generate PDFs
       run: |
           brew install --cask libreoffice
-          lowriter --convert-to pdf cv-long-nelly-barret.docx
+          soffice --headless --convert-to pdf:writer_pdf_Export cv-long-nelly-barret.docx
     - name: Push generated CVs
       run: |
           git config --global user.name 'Nelly Barret'
