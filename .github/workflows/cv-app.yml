@@ -28,6 +28,7 @@ jobs:
       run: |
           brew install --cask libreoffice
           pwd
+          cd generate-cv/
           ls -al *.docx
           soffice --headless --convert-to pdf:writer_pdf_Export cv-long-nelly-barret.docx
     - name: Push generated CVs
