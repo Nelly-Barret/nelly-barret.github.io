@@ -45,7 +45,7 @@
                 <p>
 		            <i>Website last update: September 05, 2025</i><br/>
                     <img src="images/pdf.svg" class="my-icon-first"/><a class="linkCollapse" href="docs/cv-nelly-barret-short.pdf" target="_blank">My short curriculum</a> <i>(last update: April 2025)</i><br/>
-		            <img src="images/pdf.svg" class="my-icon-first"/><a class="linkCollapse" href="docs/cv-nelly-barret-long.pdf" target="_blank">My long curriculum</a> <i>(last update: April 2025)</i><br/>
+		            <img src="images/pdf.svg" class="my-icon-first"/><a class="linkCollapse" href="./generate-cv/cv-long-nelly-barret.pdf" target="_blank">My long curriculum</a> <i id="link-cv-long">(last update: </i><br/> <!-- add date automatically-->
                     <img src="images/pdf.svg" class="my-icon-first"/><a class="linkCollapse" href="docs/short-bio-nelly-barret-EN.txt" target="_blank">My short bio (EN)</a> <i>(last update: Sept. 2025)</i><br/>
                     <img src="images/pdf.svg" class="my-icon-first"/><a class="linkCollapse" href="docs/short-bio-nelly-barret-FR.txt" target="_blank">My short bio (FR)</a> <i>(last update: Sept. 2025)</i>
                 </p>
@@ -91,4 +91,12 @@ $(function(){
   $("#my-navbar").load("https://nelly-barret.github.io/navbar.html"); 
   console.log("here")
 });
+
+const date = new Date();
+let day = date.getDate();
+let month = date.getMonth() + 1;
+let year = date.getFullYear();
+let last_update = `${day}-${month}-${year}`;
+console.log(last_update);
+$("#link-cv-long").append(last_update + ")");
 </script> 

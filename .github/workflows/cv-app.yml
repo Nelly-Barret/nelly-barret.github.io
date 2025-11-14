@@ -2,34 +2,37 @@
 # For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-python
 
 name: Compute latest website and CV document
-
+  
 on:
   push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
-
-permissions:
-  contents: read
-
+    branches:
+      - '**'
+      
 jobs:
   build:
 
-    runs-on: ubuntu-latest
+    runs-on: macos-latest
 
     steps:
     - uses: actions/checkout@v4
-    - name: Set up Python 3.10
+    - name: Set up Python 3.12
       uses: actions/setup-python@v3
       with:
-        python-version: "3.10"
+        python-version: "3.12"
     - name: Install dependencies
       run: |
         python3 --version
         python -m pip install --upgrade pip
-        pip install python-docx
+        pip install python-docx docx2pdf
     - name: Run main
       run: |
         python3 --version
-        cd generate-cv/generate-cv/
+        cd generate-cv/
         python3 main.py
+    - name: Push generated CVs
+      run: |
+          git config --global user.name 'Nelly Barret'
+          git config --global user.email 'Nelly-Barret@users.noreply.github.com'
+          git add *.pdf
+          git commit -m "Automated CV generation"
+          git push
