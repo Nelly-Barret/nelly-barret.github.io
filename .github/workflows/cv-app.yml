@@ -31,7 +31,7 @@ jobs:
         python3 main.py
     - name: Generate PDFs
       run: |
-          port install libreoffice
+          brew install --cask libreoffice
           lowriter --convert-to pdf cv-long-nelly-barret.docx
     - name: Push generated CVs
       run: |
