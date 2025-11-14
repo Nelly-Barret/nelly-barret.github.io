@@ -28,7 +28,6 @@ jobs:
       run: |
         python3 --version
         cd generate-cv/
-        chmod 777 cv-long-nelly-barret.docx
         python3 main.py
     - name: Push generated CVs
       run: |
