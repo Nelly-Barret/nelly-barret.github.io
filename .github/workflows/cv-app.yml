@@ -29,6 +29,9 @@ jobs:
         python3 --version
         cd generate-cv/
         python3 main.py
+    - name: Generate PDFs
+      run: |
+          docx2pdf "cv-long-nelly-barret.docx" "cv-long-nelly-barret.pdf"
     - name: Push generated CVs
       run: |
           git config --global user.name 'Nelly Barret'

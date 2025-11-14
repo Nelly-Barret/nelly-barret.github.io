@@ -98,10 +98,10 @@ def generate_long_cv(template, data_file_url, generated_filename):
                             else:
                                 for one_description in section["descriptions"]:
                                     generated_doc.add_paragraph(f"{one_description}", style='List Bullet')
-        generate_files(generated_doc)
+        generate_files(generated_doc, generated_filename)
 
 
-def generate_files(document_object):
+def generate_files(document_object, generated_filename):
 
     docx_filename = f"{generated_filename}.docx"
     pdf_filename = f"{generated_filename}.pdf"
@@ -112,11 +112,11 @@ def generate_files(document_object):
     print("Generate long cv: done.")
 
     # Convert DOCX to ODT
-    converter = Converter(docx_filename)
-    convert_options = WordProcessingConvertOptions()
-    convert_options.format = WordProcessingFileType.ODT
-    converter.convert(odt_filename, convert_options)
-    print("Convert docx to odt: done")
+    # converter = Converter(docx_filename)
+    # convert_options = WordProcessingConvertOptions()
+    # convert_options.format = WordProcessingFileType.ODT
+    # converter.convert(odt_filename, convert_options)
+    # print("Convert docx to odt: done")
 
     # convert ODT to PDF
     # convert(docx_filename, pdf_filename)
