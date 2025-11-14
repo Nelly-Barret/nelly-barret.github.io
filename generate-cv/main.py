@@ -97,7 +97,7 @@ def generate_long_cv(template, data_file_url, generated_filename):
         docx_filename = f"{generated_filename}.docx"
         generated_doc.save(docx_filename)
         print("Generate long cv: done.")
-        pdf_filename = f"{docx_filename}.pdf"
+        pdf_filename = f"{generated_filename}.pdf"
         file = open(pdf_filename, "w")
         file.close()
         convert(docx_filename, pdf_filename)
