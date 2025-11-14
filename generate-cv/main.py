@@ -94,9 +94,13 @@ def generate_long_cv(template, data_file_url, generated_filename):
                             else:
                                 for one_description in section["descriptions"]:
                                     generated_doc.add_paragraph(f"{one_description}", style='List Bullet')
-        generated_doc.save(generated_filename)
+        docx_filename = f"{generated_filename}.docx"
+        generated_doc.save(docx_filename)
         print("Generate long cv: done.")
-        convert(generated_filename, generated_filename.replace(".docx", ".pdf"))
+        pdf_filename = f"{docx_filename}.pdf"
+        file = open(pdf_filename, "w")
+        file.close()
+        convert(docx_filename, pdf_filename)
         print("Long cv saved as PDF: done.")
 
 
@@ -150,4 +154,4 @@ def format_publication(document, publi):
 
 
 if __name__ == "__main__":
-    generate_long_cv("empty-doc-with-styles.docx", "https://nelly-barret.github.io/data/data.json", "cv-long-nelly-barret.docx")
+    generate_long_cv("empty-doc-with-styles.docx", "https://nelly-barret.github.io/data/data.json", "cv-long-nelly-barret")
