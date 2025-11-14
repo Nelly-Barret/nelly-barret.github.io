@@ -3,17 +3,11 @@ import urllib.request
 
 from docx import Document
 from docx.shared import Inches
-from docx2pdf import convert
-import os
-from groupdocs.conversion import License, Converter
-from groupdocs.conversion.options.convert import WordProcessingConvertOptions 
-from groupdocs.conversion.filetypes import WordProcessingFileType
 
 from constants import IMAGE_SECTIONS, IMAGES_MAP
 from utils import insert_horizontal_rule, add_hyperlink
 
 
-# 1. create template for NINJA, i.e., the Word document wit the NINJA tags ({{tag}})
 def generate_long_cv(template, data_file_url, generated_filename):
     generated_doc = Document(template)
 
