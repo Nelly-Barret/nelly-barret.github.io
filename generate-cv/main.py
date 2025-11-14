@@ -4,6 +4,10 @@ import urllib.request
 from docx import Document
 from docx.shared import Inches
 from docx2pdf import convert
+import os
+from groupdocs.conversion import License, Converter
+from groupdocs.conversion.options.convert import WordProcessingConvertOptions 
+from groupdocs.conversion.filetypes import WordProcessingFileType
 
 from constants import IMAGE_SECTIONS, IMAGES_MAP
 from utils import insert_horizontal_rule, add_hyperlink
@@ -94,16 +98,32 @@ def generate_long_cv(template, data_file_url, generated_filename):
                             else:
                                 for one_description in section["descriptions"]:
                                     generated_doc.add_paragraph(f"{one_description}", style='List Bullet')
-        docx_filename = f"{generated_filename}.docx"
-        generated_doc.save(docx_filename)
-        print("Generate long cv: done.")
-        pdf_filename = f"{generated_filename}.pdf"
-        file = open(pdf_filename, "w")
-        file.close()
-        convert(docx_filename, pdf_filename)
-        print("Long cv saved as PDF: done.")
+        generate_files(generated_doc)
 
 
+def generate_files(document_object):
+
+    docx_filename = f"{generated_filename}.docx"
+    pdf_filename = f"{generated_filename}.pdf"
+    odt_filename = f"{generated_filename}.odt"
+
+    # Save generated CV into DOCX
+    document_object.save(docx_filename)
+    print("Generate long cv: done.")
+
+    # Convert DOCX to ODT
+    converter = Converter(docx_filename)
+    convert_options = WordProcessingConvertOptions()
+    convert_options.format = WordProcessingFileType.ODT
+    converter.convert(odt_filename, convert_options)
+    print("Convert docx to odt: done")
+
+    # convert ODT to PDF
+    # convert(docx_filename, pdf_filename)
+    # print("Long cv saved as PDF: done.")
+
+# Print success message
+print("Conversion completed successfully.")
 def format_publication(document, publi):
     paragraph_item_publi = document.add_paragraph(style='List Number') # numbered list
 
