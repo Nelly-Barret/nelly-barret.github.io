@@ -2,15 +2,15 @@ import json
 import urllib.request
 
 from docx import Document
+from docx.enum.dml import MSO_THEME_COLOR_INDEX
 from docx.shared import Inches
 
 from constants import IMAGE_SECTIONS, IMAGES_MAP
-from utils import insert_horizontal_rule, add_hyperlink
+from utils import insert_horizontal_rule, add_hyperlink, add_hyperlink_into_run, add_hyperlink_2
 
 
 def generate_long_cv(template, data_file_url, generated_filename):
     generated_doc = Document(template)
-
 
     with urllib.request.urlopen(data_file_url) as url:
         data = json.load(url)
@@ -77,10 +77,17 @@ def generate_long_cv(template, data_file_url, generated_filename):
                                         run_text.add_text(f"{IMAGES_MAP[subtitle_img]}: ")  # Role, Grant, Website, etc
                                         run_text.italic = True
                                         if subtitle_img in ["website", "code-branch"] and subtitle_text.startswith("https://"):
-                                            run_text_2 = add_hyperlink(paragraph, subtitle_text.replace("https://", ""), subtitle_text, False)
+                                            _ = add_hyperlink_2(paragraph, subtitle_text, subtitle_text, True)
+                                            # run_text_2 = paragraph.add_run()
+                                            # run_text_2.add_text(hl)
+                                            # add_hyperlink_into_run(paragraph, run_text_2, subtitle_text)
+                                            # run_text_2 = add_hyperlink(paragraph, subtitle_text.replace("https://", ""), subtitle_text, False)
+                                            # run_text_2 = add_hyperlink(paragraph, subtitle_text, subtitle_text, False)
+                                            # run_text_2 = paragraph.add_run()
+                                            # run_text_2.add_text(subtitle_text)
                                         else:
                                             run_text_2 = paragraph.add_run()
-                                            run_text_2.add_text(f"{subtitle_text}") # leader, JCJC, etc
+                                            run_text_2.add_text(f"{subtitle_text}")  # leader, grant, repository, etc
                                         if i < len(section["subtitles"]):
                                             run_text_2.add_text(" | ")
                                     i += 1
@@ -95,6 +102,67 @@ def generate_long_cv(template, data_file_url, generated_filename):
         generate_files(generated_doc, generated_filename)
 
 
+def generate_short_cv(template, data_file_url, generated_filename):
+    generated_doc = Document(template)
+
+    with urllib.request.urlopen(data_file_url) as url:
+        data = json.load(url)
+        print(data)
+        page_names = list(data.keys())
+        page_names.remove("header")  # remove the header info because it should not be part of the main loop
+        pretty_page_names = {page_name: page_name.replace("_", " ").capitalize() for page_name in page_names}
+        print(page_names)
+        print(pretty_page_names)
+
+        # header
+        generated_doc.add_heading(data["header"]["current_name"], level=0)
+        generated_doc.add_paragraph(data["header"]["current_position"], style="Subtitle")
+        generated_doc.add_heading(data["header"]["current_address"], level=1)
+        generated_doc.add_heading(f"{data["header"]["current_office"]} | {data["header"]["current_emailaddress"]} | {data["header"]["current_orcid"]}", level=2)
+
+        # generate sections for each other page
+        for page_name in page_names:
+            heading = generated_doc.add_heading()
+            run_heading = heading.add_run()
+            run_heading.add_picture(f"../images/{IMAGE_SECTIONS[page_name]}.png", width=Inches(0.25))
+            run_heading.add_text(f" {pretty_page_names[page_name]}")  # keep a space after the section image
+            #generated_doc.add_heading(pretty_page_names[page_name], level=1)
+            paragraph_horizontal_rule = generated_doc.add_paragraph()
+            insert_horizontal_rule(paragraph_horizontal_rule)
+            if page_name == "research_interests":
+                # no individual sections for the research interest page
+                # however, we still need to add the paragraph
+                generated_doc.add_paragraph(data[page_name][0]["descriptions"][0])
+            else:
+                for section in data[page_name]:
+                    if section["title"].lower() == "stay tuned":
+                        pass
+                    else:
+                        # specific titles of the form "title | location     date"
+                        if page_name in ["academic_positions", "education", "awards"]:
+                            section_title = f"{section["title"]} | {section["subtitles"][0][1]}"
+                        else:
+                            section_title = section["title"]
+                        # regular titles
+                        if "date" in section:
+
+                            title_as_paragraph = f"{section["date"]}\t{section_title}"
+                        else:
+                            title_as_paragraph = f"{section_title}"
+
+                        generated_doc.add_paragraph(title_as_paragraph) #, style="List Bullet")
+
+                        if "descriptions" in section:
+                            if page_name == "publications":
+                                # special case: we need to format each publication authors, title, etc
+                                for one_description in section["descriptions"]:
+                                    format_publication(generated_doc, one_description)
+                            else:
+                                # print only the first description for the short CV
+                                if len(section["descriptions"]) > 0:
+                                    generated_doc.add_paragraph(f"{section["descriptions"][0]}", style="List Bullet")
+        generate_files(generated_doc, generated_filename)
+
 def generate_files(document_object, generated_filename):
 
     docx_filename = f"{generated_filename}.docx"
@@ -103,7 +171,10 @@ def generate_files(document_object, generated_filename):
 
     # Save generated CV into DOCX
     document_object.save(docx_filename)
-    print("Generate long cv: done.")
+    if "short" in generated_filename:
+        print("Generate short cv: done.")
+    else:
+        print("Generate long cv: done.")
 
     # Convert DOCX to ODT
     # converter = Converter(docx_filename)
@@ -169,3 +240,4 @@ def format_publication(document, publi):
 
 if __name__ == "__main__":
     generate_long_cv("empty-doc-with-styles.docx", "https://nelly-barret.github.io/data/data.json", "cv-long-nelly-barret")
+    # generate_short_cv("empty-doc-with-styles.docx", "https://nelly-barret.github.io/data/data.json", "cv-short-nelly-barret")
