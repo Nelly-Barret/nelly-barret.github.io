@@ -3,7 +3,7 @@ from docx.enum.dml import MSO_THEME_COLOR_INDEX
 from docx.oxml import OxmlElement
 from docx.oxml.ns import qn
 
-def another_link(p, url, label):
+def add_link(p, url, label):
     hyperlink = docx.oxml.shared.OxmlElement("w:hyperlink")
     hyperlink.set(docx.oxml.shared.qn("w:anchor"), label)
 
