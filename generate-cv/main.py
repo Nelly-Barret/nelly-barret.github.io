@@ -223,7 +223,7 @@ def format_publication(document, publi):
 
     # publication title
     if "url" in publi:
-        add_link(paragraph_item_publi, f"{publi["title"]}", publi["url"], True)
+        add_link(paragraph_item_publi, f"{publi["title"]}", publi["url"])
         run_title = paragraph_item_publi.add_run()
         run_title.add_text(f". ")
     else:
