@@ -1416,45 +1416,69 @@
                 },
                 {
                     "title": "Entrepôts de santé : de l'intégration à l'analyse fédérée (May 2025 – GDR MaDICS, Toulouse, FR)",
-                    "url": ""
+                    "url": "https://zenodo.org/records/17642343"
                 },
                 {
-                    "title": "Real-world health-data distributed analytics across hospitals* (Oct. 2024 – DEIB, Milan, IT)"
+                    "title": "Integrating and exploring heterogeneous datasets (April 2024 – Politecnico di Milano, Milan, IT)",
+                    "url": "https://zenodo.org/records/17679336"
                 },
                 {
-                    "title": "Heterogeneous datasets: a tale of integration and exploration (April 2024 – LIRIS, Lyon, FR)"
+                    "title": "Heterogeneous datasets: a tale of integration and exploration (Jan. 2024 – LIRIS, Lyon, FR)",
+                    "url": "https://zenodo.org/records/17679827"
                 },
                 {
-                    "title": "Integrating and exploring heterogeneous datasets (April 2024 – Politecnico di Milano, Milan, IT)"
+                    "title": "User-oriented exploration of semi-structured datasets (Jan. 2024 – LIB, Dijon, FR)",
+                    "url": "https://zenodo.org/records/17679729"
                 },
                 {
-                    "title": "Semi-structured data user exploration (Jan. 2024 – LIB, Dijon, FR)"
-                },
-                {
-                    "title": "Semi-structured data user exploration (Oct. 2023 – LISN, Paris, FR)"
+                    "title": "User-oriented exploration of semi-structured datasets (Oct. 2023 – LISN, Paris, FR)",
+                    "url": "https://zenodo.org/records/17679385"
                 }
             ]
         },
         {
             "title": "Panels",
             "descriptions": [
-                "Quand l'intelligence artificielle hérite de nos préjugés (Oct. 2025 – Fête de la Science, Lyon, FR)."
+                {
+                    "title": "Quand l'intelligence artificielle hérite de nos préjugés (video, Oct. 2025 – Fête de la Science, Lyon, FR).",
+                    "url": "https://www.youtube.com/watch?v=xlCy-D-kpvc"
+                }
             ]
         },
         {
             "title": "Vulgarization",
             "descriptions": [
-                "From data to journalism (interactive course, Jan. 2024 – Lycée international de Palaiseau, Palaiseau, FR)",
-                "Intelligence artificielle : un outil pour le journalisme (seminar, July 2023 – CFI forum, Paris, FR)",
-                "ConnectionStudio : des données au journalisme (forum, May 2023 – DataJournos, Paris, FR)",
-                "Recherche en integration de données : le cas de ConnectionLens* (seminar, March 2022 – online)"
+                {
+                    "title": "From data to journalism (interactive course, Jan. 2024 – Lycée international de Palaiseau, Palaiseau, FR)",
+                    "url": "https://zenodo.org/records/17679761"
+                }, 
+                {
+                    "title": "Intelligence artificielle : un outil pour le journalisme (seminar, July 2023 – CFI forum, Paris, FR)",
+                    "url": "https://zenodo.org/records/17680052"
+                },
+                {
+                    "title": "ConnectionStudio : des données au journalisme (forum, May 2023 – DataJournos, Paris, FR)",
+                    "url": "https://zenodo.org/records/17680102"
+                },
+                { 
+                    "title": "Recherche en integration de données : le cas de ConnectionLens* (seminar, March 2022 – online)",
+                    "url": "https://zenodo.org/records/17679370"
+                }
             ]
         },
         {
             "title": "Female empowerment talks",
             "descriptions": [
-                "Femmes scientifiques (round table for middle school students, Nov. 2025 – Lyon, FR)",
-                "Journée Filles, Mathématiques, Informatique (speed meetings, Nov. 2025 – Lyon, FR)"
+                {
+                    "title": "Femmes scientifiques (round table for middle school students, Nov. 2025 – Lyon, FR)"
+                },
+                {
+                    "title": "Journée Filles, Mathématiques, Informatique (speed meetings, Nov. 2025 – Lyon, FR)",
+                }, 
+                {
+                    "title": "Girls@CSE (talks, Sept. 2024 - Milano, IT)",
+                    "url": "https://www.deib.polimi.it/ita/eventi/dettagli/2987"
+                }
             ]
         }
     ],
