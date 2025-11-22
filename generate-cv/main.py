@@ -6,7 +6,7 @@ from docx.enum.dml import MSO_THEME_COLOR_INDEX
 from docx.shared import Inches
 
 from constants import IMAGE_SECTIONS, IMAGES_MAP
-from utils import insert_horizontal_rule, add_hyperlink, add_hyperlink_into_run, add_hyperlink_2
+from utils import insert_horizontal_rule, add_hyperlink, add_hyperlink_into_run, add_hyperlink_2, add_link
 
 
 def generate_long_cv(template, data_file_url, generated_filename):
@@ -77,7 +77,11 @@ def generate_long_cv(template, data_file_url, generated_filename):
                                         run_text.add_text(f"{IMAGES_MAP[subtitle_img]}: ")  # Role, Grant, Website, etc
                                         run_text.italic = True
                                         if subtitle_img in ["website", "code-branch"] and subtitle_text.startswith("https://"):
-                                            _ = add_hyperlink_2(paragraph, subtitle_text, subtitle_text, True)
+                                            add_link(paragraph, subtitle_text, subtitle_text.replace("https://", "").replace("http://", ""))
+                                            #run = paragraph.add_run('www.example.com')
+                                            #run.hyperlink.address = 'https://www.example.com'
+
+                                            # _ = add_hyperlink_2(paragraph, subtitle_text, subtitle_text, True)
                                             # run_text_2 = paragraph.add_run()
                                             # run_text_2.add_text(hl)
                                             # add_hyperlink_into_run(paragraph, run_text_2, subtitle_text)
@@ -219,7 +223,7 @@ def format_publication(document, publi):
 
     # publication title
     if "url" in publi:
-        add_hyperlink(paragraph_item_publi, f"{publi["title"]}", publi["url"], True)
+        add_link(paragraph_item_publi, f"{publi["title"]}", publi["url"])
         run_title = paragraph_item_publi.add_run()
         run_title.add_text(f". ")
     else:

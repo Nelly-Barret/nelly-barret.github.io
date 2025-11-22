@@ -3,6 +3,27 @@ from docx.enum.dml import MSO_THEME_COLOR_INDEX
 from docx.oxml import OxmlElement
 from docx.oxml.ns import qn
 
+def add_link(p, url, label):
+    hyperlink = docx.oxml.shared.OxmlElement("w:hyperlink")
+    hyperlink.set(docx.oxml.shared.qn("w:anchor"), label)
+
+    new_run = docx.oxml.shared.OxmlElement("w:r")
+    rpr = docx.oxml.shared.OxmlElement("w:rPr")
+
+    hl = docx.oxml.shared.OxmlElement("w:color")
+    hl.set(docx.oxml.shared.qn("w:val"), "gray")
+    rpr.append(hl)
+
+    u = docx.oxml.shared.OxmlElement('w:u')
+    u.set(docx.oxml.shared.qn('w:val'), 'single')
+    rpr.append(u)
+
+    new_run.append(rpr)
+    new_run.text = url
+
+    hyperlink.append(new_run)
+    p._p.append(hyperlink)
+
 def add_hyperlink_2(paragraph, url, text, underline):
     """
     A function that places a hyperlink within a paragraph object.
