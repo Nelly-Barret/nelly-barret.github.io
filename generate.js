@@ -163,9 +163,9 @@ function generate_one_article(article_data, page_name) {
                     if(typeof(description) == "object") {
                         // an object description with a text and a url
                         if("url" in description) {
-                            if("zenodo" in description["url"]) {
+                            if(description["url"].includes("zenodo")) {
                                 icon = "pdf"
-                            } else if("youtube" in description["url"]) {
+                            } else if(description["url"].includes("youtube")) {
                                 icon = "youtube"
                             } else {
                                 icon = "pdf"
