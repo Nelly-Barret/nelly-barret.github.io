@@ -171,7 +171,7 @@ function generate_one_article(article_data, page_name) {
                                 icon = "pdf"
                             }
                             
-                            html_1 += `<li>${description["title"]}<a href='${description["url"]}' target="_blank"><img src="images/${icon}.svg" class="my-icon-first"/></a></li>`;
+                            html_1 += `<li>${description["title"]}<a href="${description["url"]}" target="_blank"><img src="images/${icon}.svg" class="my-icon-first"/></a></li>`;
                         } else {
                             html_1 += `<li>${description["title"]}</li>`;
                         }
