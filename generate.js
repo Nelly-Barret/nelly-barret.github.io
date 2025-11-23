@@ -157,7 +157,7 @@ function generate_one_article(article_data, page_name) {
                 }
                 html_1 += "</ol>"
                 
-            } else if(page_name == "talks") {
+            } else {
                 html_1 += "<ul>"
                 for(description of article_data["descriptions"]) {
                     if(typeof(description) == "object") {
