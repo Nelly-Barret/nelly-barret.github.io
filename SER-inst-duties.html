@@ -45,6 +45,6 @@ $(function(){
 });
 
 my_whole_data = get_json_data("https://nelly-barret.github.io/data/data.json");
-html = generate_current_page(my_whole_data["institutional_responsibilities"]);
+html = generate_current_page(my_whole_data["institutional_responsibilities"], "institutional_responsibilities");
 $("#container-inst-duties").append(html);
 </script> 

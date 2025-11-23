@@ -48,6 +48,6 @@ $(function(){
 });
 
 my_whole_data = get_json_data("https://nelly-barret.github.io/data/data.json");
-html = generate_current_page(my_whole_data["working_groups"]);
+html = generate_current_page(my_whole_data["working_groups"], "working_groups");
 $("#container-wg").append(html);
 </script> 

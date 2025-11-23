@@ -23,13 +23,13 @@ function get_json_data(url) {
 
 /* Main functions: generate one page (page of publications and other pages) */
 // for all pages except the publications
-function generate_current_page(page_data) {
+function generate_current_page(page_data, page_name) {
     console.log("generate all articles");
     console.log(page_data);
 
     var html = "";
     for(one_article_data of page_data) {
-        html += generate_one_article(one_article_data, false);
+        html += generate_one_article(one_article_data, page_name);
     }
     return html;
 }
@@ -91,7 +91,7 @@ function generate_publication_page(page_data, sort_order) {
         };
         console.log(group_of_publis);
         
-        current_publis += generate_one_article(group_of_publis, true);
+        current_publis += generate_one_article(group_of_publis, page_name);
     }
     
     return current_publis;
@@ -99,7 +99,7 @@ function generate_publication_page(page_data, sort_order) {
 
 /* individual functions */
 // title is used for publication article titles only (which can be the cateogry or the year of publication)
-function generate_one_article(article_data, publications) {
+function generate_one_article(article_data, page_name) {
     console.log("generate one article");
     console.log(article_data);
 
@@ -148,7 +148,7 @@ function generate_one_article(article_data, publications) {
             console.log("ici");
             html_1 += "<div class='postcard__preview-txt'>";
 
-            if(publications) {
+            if(page_name == "publications") {
                 sort_order = $("#sort_publis").find(":selected").val();
                 console.log(article_data["descriptions"])
                 html_1 += "<ol>";
@@ -157,10 +157,29 @@ function generate_one_article(article_data, publications) {
                 }
                 html_1 += "</ol>"
                 
-            } else {
+            } else if(page_name == "talks") {
                 html_1 += "<ul>"
                 for(description of article_data["descriptions"]) {
-                    html_1 += `<li>${description}</li>`;
+                    if(typeof(description) == "object") {
+                        // an object description with a text and a url
+                        if("url" in description) {
+                            if("zenodo" in description["url"]) {
+                                icon = "pdf"
+                            } else if("youtube" in description["url"]) {
+                                icon = "youtube"
+                            } else {
+                                icon = "pdf"
+                            }
+                            
+                            html_1 += `<li>${description["title"]}<a href="${description["url"]}" target="_blank"><img src="images/${icon}.svg" class="my-icon-first"/></a></li>`;
+                        } else {
+                            html_1 += `<li>${description["title"]}</li>`;
+                        }
+                    } else {
+                        // a simple textual description
+                        html_1 += `<li>${description}</li>`;
+                    }
+                    
                 }
                 html_1 += "</ul>"
             }
