@@ -44,6 +44,6 @@ $(function(){
 });
 
 my_whole_data = get_json_data("https://nelly-barret.github.io/data/data.json");
-html = generate_current_page(my_whole_data["awards"]);
+html = generate_current_page(my_whole_data["awards"], "awards");
 $("#container-award").append(html);
 </script> 

@@ -45,6 +45,6 @@ $(function(){
 });
 
 my_whole_data = get_json_data("https://nelly-barret.github.io/data/data.json");
-html = generate_current_page(my_whole_data["academic_positions"]);
+html = generate_current_page(my_whole_data["academic_positions"], "academic_positions");
 $("#container-position").append(html);
 </script> 
