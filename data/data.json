@@ -8,12 +8,12 @@
         "current_orcid": "https://orcid.org/0000-0002-3469-4149"
     },
     "research_interests": [
-      {
-        "title": null,
-        "descriptions": [
-          "I work in the broad field of data management, and more precisely lmy research interests focus on heterogeneous and/or multimodal data, data integration systems, and data exploration. Recently, I also added Federated Learning to my research interests. The projects that I worked on have always been part of multidisciplinary contexts, including urban planning, journalism, and health, and have been exemplified on large, complex, and often real-world data. "
-        ]
-      }
+        {
+            "title": null,
+            "descriptions": [
+                "I work in the broad field of data management, and more precisely lmy research interests focus on heterogeneous and/or multimodal data, data integration systems, and data exploration. Recently, I also added Federated Learning to my research interests. The projects that I worked on have always been part of multidisciplinary contexts, including urban planning, journalism, and health, and have been exemplified on large, complex, and often real-world data. "
+            ]
+        }
     ],
     "academic_positions": [
         {
@@ -1451,7 +1451,7 @@
                 {
                     "title": "From data to journalism (interactive course, Jan. 2024 – Lycée international de Palaiseau, Palaiseau, FR)",
                     "url": "https://zenodo.org/records/17679761"
-                }, 
+                },
                 {
                     "title": "Intelligence artificielle : un outil pour le journalisme (seminar, July 2023 – CFI forum, Paris, FR)",
                     "url": "https://zenodo.org/records/17680052"
@@ -1460,7 +1460,7 @@
                     "title": "ConnectionStudio : des données au journalisme (forum, May 2023 – DataJournos, Paris, FR)",
                     "url": "https://zenodo.org/records/17680102"
                 },
-                { 
+                {
                     "title": "Recherche en integration de données : le cas de ConnectionLens* (seminar, March 2022 – online)",
                     "url": "https://zenodo.org/records/17679370"
                 }
@@ -1474,7 +1474,7 @@
                 },
                 {
                     "title": "Journée Filles, Mathématiques, Informatique (speed meetings, Nov. 2025 – Lyon, FR)"
-                }, 
+                },
                 {
                     "title": "Girls@CSE (talks, Sept. 2024 - Milano, IT)",
                     "url": "https://www.deib.polimi.it/ita/eventi/dettagli/2987"
