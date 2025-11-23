@@ -34,7 +34,7 @@
             "title": "Postdoctoral researcher",
             "date": "Apr. 2024 – July 2025",
             "descriptions": [
-                "Horizon Europe project: “Better real-world health-data distributed analytics research platform”.",
+                "Horizon Europe project: 'Better real-world health-data distributed analytics research platform'.",
                 "Close collaborators: Pietro Pinoli (associate professor, Politecnico di Milano, IT), Anna Bernasconi (assistant professor, Politecnico di Milano, IT), Boris Bikbov (medical doctor, Politecnico di Milano, IT)."
             ],
             "subtitles": [
@@ -48,7 +48,7 @@
             "title": "PhD student",
             "date": "Jan. 2021 – March 2024",
             "descriptions": [
-                "PhD thesis title: “User-oriented exploration of semi-structured datasets”",
+                "PhD thesis title: 'User-oriented exploration of semi-structured datasets'",
                 "PhD defense jury: Fatiha Sais (présidente – professor, Univ. Paris-Saclay and LISN), Jean-Marc Petit (rapporteur – professor, at INSA Lyon and LIRIS), Olivier Teste (rapporteur – professor, Univ. Toulouse Jean Jaurès and IRIT), Katja Hose (examinatrice – professor, TU Wien, AT), Stefano Ceri (examinateur – professor, Politecnico di Milano, IT), Fatemeh Nargesian (examinatrice – associate professor, Univ. Rochester, USA), Ioana Manolescu (advisor – research director, Ecole Polytechnique and Inria Saclay), Karen Bastien (co-advisor – WeDoData CEO)."
             ],
             "subtitles": [
@@ -62,7 +62,7 @@
             "title": "Master intern",
             "date": "Feb. 2020 – July 2020",
             "descriptions": [
-                "Master thesis title (in French): “Prédiction de l'environnement d'un quartier”.",
+                "Master thesis title (in French): 'Prédiction de l'environnement d'un quartier'.",
                 "Advisors: Fabien Duchateau (associate professor, Univ. Lyon 1 and LIRIS) and Franck Favetta (associate professor, Univ. de Lyon and LIRIS).",
                 "Other collaborators: Nelly Duong (CEO, Home in Love), Behnaz Jullien (intern in psychology, Univ. Lyon 2), Wissame Laddada (post-doctoral researcher, LIRIS), and Ludovic Moncla (associate professor, computer science at INSA Lyon)."
             ],
@@ -77,7 +77,7 @@
             "title": "Bachelor intern",
             "date": "May 2018 – July 2018",
             "descriptions": [
-                "Bachelor thesis title (in French): “Intégration de données géographiques pour la recommandation de quartiers”.",
+                "Bachelor thesis title (in French): 'Intégration de données géographiques pour la recommandation de quartiers'.",
                 "Advisors: Fabien Duchateau (associate professor, Univ. Lyon 1 and LIRIS) and Franck Favetta (associate professor, Univ. de Lyon and LIRIS).",
                 "Other collaborators: Nelly Duong (CEO, Home in Love), Loic Bonneval (associate professor in sociology, Univ. Lyon 2) and Aurélien Gentil (PhD student in sociology, Univ. Lyon 2)."
             ],
@@ -1351,7 +1351,7 @@
                 ]
             ],
             "descriptions": [
-                "Manage the LinkedIn page of the “Data Science” group at DEIB, Politecnico di Milano."
+                "Manage the LinkedIn page of the Data Science group at DEIB, Politecnico di Milano."
             ]
         },
         {
@@ -1527,17 +1527,17 @@
         {
             "title": "Master students",
             "descriptions": [
-                "Ahmed Bel Hadj Youssef. “FADE : vers des lacs de données plus FAIR” (fall 2025, INSA Lyon, engineer 5th year)",
-                "Antoine Gauquier. “Path exploration of ConnectionLens graphs” (summer 2022, IMT Nord-Europe, master 1st year)"
+                "Ahmed Bel Hadj Youssef. 'FADE : vers des lacs de données plus FAIR' (fall 2025, INSA Lyon, engineer 5th year)",
+                "Antoine Gauquier. 'Path exploration of ConnectionLens graphs' (summer 2022, IMT Nord-Europe, master 1st year)"
             ]
         },
         {
             "title": "Bachelor students",
             "descriptions": [
-                "Shay Pripstein. “Target data acquisition in open repositories” (winter 2023, École Polytechnique, bachelor 3rd year)",
-                "Tudor Enache. “From simple to property graphs” (winter 2023, École Polytechnique, bachelor 3rd year)",
-                "Nikola Dobricic. “Graph queries for abstractions” (summer 2023, Ecole Polytechnique, bachelor 2nd year)",
-                "Jia-Jean Law. “Optimization of entity-to-entity data paths” (winter 2022, Ecole Polytechnique, bachelor 3rd year)"
+                "Shay Pripstein. 'Target data acquisition in open repositories' (winter 2023, École Polytechnique, bachelor 3rd year)",
+                "Tudor Enache. 'From simple to property graphs' (winter 2023, École Polytechnique, bachelor 3rd year)",
+                "Nikola Dobricic. 'Graph queries for abstractions' (summer 2023, Ecole Polytechnique, bachelor 2nd year)",
+                "Jia-Jean Law. 'Optimization of entity-to-entity data paths' (winter 2022, Ecole Polytechnique, bachelor 3rd year)"
             ]
         }
     ]
