@@ -688,7 +688,7 @@
     ],
     "working_groups": [
         {
-            "title": "Commission égalité femme/homme",
+            "title": "Commission égalité & parité femme-homme",
             "date": "Nov. 2025 – now",
             "subtitles": [
                 [
@@ -1338,6 +1338,22 @@
     ],
     "institutional_responsibilities": [
         {
+            "title": "DRIM webpage maintainer",
+            "date": "Sept. 2025 - now",
+            "subtitles": [
+                [
+                    "person",
+                    "main maintainer"
+                ],
+                [
+                    "website",
+                    "https://liris.cnrs.fr/equipe/drim"
+                ]
+            ],
+            "descriptions": [
+                "Manage the institutional webpage of the DRIM team at the LIRIS lab."
+            ]
+        },{
             "title": "LinkedIn page maintainer",
             "date": "April. 2024 – July 2025",
             "subtitles": [
@@ -1461,7 +1477,7 @@
                     "url": "https://zenodo.org/records/17680102"
                 },
                 {
-                    "title": "Recherche en integration de données : le cas de ConnectionLens* (seminar, March 2022 – online)",
+                    "title": "Recherche en integration de données : le cas de ConnectionLens (seminar, March 2022 – online)",
                     "url": "https://zenodo.org/records/17679370"
                 }
             ]
