@@ -1,4 +1,5 @@
 import json
+import re
 import urllib.request
 
 from docx import Document
@@ -100,6 +101,10 @@ def generate_long_cv(template, data_file_url, generated_filename):
                                 # special case: we need to format each publication authors, title, etc
                                 for one_description in section["descriptions"]:
                                     format_publication(generated_doc, one_description)
+                            elif page_name == "talks":
+                                # special case: we need to format each talk
+                                for one_description in section["descriptions"]:
+                                    format_talk(generated_doc, one_description)
                             else:
                                 for one_description in section["descriptions"]:
                                     generated_doc.add_paragraph(f"{one_description}", style='List Bullet')
@@ -133,39 +138,127 @@ def generate_short_cv(template, data_file_url, generated_filename):
             #generated_doc.add_heading(pretty_page_names[page_name], level=1)
             paragraph_horizontal_rule = generated_doc.add_paragraph()
             insert_horizontal_rule(paragraph_horizontal_rule)
+
             if page_name == "research_interests":
                 # no individual sections for the research interest page
                 # however, we still need to add the paragraph
                 generated_doc.add_paragraph(data[page_name][0]["descriptions"][0])
-            else:
+            elif page_name in ["academic_positions", "education", "institutional_responsibilities"]:
                 for section in data[page_name]:
+                    # specific titles of the form "title | location     date"
+                    section_title = f"{section["title"]} | {section["subtitles"][0][1]}"
+                    title_as_paragraph = generated_doc.add_paragraph()
+                    the_date = " - ".join(re.findall("[0-9]{4}|now", section["date"]))
+                    run_date = title_as_paragraph.add_run()
+                    run_date.add_text(f"{the_date}\t")
+                    run_title = title_as_paragraph.add_run()
+                    run_title.add_text(f"{section_title}")
+                    run_title.bold = True
+
+                    # we do not print their descriptions
+            elif page_name in ["research_visits", "awards", "research_projects", "research_software_and_tools", "working_groups"]:
+                i = 0
+                title_as_paragraph = generated_doc.add_paragraph()
+                for section in data[page_name]:
+                    # specific paragraph of the form "title (location. date)"
                     if section["title"].lower() == "stay tuned":
                         pass
+                    url = None
+                    if "subtitles" in section:
+                        for subtitle in section["subtitles"]:
+                            if subtitle[0] == "code-branch":
+                                url = subtitle[1]
+                    if "date" in section:
+                        section_title = f"{section["title"]} ({section["date"]})"
                     else:
-                        # specific titles of the form "title | location     date"
-                        if page_name in ["academic_positions", "education", "awards"]:
-                            section_title = f"{section["title"]} | {section["subtitles"][0][1]}"
+                        section_title = f"{section["title"]}"
+                    if i == len(data[page_name])-1:
+                        # last element
+                        if url is not None:
+                            add_link(title_as_paragraph, url, section_title)
                         else:
-                            section_title = section["title"]
-                        # regular titles
-                        if "date" in section:
-
-                            title_as_paragraph = f"{section["date"]}\t{section_title}"
+                            run_para = title_as_paragraph.add_run()
+                            run_para.add_text(f"{section_title}")
+                    else:
+                        if url is not None:
+                            add_link(title_as_paragraph, url, section_title)
+                            run_para = title_as_paragraph.add_run()
+                            run_para.add_text(f", ")
                         else:
-                            title_as_paragraph = f"{section_title}"
+                            run_para.add_text(f"{section_title}, ")
+                    i += 1
 
-                        generated_doc.add_paragraph(title_as_paragraph) #, style="List Bullet")
-
-                        if "descriptions" in section:
-                            if page_name == "publications":
-                                # special case: we need to format each publication authors, title, etc
-                                for one_description in section["descriptions"]:
-                                    format_publication(generated_doc, one_description)
+                    # no descriptions here
+            elif page_name == "publications":
+                # do not print the list of publi but rather the link to my orcid
+                publis_para = generated_doc.add_paragraph()
+                run_short_publis = publis_para.add_run()
+                run_short_publis.add_text(f"Checkout my complete list of publications on my ORCID record: ")
+                add_link(publis_para, f"{data["header"]["current_orcid"]}", "ORCID record.")
+            elif page_name in ["professional_service", "reviewing_activities", "teaching_responsibilities", "advising"]:
+                for section in data[page_name]:
+                    # specific titles of the form "title | location     date"
+                    section_title = section["title"]
+                    title_as_paragraph = generated_doc.add_paragraph()
+                    run_title = title_as_paragraph.add_run()
+                    run_title.add_text(f"{section_title}: ")
+                    run_title.bold = True
+                    i = 1
+                    for description in section["descriptions"]:
+                        run_descr = title_as_paragraph.add_run()
+                        # remove the date before the activity and aggregate all of them
+                        if i < len(section["descriptions"]):
+                            if page_name in ["teaching_responsibilities", "advising"]:
+                                run_descr.add_text(f"{description}, ")
                             else:
-                                # print only the first description for the short CV
-                                if len(section["descriptions"]) > 0:
-                                    generated_doc.add_paragraph(f"{section["descriptions"][0]}", style="List Bullet")
+                                run_descr.add_text(f"{description[6: len(description)]}, ")
+                        else:
+                            if page_name in ["teaching_responsibilities", "advising"]:
+                                run_descr.add_text(f"{description}")
+                            else:
+                                run_descr.add_text(f"{description[6: len(description)]}")
+            elif page_name in ["talks"]:
+                # do not print the list of publi but rather the link to my orcid
+                talks_para = generated_doc.add_paragraph()
+                run_short_talks = talks_para.add_run()
+                run_short_talks.add_text(f"Checkout my complete list of talks on my ")
+                zenodo_link = "https://zenodo.org/search?q=metadata.creators.person_or_org.name%3A%22Barret%2C%20Nelly%22&l=list&p=1&s=10&sort=bestmatch"
+                add_link(talks_para, f"{zenodo_link}", "ZENODO record.")
+            # elif page_name in ["teaching_responsibilities", "advising"]:
+            #     for section in data[page_name]:
+            #         # specific titles of the form "title | location     date"
+            #         section_title = section["title"]
+            #         title_as_paragraph = generated_doc.add_paragraph()
+            #         run_title = title_as_paragraph.add_run()
+            #         run_title.add_text(f"{section_title}: ")
+            #         for description in section["descriptions"]:
+            #             # remove the date
+            #             run_title.add_text(description[6: len(description)])
+            #             the_date = section["date"]
+            #             dates = re.findall("[0-9]{4}|now", the_date)
+            #             the_date = " - ".join(dates)
+            #
+            #             run_date = title_as_paragraph.add_run()
+            #             run_date.add_text(f"{the_date}\t")
+            #             run_title = title_as_paragraph.add_run()
+            #             run_title.add_text(f"{section_title}")
+            #             run_title.bold = True
+            #         else:
+            #             run = title_as_paragraph.add_run()
+            #             run.add_text(f"{section_title}")
+            #
+            #         if "descriptions" in section:
+            #             if page_name == "publications":
+            #                 # do not print the list of publi but rather the link to my orcid
+            #                 publis_para = generated_doc.add_paragraph()
+            #                 run_short_publis = publis_para.add_run()
+            #                 run_short_publis.add_text(f"Checkout my complete list of publications on my ORCID record: ")
+            #                 add_link(publis_para, f"{data["header"]["current_orcid"]}", data["header"]["current_orcid"])
+            #             else:
+            #                 # do not print descriptions in the short CV
+            #                 pass
         generate_files(generated_doc, generated_filename)
+
 
 def generate_files(document_object, generated_filename):
 
@@ -191,8 +284,7 @@ def generate_files(document_object, generated_filename):
     # convert(docx_filename, pdf_filename)
     # print("Long cv saved as PDF: done.")
 
-# Print success message
-print("Conversion completed successfully.")
+
 def format_publication(document, publi):
     paragraph_item_publi = document.add_paragraph(style='List Number') # numbered list
 
@@ -242,6 +334,56 @@ def format_publication(document, publi):
     return paragraph_item_publi
 
 
+def format_talk(document, talk):
+    # restart_numbering(document)
+    paragraph_item_talk = document.add_paragraph(style='List Bullet')  # numbered list
+
+    # talk title
+    if "url" in talk:
+        add_link(paragraph_item_talk, f"{talk["title"]}", talk["url"])
+        run_title = paragraph_item_talk.add_run()
+        run_title.add_text(f". ")
+    else:
+        run_title = paragraph_item_talk.add_run()
+        run_title.add_text(f"{talk["title"]}. ")
+        run_title.bold = True
+
+    # publication venue
+    run_venue = paragraph_item_talk.add_run()
+    run_venue.add_text(f"{talk["venue"]}. ")
+    run_venue.italic = True
+
+    # publication year
+    run_year = paragraph_item_talk.add_run()
+    run_year.add_text(f"{talk["year"]}.")
+    return paragraph_item_talk
+
+
+def get_abstract_id(numbering):
+    for fn in (style_xpath, type_xpath):
+        for prefer_single in (True, False):
+            xp = fn(prefer_single)
+            ids = numbering.xpath(xp)
+            if ids:
+                return min(int(x) for x in ids)
+    return 0
+
+
+def restart_numbering(document):
+    numbering = document.part.numbering_part.numbering_definitions._numbering
+    print(numbering)
+    #anum = get_abstract_id(numbering)
+    num = numbering.add_num(1)
+    print(num)
+    num.add_lvlOverride(ilvl=0).add_startOverride(1)
+    print(num)
+    # num_id = num.numId
+    # ppr = par._p.get_or_add_pPr()
+    # numPr = ppr.get_or_add_numPr()
+    # numPr.get_or_add_numId().val = num_id
+    # numPr.get_or_add_ilvl().val = level
+
+
 if __name__ == "__main__":
     generate_long_cv("empty-doc-with-styles.docx", "https://nelly-barret.github.io/data/data.json", "cv-long-nelly-barret")
-    # generate_short_cv("empty-doc-with-styles.docx", "https://nelly-barret.github.io/data/data.json", "cv-short-nelly-barret")
+    generate_short_cv("empty-doc-with-styles.docx", "https://nelly-barret.github.io/data/data.json", "cv-short-nelly-barret")
