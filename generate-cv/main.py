@@ -7,7 +7,7 @@ from docx.enum.dml import MSO_THEME_COLOR_INDEX
 from docx.shared import Inches
 
 from constants import IMAGE_SECTIONS, IMAGES_MAP
-from utils import insert_horizontal_rule, add_hyperlink, add_hyperlink_into_run, add_hyperlink_2, add_link
+from utils import insert_horizontal_rule, add_link
 
 
 def generate_long_cv(template, data_file_url, generated_filename):
@@ -163,37 +163,39 @@ def generate_short_cv(template, data_file_url, generated_filename):
                     # specific paragraph of the form "title (location. date)"
                     if section["title"].lower() == "stay tuned":
                         pass
-                    url = None
-                    if "subtitles" in section:
-                        for subtitle in section["subtitles"]:
-                            if subtitle[0] == "code-branch":
-                                url = subtitle[1]
-                    if "date" in section:
-                        section_title = f"{section["title"]} ({section["date"]})"
                     else:
-                        section_title = f"{section["title"]}"
-                    if i == len(data[page_name])-1:
-                        # last element
-                        if url is not None:
-                            add_link(title_as_paragraph, url, section_title)
+                        url = None
+                        if "subtitles" in section:
+                            for subtitle in section["subtitles"]:
+                                if subtitle[0] == "code-branch":
+                                    url = subtitle[1]
+                        if "date" in section:
+                            section_title = f"{section["title"]} ({section["date"]})"
                         else:
-                            run_para = title_as_paragraph.add_run()
-                            run_para.add_text(f"{section_title}")
-                    else:
-                        if url is not None:
-                            add_link(title_as_paragraph, url, section_title)
-                            run_para = title_as_paragraph.add_run()
-                            run_para.add_text(f", ")
+                            section_title = f"{section["title"]}"
+                        if i == len(data[page_name])-1:
+                            # last element
+                            if url is not None:
+                                add_link(title_as_paragraph, url, section_title)
+                            else:
+                                run_para = title_as_paragraph.add_run()
+                                run_para.add_text(f"{section_title}")
                         else:
-                            run_para.add_text(f"{section_title}, ")
-                    i += 1
+                            if url is not None:
+                                add_link(title_as_paragraph, url, section_title)
+                                run_para = title_as_paragraph.add_run()
+                                run_para.add_text(f", ")
+                            else:
+                                run_para = title_as_paragraph.add_run()
+                                run_para.add_text(f"{section_title}, ")
+                        i += 1
 
-                    # no descriptions here
+                        # no descriptions here
             elif page_name == "publications":
                 # do not print the list of publi but rather the link to my orcid
                 publis_para = generated_doc.add_paragraph()
                 run_short_publis = publis_para.add_run()
-                run_short_publis.add_text(f"Checkout my complete list of publications on my ORCID record: ")
+                run_short_publis.add_text(f"My complete list of publications is available on my ")
                 add_link(publis_para, f"{data["header"]["current_orcid"]}", "ORCID record.")
             elif page_name in ["professional_service", "reviewing_activities", "teaching_responsibilities", "advising"]:
                 for section in data[page_name]:
@@ -221,7 +223,7 @@ def generate_short_cv(template, data_file_url, generated_filename):
                 # do not print the list of publi but rather the link to my orcid
                 talks_para = generated_doc.add_paragraph()
                 run_short_talks = talks_para.add_run()
-                run_short_talks.add_text(f"Checkout my complete list of talks on my ")
+                run_short_talks.add_text(f"My complete list of talks on my ")
                 zenodo_link = "https://zenodo.org/search?q=metadata.creators.person_or_org.name%3A%22Barret%2C%20Nelly%22&l=list&p=1&s=10&sort=bestmatch"
                 add_link(talks_para, f"{zenodo_link}", "ZENODO record.")
             # elif page_name in ["teaching_responsibilities", "advising"]:
@@ -315,7 +317,7 @@ def format_publication(document, publi):
 
     # publication title
     if "url" in publi:
-        add_link(paragraph_item_publi, f"{publi["title"]}", publi["url"])
+        add_link(paragraph_item_publi, publi["url"], f"{publi["title"]}")
         run_title = paragraph_item_publi.add_run()
         run_title.add_text(f". ")
     else:
@@ -340,7 +342,7 @@ def format_talk(document, talk):
 
     # talk title
     if "url" in talk:
-        add_link(paragraph_item_talk, f"{talk["title"]}", talk["url"])
+        add_link(paragraph_item_talk, talk["url"], talk["title"])
         run_title = paragraph_item_talk.add_run()
         run_title.add_text(f". ")
     else:
@@ -357,31 +359,6 @@ def format_talk(document, talk):
     run_year = paragraph_item_talk.add_run()
     run_year.add_text(f"{talk["year"]}.")
     return paragraph_item_talk
-
-
-def get_abstract_id(numbering):
-    for fn in (style_xpath, type_xpath):
-        for prefer_single in (True, False):
-            xp = fn(prefer_single)
-            ids = numbering.xpath(xp)
-            if ids:
-                return min(int(x) for x in ids)
-    return 0
-
-
-def restart_numbering(document):
-    numbering = document.part.numbering_part.numbering_definitions._numbering
-    print(numbering)
-    #anum = get_abstract_id(numbering)
-    num = numbering.add_num(1)
-    print(num)
-    num.add_lvlOverride(ilvl=0).add_startOverride(1)
-    print(num)
-    # num_id = num.numId
-    # ppr = par._p.get_or_add_pPr()
-    # numPr = ppr.get_or_add_numPr()
-    # numPr.get_or_add_numId().val = num_id
-    # numPr.get_or_add_ilvl().val = level
 
 
 if __name__ == "__main__":
