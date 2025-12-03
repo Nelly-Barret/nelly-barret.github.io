@@ -44,7 +44,8 @@
                 
                 <p>
 		            <i>Website last update: September 05, 2025</i><br/>
-                    <img src="images/pdf.svg" class="my-icon-first"/><a class="linkCollapse" href="docs/cv-nelly-barret-short.pdf" target="_blank">My short curriculum</a> <i>(last update: April 2025)</i><br/>
+                    <!--<img src="images/pdf.svg" class="my-icon-first"/><a class="linkCollapse" href="docs/cv-nelly-barret-short.pdf" target="_blank">My short curriculum</a> <i>(last update: April 2025)</i><br/>-->
+		            <img src="images/pdf.svg" class="my-icon-first"/><a class="linkCollapse" href="./generate-cv/cv-short-nelly-barret.pdf" target="_blank">My short curriculum</a> <i id="link-cv-short">(last update: </i><br/> <!-- add date automatically-->
 		            <img src="images/pdf.svg" class="my-icon-first"/><a class="linkCollapse" href="./generate-cv/cv-long-nelly-barret.pdf" target="_blank">My long curriculum</a> <i id="link-cv-long">(last update: </i><br/> <!-- add date automatically-->
                     <img src="images/pdf.svg" class="my-icon-first"/><a class="linkCollapse" href="docs/short-bio-nelly-barret-EN.txt" target="_blank">My short bio (EN)</a> <i>(last update: Sept. 2025)</i><br/>
                     <img src="images/pdf.svg" class="my-icon-first"/><a class="linkCollapse" href="docs/short-bio-nelly-barret-FR.txt" target="_blank">My short bio (FR)</a> <i>(last update: Sept. 2025)</i>
@@ -99,4 +100,5 @@ let year = date.getFullYear();
 let last_update = `${day}-${month}-${year}`;
 console.log(last_update);
 $("#link-cv-long").append(last_update + ")");
+$("#link-cv-short").append(last_update + ")");
 </script> 
