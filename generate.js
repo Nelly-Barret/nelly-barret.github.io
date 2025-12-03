@@ -91,7 +91,7 @@ function generate_publication_page(page_data, sort_order) {
         };
         console.log(group_of_publis);
         
-        current_publis += generate_one_article(group_of_publis, page_name);
+        current_publis += generate_one_article(group_of_publis, "publications");
     }
     
     return current_publis;
