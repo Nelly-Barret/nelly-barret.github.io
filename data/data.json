@@ -1323,14 +1323,15 @@
         {
             "title": "Journal reviewer",
             "descriptions": [
-                "2025: GigaScience [Q1], Journal of Data and Information Quality [JDIQ – Q2], Computers, Materials and Continua [CMC – Q2], Journal of Open Source Software [JOSS – N/A]",
+                "2025: GigaScience [Q1], BMC Bioinformatics [Q1], Journal of Data and Information Quality [JDIQ – Q2], Computers, Materials and Continua [CMC – Q2], Journal of Open Source Software [JOSS – N/A]",
                 "2024: PLoS One [Q1], BMC Medical informatics and Decision Making [Q1], Scientific Reports [Q1]"
             ]
         },
         {
             "title": "Conference reviewer",
             "descriptions": [
-                "2025: International Conference on Data Engineering* [ICDE – A*]",
+                "2026: International Conference on Advances in Databases, Knowledge, and Data Applications [DBKDA - N/A]",
+                "2025: International Conference on Data Engineering* [ICDE – A*], International Conference on Advanced Information Systems Engineering [CaiSE - A], European Conference on Advances in Databases and Information Systems [ADBIS - C], Conférence Francophone en Gestion de données : Principes, Technologies et Applications [BDA - N/A], International Conference on Advances in Databases, Knowledge, and Data Applications [DBKDA - N/A]",
                 "2023: Conference on Innovative Data systems Research* [CIDR – A], Extending DataBase Technology* [EDBT – A]",
                 "2021: International Conference on Web Engineering* [ICWE – B]"
             ]
