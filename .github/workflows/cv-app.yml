@@ -30,6 +30,8 @@ jobs:
           pwd
           cd generate-cv/
           ls -al *.docx
+          mv cv-long-nelly-barret.pdf cv-long-nelly-barret-old.pdf
+          mv cv-short-nelly-barret.pdf cv-short-nelly-barret-old.pdf
           soffice --headless --convert-to pdf:writer_pdf_Export cv-long-nelly-barret.docx
           soffice --headless --convert-to pdf:writer_pdf_Export cv-short-nelly-barret.docx
     - name: Push generated CVs
