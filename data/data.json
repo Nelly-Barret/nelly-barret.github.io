@@ -1300,6 +1300,45 @@
                     "url": "https://theses.fr/2024IPPAX001",
                     "main_author": true,
                     "category": "manuscript"
+                }, {
+                    "authors": [
+                        {
+                            "first": "Nelly",
+                            "last": "Barret"
+                        }
+                    ],
+                    "title": "Prédiction de l'environnement d'un quartier",
+                    "venue": "Université Claude Bernard Lyon 1",
+                    "year": 2020,
+                    "url": "https://zenodo.org/records/17679906",
+                    "main_author": true,
+                    "category": "manuscript"
+                }, {
+                    "authors": [
+                        {
+                            "first": "Nelly",
+                            "last": "Barret"
+                        }
+                    ],
+                    "title": "Alignement d'entités spatiales avec GeoAlign",
+                    "venue": "Université Claude Bernard Lyon 1",
+                    "year": 2019,
+                    "url": "https://zenodo.org/records/17679892",
+                    "main_author": true,
+                    "category": "manuscript"
+                }, {
+                    "authors": [
+                        {
+                            "first": "Nelly",
+                            "last": "Barret"
+                        }
+                    ],
+                    "title": "Intégration de données géographiques pour la recommandation de quartiers",
+                    "venue": "Université Claude Bernard Lyon 1",
+                    "year": 2018,
+                    "url": "https://zenodo.org/records/17679854",
+                    "main_author": true,
+                    "category": "manuscript"
                 }
             ]
         }
