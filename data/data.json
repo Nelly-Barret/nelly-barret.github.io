@@ -1345,34 +1345,34 @@
     ],
     "professional_service": [
         {
-            "title": "Member of organization committees",
+            "title": "Member of conference organization committees",
             "descriptions": [
                 "2025: Conceptual Modeling for Life Sciences [CMLS – A] (workshop co-chair)"
             ]
         },
         {
-            "title": "Member of program committees",
+            "title": "Member of conference program committees",
             "descriptions": [
-                "2025: International Conference on Advances in Databases, Knowledge, and Data Applications [DBKDA – N/A], European Conference on Advances in Databases and Information Systems [ADBIS – C], BDA Gestion de Données – Principes, Technologies et Applications [BDA – N/A] (demonstrations only)",
-                "2025: Information Systems and AI for Life Sciences [iSAILS – A]"
+				"European Conference on Advances in Databases and Information Systems [ADBIS – C]: 2026, 2025", 
+				"International Conference on Data Engineering* [ICDE – A*]: 2025 (review only)", 
+				"Conference on Innovative Data systems Research* [CIDR – A], Extending DataBase Technology* [EDBT – A]: 2023 (review only)",
+                "Information Systems and AI for Life Sciences [iSAILS – A]: 2025",
+				"International Conference on Advanced Information Systems Engineering [CaiSE - A]: 2025 (review only)", 
+				"International Conference on Web Engineering* [ICWE – B]: 2021 (review only)", 
+                "International Conference on Advances in Databases, Knowledge, and Data Applications [DBKDA – N/A]: 2025", 
+				"BDA Gestion de Données – Principes, Technologies et Applications [BDA – N/A]: 2025 (demonstrations only)"
             ]
-        }
-    ],
-    "reviewing_activities": [
-        {
+        }, {
             "title": "Journal reviewer",
             "descriptions": [
-                "2025: GigaScience [Q1], BMC Bioinformatics [Q1], Journal of Data and Information Quality [JDIQ – Q2], Computers, Materials and Continua [CMC – Q2], Journal of Open Source Software [JOSS – N/A]",
-                "2024: PLoS One [Q1], BMC Medical informatics and Decision Making [Q1], Scientific Reports [Q1]"
-            ]
-        },
-        {
-            "title": "Conference reviewer",
-            "descriptions": [
-                "2026: International Conference on Advances in Databases, Knowledge, and Data Applications [DBKDA - N/A]",
-                "2025: International Conference on Data Engineering* [ICDE – A*], International Conference on Advanced Information Systems Engineering [CaiSE - A], European Conference on Advances in Databases and Information Systems [ADBIS - C], Conférence Francophone en Gestion de données : Principes, Technologies et Applications [BDA - N/A], International Conference on Advances in Databases, Knowledge, and Data Applications [DBKDA - N/A]",
-                "2023: Conference on Innovative Data systems Research* [CIDR – A], Extending DataBase Technology* [EDBT – A]",
-                "2021: International Conference on Web Engineering* [ICWE – B]"
+                "GigaScience [Q1]: 2025", 
+				"BMC Bioinformatics [Q1]: 2025", 
+				"Journal of Data and Information Quality [JDIQ – Q2]: 2025", 
+				"Computers, Materials and Continua [CMC – Q2]: 2025", 
+				"Journal of Open Source Software [JOSS – N/A]: 2025",
+                "PLoS One [Q1]: 2024", 
+				"BMC Medical informatics and Decision Making [Q1]: 2024", 
+				"Scientific Reports [Q1]: 2024"
             ]
         }
     ],
