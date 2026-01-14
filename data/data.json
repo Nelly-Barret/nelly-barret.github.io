@@ -1344,7 +1344,12 @@
         }
     ],
     "professional_service": [
-        {
+                {
+            "title": "Conference and workshop organizer",
+            "descriptions": [
+                "[N/A] CORIA-TALN (Conférence en Recherche d’Information et Applications - Traitement Automatique des Langues Naturelles): 2027"
+            ]
+        },{
             "title": "Conference and workshop chair",
             "descriptions": [
                 "[A] CMLS (Conceptual Modeling for Life Sciences workshop): 2025"
@@ -1385,6 +1390,22 @@
     ],
     "institutional_responsibilities": [
         {
+            "title": "GRID500 platform LIRIS referent",
+            "date": "Jan. 2026 - now",
+            "subtitles": [
+                [
+                    "person",
+                    "main maintainer"
+                ],
+                [
+                    "website",
+                    "https://www.grid5000.fr/w/Grid5000:Home"
+                ]
+            ],
+            "descriptions": [
+                "Manage the institutional webpage of the DRIM team at the LIRIS lab."
+            ]
+        }, {
             "title": "DRIM webpage maintainer",
             "date": "Sept. 2025 - now",
             "subtitles": [
