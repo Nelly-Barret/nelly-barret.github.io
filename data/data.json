@@ -198,6 +198,8 @@
         {
             "title": "BETTER: real-world health-data distributed analytics research platform",
             "date": "Apr. 2024 – July 2025",
+			"image": "./docs/better-rotate.png",
+			"alt": "BETTER project logo",
             "subtitles": [
                 [
                     "person",
@@ -246,6 +248,8 @@
         {
             "title": "CONNECTIONSTUDIO: user data exploration of heterogeneous data",
             "date": "March 2023 – March 2024",
+			"image": "./docs/cl-3.png",
+			"alt": "ConnectionStudio project logo",
             "subtitles": [
                 [
                     "person",
@@ -290,6 +294,8 @@
         {
             "title": "PATHWAYS: find interesting entity-to-entity paths in heterogeneous data",
             "date": "May 2022 – March 2024",
+			"image": "./docs/cl-3.png",
+			"alt": "Pathways project logo",
             "subtitles": [
                 [
                     "person",
@@ -330,6 +336,8 @@
         {
             "title": "ABSTRA: Entity-Relationship summaries from semi-structured data",
             "date": "Jan. 2021 – March 2024",
+			"image": "./docs/abstra.png",
+			"alt": "Abstra project logo",
             "subtitles": [
                 [
                     "person",
@@ -375,6 +383,8 @@
         {
             "title": "PREDIHOOD: supervised prediction of the environment of neighborhoods",
             "date": "Feb. 2020 – July 2020",
+			"image": "./docs/predihood.png",
+			"alt": "Predihood project logo",
             "subtitles": [
                 [
                     "person",
@@ -416,6 +426,8 @@
         {
             "title": "GEOALIGN: matching and merging geographic entities",
             "date": "Jan. 2019 – June 2019",
+			"image": "./docs/geoalign.png",
+			"alt": "GeoAlign project logo",
             "subtitles": [
                 [
                     "person",
@@ -456,6 +468,8 @@
         {
             "title": "VIZLIRIS: recommending and clustering French neighborhoods",
             "date": "May 2018 – July 2018",
+			"image": "./docs/vizliris.png",
+			"alt": "Vizliris project logo",
             "subtitles": [
                 [
                     "person",
@@ -1363,6 +1377,7 @@
 				"[A] CIDR (Conference on Innovative Data systems Research): 2023 (reviewer)", 
 				"[A] EDBT (Extending DataBase Technology): 2023 (reviewer)",
                 "[A] iSAILS (Information Systems and AI for Life Sciences workshop): 2025",
+                "[A] TGD (Transforming Graph Data workshop): 2026",
 				"[B] ICWE (International Conference on Web Engineering): 2021 (reviewer)",
 				"[B] RCIS (Research Challenges in Information Science): 2026 (forum)", 
 				"[C] ADBIS (Advances in DataBases and Information Systems): 2026, 2025", 
