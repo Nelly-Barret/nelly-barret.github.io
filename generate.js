@@ -108,7 +108,11 @@ function generate_one_article(article_data, page_name) {
     if(article_data != undefined && article_data != null) {
         html_1 += "<article class='postcard'>";
 		if(page_name == "research_projects") {
-			html_1 += `<img class='postcard__img' src='./docs/${article_data["image"]}' alt='${article_data[article_data["alt"]]}' />`
+			if("image" in article_data) {
+				html_1 += "<div class='myImage postcard__img_link'>"
+				html_1 += `<img class='postcard__img' src='${article_data["image"]}' alt='${article_data["alt"]}' />`
+				html_1 += "</div>"
+			}
 		}
         html_1 += "<div class='postcard__text t-dark'>";
         html_1 += "<div style='display: flex; justify-content: space-between;'>";
