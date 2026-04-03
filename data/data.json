@@ -181,14 +181,18 @@
                 ],
                 [
                     "hashtag",
-                    "federated learning"
+                    "data integration"
+                ],
+                [
+                    "hashtag",
+                    "data exploration"
                 ]
             ]
         },
         {
             "title": "BETTER: real-world health-data distributed analytics research platform",
             "date": "Apr. 2024 – July 2025",
-			"image": "./docs/better-rotate.png",
+			"image": "./img/better-rotate.png",
 			"alt": "BETTER project logo",
             "subtitles": [
                 [
@@ -238,7 +242,7 @@
         {
             "title": "CONNECTIONSTUDIO: user data exploration of heterogeneous data",
             "date": "March 2023 – March 2024",
-			"image": "./docs/cl-3.png",
+			"image": "./img/cl-3.png",
 			"alt": "ConnectionStudio project logo",
             "subtitles": [
                 [
@@ -284,7 +288,7 @@
         {
             "title": "PATHWAYS: find interesting entity-to-entity paths in heterogeneous data",
             "date": "May 2022 – March 2024",
-			"image": "./docs/cl-3.png",
+			"image": "./img/cl-3.png",
 			"alt": "Pathways project logo",
             "subtitles": [
                 [
@@ -326,7 +330,7 @@
         {
             "title": "ABSTRA: Entity-Relationship summaries from semi-structured data",
             "date": "Jan. 2021 – March 2024",
-			"image": "./docs/abstra.png",
+			"image": "./img/abstra.png",
 			"alt": "Abstra project logo",
             "subtitles": [
                 [
@@ -373,7 +377,7 @@
         {
             "title": "PREDIHOOD: supervised prediction of the environment of neighborhoods",
             "date": "Feb. 2020 – July 2020",
-			"image": "./docs/predihood.png",
+			"image": "./img/predihood.png",
 			"alt": "Predihood project logo",
             "subtitles": [
                 [
@@ -416,7 +420,7 @@
         {
             "title": "GEOALIGN: matching and merging geographic entities",
             "date": "Jan. 2019 – June 2019",
-			"image": "./docs/geoalign.png",
+			"image": "./img/geoalign.png",
 			"alt": "GeoAlign project logo",
             "subtitles": [
                 [
@@ -458,7 +462,7 @@
         {
             "title": "VIZLIRIS: recommending and clustering French neighborhoods",
             "date": "May 2018 – July 2018",
-			"image": "./docs/vizliris.png",
+			"image": "./img/vizliris.png",
 			"alt": "Vizliris project logo",
             "subtitles": [
                 [
@@ -1087,13 +1091,30 @@
         {
             "title": "Peer-reviewed international workshops",
             "descriptions": [
+				{
+					"authors": [
+						{
+							"first": "Nelly",
+							"last": "Barret"
+						}, {
+							"first": "Mélina",
+							"last": "Verger"
+						}
+					], 
+					"title": "SemiStructQuest: Unveiling NoSQL database concepts through gamified learning platform analyses",
+					"venue": "DATAED workshop in International Conference on Extending Database Technology",
+					"year": 2026,
+					"pdf": "",
+					"slides": "",
+					"video": "",
+					"category": "int_work"
+				},
                 {
                     "authors": [
                         {
                             "first": "Nelly",
                             "last": "Barret"
-                        },
-                        {
+                        }, {
                             "first": "Tudor",
                             "last": "Enache"
                         },
