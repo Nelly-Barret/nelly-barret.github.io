@@ -226,6 +226,15 @@ function format_publication(publi) {
     }
     publi_as_html += "<i>" + publi["venue"] + ".</i> ";
     publi_as_html += publi["year"] + ".";
+	if(publi["pdf"] != undefined && publi["pdf"] != "") {
+		publi_as_html += "<img src='images/pdf.svg' width='20rem' style='margin-left: 0.4rem; margin-right: 0.2rem;'><a href=\"" + publi["pdf"] + "\" target='_blank'>PDF paper</a>"
+	}
+	if(publi["slides"] != undefined && publi["slides"] != "") {
+		publi_as_html += "<img src='images/presentation.png' width='20rem' style='margin-left: 0.4rem; margin-right: 0.2rem;'><a href=\"" + publi["slides"] + "\" target='_blank'>slides</a>"
+	}
+	if(publi["video"] != undefined && publi["video"] != "") {
+		publi_as_html += "<img src='images/youtube.svg' width='20rem' style='margin-left: 0.4rem; margin-right: 0.2rem;'><a href=\"" + publi["video"] + "\" target='_blank'>video</a>"
+	}
     publi_as_html += "</li>";
     return publi_as_html;
 }

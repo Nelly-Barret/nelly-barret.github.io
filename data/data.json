@@ -173,7 +173,7 @@
             "tags": [
                 [
                     "hashtag",
-                    "data lake"
+                    "lakehouse"
                 ],
                 [
                     "hashtag",
@@ -956,7 +956,9 @@
                     "title": "Leveraging profiling to bridge healthcare silos for federated analyses",
                     "venue": "International Conference on Advanced Information Systems Engineering (Forum track)",
                     "year": 2025,
-                    "url": "https://www.researchgate.net/publication/392478298_Leveraging_Profiling_to_Bridge_Healthcare_Silos_for_Federated_Analyses",
+					"url": "https://link.springer.com/chapter/10.1007/978-3-031-94590-8_3",
+                    "paper": "https://www.researchgate.net/publication/392478298_Leveraging_Profiling_to_Bridge_Healthcare_Silos_for_Federated_Analyses",
+					"slides": "https://zenodo.org/records/19410215",
                     "main_author": true,
                     "category": "int_conf"
                 },
@@ -979,6 +981,7 @@
                     "venue": "International Conference on Extending Database Technology",
                     "year": 2024,
                     "url": "https://hal.science/hal-04131974",
+					"slides": "https://zenodo.org/records/19410275",
                     "main_author": true,
                     "category": "int_conf"
                 },
@@ -1104,6 +1107,7 @@
 					"title": "SemiStructQuest: Unveiling NoSQL database concepts through gamified learning platform analyses",
 					"venue": "DATAED workshop in International Conference on Extending Database Technology",
 					"year": 2026,
+					"url": "https://hal.science/hal-05579539",
 					"pdf": "https://zenodo.org/records/19328190",
 					"slides": "https://zenodo.org/records/19328190",
 					"video": "https://zenodo.org/records/19328190",
@@ -1377,7 +1381,7 @@
         },{
             "title": "Conference and workshop chair",
             "descriptions": [
-                "[A] CMLS (Conceptual Modeling for Life Sciences workshop): 2025"
+                "[A] CMLS (Conceptual Modeling for Life Sciences workshop): 2025, 2026"
             ]
         },
         {
@@ -1386,19 +1390,20 @@
 				"[A*] ICDE (International Conference on Data Engineering): 2025 (reviewer)", 
 				"[A] CAiSE (Conference on Advanced Information Systems Engineering): 2025 (reviewer)", 
 				"[A] CIDR (Conference on Innovative Data systems Research): 2023 (reviewer)", 
+				"[A] CIKM (International Conference on Information and Knowledge Management): 2026 (pc member)",
 				"[A] EDBT (Extending DataBase Technology): 2023 (reviewer)",
-                "[A] iSAILS (Information Systems and AI for Life Sciences workshop): 2025",
-                "[A] TGD (Transforming Graph Data workshop): 2026",
+                "[A] iSAILS (Information Systems and AI for Life Sciences workshop): 2025 (pc member)",
+                "[A] TGD (Transforming Graph Data workshop): 2026 (pc member)",
 				"[B] ICWE (International Conference on Web Engineering): 2021 (reviewer)",
-				"[B] RCIS (Research Challenges in Information Science): 2026 (forum)", 
-				"[C] ADBIS (Advances in DataBases and Information Systems): 2026, 2025", 
-                "[N/A] DBKDA (Databases, Knowledge, and Data Applications): 2025", 
-				"[N/A] BDA (Gestion de Données – Principes, Technologies et Applications): 2025 (demonstrations only)"
+				"[B] RCIS (Research Challenges in Information Science): 2026 (forum pc member)", 
+				"[C] ADBIS (Advances in DataBases and Information Systems): 2026, 2025 (pc member)", 
+                "[N/A] DBKDA (Databases, Knowledge, and Data Applications): 2025 (pc member)", 
+				"[N/A] BDA (Gestion de Données – Principes, Technologies et Applications): 2025 (demonstrations reviewer)"
             ]
         }, {
             "title": "Journal review board member",
             "descriptions": [
-                "[Q1] VLDB (Very Large DataBases): 2026"
+                "[Q1] VLDB Proceedings (Proceedings of the Very Large DataBases volume): 2027"
             ]
         }, {
             "title": "Journal reviewer",
@@ -1634,6 +1639,8 @@
             ],
             "descriptions": [
                 "ISN1: informatique et société numérique (fall, INSA Lyon, engineer 1st year, in French)",
+                "ISN2: informatique et société numérique (spring, INSA Lyon, engineer 1st year, in French)",
+                "ISN4: informatique et société numérique (spring, INSA Lyon, engineer 2nd year, in French)",
                 "SOL: systèmes et outils logiciels (fall, INSA Lyon, engineer 1st year, in French)"
             ]
         },
@@ -1647,9 +1654,9 @@
                 ]
             ],
             "descriptions": [
-                "ISN2: new project topic",
-                "ISN2: network module redesign",
-                "CGA: member of the Animation and Management Committee (Comité de Gestion et d'Animation)"
+                "ISN2: new hands-on project topic",
+                "ISN2: network course redesign",
+                "CGA: member of the Coordination and Management Committee (Comité de Gestion et d'Animation)"
             ]
         },
         {
@@ -1665,8 +1672,15 @@
     ],
     "advising": [
         {
+            "title": "Engineer",
+            "descriptions": [
+                "C&ocirc;me P&eacute;rin on \"Apprentissage multimodal au service de la sant&eacute; des conducteurs\" (April-Dec. 2026, ENTPE Vaulx-en-Velin)"
+            ]
+        },
+		{
             "title": "Master students",
             "descriptions": [
+				"In&egrave;s Boudjeli on \"Nettoyage et s&eacute;lection automatique de donn&eacute;es pour l'apprentissage machine\" (spring 2026, INSA Lyon, master 2nd year)",
                 "Ahmed Bel Hadj Youssef on \"Construction automatique de domaines dans les data meshs\" (fall 2025, INSA Lyon, engineer 5th year)",
                 "Antoine Gauquier on \"Path exploration of ConnectionLens graphs\" (summer 2022, IMT Nord-Europe, master 1st year)"
             ]
