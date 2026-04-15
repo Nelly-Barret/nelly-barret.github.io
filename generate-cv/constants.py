@@ -4,6 +4,7 @@ IMAGES_MAP = {
     "calendar": "",
     "code": "LOC",
     "code-branch": "Repository",
+    "display": "",
     "dollar": "Grant",
     "graduation-cap": "Major",
     "graduation-cap-2": "Minor",
