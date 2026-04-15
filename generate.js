@@ -134,7 +134,7 @@ function generate_one_article(article_data, page_name) {
                 } else {
                     subtitle_text = subtitle[1]
                 }
-                // create the subtitle with its image
+                // create the subtitle with its icon
                 if(i === 0) {
                     html_1 += `<i class="fa-solid fa-${subtitle[0]} my-icon-first"/>${subtitle_text}`;
 					// html_1 += `<img src="images/${subtitle[0]}.svg" class="my-icon-first"/>${subtitle_text}`;
@@ -172,14 +172,14 @@ function generate_one_article(article_data, page_name) {
                         // an object description with a text and a url
                         if("url" in description) {
                             if(description["url"].includes("zenodo")) {
-                                icon = "pdf"
+                                icon = "fa-solid fa-chalkboard-user"
                             } else if(description["url"].includes("youtube")) {
-                                icon = "youtube"
+                                icon = "fa-brands fa-youtube"
                             } else {
-                                icon = "pdf"
+                                icon = "fa-solid fa-chalkboard-user"
                             }
                             
-                            html_1 += `<li>${description["title"]}<a href="${description["url"]}" target="_blank"><img src="images/${icon}.svg" class="my-icon-first"/></a></li>`;
+                            html_1 += `<li>${description["title"]}<a href="${description["url"]}" target="_blank"><i class="${icon} my-icon"></i></a></li>`;
                         } else {
                             html_1 += `<li>${description["title"]}</li>`;
                         }
@@ -199,7 +199,7 @@ function generate_one_article(article_data, page_name) {
         if("tags" in article_data) {
             html_1 += "<ul class='postcard__tagbox'>";
             for(tag of article_data["tags"]) {
-                html_1 += `<li class="tag__item play"><img src="images/${tag[0]}.svg" class="my-tag"/>${tag[1]}</li>`;
+                html_1 += `<li class="tag__item play"><i class="fa-solid fa-${tag[0]} my-tag"></i>${tag[1]}</li>`;
             }
             html_1 += "</ul>";
         }
