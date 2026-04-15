@@ -1,6 +1,7 @@
 IMAGES_MAP = {
     "award": "",
     "briefcase": "",
+    "building": "Partners",
     "calendar": "",
     "code": "LOC",
     "code-branch": "Repository",
@@ -8,7 +9,6 @@ IMAGES_MAP = {
     "dollar": "Grant",
     "graduation-cap": "Major",
     "graduation-cap-2": "Minor",
-    "group": "Partners",
     "hashtag": "Tag",
     "language": "Languages",
     "map-pin": "",
