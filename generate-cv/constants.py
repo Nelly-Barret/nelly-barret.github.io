@@ -13,7 +13,7 @@ IMAGES_MAP = {
     "language": "Languages",
     "map-pin": "",
     "pdf": "",
-    "person": "Role",
+    "user": "Role",
     "update": "Time",
     "website": "Website"
 }
