@@ -32,7 +32,7 @@ def generate_long_cv(template, data_file_url, generated_filename):
         for page_name in page_names:
             heading = generated_doc.add_heading()
             run_heading = heading.add_run()
-            run_heading.add_picture(f"../images/{IMAGE_SECTIONS[page_name]}.png", width=Inches(0.25))
+            run_heading.add_picture("images/{IMAGE_SECTIONS[page_name]}.png", width=Inches(0.25))
             run_heading.add_text(f" {pretty_page_names[page_name]}")  # keep a space after the section image
             #generated_doc.add_heading(pretty_page_names[page_name], level=1)
             paragraph_horizontal_rule = generated_doc.add_paragraph()
@@ -74,7 +74,7 @@ def generate_long_cv(template, data_file_url, generated_filename):
                                         subtitle_img = one_subtitle[0]
                                         subtitle_text = one_subtitle[1]
                                         run_text = paragraph.add_run()
-                                        # run.add_picture(f"../images/{subtitle_img}.png", width=Inches(0.15))
+                                        # run.add_picture(f"images/{subtitle_img}.png", width=Inches(0.15))
                                         run_text.add_text(f"{IMAGES_MAP[subtitle_img]}: ")  # Role, Grant, Website, etc
                                         run_text.italic = True
                                         if subtitle_img in ["website", "code-branch"] and subtitle_text.startswith("https://"):
@@ -133,7 +133,7 @@ def generate_short_cv(template, data_file_url, generated_filename):
         for page_name in page_names:
             heading = generated_doc.add_heading()
             run_heading = heading.add_run()
-            run_heading.add_picture(f"../images/{IMAGE_SECTIONS[page_name]}.png", width=Inches(0.25))
+            run_heading.add_picture(f"images/{IMAGE_SECTIONS[page_name]}.png", width=Inches(0.25))
             run_heading.add_text(f" {pretty_page_names[page_name]}")  # keep a space after the section image
             #generated_doc.add_heading(pretty_page_names[page_name], level=1)
             paragraph_horizontal_rule = generated_doc.add_paragraph()
@@ -197,7 +197,7 @@ def generate_short_cv(template, data_file_url, generated_filename):
                 run_short_publis = publis_para.add_run()
                 run_short_publis.add_text(f"My complete list of publications is available on my ")
                 add_link(publis_para, f"{data["header"]["current_orcid"]}", "ORCID record.")
-            elif page_name in ["professional_service", "reviewing_activities", "teaching_responsibilities", "advising"]:
+            elif page_name in ["professional_service", "teaching_responsibilities", "advising"]:
                 for section in data[page_name]:
                     # specific titles of the form "title | location     date"
                     section_title = section["title"]
@@ -209,23 +209,20 @@ def generate_short_cv(template, data_file_url, generated_filename):
                     for description in section["descriptions"]:
                         run_descr = title_as_paragraph.add_run()
                         # remove the date before the activity and aggregate all of them
-                        if i < len(section["descriptions"]):
-                            if page_name in ["teaching_responsibilities", "advising"]:
-                                run_descr.add_text(f"{description}, ")
-                            else:
-                                run_descr.add_text(f"{description[6: len(description)]}, ")
-                        else:
-                            if page_name in ["teaching_responsibilities", "advising"]:
-                                run_descr.add_text(f"{description}")
-                            else:
-                                run_descr.add_text(f"{description[6: len(description)]}")
+                        text = description
+                        if page_name  == "professional_service":
+                            index_remove_rank = text.find(" ")
+                            text = description[index_remove_rank: len(description)]
+                            if i < len(section["descriptions"]):
+                                text += ", "
+                        run_descr.add_text(text)
             elif page_name in ["talks"]:
                 # do not print the list of publi but rather the link to my orcid
                 talks_para = generated_doc.add_paragraph()
                 run_short_talks = talks_para.add_run()
                 run_short_talks.add_text(f"My complete list of talks on my ")
-                zenodo_link = "https://zenodo.org/search?q=metadata.creators.person_or_org.name%3A%22Barret%2C%20Nelly%22&l=list&p=1&s=10&sort=bestmatch"
-                add_link(talks_para, f"{zenodo_link}", "ZENODO record.")
+                zenodo_link = "https://nelly-barret.github.io/RES-talks.html"
+                add_link(talks_para, f"{zenodo_link}", "webpage.")
             # elif page_name in ["teaching_responsibilities", "advising"]:
             #     for section in data[page_name]:
             #         # specific titles of the form "title | location     date"
