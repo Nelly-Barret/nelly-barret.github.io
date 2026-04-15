@@ -14,7 +14,7 @@ IMAGES_MAP = {
     "map-pin": "",
     "pdf": "",
     "user": "Role",
-    "update": "Time",
+    "hourglass": "Time",
     "website": "Website"
 }
 
