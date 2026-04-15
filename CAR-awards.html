@@ -18,10 +18,10 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script> 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">	
-
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	
+	<!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/54ddfbe03a.js" crossorigin="anonymous"></script>
 
     <!-- Our custom CSS -->
     <link rel="stylesheet" href="styles.css"/>
@@ -33,14 +33,15 @@
     
     <!-- SECTION AWARDS -->
     <section class="anchor light">
-    <div class="container py-2" id="container-award">
-    </div>
+		<div class="container py-2" id="container-award">
+		</div>
+	</section>
 </body>
 </html>
 
 <script> 
-$(function(){
-  $("#my-navbar").load("https://nelly-barret.github.io/navbar.html"); 
+$(function() {
+	$("#my-navbar").load("https://nelly-barret.github.io/navbar.html");
 });
 
 my_whole_data = get_json_data("https://nelly-barret.github.io/data/data.json");

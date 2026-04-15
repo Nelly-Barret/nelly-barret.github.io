@@ -153,7 +153,7 @@
                     "BDA conference"
                 ],
                 [
-                    "website",
+                    "window-maximize",
                     "https://bda2024.sciencesconf.org/resource/page/id/10"
                 ]
             ],
@@ -196,7 +196,7 @@
 			"alt": "BETTER project logo",
             "subtitles": [
                 [
-                    "person",
+                    "user",
                     "contributor (tasks 4.1, 4.2)"
                 ],
                 [
@@ -204,11 +204,11 @@
                     "Horizon Europe (2022 – 2027)"
                 ],
                 [
-                    "group",
+                    "building",
                     "7 European hospitals"
                 ],
                 [
-                    "website",
+                    "window-maximize",
                     "https://better-health-project.eu"
                 ]
             ],
@@ -246,7 +246,7 @@
 			"alt": "ConnectionStudio project logo",
             "subtitles": [
                 [
-                    "person",
+                    "user",
                     "contributor"
                 ],
                 [
@@ -254,7 +254,7 @@
                     "ANR SourcesSay project (2020 – 2024)"
                 ],
                 [
-                    "website",
+                    "window-maximize",
                     "https://connectionstudio.inria.fr"
                 ]
             ],
@@ -292,7 +292,7 @@
 			"alt": "Pathways project logo",
             "subtitles": [
                 [
-                    "person",
+                    "user",
                     "co-leader"
                 ],
                 [
@@ -300,7 +300,7 @@
                     "DIM RFSI PHD 2020-01"
                 ],
                 [
-                    "website",
+                    "window-maximize",
                     "https://team.inria.fr/cedar/projects/pathways"
                 ]
             ],
@@ -334,7 +334,7 @@
 			"alt": "Abstra project logo",
             "subtitles": [
                 [
-                    "person",
+                    "user",
                     "leader"
                 ],
                 [
@@ -342,11 +342,11 @@
                     "DIM RFSI PHD 2020-01"
                 ],
                 [
-                    "group",
+                    "building",
                     "WeDoData start-up"
                 ],
                 [
-                    "website",
+                    "window-maximize",
                     "https://team.inria.fr/cedar/projects/abstra"
                 ]
             ],
@@ -381,7 +381,7 @@
 			"alt": "Predihood project logo",
             "subtitles": [
                 [
-                    "person",
+                    "user",
                     "leader"
                 ],
                 [
@@ -389,7 +389,7 @@
                     "LabEx IMU (Intelligences des Mondes Urbains)"
                 ],
                 [
-                    "group",
+                    "building",
                     "HomeInLove start-up"
                 ]
             ],
@@ -424,7 +424,7 @@
 			"alt": "GeoAlign project logo",
             "subtitles": [
                 [
-                    "person",
+                    "user",
                     "leader"
                 ],
                 [
@@ -466,7 +466,7 @@
 			"alt": "Vizliris project logo",
             "subtitles": [
                 [
-                    "person",
+                    "user",
                     "leader"
                 ],
                 [
@@ -474,11 +474,11 @@
                     "LabEx IMU (Intelligences des Mondes Urbains)"
                 ],
                 [
-                    "group",
+                    "building",
                     "HomeInLove start-up"
                 ],
                 [
-                    "website",
+                    "window-maximize",
                     "https://perso.liris.cnrs.fr/fabien.duchateau/?page=VizLIRIS/"
                 ]
             ],
@@ -516,7 +516,7 @@
             "date": "Apr. 2024 – July 2025",
             "subtitles": [
                 [
-                    "person",
+                    "user",
                     "developer"
                 ],
                 [
@@ -542,7 +542,7 @@
             "date": "March 2023 – March 2024",
             "subtitles": [
                 [
-                    "person",
+                    "user",
                     "contributor"
                 ],
                 [
@@ -568,7 +568,7 @@
             "date": "May 2022 – March 2024",
             "subtitles": [
                 [
-                    "person",
+                    "user",
                     "main developer"
                 ],
                 [
@@ -594,7 +594,7 @@
             "date": "Jan. 2021 – March 2024",
             "subtitles": [
                 [
-                    "person",
+                    "user",
                     "developer"
                 ],
                 [
@@ -620,7 +620,7 @@
             "date": "Feb. 2020 – July 2020",
             "subtitles": [
                 [
-                    "person",
+                    "user",
                     "main developer"
                 ],
                 [
@@ -646,7 +646,7 @@
             "date": "Jan. 2019 – June 2019",
             "subtitles": [
                 [
-                    "person",
+                    "user",
                     "main developer"
                 ],
                 [
@@ -672,7 +672,7 @@
             "date": "May 2018 – July 2018",
             "subtitles": [
                 [
-                    "person",
+                    "user",
                     "main developer"
                 ],
                 [
@@ -704,11 +704,11 @@
                     "LIRIS"
                 ],
                 [
-                    "person",
+                    "user",
                     "permanent and active member"
                 ],
                 [
-                    "website",
+                    "window-maximize",
                     "https://vargas-solar.com/aequitas"
                 ]
             ],
@@ -721,11 +721,11 @@
             "date": "Apr. 2023 – now",
             "subtitles": [
                 [
-                    "person",
+                    "user",
                     "active member"
                 ],
                 [
-                    "website",
+                    "window-maximize",
                     "https://dbdni.github.io/"
                 ]
             ],
@@ -738,11 +738,11 @@
             "date": "Dec. 2024 – now",
             "subtitles": [
                 [
-                    "person",
+                    "user",
                     "active member"
                 ],
                 [
-                    "website",
+                    "window-maximize",
                     "https://www.rd-alliance.org/groups/fairification-genomic-annotations-wg/activity/"
                 ]
             ],
@@ -1456,11 +1456,11 @@
             "date": "Jan. 2026 - now",
             "subtitles": [
                 [
-                    "person",
+                    "user",
                     "main maintainer"
                 ],
                 [
-                    "website",
+                    "window-maximize",
                     "https://www.grid5000.fr/w/Grid5000:Home"
                 ]
             ],
@@ -1472,11 +1472,11 @@
             "date": "Sept. 2025 - now",
             "subtitles": [
                 [
-                    "person",
+                    "user",
                     "main maintainer"
                 ],
                 [
-                    "website",
+                    "window-maximize",
                     "https://liris.cnrs.fr/equipe/drim"
                 ]
             ],
@@ -1488,11 +1488,11 @@
             "date": "April. 2024 – July 2025",
             "subtitles": [
                 [
-                    "person",
+                    "user",
                     "main maintainer"
                 ],
                 [
-                    "website",
+                    "window-maximize",
                     "https://linkedin.com/company/polimi-data-science-group"
                 ]
             ],
@@ -1505,7 +1505,7 @@
             "date": "Jan. 2023 – March 2024",
             "subtitles": [
                 [
-                    "person",
+                    "user",
                     "main representative"
                 ]
             ],
@@ -1518,11 +1518,11 @@
             "date": "Jan. 2021 – March 2024",
             "subtitles": [
                 [
-                    "person",
+                    "user",
                     "main organizer"
                 ],
                 [
-                    "website",
+                    "window-maximize",
                     "https://team.inria.fr/cedar/category/seminar"
                 ]
             ],
@@ -1535,11 +1535,11 @@
             "date": "Jan. 2021 – Dec. 2021",
             "subtitles": [
                 [
-                    "person",
+                    "user",
                     "active contributor"
                 ],
                 [
-                    "website",
+                    "window-maximize",
                     "https://stages.dix.polytechnique.fr/home"
                 ]
             ],
@@ -1664,7 +1664,7 @@
             "date": "Sept. 2025 – now",
             "subtitles": [
                 [
-                    "person",
+                    "user",
                     "magistral and lab courses"
                 ]
             ],
@@ -1680,7 +1680,7 @@
             "date": "Sept. 2025 – now",
             "subtitles": [
                 [
-                    "person",
+                    "user",
                     "contributor"
                 ]
             ],

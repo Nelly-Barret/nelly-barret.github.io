@@ -136,9 +136,11 @@ function generate_one_article(article_data, page_name) {
                 }
                 // create the subtitle with its image
                 if(i === 0) {
-                    html_1 += `<img src="images/${subtitle[0]}.svg" class="my-icon-first"/>${subtitle_text}`;
+                    html_1 += `<i class="fa-solid fa-${subtitle[0]} my-icon-first"/>${subtitle_text}`;
+					// html_1 += `<img src="images/${subtitle[0]}.svg" class="my-icon-first"/>${subtitle_text}`;
                 } else {
-                    html_1 += `<img src="images/${subtitle[0]}.svg" class="my-icon"/>${subtitle_text}`;
+                    html_1 += `<i class="fa-solid fa-${subtitle[0]} my-icon"/>${subtitle_text}`;
+					// html_1 += `<img src="images/${subtitle[0]}.svg" class="my-icon"/>${subtitle_text}`;
                 }
                 i = i + 1;
             }
@@ -227,13 +229,16 @@ function format_publication(publi) {
     publi_as_html += "<i>" + publi["venue"] + ".</i> ";
     publi_as_html += publi["year"] + ".";
 	if("paper" in publi && publi["paper"] != "") {
-		publi_as_html += "<img src='images/pdf.svg' width='20rem' style='margin-left: 0.4rem; margin-right: 0.2rem;'><a href=\"" + publi["paper"] + "\" target='_blank'>PDF paper</a>"
+		publi_as_html += "<a href=\"" + publi["paper"] + "\" target='_blank' title='PDF paper'><i class='fa-regular fa-file-pdf my-icon' style='color: black;'></i></a>"
 	}
 	if("slides" in publi && publi["slides"] != "") {
-		publi_as_html += "<img src='images/presentation.png' width='20rem' style='margin-left: 0.4rem; margin-right: 0.2rem;'><a href=\"" + publi["slides"] + "\" target='_blank'>Slides</a>"
+		publi_as_html += "<a href=\"" + publi["slides"] + "\" target='_blank' title='Slides'><i class='fa-solid fa-chalkboard-user my-icon' style='color: black;'></i></a>"
+	}
+	if("poster" in publi && publi["poster"] != "") {
+		publi_as_html += "<a href=\"" + publi["poster"] + "\" target='_blank' title='Poster'><i class='fa-regular fa-newspaper my-icon' style='color: black;'></i></a>"
 	}
 	if("video" in publi && publi["video"] != "") {
-		publi_as_html += "<img src='images/youtube.svg' width='20rem' style='margin-left: 0.4rem; margin-right: 0.2rem;'><a href=\"" + publi["video"] + "\" target='_blank'>video</a>"
+		publi_as_html += "<a href=\"" + publi["video"] + "\" target='_blank' title='Video'><i class='fa-solid fa-video my-icon' style='color: black;'></i></a>"
 	}
     publi_as_html += "</li>";
     return publi_as_html;
