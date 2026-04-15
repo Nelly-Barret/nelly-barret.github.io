@@ -3,7 +3,7 @@ IMAGES_MAP = {
     "briefcase": "",
     "building": "Partners",
     "calendar": "",
-    "code": "LOC",
+    "folder-open": "LOC",
     "code-branch": "Repository",
     "display": "",
     "dollar": "Grant",
