@@ -32,7 +32,7 @@ def generate_long_cv(template, data_file_url, generated_filename):
         for page_name in page_names:
             heading = generated_doc.add_heading()
             run_heading = heading.add_run()
-            run_heading.add_picture("images/{IMAGE_SECTIONS[page_name]}.png", width=Inches(0.25))
+            run_heading.add_picture(f"images/{IMAGE_SECTIONS[page_name]}.png", width=Inches(0.25))
             run_heading.add_text(f" {pretty_page_names[page_name]}")  # keep a space after the section image
             #generated_doc.add_heading(pretty_page_names[page_name], level=1)
             paragraph_horizontal_rule = generated_doc.add_paragraph()
