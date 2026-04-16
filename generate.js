@@ -241,10 +241,41 @@ function format_publication(publi) {
 		publi_as_html += "<a href=\"" + publi["video"] + "\" target='_blank' title='Video'><i class='fa-solid fa-video my-icon' style='color: black;'></i></a>"
 	}
 	if("bib" in publi) {
-		publi_as_html += "<a class='btn btn-primary' data-toggle='collapse' href='#collapseExample' role='button' aria-expanded='false' aria-controls='collapseExample'><i class='fa-brands fa-tex my-icon' style='color: black;'></i></a><div class='collapse' id='collapse" + publi["bib"]["citation"] + "><div class='card card-body'>" + publi["bib"]["citation"] + "</div></div>";
+		publi_as_html += "<button data-toggle='collapse' data-target='#collapse" + publi["bib"]["citation"] + "' aria-expanded='false' aria-controls='collapse" + publi["bib"]["citation"] + "' style='border: none; background-color: transparent;'><i class='fa-brands fa-tex my-icon' style='color: black;'></i></a></li><div class='collapse' id='collapse" + publi["bib"]["citation"] + "'><div class='card card-body'>" + display_bib(publi) + "</div></div>";
+	} else {
+		publi_as_html += "</li>";
 	}
-    publi_as_html += "</li>";
     return publi_as_html;
+}
+
+function display_bib(publi_record) {
+	html_bib = "@" + publi_record["bib"]["type"] + " {" + publi_record["bib"]["citation"] + ", <br/>";
+	html_bib += "&nbsp;&nbsp;title={" + publi_record["title"] + "}, <br/>";
+	authors = publi_record["authors"].map(author => author["last"] + ", " + author["first"] + " and ");
+	console.log(authors);
+	authors = authors.join("");
+	authors = authors.substring(0, authors.length - 5) // remove last "and" from the string
+	html_bib += "&nbsp;&nbsp;author={" + authors + "}, <br/>";
+	if(publi_record["bib"]["type"] == "phdthesis") {
+		html_bib += "&nbsp;&nbsp;school={" + publi_record["venue"] + "}, <br/>";
+	} else {
+		html_bib += "&nbsp;&nbsp;booktitle={" + publi_record["venue"] + "}, <br/>";
+	}
+	html_bib += "&nbsp;&nbsp;year={" + publi_record["year"] + "}, <br/>";
+	// add all other fields in the bib entry
+	for(const [key, value] of Object.entries(publi_record["bib"])) {
+		if(!["type", "citation"].includes(key)) {
+			// this is NOT a key that we already put (authors, title, type)
+			html_bib += "&nbsp;&nbsp;" + key + "={" + value + "}, <br/>";
+		}
+	}
+	// remove comma after last entry and add final }
+	console.log(html_bib);
+	html_bib = html_bib.substring(0, html_bib.length - 7);
+	console.log(html_bib);
+	html_bib += "<br/>}";
+	console.log(html_bib);
+	return html_bib;
 }
 
 function display_authors(author_list, style, main_author) {
