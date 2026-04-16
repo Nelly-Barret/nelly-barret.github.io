@@ -98,7 +98,7 @@ function generate_publication_page(page_data, sort_order) {
 }
 
 /* individual functions */
-// title is used for publication article titles only (which can be the cateogry or the year of publication)
+// title is used for publication article titles only (which can be the category or the year of publication)
 function generate_one_article(article_data, page_name) {
     console.log("generate one article");
     console.log(article_data);
@@ -239,6 +239,9 @@ function format_publication(publi) {
 	}
 	if("video" in publi && publi["video"] != "") {
 		publi_as_html += "<a href=\"" + publi["video"] + "\" target='_blank' title='Video'><i class='fa-solid fa-video my-icon' style='color: black;'></i></a>"
+	}
+	if("bib" in publi) {
+		publi_as_html += "<a class='btn btn-primary' data-toggle='collapse' href='#collapseExample' role='button' aria-expanded='false' aria-controls='collapseExample'><i class='fa-brands fa-tex my-icon' style='color: black;'></i></a><div class='collapse' id='collapse" + publi["bib"]["citation"] + "><div class='card card-body'>" + publi["bib"]["citation"] + "</div></div>";
 	}
     publi_as_html += "</li>";
     return publi_as_html;

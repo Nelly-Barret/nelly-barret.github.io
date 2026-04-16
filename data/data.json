@@ -820,7 +820,15 @@
                     "url": "https://dl.acm.org/doi/10.1145/3774303.3774315",
                     "paper": "https://sigmodrecord.org/publications/sigmodRecord/2509/pdfs/08_Reports_Barret.pdf",
                     "main_author": false,
-                    "category": "journal"
+                    "category": "journal",
+					"bib": {
+						"type": "article",
+						"citation": "barret2025diversity",
+						"volume": 34,
+						"number": 3,
+						"pages": "40--43",
+						"publisher": "ACM New York, NY, USA"
+					}
                 },
                 {
                     "authors": [
@@ -847,7 +855,15 @@
                     "url": "https://link.springer.com/article/10.1186/s12911-025-03188-0",
                     "paper": "https://www.researchgate.net/publication/396456781_I-ETL_an_interoperability-aware_health_metadata_pipeline_to_enable_federated_analyses",
                     "main_author": true,
-                    "category": "journal"
+                    "category": "journal",
+					"bib": {
+						"type": "article",
+						"citation": "barret2025etl",
+						"volume": 25,
+						"number": 1,
+						"pages": 375,
+						"publisher": "Springer"
+					}
                 },
                 {
                     "authors": [
@@ -874,7 +890,14 @@
                     "url": "https://www.sciencedirect.com/science/article/abs/pii/S0306437924001212",
                     "paper": "https://hal.science/hal-04727209",
                     "main_author": true,
-                    "category": "journal"
+                    "category": "journal",
+					"bib": {
+						"type": "article",
+						"citation": "barret2025finding",
+						"volume": 127,
+						"pages": "102463",
+						"publisher": "Elsevier"
+					}
                 },
                 {
                     "authors": [
@@ -897,7 +920,14 @@
                     "url": "https://joss.theoj.org/papers/10.21105/joss.02805",
                     "paper": "https://joss.theoj.org/papers/10.21105/joss.02805",
                     "main_author": true,
-                    "category": "journal"
+                    "category": "journal",
+					"bib": {
+						"type": "article",
+						"citation": "barret2021predihood",
+						"volume": 6,
+						"number": 61,
+						"pages": "2805"
+					}
                 },
                 {
                     "authors": [
@@ -928,7 +958,15 @@
                     "url": "https://link.springer.com/chapter/10.1007/978-3-030-83014-4_13",
                     "paper": "https://hal.science/hal-05388570",
                     "main_author": true,
-                    "category": "journal"
+                    "category": "journal",
+					"bib": {
+						"type": "inproceedings",
+						"citation": "barret2021environmental",
+						"volume": 1446,
+						"pages": "267-292",
+						"publisher": "Communications in Computer and Information Science"
+
+					}
                 }
             ]
         },
@@ -965,7 +1003,13 @@
                     "paper": "https://www.researchgate.net/publication/392478298_Leveraging_Profiling_to_Bridge_Healthcare_Silos_for_Federated_Analyses",
 					"slides": "https://zenodo.org/records/19410215",
                     "main_author": true,
-                    "category": "int_conf"
+                    "category": "int_conf",
+					"bib": {
+						"type": "inproceedings",
+						"citation": "barret2025leveraging",
+						"pages": "20--28",
+						"organization": "Springer"
+					}
                 },
                 {
                     "authors": [
@@ -989,7 +1033,14 @@
                     "paper": "https://openproceedings.org/2024/conf/edbt/paper-31.pdf",
 					"slides": "https://zenodo.org/records/19410275",
                     "main_author": true,
-                    "category": "int_conf"
+                    "category": "int_conf",
+					"bib": {
+						"type": "inproceedings",
+						"citation": "barret2024computing",
+						"volume": "27",
+						"pages": "94--107",
+						"publisher": "OpenProceedings"
+					}
                 },
                 {
                     "authors": [
@@ -1021,7 +1072,13 @@
                     "paper": "https://hal.science/hal-04185938",
                     "slides": "https://zenodo.org/records/19572618",
                     "main_author": false,
-                    "category": "int_conf"
+                    "category": "int_conf",
+					"bib": {
+						"type": "inproceedings",
+						"citation": "barret2023user",
+						"pages": "488--496",
+						"organization": "Springer"
+					}
                 },
                 {
                     "authors": [
@@ -1049,7 +1106,13 @@
                     "paper": "https://hal.science/hal-04131977",
                     "slides": "https://zenodo.org/records/19572448",
                     "main_author": true,
-                    "category": "int_conf"
+                    "category": "int_conf",
+					"bib": {
+						"type": "inproceedings",
+						"citation": "barret2023exploring",
+						"pages": "163--179",
+						"organization": "Springer"
+					}
                 },
                 {
                     "authors": [
@@ -1073,7 +1136,13 @@
                     "paper": "https://dl.acm.org/doi/10.1145/3511808.3557179",
                     "poster": "https://zenodo.org/records/19572225",
                     "main_author": true,
-                    "category": "int_conf"
+                    "category": "int_conf",
+					"bib": {
+						"type": "inproceedings",
+						"citation": "barret2022abstra",
+						"pages": "4803--4807",
+						"publisger": "Association for Computing Machinery"
+					}
                 },
                 {
                     "authors": [
@@ -1101,7 +1170,13 @@
                     "paper": "https://www.scitepress.org/PublicationsDetail.aspx?ID=YRZoV7ChM6U=&t=1",
                     "slides": "https://zenodo.org/records/19572133",
                     "main_author": true,
-                    "category": "int_conf"
+                    "category": "int_conf",
+					"bib": {
+						"type": "inproceedings",
+						"citation": "barret2020predicting",
+						"pages": "294--301",
+						"organization": "SCITEPRESS-Science and Technology Publications"
+					}
                 }
             ]
         },
@@ -1124,7 +1199,12 @@
 					"url": "https://hal.science/hal-05579539",
 					"paper": "https://hal.science/hal-05579539",
 					"slides": "https://zenodo.org/records/19328190",
-					"category": "int_work"
+					"category": "int_work",
+					"bib": {
+						"type": "article",
+						"citation": "barret2026semistructquest",
+						"publisher": "CEUR Workshop Proceedings"
+					}
 				},
                 {
                     "authors": [
@@ -1150,7 +1230,13 @@
                     "url": "https://ieeexplore.ieee.org/document/10555060",
                     "paper": "https://inria.hal.science/hal-04591933",
                     "slides": "https://zenodo.org/records/19572018",
-                    "category": "int_work"
+                    "category": "int_work",
+					"bib": {
+						"type": "inproceedings",
+						"citation": "barret2024finding",
+						"pages": "365--369",
+						"organization": "IEEE"
+					}
                 },
                 {
                     "authors": [
@@ -1186,7 +1272,13 @@
                     "paper": "https://inria.hal.science/hal-04591897",
                     "slides": "https://zenodo.org/records/19571921",
                     "main_author": false,
-                    "category": "int_work"
+                    "category": "int_work",
+					"bib": {
+						"type": "inproceedings",
+						"citation": "balalau2024graph",
+						"pages": "370--374",
+						"organization": "IEEE"
+					}
                 }
             ]
         },
@@ -1223,7 +1315,13 @@
                     "paper": "https://hal.science/hal-04388609",
                     "slides": "https://zenodo.org/records/19571833",
                     "main_author": true,
-                    "category": "nat_conf"
+                    "category": "nat_conf", 
+					"bib": {
+						"type": "article",
+						"citation": "barret2024exploration",
+						"pages": "421--422",
+						"journal": "Revue des Nouvelles Technologies de l'Information"
+					}
                 },
                 {
                     "authors": [
@@ -1258,7 +1356,13 @@
                     "url": "https://editions-rnti.fr/?inprocid=1002526",
                     "paper": "https://editions-rnti.fr/?inprocid=1002526",
                     "main_author": true,
-                    "category": "nat_conf"
+                    "category": "nat_conf",
+					"bib": {
+						"type": "article",
+						"pages": "429--432",
+						"volume": "Extraction et Gestion des connaissances, RNTI-E-35",
+						"publisher": "Revue des Nouvelles Technologies de l'Information"
+					}
                 }
             ]
         },
@@ -1291,7 +1395,14 @@
                     "paper": "https://hal.science/hal-04131977",
                     "slides": "https://zenodo.org/records/19571641",
                     "main_author": true,
-                    "category": "demo"
+                    "category": "demo",
+					"bib": {
+						"type": "inproceedings",
+						"citation": "barret2023pathways",
+						"pages": "91--95",
+						"organization": "Springer",
+						"booktitle": "European Semantic Web Conference"
+					}
                 },
                 {
                     "authors": [
@@ -1307,7 +1418,11 @@
                     "paper": "https://hal.science/hal-03344102/document",
                     "poster": "https://zenodo.org/records/19570894",
                     "main_author": true,
-                    "category": "demo"
+                    "category": "demo",
+					"bib": {
+						"type": "inproceedings",
+						"citation": "barret2021facilitating"
+					}
                 },
                 {
                     "authors": [
@@ -1332,8 +1447,15 @@
                     "venue": "ACM SIGSPATIAL International Conference on Advances in Geographic Information Systems",
                     "year": 2019,
                     "url": "https://dl.acm.org/doi/10.1145/3347146.3359345",
+                    "paper": "https://hal.science/hal-05388560",
                     "main_author": true,
-                    "category": "demo"
+                    "category": "demo",
+					"bib": {
+						"type": "inproceedings",
+						"citation": "barret2019spatial",
+						"booktitle": "Proceedings of the 27th ACM SIGSPATIAL International Conference on Advances in Geographic Information Systems",
+						"pages": "580--583"
+					}
                 }
             ]
         },
@@ -1354,7 +1476,11 @@
                     "paper": "https://theses.fr/2024IPPAX001",
                     "slides": "https://zenodo.org/records/17679803",
                     "main_author": true,
-                    "category": "manuscript"
+                    "category": "manuscript",
+					"bib": {
+						"type": "phdthesis",
+						"citation": "barret2024user"
+					}
                 }, {
                     "authors": [
                         {
