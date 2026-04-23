@@ -1555,7 +1555,7 @@
 				"[B] RCIS (Research Challenges in Information Science): 2026 (forum pc member)", 
 				"[C] ADBIS (Advances in DataBases and Information Systems): 2026 (pc member), 2025 (pc member)", 
                 "[N/A] DBKDA (Databases, Knowledge, and Data Applications): 2025 (pc member)", 
-				"[N/A] BDA (Gestion de Données – Principes, Technologies et Applications): 2025 (demonstrations reviewer)"
+				"[N/A] BDA (Gestion de Données – Principes, Technologies et Applications): 2025 (demonstrations reviewer), 2026 (pc member)"
             ]
         }, {
             "title": "Journal review board member",
@@ -1815,8 +1815,15 @@
                 "ISN2: network course redesign",
                 "CGA: member of the Coordination and Management Committee (Comité de Gestion et d'Animation)"
             ]
-        },
-        {
+        }, {
+			"title": "Training",
+			"date": "Sept. 2025 - now",
+			"descriptions": [
+				"Training on doctoral supervision (18 hours)",
+				"Training on student evaluation (4 hours)",
+				"Training on APC -- Competency-based approach (2 days)"
+			]
+		}, {
             "title": "Previous courses",
             "date": "Feb. 2022 – May 2024",
             "descriptions": [
