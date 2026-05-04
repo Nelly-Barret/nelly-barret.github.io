@@ -1787,7 +1787,7 @@
     ],
     "teaching_responsibilities": [
         {
-            "title": "Recurring courses",
+            "title": "Recurring courses at INSA Lyon",
             "date": "Sept. 2025 – now",
             "subtitles": [
                 [
@@ -1796,11 +1796,11 @@
                 ]
             ],
             "descriptions": [
-                "ISN1: informatique et société numérique (fall, INSA Lyon, engineer 1st year, in French): algorithmics, Python developement",
-                "ISN2: informatique et société numérique (spring, INSA Lyon, engineer 1st year, in French): algorithmics, functional decomposition, introduction to networks, guided hands-on project",
-                "ISN4: informatique et société numérique (spring, INSA Lyon, engineer 2nd year, in French): object-oriented programming, graphical interfaces, code versioning, hand-on project",
-                "SOL: systèmes et outils logiciels (fall, INSA Lyon, engineer 1st year, in French): Microsoft Office and LibreOffice suite, basic Linux commands", 
-				"P2I: Projets Pluridisciplinaires d'Initiation à l'Ingénierie (spring, INSA Lyon, engineer 2nd year, in French): mecatronic and robotics hand-on project with a part dedicated to programming and communication between objects"
+                "ISN1: Informatique et Société Numérique (fall, engineer 1st year): algorithmics, Python developement",
+                "ISN2: Informatique et Société Numérique (spring, engineer 1st year): algorithmics, functional decomposition, introduction to networks, guided hands-on project",
+                "ISN4: Informatique et Société Numérique (spring, engineer 2nd year): object-oriented programming, graphical interfaces, code versioning, hand-on project",
+                "SOL: Systèmes et Outils Logiciels (fall, engineer 1st year): Microsoft Office and LibreOffice suite, basic Linux commands", 
+				"P2I: Projets Pluridisciplinaires d'Initiation à l'Ingénierie (spring, engineer 2nd year): mecatronic and robotics hand-on project with a part dedicated to programming and communication between objects"
             ]
         },
         {
