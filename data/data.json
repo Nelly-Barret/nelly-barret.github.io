@@ -197,7 +197,7 @@
             "subtitles": [
                 [
                     "user",
-                    "people-group (tasks 4.1, 4.2)"
+                    "contributor (tasks 4.1, 4.2)"
                 ],
                 [
                     "dollar",
@@ -247,7 +247,7 @@
             "subtitles": [
                 [
                     "user",
-                    "people-group"
+                    "contributor"
                 ],
                 [
                     "dollar",
@@ -543,7 +543,7 @@
             "subtitles": [
                 [
                     "user",
-                    "people-group"
+                    "contributor"
                 ],
                 [
                     "hourglass",
@@ -1533,12 +1533,13 @@
                 {
             "title": "Conference and workshop organizer",
             "descriptions": [
-                "[N/A] CORIA-TALN (Conférence en Recherche d’Information et Applications - Traitement Automatique des Langues Naturelles): 2027"
+                "[N/A] CORIA-TALN (Conférence en Recherche d'Information et Applications - Traitement Automatique des Langues Naturelles): 2027"
             ]
         },{
             "title": "Conference and workshop chair",
             "descriptions": [
-                "[A] CMLS (Conceptual Modeling for Life Sciences workshop): 2025, 2026"
+                "[A] CMLS (Conceptual Modeling for Life Sciences workshop): 2025 (workshop chair), 2026 (workshop chair)", 
+				"[B] EDBT/ICDT Joint Conference (Extending DataBase Technology): 2027 (Diversity & Inclusion Chair)"
             ]
         },
         {
@@ -1657,12 +1658,12 @@
             ]
         },
         {
-            "title": "Internship application website people-group",
+            "title": "Internship application website contributor",
             "date": "Jan. 2021 – Dec. 2021",
             "subtitles": [
                 [
                     "user",
-                    "active people-group"
+                    "active contributor"
                 ],
                 [
                     "display",
@@ -1795,25 +1796,27 @@
                 ]
             ],
             "descriptions": [
-                "ISN1: informatique et société numérique (fall, INSA Lyon, engineer 1st year, in French)",
-                "ISN2: informatique et société numérique (spring, INSA Lyon, engineer 1st year, in French)",
-                "ISN4: informatique et société numérique (spring, INSA Lyon, engineer 2nd year, in French)",
-                "SOL: systèmes et outils logiciels (fall, INSA Lyon, engineer 1st year, in French)"
+                "ISN1: informatique et société numérique (fall, INSA Lyon, engineer 1st year, in French): algorithmics, Python developement",
+                "ISN2: informatique et société numérique (spring, INSA Lyon, engineer 1st year, in French): algorithmics, functional decomposition, introduction to networks, guided hands-on project",
+                "ISN4: informatique et société numérique (spring, INSA Lyon, engineer 2nd year, in French): object-oriented programming, graphical interfaces, code versioning, hand-on project",
+                "SOL: systèmes et outils logiciels (fall, INSA Lyon, engineer 1st year, in French): Microsoft Office and LibreOffice suite, basic Linux commands", 
+				"P2I: Projets Pluridisciplinaires d'Initiation à l'Ingénierie (spring, INSA Lyon, engineer 2nd year, in French): mecatronic and robotics hand-on project with a part dedicated to programming and communication between objects"
             ]
         },
         {
-            "title": "Involvement in teaching teams",
+            "title": "Involvement in INSA",
             "date": "Sept. 2025 – now",
             "subtitles": [
                 [
                     "user",
-                    "people-group"
+                    "contributor"
                 ]
             ],
             "descriptions": [
                 "ISN2: new hands-on project topic",
                 "ISN2: network course redesign",
-                "CGA: member of the Coordination and Management Committee (Comité de Gestion et d'Animation)"
+                "CGA: member of the Coordination and Management Committee (Comité de Gestion et d'Animation)", 
+				"First year admission interviews for INSA Lyon"
             ]
         }, {
 			"title": "Training",
