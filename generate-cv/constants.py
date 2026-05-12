@@ -7,6 +7,7 @@ IMAGES_MAP = {
     "code-branch": "Repository",
     "display": "Website",
     "dollar": "Grant",
+	"flag": "Language",
     "folder-open": "LOC",
     "graduation-cap": "Major",
     "graduation-cap-2": "Minor",
