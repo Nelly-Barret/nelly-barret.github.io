@@ -1805,34 +1805,28 @@
                 "ISN1: Informatique et Société Numérique (fall, engineer 1st year): algorithmics, Python developement",
                 "ISN2: Informatique et Société Numérique (spring, engineer 1st year): algorithmics, functional decomposition, introduction to networks, guided hands-on project",
                 "ISN4: Informatique et Société Numérique (spring, engineer 2nd year): object-oriented programming, graphical interfaces, code versioning, hand-on project",
-                "SOL: Systèmes et Outils Logiciels (fall, engineer 1st year): Microsoft Office and LibreOffice suite, basic Linux commands", 
-				"P2I: Projets Pluridisciplinaires d'Initiation à l'Ingénierie (spring, engineer 2nd year): mecatronic and robotics hand-on project with a part dedicated to programming and communication between objects"
+                "SOL: Systèmes et Outils Logiciels (fall, engineer 1st year): Microsoft Office and LibreOffice suite, basic Linux commands"
             ]
         },
         {
-            "title": "Involvement in INSA",
+            "title": "Involvement in INSA teaching teams",
             "date": "Sept. 2025 – now",
             "subtitles": [
                 [
                     "user",
                     "contributor"
+                ], [
+                    "map-pin",
+                    "INSA Lyon (FR)"
                 ]
             ],
             "descriptions": [
-                "ISN2: new hands-on project topic",
-                "ISN2: network course redesign",
+                "ISN1, ISN2, ISN4, SOL: course improvement and/or redesign",
+				"ISN1, ISN2, ISN4: Python and Visual Studio Code setup",
                 "CGA: member of the Coordination and Management Committee (Comité de Gestion et d'Animation)", 
 				"First year admission interviews for INSA Lyon"
             ]
         }, {
-			"title": "Training",
-			"date": "Sept. 2025 - now",
-			"descriptions": [
-				"Training on doctoral supervision (18 hours)",
-				"Training on student evaluation (4 hours)",
-				"Training on APC -- Competency-based approach (2 days)"
-			]
-		}, {
             "title": "Previous courses",
             "date": "Feb. 2022 – May 2024",
             "descriptions": [
@@ -1843,6 +1837,40 @@
             ]
         }
     ],
+	"training": [
+		{
+			"title": "Training on doctoral supervision (18 hours)",
+			"date": "Jan. 2026 - April 2026",
+			"url": "https://fedora.insa-lyon.fr/fr/page/seminaire-encadrants",
+			"descriptions": [
+				"The PhD journey as a system",
+				"Human and organizational factors for a successful PhD journey",
+				"Scientific co-production between the PhD student and the advisors",
+				"Unerstanding interculturality within the PhD eco-system",
+				"Evolution of the supervisor's role during a PhD and through a career"
+			]
+		}, {
+			"title": "Training on student evaluation (4 hours)",
+			"date": "April 2026",
+			"url": "",
+			"descriptions": [
+				"How to evaluate students within the APC framework (Competency-based approach)?",
+				"How to evaluate students in the era of GenAI?"
+			]
+		}, {
+			"title": "ACM Peer Reviewer Training (1 hour)",
+			"date": "May 2026",
+			"url": "https://reviewers.acm.org/training-course",
+			"descriptions": [
+				"Peer-review overview",
+				"Assessing your suitability to review",
+				"Review touchstones",
+				"Evaluating the paper",
+				"Submitting your review",
+				"Artifact review and badging"
+			]
+		}
+	],
     "advising": [
         {
             "title": "Engineer",
@@ -1853,7 +1881,7 @@
 		{
             "title": "Master students",
             "descriptions": [
-				"Inès Boudjeli on \"Nettoyage et sélection automatique de données pour l'apprentissage machine\" (spring 2026, INSA Lyon, master 2nd year)",
+				"Inès Boudjeli on \"Débruitage et sélection automatique de signaux cardiaques pour la prédiction médicale\" (spring 2026, Université de Dijon, master 2nd year)",
                 "Ahmed Bel Hadj Youssef on \"Construction automatique de domaines dans les data meshs\" (fall 2025, INSA Lyon, engineer 5th year)",
                 "Antoine Gauquier on \"Path exploration of ConnectionLens graphs\" (summer 2022, IMT Nord-Europe, master 1st year)"
             ]
