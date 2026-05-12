@@ -75,6 +75,7 @@ def generate_long_cv(template, data_file_url, generated_filename):
                                         subtitle_text = one_subtitle[1]
                                         run_text = paragraph.add_run()
                                         # run.add_picture(f"images/{subtitle_img}.png", width=Inches(0.15))
+                                        print(subtitle_img)
                                         run_text.add_text(f"{IMAGES_MAP[subtitle_img]}: ")  # Role, Grant, Website, etc
                                         run_text.italic = True
                                         if subtitle_img in ["website", "code-branch"] and subtitle_text.startswith("https://"):

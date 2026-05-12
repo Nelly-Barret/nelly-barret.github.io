@@ -31,6 +31,7 @@ IMAGE_SECTIONS = {
     "professional_service": "group",
     "reviewing_activities": "institution",
     "institutional_responsibilities": "responsibilities",
+	"training": "training",
     "talks": "presentation",
     "teaching_responsibilities": "teaching",
     "advising": "student-management",

@@ -1841,7 +1841,12 @@
 		{
 			"title": "Training on doctoral supervision (18 hours)",
 			"date": "Jan. 2026 - April 2026",
-			"url": "https://fedora.insa-lyon.fr/fr/page/seminaire-encadrants",
+			"subtitles": [
+                [
+                    "display",
+                    "https://fedora.insa-lyon.fr/fr/page/seminaire-encadrants"
+                ]
+            ], 
 			"descriptions": [
 				"The PhD journey as a system",
 				"Human and organizational factors for a successful PhD journey",
@@ -1852,15 +1857,19 @@
 		}, {
 			"title": "Training on student evaluation (4 hours)",
 			"date": "April 2026",
-			"url": "",
 			"descriptions": [
 				"How to evaluate students within the APC framework (Competency-based approach)?",
-				"How to evaluate students in the era of GenAI?"
+				"How to evaluate students in the GenAI era?"
 			]
 		}, {
 			"title": "ACM Peer Reviewer Training (1 hour)",
 			"date": "May 2026",
-			"url": "https://reviewers.acm.org/training-course",
+			"subtitles": [
+                [
+                    "display",
+                    "https://reviewers.acm.org/training-course"
+                ]
+            ],
 			"descriptions": [
 				"Peer-review overview",
 				"Assessing your suitability to review",
