@@ -722,7 +722,7 @@
             "subtitles": [
                 [
                     "user",
-                    "active member"
+                    "permanent and active member"
                 ],
                 [
                     "display",
@@ -730,7 +730,7 @@
                 ]
             ],
             "descriptions": [
-                "I co-lead the SCOUT action with Madhulika Mohanty (researcher, Inria Saclay) and Sujaya Maiyya (assistant professor, Univ. of Waterloo, USA). It aims at facilitating DEI efforts in the database community. My main proposal is a checklist to easily comply with inclusive submission guidelines; it will be integrated into EasyChair and CMT."
+                "I lead the SCOUT action which aims at facilitating DEI efforts in the database community. My main proposal is a checklist to easily comply with inclusive submission guidelines; it will be integrated into EasyChair and CMT."
             ]
         },
         {
@@ -739,7 +739,7 @@
             "subtitles": [
                 [
                     "user",
-                    "active member"
+                    "member"
                 ],
                 [
                     "display",
@@ -1783,6 +1783,27 @@
                     "year": "Sept. 2024"
                 }
             ]
+        }, {
+			"title": "Event orginzation",
+			"descriptions": [
+				{
+					"title": "DRIM team annual seminar co-organizer (LIRIS)",
+					"venue": "Miribel park (France)",
+					"year": "Sept. 2026",
+					"crowd": "30 people",
+					"url": ""
+				}, {
+					"title": "Open debate on AI for/to teaching at INSA Lyon - FIMISkills (INSA)",
+					"venue": "INSA Lyon",
+					"year": "Sept. 2026",
+					"crowd": "50 people"
+				}, {
+					"title": "Introduction to scientific research for INSA Lyon engineers (INSA)",
+					"venue": "INSA Lyon",
+					"year": "Sept. 2026",
+					"crowd": "100-150 people"
+				}
+			]
         }
     ],
     "teaching_responsibilities": [
@@ -1803,7 +1824,7 @@
             ],
             "descriptions": [
                 "ISN1: Informatique et Société Numérique (fall, engineer 1st year): algorithmics, Python developement",
-                "ISN2: Informatique et Société Numérique (spring, engineer 1st year): algorithmics, functional decomposition, introduction to networks, guided hands-on project",
+                "ISN2: Informatique et Société Numérique (spring, engineer 1st year): algorithmics, functional decomposition, introduction to networks, recursivity, guided hands-on project",
                 "ISN4: Informatique et Société Numérique (spring, engineer 2nd year): object-oriented programming, graphical interfaces, code versioning, hand-on project",
                 "SOL: Systèmes et Outils Logiciels (fall, engineer 1st year): Microsoft Office and LibreOffice suite, basic Linux commands"
             ]
@@ -1824,7 +1845,8 @@
                 "ISN1, ISN2, ISN4, SOL: course improvement and/or redesign",
 				"ISN1, ISN2, ISN4: Python and Visual Studio Code setup",
                 "CGA: member of the Coordination and Management Committee (Comité de Gestion et d'Animation)", 
-				"First year admission interviews for INSA Lyon"
+				"First year admission interviews for INSA Lyon",
+				"Industrial 1st year intership referee for 3-5 students each year"
             ]
         }, {
             "title": "Previous courses",
