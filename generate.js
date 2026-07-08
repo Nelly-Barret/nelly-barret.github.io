@@ -247,7 +247,7 @@ function format_publication(publi) {
 		publi_as_html += "<a href=\"" + publi["video"] + "\" target='_blank' title='Video'><i class='fa-solid fa-video my-icon' style='color: black;'></i></a>"
 	}
 	if("bib" in publi) {
-		publi_as_html += "<button data-toggle='collapse' data-target='#collapse" + publi["bib"]["citation"] + "' aria-expanded='false' aria-controls='collapse" + publi["bib"]["citation"] + "' style='border: none; background-color: transparent;'><i class='fa-brands fa-tex my-icon' style='color: black;'></i></a></li><div class='collapse' id='collapse" + publi["bib"]["citation"] + "'><div class='card card-body'>" + display_bib(publi) + "</div></div>";
+		publi_as_html += "<button data-toggle='collapse' href='#collapse" + publi["bib"]["citation"] + "' aria-expanded='false' aria-controls='collapse" + publi["bib"]["citation"] + "' style='border: none; background-color: transparent;'><i class='fa-brands fa-tex my-icon' style='color: black;'></i></a></li><div class='collapse' id='collapse" + publi["bib"]["citation"] + "'><div class='card card-body'>" + display_bib(publi) + "</div></div>";
 	} else {
 		publi_as_html += "</li>";
 	}
