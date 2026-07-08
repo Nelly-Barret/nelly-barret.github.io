@@ -171,15 +171,20 @@ function generate_one_article(article_data, page_name) {
                     if(typeof(description) == "object") {
                         // an object description with a text and a url
                         if("url" in description) {
-                            if(description["url"].includes("zenodo")) {
+                            if("type" in description) {
+								if(description["type"] == "seminar" || description["type"] == "interactive course")
                                 icon = "fa-solid fa-chalkboard-user"
-                            } else if(description["url"].includes("youtube")) {
+                            } else if(description["type"] == "video") {
                                 icon = "fa-brands fa-youtube"
+                            } else if(description["type"] == "event") {
+                                icon = "fa-users-between-lines"
+                            } else if(description["type"] == "round table" || description["type"] == "speed meetings" || description["type"] == "speed forum") {
+                                icon = "fa-brands fa-comments"
                             } else {
                                 icon = "fa-solid fa-chalkboard-user"
                             }
                             
-                            html_1 += `<li>${description["title"]}<a href="${description["url"]}" target="_blank"><i class="${icon} my-icon"></i></a></li>`;
+                            html_1 += `<li>${description["title"]} (${description["type"]}, ${description["venue"]}, ${description["year"]})<a href="${description["url"]}" target="_blank"><i class="${icon} my-icon"></i></a></li>`;
                         } else {
                             html_1 += `<li>${description["title"]}</li>`;
                         }

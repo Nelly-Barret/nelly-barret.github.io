@@ -1682,42 +1682,49 @@
                 {
                     "title": "Multimodal data without borders: integration and exploration to the rescue",
                     "url": "https://zenodo.org/records/17639744",
+					"type": "seminar",
                     "venue": "IRIT, Toulouse, FR",
                     "year": "Oct. 2025"
                 },
                 {
                     "title": "Leveraging profiling to bridge healthcare silos",
                     "url": "https://zenodo.org/records/17642200",
+					"type": "seminar",
                     "venue": "FIL, Lyon, FR",
                     "year": "June 2025"
                 },
                 {
                     "title": "Entrepôts de santé : de l'intégration à l'analyse fédérée",
                     "url": "https://zenodo.org/records/17642343",
+					"type": "seminar",
                     "venue": "GDR MaDICS, Toulouse, FR",
                     "year": "May 2025"
                 },
                 {
                     "title": "Integrating and exploring heterogeneous datasets",
                     "url": "https://zenodo.org/records/17679336",
+					"type": "seminar",
                     "venue": "Politecnico di Milano, Milan, IT",
                     "year": "April 2024"
                 },
                 {
                     "title": "Heterogeneous datasets: a tale of integration and exploration",
                     "url": "https://zenodo.org/records/17679827",
+					"type": "seminar",
                     "venue": "LIRIS, Lyon, FR",
                     "year": "Jan. 2024"
                 },
                 {
                     "title": "User-oriented exploration of semi-structured datasets",
                     "url": "https://zenodo.org/records/17679729",
+					"type": "seminar",
                     "venue": "LIB, Dijon, FR",
                     "year": "Jan. 2024"
                 },
                 {
                     "title": "User-oriented exploration of semi-structured datasets",
                     "url": "https://zenodo.org/records/17679385",
+					"type": "seminar",
                     "venue": "LISN, Paris, FR",
                     "year": "Oct. 2023"
                 }
@@ -1727,8 +1734,9 @@
             "title": "Panels",
             "descriptions": [
                 {
-                    "title": "Quand l'intelligence artificielle hérite de nos préjugés (video).",
+                    "title": "Quand l'intelligence artificielle hérite de nos préjugés",
                     "url": "https://www.youtube.com/watch?v=xlCy-D-kpvc",
+					"type": "video",
                     "venue": "Fête de la Science, Lyon, FR",
                     "year": "Oct. 2025"
                 }
@@ -1738,26 +1746,30 @@
             "title": "Vulgarization",
             "descriptions": [
                 {
-                    "title": "From data to journalism (interactive course)",
+                    "title": "From data to journalism",
                     "url": "https://zenodo.org/records/17679761",
+					"type": "interactive course",
                     "venue": "Lycée international de Palaiseau, Palaiseau, FR",
                     "year": "Jan. 2024"
                 },
                 {
-                    "title": "Intelligence artificielle : un outil pour le journalisme (seminar)",
+                    "title": "Intelligence artificielle : un outil pour le journalisme",
                     "url": "https://zenodo.org/records/17680052",
+					"type": "seminar",
                     "venue": "FI forum, Paris, FR",
                     "year": "July 2023"
                 },
                 {
-                    "title": "ConnectionStudio : des données au journalisme (forum)",
+                    "title": "ConnectionStudio : des données au journalisme",
                     "url": "https://zenodo.org/records/17680102",
+					"type": "forum",
                     "venue": "DataJournos, Paris, FR",
                     "year": "May 2023"
                 },
                 {
-                    "title": "Recherche en integration de données : le cas de ConnectionLens (seminar)",
+                    "title": "Recherche en integration de données : le cas de ConnectionLens",
                     "url": "https://zenodo.org/records/17679370",
+					"type": "seminar",
                     "venue": "Online",
                     "year": "March 2022"
                 }
@@ -1767,18 +1779,21 @@
             "title": "Female empowerment talks",
             "descriptions": [
                 {
-                    "title": "Femmes scientifiques (round table for middle school students)",
+                    "title": "Femmes scientifiques",
+					"type": "round table",
                     "venue": "Lyon, FR",
                     "year": "Nov. 2025"
                 },
                 {
-                    "title": "Journée Filles, Mathématiques, Informatique (speed meetings)",
+                    "title": "Journée Filles, Mathématiques, Informatique",
+					"type": "speed meetings",
                     "venue": "Lyon, FR",
                     "year": "Nov. 2025"
                 },
                 {
-                    "title": "Girls@CSE (talks)",
+                    "title": "Girls@CSE",
                     "url": "https://www.deib.polimi.it/ita/eventi/dettagli/2987",
+					"type": "seminar",
                     "venue": "Politecnico di Milano, IT",
                     "year": "Sept. 2024"
                 }
@@ -1787,18 +1802,21 @@
 			"title": "Event orginzation",
 			"descriptions": [
 				{
-					"title": "DRIM team annual seminar co-organizer (LIRIS)",
-					"venue": "Miribel park (France)",
+					"title": "DRIM team annual seminar co-organizer",
+					"type": "event",
+					"venue": "Lyon (France)",
 					"year": "Sept. 2026",
 					"crowd": "30 people",
 					"url": ""
 				}, {
-					"title": "Open debate on AI for/to teaching at INSA Lyon - FIMISkills (INSA)",
+					"title": "Open debate on AI for/to teaching at INSA Lyon - FIMISkills",
+					"type": "round table",
 					"venue": "INSA Lyon",
 					"year": "Sept. 2026",
 					"crowd": "50 people"
 				}, {
-					"title": "Introduction to scientific research for INSA Lyon engineers (INSA)",
+					"title": "Introduction to scientific research for INSA Lyon engineers",
+					"type": "seminar",
 					"venue": "INSA Lyon",
 					"year": "Sept. 2026",
 					"crowd": "100-150 people"
