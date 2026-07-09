@@ -29,7 +29,7 @@ function generate_current_page(page_data, page_name) {
 
     var html = "";
     for(one_block of page_data) {
-		if(Object.keys(one_block).contains("hide") && one_block["hide"]) {
+		if(Object.keys(one_block).includes("hide") && one_block["hide"]) {
 			// pass: we don't want to display that block in the main site (but rather in the dashboard or not at all)
 		} else {
 			html += generate_one_block(one_block, page_name);
