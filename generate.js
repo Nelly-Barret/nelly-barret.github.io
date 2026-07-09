@@ -24,12 +24,16 @@ function get_json_data(url) {
 /* Main functions: generate one page (page of publications and other pages) */
 // for all pages except the publications
 function generate_current_page(page_data, page_name) {
-    console.log("generate all articles");
+    console.log("generate all blocks");
     console.log(page_data);
 
     var html = "";
-    for(one_article_data of page_data) {
-        html += generate_one_article(one_article_data, page_name);
+    for(one_block of page_data) {
+		if(Object.keys(one_block).contains("hide") && one_block["hide"]) {
+			// pass: we don't want to display that block in the main site (but rather in the dashboard or not at all)
+		} else {
+			html += generate_one_block(one_block, page_name);
+		}
     }
     return html;
 }
@@ -91,43 +95,102 @@ function generate_publication_page(page_data, sort_order) {
         };
         console.log(group_of_publis);
         
-        current_publis += generate_one_article(group_of_publis, "publications");
+        current_publis += generate_one_block(group_of_publis, "publications");
     }
     
     return current_publis;
 }
 
+DASHBOARD = {
+	"research_projects": ["short_title","opening","deadline1","deadline2","financement","leader","completion","statut","notes"],
+	"working_groups": ["title", "date", "descriptions"],
+	"advising": ["title"]
+}
+
+// for the dashboard page
+function generate_dashboard(data) {
+	the_html = "";
+
+	// RESEARCH
+	for(section of Object.keys(DASHBOARD)) {
+		console.log(section);
+		console.log(data[section]);
+		res = build_data_table_for_section(section, data[section]);
+		header = res[0];
+		rows = res[1];
+		the_html += `${section}`;
+		the_html += create_table(header, rows);
+		the_html += "<hr>"
+	}
+	return the_html;
+}
+
+function build_data_table_for_section(section_name, section_data) {
+	header = DASHBOARD[section_name];
+	data_section = [];
+	for(project of section_data) {
+		project_data = [];
+		for(column of header) {
+			project_data.push(project[column]);
+		}
+		data_section.push(project_data);
+	}
+	return [header, data_section];
+}
+
+function create_table(header, rows) {
+	table_html = "<table>";
+
+	table_html += "<tr>";
+	for(column of header) {
+		table_html += `<th>${column}</th>`
+	}
+	table_html += "</tr>";
+	
+	for(row of rows) {
+		table_html += "<tr>";
+		for(value of row) {
+			table_html += `<td>${value}</td>`
+			
+		}
+		table_html += "</tr>";
+	}
+
+	table_html += "</table>";
+	return table_html;
+}
+
 /* individual functions */
 // title is used for publication article titles only (which can be the category or the year of publication)
-function generate_one_article(article_data, page_name) {
-    console.log("generate one article");
-    console.log(article_data);
+function generate_one_block(one_block, page_name) {
+    console.log("generate one block for page " + page_name);
+    console.log(one_block);
 
     var html_1 = "";
 
-    if(article_data != undefined && article_data != null) {
+    if(one_block != undefined && one_block != null) {
         html_1 += "<article class='postcard'>";
 		if(page_name == "research_projects") {
-			if("image" in article_data) {
+			if("image" in one_block) {
 				html_1 += "<div class='myImage postcard__img_link'>"
-				html_1 += `<img class='postcard__img' src='${article_data["image"]}' alt='${article_data["alt"]}' />`
+				html_1 += `<img class='postcard__img' src='${one_block["image"]}' alt='${one_block["alt"]}' />`
 				html_1 += "</div>"
 			}
 		}
         html_1 += "<div class='postcard__text t-dark'>";
         html_1 += "<div style='display: flex; justify-content: space-between;'>";
-        html_1 += `<h4 class="postcard__title">${article_data["title"]}</h4>`;
-        if(article_data["date"] != undefined && article_data["date"] != null) {
-            html_1 += `<p style='float: right;'>${article_data["date"]}</p>`;
+        html_1 += `<h4 class="postcard__title">${one_block["title"]}</h4>`;
+        if(one_block["date"] != undefined && one_block["date"] != null) {
+            html_1 += `<p style='float: right;'>${one_block["date"]}</p>`;
         }
         
         html_1 += "</div>";
         
         // subtitles
-        if("subtitles" in article_data) {
+        if("subtitles" in one_block) {
             html_1 += "<div class='postcard__subtitle'>";
             i = 0;
-            for(subtitle of article_data["subtitles"]) {
+            for(subtitle of one_block["subtitles"]) {
                 // check whether the text of the subtitle should be converted to a <a> element or not
                 if(subtitle[1].startsWith("http")) {
                     subtitle_text = `<a href='${subtitle[1]} target='_blank'>${subtitle[1]}</a>`
@@ -152,22 +215,22 @@ function generate_one_article(article_data, page_name) {
         html_1 += "<div class='postcard__bar'></div>";
 
         // description
-        if("descriptions" in article_data) {
+        if("descriptions" in one_block) {
             console.log("ici");
             html_1 += "<div class='postcard__preview-txt'>";
 
             if(page_name == "publications") {
                 sort_order = $("#sort_publis").find(":selected").val();
-                console.log(article_data["descriptions"])
+                console.log(one_block["descriptions"])
                 html_1 += "<ol>";
-                for(description of article_data["descriptions"]) {
+                for(description of one_block["descriptions"]) {
                     html_1 += format_publication(description);
                 }
                 html_1 += "</ol>"
                 
             } else {
                 html_1 += "<ul>"
-                for(description of article_data["descriptions"]) {
+                for(description of one_block["descriptions"]) {
                     if(typeof(description) == "object") {
                         // an object description with a text and a url
                         if("url" in description) {
@@ -202,9 +265,9 @@ function generate_one_article(article_data, page_name) {
         }
 
         // tags
-        if("tags" in article_data) {
+        if("tags" in one_block) {
             html_1 += "<ul class='postcard__tagbox'>";
-            for(tag of article_data["tags"]) {
+            for(tag of one_block["tags"]) {
                 html_1 += `<li class="tag__item play"><i class="fa-solid fa-${tag[0]} my-tag"></i>${tag[1]}</li>`;
             }
             html_1 += "</ul>";

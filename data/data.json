@@ -188,9 +188,21 @@
                     "data exploration"
                 ]
             ]
-        },
+        }, {
+			"hide": true,
+			"short_title": "JCJC 2025",
+			"opening": "21/07/2025",
+			"deadline1": "15/10/2025",
+			"deadline2": "26/03/2026",
+			"financement": "09/2026",
+			"leader": "moi",
+			"completion": 0,
+			"statut": "refuse",
+			"notes": ""
+		},
         {
             "title": "BETTER: real-world health-data distributed analytics research platform",
+			"short_title": "BETTER",
             "date": "Apr. 2024 – July 2025",
 			"image": "./img/better-rotate.png",
 			"alt": "BETTER project logo",
