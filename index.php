@@ -30,4 +30,27 @@ if($result->num_rows > 0) {
   echo "0 result";
 }
 echo "Hello 6";
+
+$stmt = $mysqli->prepare("SELECT * FROM academic_position ap LEFT JOIN description d ON ap.fk_id = d.id");
+
+/* Prepared statement, stage 2: bind and execute */
+$id = 1;
+$label = 'PHP';
+//$stmt->bind_param("is", $id, $label); // "is" means that $id is bound as an integer and $label as a string
+
+$stmt->execute();
+$result = $stmt->bind_result();
+
+echo "Goodbye 3";
+if($result->num_rows > 0) {
+  echo "Goodbye 4";
+  while($row = $result->fetch_assoc()) {
+    echo "- ".$row["title"]."\n";
+  }
+  echo "Goodbye 5";
+} else {
+  echo "0 result";
+}
+echo "Goodbye 6";
+
 ?>
