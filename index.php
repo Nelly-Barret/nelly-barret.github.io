@@ -34,9 +34,9 @@ echo "Hello 6";
 echo "Goodbye 0";
 
 try {
-	$stmt = $mysqli->prepare("SELECT * FROM academic_position ap LEFT JOIN description d ON d.fk_id = ap.id ORDER BY ap.id, d.order");
+	$stmt = $conn->prepare("SELECT * FROM academic_position ap LEFT JOIN description d ON d.fk_id = ap.id ORDER BY ap.id, d.order");
 } catch(Exception $e) {
-	print_r($e);
+	var_dump($e);
 }
 
 echo "Goodbye 1";
