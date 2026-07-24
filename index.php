@@ -33,13 +33,16 @@ echo "Hello 6";
 
 $stmt = $mysqli->prepare("SELECT * FROM academic_position ap LEFT JOIN description d ON d.fk_id = ap.id ORDER BY ap.id, d.order");
 
+echo "Goodbye 1";
+
 /* Prepared statement, stage 2: bind and execute */
-$id = 1;
-$label = 'PHP';
+// $id = 1;
+// $label = 'PHP';
 //$stmt->bind_param("is", $id, $label); // "is" means that $id is bound as an integer and $label as a string
 
 $stmt->execute();
-$result = $stmt->bind_result();
+echo "Goodbye 2";
+$result = $stmt->get_result();
 
 echo "Goodbye 3";
 if($result->num_rows > 0) {
