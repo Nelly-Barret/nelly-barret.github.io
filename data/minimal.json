@@ -1,0 +1,123 @@
+{
+    "teaching_responsibilities": [
+        {
+            "title": "Recurring courses",
+            "date": "Sept. 2025 – now",
+            "subtitles": [
+                [
+                    "user",
+                    "magistral and lab courses"
+                ], [
+                    "map-pin",
+                    "INSA Lyon (FR)"
+                ], [
+                    "flag",
+                    "French"
+                ]
+            ],
+            "descriptions": [
+                "ISN1: Informatique et Société Numérique (fall, engineer 1st year): algorithmics, Python developement",
+                "ISN2: Informatique et Société Numérique (spring, engineer 1st year): algorithmics, functional decomposition, introduction to networks, recursivity, guided hands-on project",
+                "ISN4: Informatique et Société Numérique (spring, engineer 2nd year): object-oriented programming, graphical interfaces, code versioning, hand-on project",
+                "SOL: Systèmes et Outils Logiciels (fall, engineer 1st year): Microsoft Office and LibreOffice suite, basic Linux commands"
+            ]
+        },
+        {
+            "title": "Involvement in INSA teaching teams",
+            "date": "Sept. 2025 – now",
+            "subtitles": [
+                [
+                    "user",
+                    "contributor"
+                ], [
+                    "map-pin",
+                    "INSA Lyon (FR)"
+                ]
+            ],
+            "descriptions": [
+                "ISN1, ISN2, ISN4, SOL: course improvement and/or redesign",
+				"ISN1, ISN2, ISN4: Python and Visual Studio Code setup",
+                "CGA: member of the Coordination and Management Committee (Comité de Gestion et d'Animation)", 
+				"First year admission interviews for INSA Lyon",
+				"Industrial 1st year intership referee for 3-5 students each year"
+            ]
+        }, {
+            "title": "Previous courses",
+            "date": "Feb. 2022 – May 2024",
+            "descriptions": [
+                "CSE203: CS project (spring 2024, Ecole Polytechnique, bachelor 2nd year, in English)",
+                "CSE204: Machine Learning (spring 2023, Ecole Polytechnique, bachelor 2nd year, in English)",
+                "INF411: bases de programmation et d'algorithmique (fall 2022, Ecole Polytechnique, engineer 2nd year, in French)",
+                "INF371: mécanismes de la programmation orientée objet (spring 2022, Ecole Polytechnique, engineer 1st year, in French)"
+            ]
+        }
+    ],
+	"training": [
+		{
+			"title": "Training on doctoral supervision (18 hours)",
+			"date": "Jan. 2026 - April 2026",
+			"subtitles": [
+                [
+                    "display",
+                    "https://fedora.insa-lyon.fr/fr/page/seminaire-encadrants"
+                ]
+            ], 
+			"descriptions": [
+				"The PhD journey as a system",
+				"Human and organizational factors for a successful PhD journey",
+				"Scientific co-production between the PhD student and the advisors",
+				"Unerstanding interculturality within the PhD eco-system",
+				"Evolution of the supervisor's role during a PhD and through a career"
+			]
+		}, {
+			"title": "Training on student evaluation (4 hours)",
+			"date": "April 2026",
+			"descriptions": [
+				"How to evaluate students within the APC framework (Competency-based approach)?",
+				"How to evaluate students in the GenAI era?"
+			]
+		}, {
+			"title": "ACM Peer Reviewer Training (1 hour)",
+			"date": "May 2026",
+			"subtitles": [
+                [
+                    "display",
+                    "https://reviewers.acm.org/training-course"
+                ]
+            ],
+			"descriptions": [
+				"Peer-review overview",
+				"Assessing your suitability to review",
+				"Review touchstones",
+				"Evaluating the paper",
+				"Submitting your review",
+				"Artifact review and badging"
+			]
+		}
+	],
+    "advising": [
+        {
+            "title": "Engineer",
+            "descriptions": [
+                "Côme Périn on \"Apprentissage multimodal au service de la santé des conducteurs\" (April-Dec. 2026, ENTPE Vaulx-en-Velin)"
+            ]
+        },
+		{
+            "title": "Master students",
+            "descriptions": [
+				"Inès Boudjeli on \"Débruitage et sélection automatique de signaux cardiaques pour la prédiction médicale\" (spring 2026, Université de Dijon, master 2nd year)",
+                "Ahmed Bel Hadj Youssef on \"Construction automatique de domaines dans les data meshs\" (fall 2025, INSA Lyon, engineer 5th year)",
+                "Antoine Gauquier on \"Path exploration of ConnectionLens graphs\" (summer 2022, IMT Nord-Europe, master 1st year)"
+            ]
+        },
+        {
+            "title": "Bachelor students",
+            "descriptions": [
+                "Shay Pripstein on \"Target data acquisition in open repositories\" (winter 2023, École Polytechnique, bachelor 3rd year)",
+                "Tudor Enache on \"From simple to property graphs\" (winter 2023, École Polytechnique, bachelor 3rd year)",
+                "Nikola Dobricic on \"Graph queries for abstractions\" (summer 2023, Ecole Polytechnique, bachelor 2nd year)",
+                "Jia-Jean Law on \"Optimization of entity-to-entity data paths\" (winter 2022, Ecole Polytechnique, bachelor 3rd year)"
+            ]
+        }
+    ]
+}
