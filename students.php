@@ -2,20 +2,8 @@
 require('db.php');
 
 try {
-	$sql = "SELECT * FROM project;";
-	$projects = $conn->query($sql);
-	// $query->bindValue(':uid', $_REQUEST['uid']);
-	// $stmt->execute();
-	// $elements = $stmt->fetchAll();
-	// print_r($elements);
-	// $elements = ["a", "b"];
-} catch (Exception $e) {
-	var_dump($e);
-}
-
-try {
-	$sql = "SELECT * FROM project_description;";
-	$descriptions = $conn->query($sql);
+	$sql = "SELECT * FROM supervision;";
+	$supervisions = $conn->query($sql);
 } catch (Exception $e) {
 	var_dump($e);
 }
@@ -25,41 +13,15 @@ try {
 <!DOCTYPE html>
 
 <html lang="fr">
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
- 
-    <title>Nelly Barret</title>
-
-    <!--My functions to generate the website-->
-    <script src="generate.js"></script> 
-
-    <!--JQuery-->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script> 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">	
-
-    <!-- Font Awesome -->
-    <script src="https://kit.fontawesome.com/54ddfbe03a.js" crossorigin="anonymous"></script>
-
-    <!-- Our custom CSS -->
-    <link rel="stylesheet" href="styles.css"/>
-    <link rel="stylesheet" href="w3schools-styles.css"/>
-</head>
+<?php include 'head.php'; ?>
     
 <body>
 	<?php include 'navbar.php'; ?>
     
     <!-- SECTION TALKS -->
     <section class="anchor light">
-		<div class="container py-2" id="container-talks">
-		</div>
 		<?php 
-			while($row = $projects->fetch_assoc()): ?>
+			while($row = $supervisions->fetch_assoc()): ?>
 			<article class='postcard'>
 				<?php if($row["image_filepath"] != ""): ?>
 					<div class='myImage postcard__img_link'>
