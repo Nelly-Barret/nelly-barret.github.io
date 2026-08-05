@@ -1,17 +1,20 @@
 <?php
 require('db.php');
 try {
-	$SQL_ALL_SUPERVISION = "SELECT * FROM supervision;";
-	$supervisions = $conn->query($SQL_ALL_SUPERVISION);
-
-	$SQL_ALL_TRAINING = "SELECT * FROM training;";
-	$trainings = $conn->query($SQL_ALL_TRAINING);
-
 	$SQL_CURRENT_COURSES = "SELECT * FROM course WHERE end_date = '1900-01-01';";
 	$current_courses = $conn->query($SQL_CURRENT_COURSES);
 
 	$SQL_FORMER_COURSES = "SELECT * FROM course WHERE end_date > '1900-01-01';";
 	$former_courses = $conn->query($SQL_FORMER_COURSES);
+
+	$SQL_CURRENT_SUPERVISION = "SELECT * FROM supervision WHERE year >= YEAR(CURDATE());";
+	$current_supervisions = $conn->query($SQL_CURRENT_SUPERVISION);
+
+	$SQL_FORMER_SUPERVISION = "SELECT * FROM supervision WHERE year < YEAR(CURDATE());";
+	$former_supervisions = $conn->query($SQL_FORMER_SUPERVISION);
+
+	$SQL_ALL_TRAINING = "SELECT * FROM training;";
+	$trainings = $conn->query($SQL_ALL_TRAINING);
 } catch (Exception $e) {
 	var_dump($e);
 }
@@ -28,7 +31,7 @@ try {
     
     <!-- SECTION TALKS -->
     <section class="anchor light">
-		<h1><i class="fa-solid fa-chalkboard-user"></i> Courses</h1>
+		<h1 class="section-title"><i class="fa-solid fa-chalkboard-user"></i> Courses</h1>
 		<ul>
 		<?php 
 			while($course = $current_courses->fetch_assoc()): ?>
@@ -50,13 +53,12 @@ try {
 		</ul>
 		</details>
 
-		<hr>
 		
-		<h1 style="text-align: center;"><i class="fa-solid fa-graduation-cap"></i> Student supervision</h1>
+		<h1 class="section-title"><i class="fa-solid fa-graduation-cap"></i> Student supervision</h1>
 		<h2>Current students</h2>
 		<ul>
 		<?php 
-			while($supervision = $supervisions->fetch_assoc()): ?>
+			while($supervision = $current_supervisions->fetch_assoc()): ?>
 			<li>
 				<?= $supervision["topic"] ?> (<?= $supervision["school"] ?>)
 			</li>
@@ -67,7 +69,7 @@ try {
 		<summary>Former students</summary>
 		<ul>
 		<?php 
-			while($supervision = $supervisions->fetch_assoc()): ?>
+			while($supervision = $former_supervisions->fetch_assoc()): ?>
 			<li>
 				<?= $supervision["topic"] ?> (<?= $supervision["school"] ?>)
 			</li>
@@ -75,9 +77,22 @@ try {
 		</ul>
 		</details>
 
-		<hr>
 
-		<h1>Training activities</h1>
+		<h1 class="section-title">Training activities</h1>
+		<table class="table table-striped table-hover">
+			<tbody>
+			<?php while($training = $trainings->fetch_assoc()): ?>
+				<tr>
+					<td><img src="<?=$training["logo_filepath"]?>" width="50px"></img></td>
+					<td><?=$training["title"] ?></td>
+					<td><?=$training["duration"] ?></td>
+					<?php if($training["webpage"] != ""): ?>
+						<td><a href="<?=$training["webpage"]?>" target="_blank">website</a></td>
+					<?php endif; ?>
+				</tr>
+			<?php endwhile; ?> 
+			</tbody>
+		</table>
 		<ul>
 		<?php 
 			while($training = $trainings->fetch_assoc()): ?>

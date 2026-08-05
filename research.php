@@ -1,7 +1,7 @@
 <?php
 require('db.php');
 try {
-	$SQL_CURRENT_PROJECTS = "SELECT * FROM project  WHERE end_date = '1900-01-01' OR end_date > CURDATE()";
+	$SQL_CURRENT_PROJECTS = "SELECT * FROM project  WHERE end_date = '1900-01-01' OR end_date >= CURDATE()";
 	$current_projects = $conn->query($SQL_CURRENT_PROJECTS);
 
 	$SQL_FORMER_PROJECTS = "SELECT * FROM project WHERE end_date < CURDATE();";
@@ -23,35 +23,38 @@ try {
     <section class="anchor light">
 		<h1 class="section-title">Research themes</h1>
 		
-		<p style="color: red;">TODO</p>
+		My research themes lie in the broad area of <b>heterogeneous data integration and exploitation</b>, including heterogeneous and multi-modal data as well as warehouse, data lake and lakehouse architectures.
+
+		<br/><br/>
+
+		The general scientific questions that are driving me every day include: 
+		<ul>
+			<li>How to effectively and efficiently collect, organize and store heterogeneous data produced by various actors?</li>
+			<li>How to explore and exploit large amounts of data, especially for domain experts?</li>
+			<li>How to clean, join, merge, and sementically enrich raw data for better decision making?
+		</ul>
+
+		My research applies to various domains including sustainable cities, media, and healthcare, with a strong interest in <b>sustainable cities</b>.
 		
 		<h1 class="section-title">Projects</h1>
 		
 		
 		<h2>Current projects</h2>
-		<div class="row row-cols-3">
-			<?php 
-				while($project = $current_projects->fetch_assoc()): ?>
-					<div class="col">
-						<?php include("project_card.php") ?>
-					</div>
-				<?php endwhile; ?> 
+		<?php while($project = $current_projects->fetch_assoc()): ?>
+			<?php include("project-card.php") ?>
+		<?php endwhile; ?> 
 		</div>
 
 
-		<details>
-		<summary>Past projects</summary>
-		<div class="row row-cols-3">
-			<?php 
-				while($project = $former_projects->fetch_assoc()): ?>
-					<div class="col">
-						<?php include("project_card.php") ?>
-					</div>
-			<?php endwhile; ?> 
-		</div>
-		</details>
-
-		<hr>
+		<h2>Past projects</h2>
+		<!-- <h2 data-bs-toggle="collapse" href="#collapsePastProjects" role="button" aria-expanded="false" aria-controls="collapsePastProjects">Past projects</h2> -->
+  		
+		<!-- <div class="collapse" id="collapsePastProjects"> -->
+		<?php while($project = $former_projects->fetch_assoc()): ?>
+			<?php include("project-card.php") ?>
+		<?php endwhile; ?> 
+		<!-- </div> -->
     </section>
 </body>
+
 </html>

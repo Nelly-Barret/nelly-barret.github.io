@@ -1,11 +1,8 @@
 <?php
 require('db.php');
 try {
-	$SQL_CURRENT_PROJECTS = "SELECT * FROM project WHERE end_date = '1900-01-01' OR end_date > CURDATE();";
-	$current_projects = $conn->query($SQL_CURRENT_PROJECTS);
-
-	$SQL_FORMER_PROJECTS = "SELECT * FROM project WHERE end_date < CURDATE();";
-	$former_projects = $conn->query($SQL_FORMER_PROJECTS);
+	$SQL_TALKS = "SELECT * FROM dissemination ORDER BY date DESC, id ASC;";
+	$talks = $conn->query($SQL_TALKS);
 } catch (Exception $e) {
 	var_dump($e);
 }
@@ -21,23 +18,94 @@ try {
 	<?php include 'navbar.php'; ?>
     
     <section class="anchor light">
-		<h1 style="text-align: center;">Scientific talks</h1>
+		<h1 class="section-title">Selection</h1>
 
-		<hr>
+		<p style="color: red;">TODO</p>
 
-		<h1>Invited talks</h1>
+		<h1 class="section-title">Invited talks</h1>
+		<table class="table table-striped table-hover">
+			<tbody>
+			<?php while($talk = $talks->fetch_assoc()): ?>
+				<?php if($talk["category"] == "Seminar"): ?>
+					<tr>
+						<td><img src="<?=$talk["logo_filepath"]?>" width="50px"></img></td>
+						<td><?=date('F Y', strtotime($talk["date"])) ?></td>
+						<td><?=$talk["title"] ?></td>
+						<td><a href="<?=$talk["resource"]?>" target="_blank">PDF</a></td>
+					</tr>
+				<?php endif; ?>
+			<?php endwhile; ?> 
+			</tbody>
+		</table>
 
-		<hr>
+		<h1 class="section-title">Panels</h1>
+		<?php $talks = $conn->query($SQL_TALKS); ?>
 
-		<h1>Dissemination</h1>
+		<table class="table table-striped table-hover">
+			<tbody>
+			<?php while($talk = $talks->fetch_assoc()): ?>
+				<?php if($talk["category"] == "Panel"): ?>
+					<tr>
+						<td><img src="<?=$talk["logo_filepath"]?>" width="50px"></img></td>
+						<td><?=date('F Y', strtotime($talk["date"])) ?></td>
+						<td><?=$talk["title"] ?></td>
+						<td><?=$talk["crowd"] ?></td>
+						<?php if($talk["resource"] != ""): ?>
+							<td><a href="<?=$talk["resource"]?>" target="_blank">video</a></td>
+						<?php else: ?>
+							<td></td>
+						<?php endif; ?>
+					</tr>
+				<?php endif; ?>
+			<?php endwhile; ?> 
+			</tbody>
+		</table>
 
-		<h2>Vulgarization talks</h2>
+		<h1 class="section-title">Vulgarization talks</h1>
+		<?php $talks = $conn->query($SQL_TALKS); ?>
+		
+		<table class="table table-striped table-hover">
+			<tbody>
+			<?php while($talk = $talks->fetch_assoc()): ?>
+				<?php if($talk["category"] == "Vulgarization"): ?>
+					<tr>
+						<td><img src="<?=$talk["logo_filepath"]?>" width="50px"></img></td>
+						<td><?=date('F Y', strtotime($talk["date"])) ?></td>
+						<td><?=$talk["title"] ?></td>
+						<td><?=$talk["crowd"] ?></td>
+						<?php if($talk["resource"] != ""): ?>
+							<td><a href="<?=$talk["resource"]?>" target="_blank">PDF</a></td>
+						<?php else: ?>
+							<td></td>
+						<?php endif; ?>
+					</tr>
+				<?php endif; ?>
+			<?php endwhile; ?> 
+			</tbody>
+		</table>
 
-		<h2>Female empowerment talks</h2>
-
-		<hr>
-
-		<h1>Event organization</h1>
+		<h1 class="section-title">Female empowerment talks</h1>
+		<?php $talks = $conn->query($SQL_TALKS); ?>
+		
+		<table class="table table-striped table-hover">
+			<tbody>
+			<?php while($talk = $talks->fetch_assoc()): ?>
+				<?php if($talk["category"] == "Female empowerment"): ?>
+					<tr>
+						<td><img src="<?=$talk["logo_filepath"]?>" width="50px"></img></td>
+						<td><?=date('F Y', strtotime($talk["date"])) ?></td>
+						<td><?=$talk["title"] ?></td>
+						<td><?=$talk["crowd"] ?></td>
+						<?php if($talk["resource"] != ""): ?>
+							<td><a href="<?=$talk["resource"]?>" target="_blank">website</a></td>
+						<?php else: ?>
+							<td></td>
+						<?php endif; ?>
+					</tr>
+				<?php endif; ?>
+			<?php endwhile; ?> 
+			</tbody>
+		</table>
     </section>
 </body>
 </html>

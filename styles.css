@@ -1,13 +1,44 @@
-section {
-    margin: 2rem 2rem 0 2rem; /* top right bottom left */
+.section-title {
+	text-align: center;
+	padding-top: 2rem; 
+	padding-bottom: 1rem; 
 }
 
+section {
+    margin-left: 2rem;
+	margin-right: 2rem;
+}
+
+.anchor {
+    padding-top: 50px; /* default Bootstrap navbar height */
+}
+
+.card-body {
+	background-color: #F0ECE3 !important;
+}
+
+.progress {
+	height: 8px;
+	width: 100px;
+	margin-top: 1rem;
+	margin-bottom: 1rem;
+}
+
+.progress-bar {
+	width: 100%; 
+	background-color: orange !important;
+}
+/* 
 .old {
     background-color: gray;
 }
 
 .currentpast {
     text-align: center;
+}
+
+.dates {
+	color: gray;
 }
 
 p {
@@ -50,9 +81,7 @@ a:not(.nav-link, .navbar-brand) {
     text-align: right;
 }
 
-.anchor {
-    padding-top: 90px;
-}
+
 
 .social-icons {
     display: flex;
@@ -125,31 +154,4 @@ a:not(.nav-link, .navbar-brand) {
 .myImage {
     height: 100%;
     width: 100%;
-}
-
-table tr td {
-    padding: 0.3rem;
-}
-
-table tr th {
-    padding: 0.3rem;
-}
-
-table.rounded-corners {
-  border-spacing: 0;
-  border-collapse: separate;
-  border-radius: 10px;
-  border: 1px solid black;
-}
-
-/* Apply a border to the right of all but the last column */
-table.rounded-corners th:not(:last-child),
-table.rounded-corners td:not(:last-child) {
- border-right: 1px solid black;
-}
-
-/* Apply a border to the bottom of all but the last row */
-table.rounded-corners>tbody>tr:not(:last-child)>th,
-table.rounded-corners>tbody>tr:not(:last-child)>td {
- border-bottom: 1px solid black;
-}
+} */
