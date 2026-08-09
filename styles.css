@@ -28,6 +28,21 @@ section {
 	width: 100%; 
 	background-color: orange !important;
 }
+
+.badge > a {
+	color: white !important;
+	text-decoration: none;
+}
+
+.citation {
+	border: none; 
+	background-color: transparent;
+}
+
+.publications > li {
+	margin: 20px 0;
+}
+
 /* 
 .old {
     background-color: gray;
