@@ -62,9 +62,7 @@
 
 	<!-- TeX citation -->
 	<?php if($publication["bib_id"] != ""): ?>
-		<button class="btn btn-light" type="button" data-bs-toggle="collapse" data-bs-target="#collapseBib<?=$publication['bib_id']?>" aria-expanded="false" aria-controls="collapseBib<?=$publication['bib_id']?>">
-			<i class='fa-brands fa-tex my-icon' style='color: blue;'></i>
-		</button>
+		<button class="btn btn-light" type="button" data-bs-toggle="collapse" data-bs-target="#collapseBib<?=$publication['bib_id']?>" aria-expanded="false" aria-controls="collapseBib<?=$publication['bib_id']?>">TeX citation</button>
 		<div class="collapse" id="collapseBib<?=$publication['bib_id']?>" style='font-family: monospace, monospace'>
 			<div class="card card-body">
 				@<?= $publication["type"]?> {<?= $publication["key"]?></br>

@@ -50,9 +50,13 @@ try {
 		<!-- <h2 data-bs-toggle="collapse" href="#collapsePastProjects" role="button" aria-expanded="false" aria-controls="collapsePastProjects">Past projects</h2> -->
   		
 		<!-- <div class="collapse" id="collapsePastProjects"> -->
+			<div class="row">
 		<?php while($project = $former_projects->fetch_assoc()): ?>
+  <div class="col-sm-6 mb-3 mb-sm-0">
 			<?php include("project-card.php") ?>
+		</div>
 		<?php endwhile; ?> 
+	</div>
 		<!-- </div> -->
     </section>
 </body>

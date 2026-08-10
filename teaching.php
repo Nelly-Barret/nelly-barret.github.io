@@ -31,7 +31,9 @@ try {
     
     <!-- SECTION TALKS -->
     <section class="anchor light">
-		<h1 class="section-title"><i class="fa-solid fa-chalkboard-user"></i> Courses</h1>
+		<h1 class="section-title">Courses</h1>
+		
+		<h2>Current courses</h2>
 		<ul>
 		<?php 
 			while($course = $current_courses->fetch_assoc()): ?>
@@ -41,8 +43,7 @@ try {
         <?php endwhile; ?> 
 		</ul>
 
-		<details>
-		<summary>Former courses</summary>
+		<h2>Former courses</h2>
 		<ul>
 		<?php 
 			while($course = $former_courses->fetch_assoc()): ?>

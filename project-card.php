@@ -9,6 +9,7 @@ try {
 
 ?>
 
+
 <div class="card mb-3">
 	<div class="row g-0">
 		<div class="col-md-1">
@@ -20,7 +21,7 @@ try {
 				<h5 class="card-title"><?=$project["short_title"]?></h5>
 				<h6 class="card-subtitle mb-2 text-muted"><?=$project["long_title"]?></h6>
 				<!-- Infos -->
-				<ul class="list-group list-group-horizontal">
+				<ul class="list-group list-group-horizontal-lg">
 					<li class="list-group-item"><i class="fa-solid fa-calendar"></i><?=date('F Y', strtotime($project["starting_date"])) ?> - <?=date('F Y', strtotime($project["end_date"]))?></li>
 					<li class="list-group-item"><i class="fa-solid fa-user"></i><?=$project["involvement"]?></li>
 					<li class="list-group-item"><i class="fa-solid fa-dollar-sign"></i><?=$project["grant_type"]?></li>
@@ -60,21 +61,3 @@ try {
 </div>
 
 
-
-<div class="modal fade" id="<?= $project["short_title"] ?>Modal" tabindex="-1" aria-labelledby="<?= $project["short_title"] ?>ModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h1 class="modal-title fs-5" id="<?= $project["short_title"] ?>ModalLabel"><?= $project["long_title"] ?></h1>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-	  	
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
-    </div>
-  </div>
-</div>
