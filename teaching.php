@@ -21,40 +21,6 @@ try {
 		<h1 class="section-title">Courses</h1>
 		
 		<h2>Current courses</h2>
-		<ul>
-		<?php 
-			while($course = $courses->fetch_assoc()): ?>
-			<li>
-				<?= $course["title"] ?> (<?= $course["language"] ?>)
-			</li>
-        <?php endwhile; ?> 
-		</ul>
-
-		<h2>Former courses</h2>
-		<ul>
-		<?php 
-			while($course = $former_courses->fetch_assoc()): ?>
-			<li>
-				<?= $course["title"] ?> (<?= $course["language"] ?>)
-			</li>
-        <?php endwhile; ?> 
-		</ul>
-    </section>
-</body>
-</html>
-
-<!DOCTYPE html>
-
-<html lang="fr">
-<?php include 'head.php'; ?>
-    
-<body>
-	<?php include 'navbar.php'; ?>
-    
-    <section class="anchor light">
-		<h1 class="section-title">Courses</h1>
-		
-		<h2>Current courses</h2>
 		<?php include("teaching-table.php"); ?>
 
 		<h2>Former courses 2</h2>
