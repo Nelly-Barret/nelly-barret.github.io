@@ -1,40 +1,43 @@
 <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
-	<div class="container-fluid">
-		<a class="navbar-brand" style="color: white;">Nelly Barret</a>
-		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="true" aria-label="Toggle navigation">
-		<span class="navbar-toggler-icon"></span>
-		</button>
-	
-		<div class="collapse navbar-collapse" id="navbarSupportedContent">
-			<ul class="navbar-nav ml-auto">
-				<li class="nav-item">
-					<a class="nav-link" href="./index.php">About me</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="./research.php">Research</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="./dissemination.php">Dissemination</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="./publications.php">Publications</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="./teaching.php">Teaching</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="./students.php">Supervision</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="./service.php">Service</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="./career.php" >Career</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="./personal.html">Personal</a>
-				</li>
-			</ul>
-		</div>
-	</div>
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Nelly Barret</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+		  <a class="nav-link active" aria-current="page" href="./index.php">About me</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Research
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="./research.php">Projects and tools</a></li>
+            <li><a class="dropdown-item" href="./dissemination.php">Talks and dissemination</a></li>
+            <li><a class="dropdown-item" href="./publications.php">Publications</a></li>
+          </ul>
+        </li>
+		<li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Teaching
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="./teaching.php">Courses</a></li>
+            <li><a class="dropdown-item" href="./students.php">Student supervision</a></li>
+          </ul>
+        </li>
+		<li class="nav-item">
+          <a class="nav-link" href="./service.php">Service</a>
+        </li>
+		<li class="nav-item">
+          <a class="nav-link" href="./career.php">Career</a>
+        </li>
+		<li class="nav-item">
+          <a class="nav-link" href="./personal.php">Personal</a>
+        </li>
+      </ul>
+    </div>
+  </div>
 </nav>

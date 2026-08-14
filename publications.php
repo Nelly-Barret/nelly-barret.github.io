@@ -162,13 +162,18 @@ function echo_count(String $category, String $rank, String $rank2 = null) {
 		
 		<h1 class="section-title">Publication list</h1>
 
-		<form action="publications.php" method="post" >
-		Sort by: <select name="sort-publis" id="sort-publis">
+		<form action="publications.php" method="post">
+		Sort by: <select name="sort-publis" id="sort-publis" onchange="this.form.submit();">
 			<option value="category" <?= $_POST["sort-publis"] != "year" ? "selected" : ""?>>Publication type</option>
 			<option value="year" <?= $_POST["sort-publis"] == "year" ? "selected" : ""?>>Year</option>
 		</select>
-		<input type="submit">
+		<!-- <input type="submit"> -->
+		<!-- <noscript><input type="submit" value="Submit"></noscript> -->
 		</form>
+
+		<?php foreach($CATEGORIES as $key => $category): ?>
+			<span class="badge text-bg-secondary" style="background-color: <?=$COLORS[$key]?> !important"><?=$category?></span>
+		<?php endforeach; ?>
 
 		<ol class="publications">
 		<?php while($publication = $publications->fetch_assoc()): ?>

@@ -2,8 +2,11 @@
 require('db.php');
 
 try {
-	$sql = "SELECT * FROM supervision;";
-	$supervisions = $conn->query($sql);
+	$SQL_CURRENT_SUPERVISION = "SELECT * FROM supervision WHERE year >= YEAR(CURDATE());";
+	$current_supervisions = $conn->query($SQL_CURRENT_SUPERVISION);
+
+	$SQL_FORMER_SUPERVISION = "SELECT * FROM supervision WHERE year < YEAR(CURDATE());";
+	$former_supervisions = $conn->query($SQL_FORMER_SUPERVISION);
 } catch (Exception $e) {
 	var_dump($e);
 }
@@ -20,53 +23,26 @@ try {
     
     <!-- SECTION TALKS -->
     <section class="anchor light">
+		<h1 class="section-title">Student supervision</h1>
+		<h2>Current students</h2>
+		<ul>
 		<?php 
-			while($row = $supervisions->fetch_assoc()): ?>
-			<article class='postcard'>
-				<?php if($row["image_filepath"] != ""): ?>
-					<div class='myImage postcard__img_link'>
-						<img class='postcard__img' src='<?= $row["image_filepath"] ?>' alt='<?= $row["img_alt_text"] ?>' />
-					</div>
-				<?php endif; ?>
-				<div class='postcard__text t-dark'>
-					<div style='display: flex; justify-content: space-between;'>
-						<h4 class="postcard__title"><?= $row["long_title"];?></h4>
-					</div>
-					<div class='postcard__subtitle'>
-						<p class="dates"><?= $row["starting_date"] ?> - <?= $row["end_date"] ?></p>
-						<i class="fa-solid fa-user"></i>
-						<?= $row["involvement"] ?>
-						<i class="fa-solid fa-dollar"></i>
-						<?= $row["grant_type"] ?>
-						<i class="fa-solid fa-building"></i>
-						<?= $row["company"] ?>
-						<i class="fa-solid fa-display"></i>
-						<a href="<?= $row["webpage"] ?>" target="_blank"><?= $row["webpage"] ?></a>
-					</div>
-					<div class='postcard__bar'></div>
-						<div class='postcard__preview-txt'>
-							<ul>
-							<?php 
-							while($description = $descriptions->fetch_assoc()): ?>
-								<?php if($row["id"] == $description["project_id"]): ?>
-									<li><?= $description["text"] ?></li>
-								<?php endif ?>
-							<?php endwhile; ?> 
-							</ul>
-						</div>
-						<?php 
-						try {
-							$sql = "SELECT * FROM project_description;";
-							$descriptions = $conn->query($sql);
-						} catch (Exception $e) {
-							var_dump($e);
-						}
-						?>
-					</div>
-				</div>
-				
-			</article>
+			while($supervision = $current_supervisions->fetch_assoc()): ?>
+			<li>
+				<?= $supervision["topic"] ?> (<?= $supervision["school"] ?>)
+			</li>
         <?php endwhile; ?> 
-    </section>
+		</ul>
+
+		<h2>Former students</h2>
+		<ul>
+		<?php 
+			while($supervision = $former_supervisions->fetch_assoc()): ?>
+			<li>
+				<?= $supervision["topic"] ?> (<?= $supervision["school"] ?>)
+			</li>
+        <?php endwhile; ?> 
+		</ul>
+
 </body>
 </html>
