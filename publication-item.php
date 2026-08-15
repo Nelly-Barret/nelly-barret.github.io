@@ -23,46 +23,63 @@
 	<?= $str_authors ?>. <b><?= $publication["title"] ?></b>. <?=$publication["name"]?>. <?=$publication["year"]?>.
 	<br/>
 
+	<!-- <div class="row"> -->
+
 	<!-- conference name -->
 	<?php if($publication["acronym"] != ""): ?>
-		<span class="badge text-bg-secondary" style="background-color: <?=$COLORS[$publication['category']]?> !important"><?=$publication["acronym"]?></span>
+		<!-- <div class="col"> -->
+			<span class="badge text-bg-secondary publication-button" style="background-color: <?=$COLORS[$publication['category']]?> !important"><?=$publication["acronym"]?></span>
+		<!-- </div> -->
 	<?php endif; ?>
 
 	<!-- publication type -->
 	<?php if($publication["category"] != ""): ?>
-		<span class="badge text-bg-secondary"><?=$CATEGORIES[$publication["category"]]?></span>
+		<!-- <div class="col"> -->
+			<span class="badge text-bg-secondary publication-button"><?=$CATEGORIES[$publication["category"]]?></span>
+		<!-- </div> -->
 	<?php endif; ?>
 
 	<!-- year -->
 	<?php if($publication["year"] != ""): ?>
-		<span class="badge text-bg-secondary"><?=$publication["year"]?></span>
+		<!-- <div class="col"> -->
+			<span class="badge text-bg-secondary publication-button"><?=$publication["year"]?></span>
+		<!-- </div> -->
 	<?php endif; ?>
 	<br/>
 
 	<!-- buttons -->
 	<!-- publication url -->
 	<?php if($publication["publication_url"] != ""): ?>
-		<button type="button" class="btn btn-light"><a href="<?=$publication["publication_url"]?>" target="_blank">publication link</a></button>
+		<!-- <div class="col"> -->
+		<a href="<?=$publication["publication_url"]?>" target="_blank" style="display: inline-block !important"><i class="fa-solid fa-up-right-from-square"></i></a>
+		<!-- </div> -->
 	<?php endif; ?>
 
 	<!-- paper url -->
 	<?php if($publication["paper_url"] != ""): ?>
-		<button type="button" class="btn btn-light"><a href="<?=$publication["paper_url"]?>" target="_blank">pdf</a></button>
+		<!-- <div class="col"> -->
+			<span class="inline-span"><a href="<?=$publication["paper_url"]?>" target="_blank"><i class="fa-solid fa-file-pdf"></i>paper</a></span>
+		<!-- </div> -->
 	<?php endif; ?>
 
 	<!-- slides url -->
 	<?php if($publication["slides_url"] != ""): ?>
-		<button type="button" class="btn btn-light"><a href="<?=$publication["slides_url"]?>" target="_blank">slides</a></button>
+		<!-- <div class="col"> -->
+			<span><a href="<?=$publication["slides_url"]?>" target="_blank"><i class="fa-solid fa-file-pdf">slides</a></span>
+		<!-- </div> -->
 	<?php endif; ?>
 
 	<!-- poster url -->
 	<?php if($publication["poster_url"] != ""): ?>
-		<button type="button" class="btn btn-light"><a href="<?=$publication["poster_url"]?>" target="_blank">poster</a></button>
+		<!-- <div class="col"> -->
+			<span class="inline-span"><a href="<?=$publication["poster_url"]?>" target="_blank"><i class="fa-solid fa-file-pdf">poster</a></span>
+		<!-- </div> -->
 	<?php endif; ?>
 
 	<!-- TeX citation -->
 	<?php if($publication["bib_id"] != ""): ?>
-		<button class="btn btn-light" type="button" data-bs-toggle="collapse" data-bs-target="#collapseBib<?=$publication['bib_id']?>" aria-expanded="false" aria-controls="collapseBib<?=$publication['bib_id']?>">TeX citation</button>
+		<!-- <div class="col"> -->
+		<button class="btn btn-light collapse-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseBib<?=$publication['bib_id']?>" aria-expanded="false" aria-controls="collapseBib<?=$publication['bib_id']?>"><i class="fa-brands fa-tex"></i>TeX citation</button>
 		<div class="collapse" id="collapseBib<?=$publication['bib_id']?>" style='font-family: monospace, monospace'>
 			<div class="card card-body">
 				@<?= $publication["type"]?> {<?= $publication["key"]?></br>
@@ -85,6 +102,7 @@
 				}
 			</div>
 		</div>
+		<!-- </div> -->
 	<?php endif; ?>
-	<br/>
+	<!-- </div> -->
 </li>

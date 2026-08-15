@@ -17,6 +17,7 @@
             <li><a class="dropdown-item" href="./research.php">Projects and tools</a></li>
             <li><a class="dropdown-item" href="./dissemination.php">Talks and dissemination</a></li>
             <li><a class="dropdown-item" href="./publications.php">Publications</a></li>
+            <li><a class="dropdown-item" href="./working-groups.php">Working groups</a></li>
           </ul>
         </li>
 		<li class="nav-item dropdown">

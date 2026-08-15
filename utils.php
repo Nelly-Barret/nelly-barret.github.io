@@ -1,5 +1,7 @@
 <?php 
 
+$CURRENT_STATUS_SQL = "CASE WHEN end_date = '1900-01-01' OR end_date > CURDATE() THEN 'Current' ELSE 'Finished' END AS status";
+
 function get_total_count_for_category(String $category) {
 	$sum = 0;
 	// $GLOBALS['counts'] because the variable counts is decalred outside the function, thus is not known inside the function

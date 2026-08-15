@@ -1,7 +1,8 @@
 <?php
 require('db.php');
+require('utils.php');
 try {
-	$SQL_CURRENT_COURSES = "SELECT * FROM teaching WHERE (end_date = '1900-01-01' OR end_date > CURDATE()) AND category = 'course' ORDER BY start_date DESC;";
+	$SQL_CURRENT_COURSES = "SELECT *, ".$CURRENT_STATUS_SQL." FROM teaching WHERE category = 'course' ORDER BY status ASC, end_date ASC, start_date DESC;";
 	$courses = $conn->query($SQL_CURRENT_COURSES);
 } catch (Exception $e) {
 	var_dump($e);
@@ -20,16 +21,7 @@ try {
     <section class="anchor light">
 		<h1 class="section-title">Courses</h1>
 		
-		<h2>Current courses</h2>
 		<?php include("teaching-table.php"); ?>
-
-		<h2>Former courses</h2>
-		<?php 
-			$SQL_FORMER_COURSES = "SELECT * FROM teaching WHERE end_date > '1900-01-01' AND end_date < CURDATE() ORDER BY start_date DESC;";
-			$courses = $conn->query($SQL_FORMER_COURSES);
-		?>
-		<?php include("teaching-table.php"); ?>
-
 
 		<h1 class="section-title">Teaching service</h1>
 		<?php 

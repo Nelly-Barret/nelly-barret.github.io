@@ -1,4 +1,4 @@
-<table class="table table-striped table-hover">
+<table class="table table-striped table-hover my-table-two">
 	<tbody>
 	<?php while($service = $services->fetch_assoc()): ?>
 		<tr>
