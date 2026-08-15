@@ -28,8 +28,14 @@
             <li><a class="dropdown-item" href="./students.php">Student supervision</a></li>
           </ul>
         </li>
-		<li class="nav-item">
-          <a class="nav-link" href="./service.php">Service</a>
+		<li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Service
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="./service.php">Academic service</a></li>
+            <li><a class="dropdown-item" href="./institutional.php">Institutional service</a></li>
+          </ul>
         </li>
 		<li class="nav-item">
           <a class="nav-link" href="./career.php">Career</a>

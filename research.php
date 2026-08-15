@@ -77,7 +77,7 @@ try {
 		</div>
 
 
-		<h2>Past projects</h2>
+		<h2>Previous projects</h2>
 		<!-- <h2 data-bs-toggle="collapse" href="#collapsePastProjects" role="button" aria-expanded="false" aria-controls="collapsePastProjects">Past projects</h2> -->
   		
 		<!-- <div class="collapse" id="collapsePastProjects"> -->

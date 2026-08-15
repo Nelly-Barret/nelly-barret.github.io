@@ -1,5 +1,7 @@
 <?php
 require('db.php');
+require('utils.php');
+
 try {
 	// SUMMARY RECORD
 
@@ -55,34 +57,7 @@ try {
 	var_dump($e);
 }
 
-function get_total_count_for_category(String $category) {
-	$sum = 0;
-	// $GLOBALS['counts'] because the variable counts is decalred outside the function, thus is not known inside the function
-	foreach($GLOBALS['counts'][$category] as $key => $value) {
-		$sum += $value;
-	}
-	return $sum;
-}
 
-function echo_count(String $category, String $rank, String $rank2 = null) {
-	// $GLOBALS['counts'] because the variable counts is decalred outside the function, thus is not known inside the function
-	if($rank2 != null) {
-		// we want to get the counts for two ranks, typically A* and A
-		if ($GLOBALS['counts'][$category][$rank] <= 0 && $GLOBALS['counts'][$category][$rank2] <= 0) {
-			return "";
-		} else if ($GLOBALS['counts'][$category][$rank] > 0 && $GLOBALS['counts'][$category][$rank2] <= 0) {
-			return $GLOBALS['counts'][$category][$rank];
-		} else {
-			return $GLOBALS['counts'][$category][$rank] + $GLOBALS['counts'][$category][$rank2];
-		}
-	} else {
-		if ($GLOBALS['counts'][$category][$rank] <= 0) {
-			return "";
-		} else {
-			return $GLOBALS['counts'][$category][$rank];
-		}
-	}
-}
 
 ?>
 
