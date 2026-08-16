@@ -1,0 +1,8 @@
+@inproceedings{barret2023pathways,
+  title={PathWays: entity-focused exploration of heterogeneous data graphs},
+  author={Barret, Nelly and Gauquier, Antoine and Law, Jia-Jean and Manolescu, Ioana},
+  booktitle={European Semantic Web Conference},
+  pages={91--95},
+  year={2023},
+  organization={Springer}
+}

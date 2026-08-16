@@ -1,0 +1,7 @@
+@inproceedings{barret2019spatial,
+  title={Spatial entity matching with geoalign (demo paper)},
+  author={Barret, Nelly and Duchateau, Fabien and Favetta, Franck and Moncla, Ludovic},
+  booktitle={Proceedings of the 27th ACM SIGSPATIAL International Conference on Advances in Geographic Information Systems},
+  pages={580--583},
+  year={2019}
+}

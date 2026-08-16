@@ -70,20 +70,20 @@ try {
 		<h1 class="section-title">Projects and tools</h1>
 		
 		
-		<h2>Current projects</h2>
+		<h2 class="subsection-title">Current projects</h2>
 		<?php while($project = $current_projects->fetch_assoc()): ?>
 			<?php include("research-card.php") ?>
 		<?php endwhile; ?> 
 		</div>
 
 
-		<h2>Previous projects</h2>
+		<h2 class="subsection-title">Previous projects</h2>
 		<!-- <h2 data-bs-toggle="collapse" href="#collapsePastProjects" role="button" aria-expanded="false" aria-controls="collapsePastProjects">Past projects</h2> -->
   		
 		<!-- <div class="collapse" id="collapsePastProjects"> -->
 			<div class="row">
 		<?php while($project = $former_projects->fetch_assoc()): ?>
-  <div class="col-sm-6 mb-3 mb-sm-0">
+  		<div class="col-sm-6 mb-3 mb-sm-0">
 			<?php include("research-card.php") ?>
 		</div>
 		<?php endwhile; ?> 

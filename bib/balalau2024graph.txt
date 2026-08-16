@@ -1,0 +1,8 @@
+@inproceedings{balalau2024graph,
+  title={Graph lenses over any data: the ConnectionLens experience},
+  author={Balalau, Oana and Barret, Nelly and Ebel, Simon and Galizzi, Th{\'e}o and Manolescu, Ioana and Mohanty, Madhulika},
+  booktitle={2024 IEEE 40th International Conference on Data Engineering Workshops (ICDEW)},
+  pages={370--374},
+  year={2024},
+  organization={IEEE}
+}

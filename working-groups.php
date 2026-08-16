@@ -2,7 +2,7 @@
 require('db.php');
 require('utils.php');
 try {
-	$SQL_WG = "SELECT *, ".$CURRENT_STATUS_SQL.", GROUP_CONCAT(wgd.text SEPARATOR ' ') AS content FROM working_group wg LEFT JOIN working_group_description wgd ON wg.id = wgd.wg_id GROUP BY wg.id ORDER BY status ASC, end_date ASC, start_date DESC;";
+	$SQL_WG = "SELECT *, ".$CURRENT_STATUS_SQL.", GROUP_CONCAT(wgd.text SEPARATOR ' ') AS content FROM working_group wg LEFT JOIN working_group_description wgd ON wg.wgid = wgd.wg_id GROUP BY wg.wgid ORDER BY status ASC, end_date ASC, start_date DESC;";
 	$wgs = $conn->query($SQL_WG);
 } catch (Exception $e) {
 	var_dump($e);

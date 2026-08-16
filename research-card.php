@@ -26,7 +26,7 @@ try {
 				<h6 class="card-subtitle mb-2 text-muted"><?=$project["long_title"]?></h6>
 				<!-- Tags -->
 				<?php while($tag = $projects_tags->fetch_assoc()): ?>
-					<?php if($tag["project_id"] == $project["id"]): ?>
+					<?php if($tag["project_id"] == $project["prid"]): ?>
 						<span class="badge text-bg-secondary"><?=$tag["tag"]?></span>
 					<?php endif; ?>
 				<?php endwhile;?>
@@ -66,17 +66,13 @@ try {
 						<p class="todo">TODO</p>
 					<!-- Tools and artifacts -->
 					<h5>Artifacts</h5>
+						<ul>
 						<?php while($tool = $projects_tools->fetch_assoc()): ?>
-							<?php if($tool["project_id"] == $project["id"]): ?>
-								<h6><?=$tool["title"]?></h6>
-								<ul>
-									<li>Repository: <a href="<?=$tool["repository"]?>" target="_blank"><?=$tool["repository"]?></a></li>
-									<li>LOC: <?=$tool["loc"]?>k</li>
-									<li>Languages: <?=$tool["language"]?></li>
-									<li>Duration: <?= compute_duration($tool["start_date"], $tool["end_date"])?></li>
-								</ul>
+							<?php if($tool["project_id"] == $project["prid"]): ?>
+								<li><b><?=$tool["title"]?></b> <a href="<?=$tool["repository"]?>" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i></a> (<?=$tool["language"]?> application, <?=$tool["loc"]?>k LOC, <?= compute_duration($tool["start_date"], $tool["end_date"])?>)</li>
 							<?php endif; ?>
 						<?php endwhile;?>
+						</ul>
 				</div>
 			</div>
 		</div>

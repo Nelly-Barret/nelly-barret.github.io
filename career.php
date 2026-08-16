@@ -4,7 +4,7 @@ try {
 	$SQL_AWARDS = "SELECT * FROM award;";
 	$awards = $conn->query($SQL_AWARDS);
 
-	$SQL_ALL_TRAINING = "SELECT *, CONCAT('<ul><li>', GROUP_CONCAT(td.text SEPARATOR '</li><li>'), '</li></ul>') AS content FROM training t LEFT JOIN training_description td ON t.id=td.training_id GROUP BY t.id;";
+	$SQL_ALL_TRAINING = "SELECT *, CONCAT('<ul><li>', GROUP_CONCAT(td.text SEPARATOR '</li><li>'), '</li></ul>') AS content FROM training t LEFT JOIN training_description td ON t.trid=td.training_id GROUP BY t.trid;";
 	$trainings = $conn->query($SQL_ALL_TRAINING);
 } catch (Exception $e) {
 	var_dump($e);

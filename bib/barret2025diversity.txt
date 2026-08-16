@@ -1,0 +1,10 @@
+@article{barret2025diversity,
+  title={Diversity, Equity and Inclusion Activities in DatabaseConferences: A 2024 Report},
+  author={Barret, Nelly and Bhowmick, Sourav S and Bonifati, Angela and Catania, Barbara and Idreos, Stratos and Ioannou, Ekaterini and Mohanty, Madhulika and Sellami, Sana and Shraga, Roee and Sirin, Utku and others},
+  journal={ACM SIGMOD Record},
+  volume={54},
+  number={3},
+  pages={40--43},
+  year={2025},
+  publisher={ACM New York, NY, USA}
+}

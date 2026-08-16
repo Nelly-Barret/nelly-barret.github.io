@@ -4,6 +4,11 @@
 	padding-bottom: 1rem; 
 }
 
+.subsection-title {
+	padding-top: 2rem; 
+	padding-bottom: 1rem; 
+}
+
 section {
     margin-left: 8rem;
 	margin-right: 8rem;
@@ -50,9 +55,9 @@ ul.list-group {
 	background-color: transparent;
 }
 
-.publications > li {
-	margin: 20px 0;
-}
+/* .publications > li { */
+	/* margin: 20px 0; */
+/* } */
 
 .inline-span {
 	display: inline;
@@ -71,6 +76,7 @@ ul.list-group {
 	width: 50px;
 }
 
+/* tables with the same number of columns have columns of the same size (which is not default in Bootstrap as it fits the content */
 .my-table-two, .my-table-three, .my-table-four {
     width: 100%;
     table-layout: fixed;
@@ -119,6 +125,11 @@ ul.list-group {
 /* add some space between the project card items and the text */
 .list-group-item > i {
 	margin-right: 1rem;
+}
+
+/* black font-awesome icons when there are links */
+a > i {
+	color: black !important;
 }
 /* 
 

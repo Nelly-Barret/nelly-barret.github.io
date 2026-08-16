@@ -1,0 +1,6 @@
+@inproceedings{barret2021facilitating,
+  title={Facilitating Heterogeneous Dataset Understanding},
+  author={Barret, Nelly},
+  booktitle={BDA 2021-informal publication only},
+  year={2021}
+}

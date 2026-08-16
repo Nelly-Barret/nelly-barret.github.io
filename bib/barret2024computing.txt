@@ -1,0 +1,8 @@
+@inproceedings{barret2024computing,
+  title={Computing generic abstractions from application datasets},
+  author={Barret, Nelly and Manolescu, Ioana and Upadhyay, Prajna},
+  booktitle={EDBT 2024-27th International Conference on Extending Database Technology},
+  volume={27},
+  pages={94--107},
+  year={2024}
+}

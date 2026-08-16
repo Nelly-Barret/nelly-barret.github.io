@@ -1,0 +1,7 @@
+@inproceedings{barret2019recherche,
+  title={{\`A} la recherche du quartier id{\'e}al.},
+  author={Barret, Nelly and Duchateau, Fabien and Favetta, Franck and Miquel, Maryvonne and Gentil, Aur{\'e}lien and Bonneval, Lo{\"\i}c and UMR5205, LIRIS},
+  booktitle={EGC},
+  pages={429--432},
+  year={2019}
+}

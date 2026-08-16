@@ -24,7 +24,7 @@ try {
     <!-- SECTION TALKS -->
     <section class="anchor light">
 		<h1 class="section-title">Student supervision</h1>
-		<h2>Current students</h2>
+		<h2 class="subsection-title">Current students</h2>
 		<ul>
 		<?php 
 			while($supervision = $current_supervisions->fetch_assoc()): ?>
@@ -34,7 +34,7 @@ try {
         <?php endwhile; ?> 
 		</ul>
 
-		<h2>Former students</h2>
+		<h2 class="subsection-title">Former students</h2>
 		<ul>
 		<?php 
 			while($supervision = $former_supervisions->fetch_assoc()): ?>

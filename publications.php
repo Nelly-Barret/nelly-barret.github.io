@@ -14,9 +14,7 @@ try {
 		"manuscript" => ["A*" => 0, "A" => 0, "B" => 0, "C" => 0, "D" => 0, "N/A" => 0]
 	];
 
-	// SELECT p.category, v.rank, COUNT(p.id) FROM publication p LEFT JOIN venue v ON p.venue=v.id GROUP BY p.category, v.rank
-
-	$SQL_SUMMARY = "SELECT p.category, v.rank, COUNT(p.id) AS count FROM publication p LEFT JOIN venue v ON p.venue=v.id GROUP BY p.category, v.rank";
+	$SQL_SUMMARY = "SELECT p.category, v.rank, COUNT(p.puid) AS count FROM publication p LEFT JOIN venue v ON p.venue=v.vid GROUP BY p.category, v.rank";
 	$summary = $conn->query($SQL_SUMMARY);
 	while($row = $summary->fetch_assoc()) {
 		$counts[$row["category"]][$row["rank"]] = $row["count"];
@@ -32,7 +30,7 @@ try {
 		$sort = "FIELD(pu.category, 'int_journal', 'int_conf', 'int_workshop', 'nat_conf', 'demo', 'manuscript'), pu.year DESC, v.acronym ASC";
 	}
 
-	$SQL_PUBLICATIONS = "SELECT pu.*, v.*, b.id AS bib_id, b.* FROM publication pu LEFT JOIN bibcitation b ON pu.bib_citation = b.id LEFT JOIN venue v ON pu.venue = v.id ORDER BY ".$sort;
+	$SQL_PUBLICATIONS = "SELECT pu.*, v.* FROM publication pu LEFT JOIN venue v ON pu.venue = v.vid ORDER BY ".$sort;
 	$publications = $conn->query($SQL_PUBLICATIONS);
 
 	$COLORS = [
@@ -45,14 +43,36 @@ try {
 	];
 
 	$CATEGORIES = [
-		"int_journal" => "International journal", 
-		"int_conf" => "International conference", 
-		"int_workshop" => "International workshop", 
-		"demo" => "Demonstration",
-		"nat_conf" => "National conference",
-		"manuscript" => "Manuscript"
+		"int_journal" => "International journals", 
+		"int_conf" => "International conferences", 
+		"int_workshop" => "International workshops", 
+		"demo" => "Demonstrations",
+		"nat_conf" => "National conferences",
+		"manuscript" => "Manuscripts"
 	];
 
+	// process the SQL result to obtain an arry of the form
+	// ["int_journal": [1, 2, 3], 
+	//    "int_conf": [4, 5], ...] or with keys being years when sorting by years
+	$the_publications = [];
+	$the_sort = $_POST["sort-publis"] == null ? "category" : $_POST["sort-publis"];
+
+	while($publi = $publications->fetch_assoc()) {
+		if($the_sort == "category") {
+			$the_category = $publi["category"];
+			if(!array_key_exists($the_category, $the_publications)) {
+				$the_publications[$the_category] = [];
+			}
+			$the_publications[$the_category][] = $publi;
+		} else {
+			// sort by year
+			$the_year = $publi["year"];
+			if(!array_key_exists($the_year, $the_publications)) {
+				$the_publications[$the_year] = [];
+			}
+			$the_publications[$the_year][] = $publi;
+		}
+	}
 } catch (Exception $e) {
 	var_dump($e);
 }
@@ -72,73 +92,16 @@ try {
     <section class="anchor light">
 		<h1 class="section-title">Summary</h1>
 
-		<table class="table table-striped table-hover">
-			<thead>
-				<tr>
-					<td></td>
-					<td>Q1/A*-A</td>
-					<td>Q2/B</td>
-					<td>Q3/C</td>
-					<td>Q4/D</td>
-					<td>N/A</td>
-				</tr>
-			</thead>
-			<tbody>
-				<tr>
-					<td><b><?=get_total_count_for_category("int_journal")?> Journals</b></td>
-					<td><?=echo_count("int_journal", "Q1")?></td>
-					<td><?=echo_count("int_journal", "Q2")?></td>
-					<td><?=echo_count("int_journal", "Q3")?></td>
-					<td><?=echo_count("int_journal", "Q4")?></td>
-					<td><?=echo_count("int_journal", "N/A")?></td>
-				</tr>
-				<tr>
-					<td><b><?=get_total_count_for_category("int_conf")?> International peer-reviewed conferences</b></td>
-					<td><?=echo_count("int_conf", "A*", "A")?></td>
-					<td><?=echo_count("int_conf", "B")?></td>
-					<td><?=echo_count("int_conf", "C")?></td>
-					<td><?=echo_count("int_conf", "D")?></td>
-					<td><?=echo_count("int_conf", "N/A")?></td>
-				</tr>
-				<tr>
-					<td><b><?=get_total_count_for_category("int_workshop")?> International peer-reviewed workshops</b></td>
-					<td><?=echo_count("int_workshop", "A*", "A")?></td>
-					<td><?=echo_count("int_workshop", "B")?></td>
-					<td><?=echo_count("int_workshop", "C")?></td>
-					<td><?=echo_count("int_workshop", "D")?></td>
-					<td><?=echo_count("int_workshop", "N/A")?></td>
-				</tr>
-				<tr>
-					<td><b><?=get_total_count_for_category("demo")?> International peer-reviewed demonstrations</b></td>
-					<td><?=echo_count("demo", "A*", "A")?></td>
-					<td><?=echo_count("demo", "B")?></td>
-					<td><?=echo_count("demo", "C")?></td>
-					<td><?=echo_count("demo", "D")?></td>
-					<td><?=echo_count("demo", "N/A")?></td>
-				</tr>
-				<tr>
-					<td><b><?=get_total_count_for_category("nat_conf")?> National peer-reviewed conferences</b></td>
-					<td><?=echo_count("nat_conf", "A*", "A")?></td>
-					<td><?=echo_count("nat_conf", "B")?></td>
-					<td><?=echo_count("nat_conf", "C")?></td>
-					<td><?=echo_count("nat_conf", "D")?></td>
-					<td><?=echo_count("nat_conf", "N/A")?></td>
-				</tr>
-				<tr>
-					<td><b><?=get_total_count_for_category("manuscript")?> Manuscripts</b></td>
-					<td><?=echo_count("manuscript", "A*", "A")?></td>
-					<td><?=echo_count("manuscript", "B")?></td>
-					<td><?=echo_count("manuscript", "C")?></td>
-					<td><?=echo_count("manuscript", "D")?></td>
-					<td><?=echo_count("manuscript", "N/A")?></td>
-				</tr>
-			</tbody>
-		</table>
+		<p>
+			I regularly publish in peer-reviewed and recognized venues. Specifically, I have published in <b><?=get_total_count_for_category("int_journal")?> journals</b>, including <?= echo_count("int_journal", "Q1") ?> Q1 venues, and in <b><?=get_total_count_for_category("int_conf")?> international conferences</b>, <?= echo_count("int_conf", "A*", "A") ?> of which are ranked A* or A. I have also published <b><?=get_total_count_for_category("int_workshop")?> international workshop</b> papers and <b><?=get_total_count_for_category("demo")?> demonstration</b> papers, as well as <b><?=get_total_count_for_category("nat_conf")?> national conference</b> papers. In addition, I have authored <b><?=get_total_count_for_category("manuscript")?> manuscripts</b> as part of my research work.
+		</p>
 		
 		<h1 class="section-title">Publication list</h1>
 
 		<form action="publications.php" method="post">
-		Sort by: <select name="sort-publis" id="sort-publis" onchange="this.form.submit();">
+		<b>Legend:</b> <i class="fa-solid fa-file-pdf"></i> PDF paper, <i class="fa-solid fa-file-powerpoint"></i> PDF slides, <i class="fa-solid fa-file-invoice"></i> PDF poster, <i class="fa-brands fa-tex"></i> TeX citation
+		<br/>
+		<b>Sort by:</b> <select name="sort-publis" id="sort-publis" onchange="this.form.submit();">
 			<option value="category" <?= $_POST["sort-publis"] != "year" ? "selected" : ""?>>Publication type</option>
 			<option value="year" <?= $_POST["sort-publis"] == "year" ? "selected" : ""?>>Year</option>
 		</select>
@@ -146,15 +109,18 @@ try {
 		<!-- <noscript><input type="submit" value="Submit"></noscript> -->
 		</form>
 
-		<?php foreach($CATEGORIES as $key => $category): ?>
-			<span class="badge text-bg-secondary" style="background-color: <?=$COLORS[$key]?> !important"><?=$category?></span>
-		<?php endforeach; ?>
-
-		<ol class="publications">
-		<?php while($publication = $publications->fetch_assoc()): ?>
-			<?php include("publication-item.php") ?>
-		<?php endwhile; ?> 
-		</ol>
+		<?php foreach(array_keys($the_publications) as $key): ?>
+			<?php if($the_sort == "category"): ?>
+				<h2 class="subsection-title"><?=$CATEGORIES[$key]?></h2> <!-- the readable publication category -->
+			<?php else: ?>
+				<h2 class="subsection-title"><?=$key?></h2> <!-- the year -->
+			<?php endif; ?>
+			<ol class="publications">
+			<?php foreach($the_publications[$key] as $publication): ?>
+				<?php include("publication-item.php") ?>
+			<?php endforeach; ?> 
+			</ol>
+		<?php endforeach; ?> 
     </section>
 </body>
 

@@ -1,0 +1,10 @@
+@article{barret2025etl,
+  title={I-ETL: an interoperability-aware health (meta) data pipeline to enable federated analyses},
+  author={Barret, Nelly and Bernasconi, Anna and Bikbov, Boris and Pinoli, Pietro},
+  journal={BMC Medical Informatics and Decision Making},
+  volume={25},
+  number={1},
+  pages={375},
+  year={2025},
+  publisher={Springer}
+}

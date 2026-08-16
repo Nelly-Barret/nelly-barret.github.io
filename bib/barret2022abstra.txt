@@ -1,0 +1,7 @@
+@inproceedings{barret2022abstra,
+  title={Abstra: toward generic abstractions for data of any model},
+  author={Barret, Nelly and Manolescu, Ioana and Upadhyay, Prajna},
+  booktitle={Proceedings of the 31st ACM International Conference on Information \& Knowledge Management},
+  pages={4803--4807},
+  year={2022}
+}
