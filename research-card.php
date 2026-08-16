@@ -46,8 +46,8 @@ try {
 						<li class="list-group-item"><i class="fa-solid fa-display"></i><a href="<?=$project["webpage"]?>" target="_blank"><?=$project["webpage"]?></a></li>
 					<?php endif; ?>
 				</ul>
-				<button class="btn btn-light collapse-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseProject<?=$project['id']?>" aria-expanded="false" aria-controls="collapseProject<?=$project['id']?>">Open details</button>
-				<div class="collapse" id="collapseProject<?=$project['id']?>">
+				<button class="btn btn-light collapse-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseProject<?=$project["prid"]?>" aria-expanded="false" aria-controls="collapseProject<?=$project["prid"]?>">Open details</button>
+				<div class="collapse" id="collapseProject<?=$project["prid"]?>">
 					<!-- Achivements -->
 					<h5>Scientific achievements</h5>
 						<ol>
