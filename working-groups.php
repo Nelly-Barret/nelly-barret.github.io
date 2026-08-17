@@ -23,5 +23,6 @@ try {
 		
 		<?php include("wg-table.php"); ?>
     </section>
+	<?php include('footer.php'); ?>
 </body>
 </html>

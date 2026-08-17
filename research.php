@@ -88,8 +88,7 @@ try {
 		</div>
 		<?php endwhile; ?> 
 	</div>
-		<!-- </div> -->
     </section>
+	<?php include('footer.php'); ?>
 </body>
-
 </html>

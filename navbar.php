@@ -7,7 +7,7 @@
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
       <ul class="navbar-nav">
         <li class="nav-item">
-		  <a class="nav-link active" aria-current="page" href="./index.php">About me</a>
+		  <a class="nav-link" aria-current="page" href="./index.php">About me</a>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -18,6 +18,7 @@
             <li><a class="dropdown-item" href="./dissemination.php">Talks and dissemination</a></li>
             <li><a class="dropdown-item" href="./publications.php">Publications</a></li>
             <li><a class="dropdown-item" href="./working-groups.php">Working groups</a></li>
+            <!-- <li><a class="dropdown-item" href="./visits.php">Visits in other labs</a></li> -->
           </ul>
         </li>
 		<li class="nav-item dropdown">
@@ -26,7 +27,7 @@
           </a>
           <ul class="dropdown-menu">
             <li><a class="dropdown-item" href="./teaching.php">Courses</a></li>
-            <li><a class="dropdown-item" href="./students.php">Student supervision</a></li>
+            <li><a class="dropdown-item" href="./supervision.php">Student supervision</a></li>
           </ul>
         </li>
 		<li class="nav-item dropdown">

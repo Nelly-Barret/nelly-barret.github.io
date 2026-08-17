@@ -8,9 +8,9 @@
 			<?php else: ?>
 				<td><?= date('M. Y', strtotime($respo["start_date"]))." - ".date('M. Y', strtotime($respo["end_date"])) ?></td>
 			<?php endif; ?>
-			<td><?=$respo["status"] == 'Current' ? "<b>" : ""?><?=$respo["title"] ?><?=$respo["status"] == 'Current' ? "</b>" : ""?></br/><p class="description"><?=$respo["contents"] ?></p></td>
+			<td><?=$respo["status"] == 'Current' ? "<b>" : ""?><?=$respo["title"] ?><?=$respo["status"] == 'Current' ? "</b>" : ""?></br/><p class="description"><?=$respo["content"] ?></p></td>
 			<?php if($respo["status"] == "Current"): ?>
-				<td><span class='badge text-bg-secondary' style='background-color: green !important'>Current</span></td>
+				<td><span class='badge text-bg-success'>Current</span></td>
 			<?php else: ?>
 				<td><span class='badge text-bg-secondary'>Finished</span></td>
 			<?php endif; ?>

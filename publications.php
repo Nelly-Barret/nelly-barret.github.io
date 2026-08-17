@@ -76,9 +76,6 @@ try {
 } catch (Exception $e) {
 	var_dump($e);
 }
-
-
-
 ?>
 
 <!DOCTYPE html>
@@ -122,6 +119,6 @@ try {
 			</ol>
 		<?php endforeach; ?> 
     </section>
+	<?php include('footer.php'); ?>
 </body>
-
 </html>

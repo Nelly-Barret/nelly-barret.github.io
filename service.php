@@ -22,7 +22,8 @@ try {
 	$TEMPLATE_SERVICE_SELECT_WITHOUT_ROLE = "SELECT s.seid, s.category, v.acronym, v.name, v.rank, s.role, GROUP_CONCAT(s.year ORDER BY year DESC SEPARATOR ', ') AS years FROM service s LEFT JOIN venue v ON s.venue_id = v.vid";
 	$TEMPLATE_SERVICE_GROUP_SORT = "GROUP BY category, venue_id ORDER BY s.category, FIELD (v.rank, 'Q1', 'A*', 'A', 'Q2', 'B', 'Q3', 'C', 'Q4', 'D', 'N/A'), s.year DESC, v.acronym ASC;";
 
-	$SQL_ORGA_SERVICES = $TEMPLATE_SERVICE_SELECT_WITHOUT_ROLE." WHERE category = 'organizer' OR category = 'chair' ".$TEMPLATE_SERVICE_GROUP_SORT;
+	$SQL_ORGA_SERVICES = $TEMPLATE_SERVICE_SELECT." WHERE category = 'organizer' ".$TEMPLATE_SERVICE_GROUP_SORT;
+	$SQL_CHAIR_SERVICES = $TEMPLATE_SERVICE_SELECT." WHERE category = 'chair' ".$TEMPLATE_SERVICE_GROUP_SORT;
 	$SQL_PC_SERVICES = $TEMPLATE_SERVICE_SELECT." WHERE category = 'pc' ".$TEMPLATE_SERVICE_GROUP_SORT;
 	$SQL_JOURNAL_REVIEW_SERVICES = $TEMPLATE_SERVICE_SELECT_WITHOUT_ROLE." WHERE role = 'journal reviewer' ".$TEMPLATE_SERVICE_GROUP_SORT;
 	$SQL_CONFERENCE_REVIEW_SERVICES = $TEMPLATE_SERVICE_SELECT." WHERE category = 'reviewer' AND role = '' ".$TEMPLATE_SERVICE_GROUP_SORT;
@@ -65,9 +66,15 @@ try {
 		</p>
 		
 		<h1 class="section-title">Leadership</h1>
+		
 		<h2 class="subsection-title">Conference & workshop organization</h2>
-		<!-- Organisation and chair duties -->
+		<!-- Organisation duties -->
 		<?php $services = $conn->query($SQL_ORGA_SERVICES); ?>
+		<?php include("service-table.php"); ?>
+
+		<h2 class="subsection-title">Conference & workshop chairing</h2>
+		<!-- Chair duties -->
+		<?php $services = $conn->query($SQL_CHAIR_SERVICES); ?>
 		<?php include("service-table.php"); ?>
 
 		<!-- PC duties -->
@@ -86,5 +93,6 @@ try {
 		<h2 class="subsection-title">Conferences</h2>
 		<?php include("service-table.php"); ?>
     </section>
+	<?php include('footer.php'); ?>
 </body>
 </html>

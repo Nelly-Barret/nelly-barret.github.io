@@ -22,5 +22,6 @@ try {
 		<h1 class="section-title">Institutional responsabilities</h1>
 		<?php include("institutional-table.php"); ?>
     </section>
+	<?php include('footer.php'); ?>
 </body>
 </html>

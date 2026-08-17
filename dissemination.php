@@ -1,8 +1,16 @@
 <?php
 require('db.php');
 try {
-	$SQL_TALKS = "SELECT * FROM dissemination ORDER BY date DESC, id ASC;";
+	$SQL_TALKS = "SELECT * FROM dissemination WHERE category = 'Seminar' ORDER BY date DESC, id ASC;";
 	$talks = $conn->query($SQL_TALKS);
+
+	$SQL_PANELS = "SELECT * FROM dissemination WHERE category = 'Panel' ORDER BY date DESC, id ASC;";
+
+	$SQL_VULGARIZATION = "SELECT * FROM dissemination WHERE category = 'Vulgarization' ORDER BY date DESC, id ASC;";
+	
+
+	$SQL_EMPOWERMENT = "SELECT * FROM dissemination WHERE category = 'Female empowerment' ORDER BY date DESC, id ASC;";
+	
 } catch (Exception $e) {
 	var_dump($e);
 }
@@ -18,91 +26,21 @@ try {
 	<?php include 'navbar.php'; ?>
     
     <section class="anchor light">
-		<h1 class="section-title">Selection</h1>
-
-		<p style="color: red;">TODO</p>
-
 		<h1 class="section-title">Invited talks</h1>
-		<table class="table table-striped table-hover my-table-four">
-			<tbody>
-			<?php while($talk = $talks->fetch_assoc()): ?>
-				<?php if($talk["category"] == "Seminar"): ?>
-					<tr>
-						<td><img src="<?=$talk["logo_filepath"]?>" class="logo"></img></td>
-						<td><?=date('F Y', strtotime($talk["date"])) ?></td>
-						<td><?=$talk["title"] ?></td>
-						<td><a href="<?=$talk["resource"]?>" target="_blank">PDF</a></td>
-					</tr>
-				<?php endif; ?>
-			<?php endwhile; ?> 
-			</tbody>
-		</table>
+		<?php include("dissemination-table.php"); ?>
 
 		<h1 class="section-title">Panels</h1>
-		<?php $talks = $conn->query($SQL_TALKS); ?>
-
-		<table class="table table-striped table-hover my-table-four">
-			<tbody>
-			<?php while($talk = $talks->fetch_assoc()): ?>
-				<?php if($talk["category"] == "Panel"): ?>
-					<tr>
-						<td><img src="<?=$talk["logo_filepath"]?>" class="logo"></img></td>
-						<td><?=date('F Y', strtotime($talk["date"])) ?></td>
-						<td><?=$talk["title"] ?><br/><span class="badge text-bg-secondary"><?=$talk["crowd"] ?></span></td>
-						<?php if($talk["resource"] != ""): ?>
-							<td><a href="<?=$talk["resource"]?>" target="_blank">video</a></td>
-						<?php else: ?>
-							<td></td>
-						<?php endif; ?>
-					</tr>
-				<?php endif; ?>
-			<?php endwhile; ?> 
-			</tbody>
-		</table>
+		<?php $talks = $conn->query($SQL_PANELS); ?>
+		<?php include("dissemination-table.php"); ?>
 
 		<h1 class="section-title">Vulgarization talks</h1>
-		<?php $talks = $conn->query($SQL_TALKS); ?>
-		
-		<table class="table table-striped table-hover my-table-four">
-			<tbody>
-			<?php while($talk = $talks->fetch_assoc()): ?>
-				<?php if($talk["category"] == "Vulgarization"): ?>
-					<tr>
-						<td><img src="<?=$talk["logo_filepath"]?>" class="logo"></img></td>
-						<td><?=date('F Y', strtotime($talk["date"])) ?></td>
-						<td><?=$talk["title"] ?><br/><span class="badge text-bg-secondary"><?=$talk["crowd"] ?></span></td>
-						<?php if($talk["resource"] != ""): ?>
-							<td><a href="<?=$talk["resource"]?>" target="_blank">PDF</a></td>
-						<?php else: ?>
-							<td></td>
-						<?php endif; ?>
-					</tr>
-				<?php endif; ?>
-			<?php endwhile; ?> 
-			</tbody>
-		</table>
+		<?php $talks = $conn->query($SQL_VULGARIZATION); ?>
+		<?php include("dissemination-table.php"); ?>
 
 		<h1 class="section-title">Female empowerment talks</h1>
-		<?php $talks = $conn->query($SQL_TALKS); ?>
-		
-		<table class="table table-striped table-hover my-table-four">
-			<tbody>
-			<?php while($talk = $talks->fetch_assoc()): ?>
-				<?php if($talk["category"] == "Female empowerment"): ?>
-					<tr>
-						<td><img src="<?=$talk["logo_filepath"]?>" class="logo"></img></td>
-						<td><?=date('F Y', strtotime($talk["date"])) ?></td>
-						<td><?=$talk["title"] ?><br/><span class="badge text-bg-secondary"><?=$talk["crowd"] ?></span></td>
-						<?php if($talk["resource"] != ""): ?>
-							<td><a href="<?=$talk["resource"]?>" target="_blank">website</a></td>
-						<?php else: ?>
-							<td></td>
-						<?php endif; ?>
-					</tr>
-				<?php endif; ?>
-			<?php endwhile; ?> 
-			</tbody>
-		</table>
+		<?php $talks = $conn->query($SQL_EMPOWERMENT); ?>
+		<?php include("dissemination-table.php"); ?>
     </section>
+	<?php include('footer.php'); ?>
 </body>
 </html>

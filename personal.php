@@ -28,17 +28,23 @@ try {
     <section class="anchor light">
     
     	<div class="row">
+			<h1 class="section-title">Personal news</h1>
         	<div class="col-sm-6" style="text-align: center">I recently got engaged with my partner<br/>
-	        	<img src="./img/pacs.jpg" width="30%"/>
-        	</div>
-        	<div class="col-sm-6" style="text-align: center">On my free time, I enjoy doing puzzles:
+				<img src="./img/pacs.jpg" width="30%"/>
+			</div>
+			<div class="col-sm-6" style="text-align: center">On my free time, I enjoy doing puzzles:
 				<img src="./img/puzzle-3.jpeg" width="90%"/>
-        	</div>
-      	</div>
-      
-      	<br/>
-
+			</div>
+		</div>
+		
+		<h1 class="section-title">Book recommendations</h1>
+		<ul>
+			<li>"The Confidence Code" by Katty Kay and Claire Shipman</li>
+			<li>"Deep Work: Rules for Focused Success in a Distracted World" by Cal Newport</li>
+		</ul>
+      	
         <div class="row">
+			<h1 class="section-title">Former activities</h1>
             Some former activities I enjoyed doing during my high school and university years:
             <div class="col-sm-12">
                 <ul>
@@ -49,5 +55,6 @@ try {
             </div>
         </div>
     </section>
+	<?php include('footer.php'); ?>
 </body>
 </html>
