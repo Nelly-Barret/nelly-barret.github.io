@@ -19,33 +19,68 @@
 		}
 	?>
 
-	<!-- publication authors, title , conference and year-->
-	<?php if($publication["publication_url"] != ""): ?>
-		<?= $str_authors ?>. <a href="<?=$publication["publication_url"]?>" target="_blank"><?= $publication["title"] ?></a>. <?=$publication["name"]?>. <?=$publication["year"]?>. 
-	<?php else: ?>
-		<?= $str_authors ?>. <b><?= $publication["title"] ?></b>. <?=$publication["name"]?>. <?=$publication["year"]?>. 
-	<?php endif; ?>
+	<!-- code publication -->
+	<?php 
+		$SQL_CODE = "SELECT * FROM publication_tool pt LEFT JOIN tool t ON pt.tool_id = t.toid;";
+		$codes = $conn->query($SQL_CODE);
+		$the_code = "";
+		$the_code_url = "";
+		while($code = $codes->fetch_assoc()) {
+			if($code["publication_id"] == $publication["puid"]) {
+				$the_code = $code["title"];
+				$the_code_url = $code["repository"];
+			}
+		}
+	?>
 
+	<b><?= $publication["title"] ?></b>. <br/><?= $str_authors ?>. <br/><?=$publication["name"]?>. <?=$publication["year"]?>. <br/>
+
+	<!-- publication authors, title , conference and year-->
+	
 	<!-- buttons -->
 	<!-- editor url -->
+	<?php if($publication["publication_url"] != ""): ?>
+		<i class="fa-solid fa-up-right-from-square"></i><a href="<?=$publication["publication_url"]?>" target="_blank">Publisher page</a> 
+	<?php endif; ?>
+
+	<!-- DOI url -->
+	<?php if($publication["doi_url"] != ""): ?>
+		&nbsp;&#183;&nbsp;
+		<i class="fa-solid fa-up-right-from-square"></i>&nbsp;<a href="<?=$publication["doi_url"]?>" target="_blank">DOI</a> 
+	<?php endif; ?>
 		
 	<!-- paper url -->
 	<?php if($publication["paper_url"] != ""): ?>
-		<a href="<?=$publication["paper_url"]?>" target="_blank" title="PDF paper"><i class="fa-solid fa-file-pdf black-fa"></i></a>
+		&nbsp;&#183;&nbsp;
+		<!-- <a href="<?=$publication["paper_url"]?>" target="_blank" title="PDF paper"><i class="fa-solid fa-file-pdf black-fa"></i></a> -->
+		<i class="fa-solid fa-file-pdf black-fa"></i>&nbsp;<a href="<?=$publication["paper_url"]?>" target="_blank" title="PDF paper">Paper</a>
 	<?php endif; ?>
-
+	
+	
 	<!-- slides url -->
 	<?php if($publication["slides_url"] != ""): ?>
-		<a href="<?=$publication["slides_url"]?>" target="_blank" title="PDF slides"><i class="fa-solid fa-file-powerpoint black-fa"></i></a>
+		&nbsp;&#183;&nbsp;
+		<i class="fa-solid fa-file-powerpoint black-fa"></i>&nbsp;<a href="<?=$publication["slides_url"]?>" target="_blank" title="PDF slides">Slides</a>
 	<?php endif; ?>
-
+		
+		
 	<!-- poster url -->
 	<?php if($publication["poster_url"] != ""): ?>
-		<a href="<?=$publication["poster_url"]?>" target="_blank" title="PDF poster"><i class="fa-solid fa-file-invoice black-fa"></i></a>
+		&nbsp;&#183;&nbsp;
+		<i class="fa-solid fa-file-invoice black-fa"></i>&nbsp;<a href="<?=$publication["poster_url"]?>" target="_blank" title="PDF poster">Poster</a>
 	<?php endif; ?>
 
+
+	<!-- Code link -->
+	<?php if($the_code_url != ""): ?>
+		&nbsp;&#183;&nbsp;
+		<i class="fa-solid fa-code"></i>&nbsp;<a href="<?=$the_code_url?>" target="_blank" title="Code URL">Code (<?= $the_code ?>)</a>
+	<?php endif; ?>
+
+	
 	<!-- TeX citation -->
 	<?php if($publication["bib_key"] != ""): ?>
-		<a href="./bib/<?=$publication["bib_key"]?>.txt" target="_blank" title="TeX citation"><i class="fa-brands fa-tex black-fa"></i></a>
+		&nbsp;&#183;&nbsp;
+		<i class="fa-brands fa-tex black-fa"></i>&nbsp;<a href="./bib/<?=$publication["bib_key"]?>.txt" target="_blank" title="TeX citation">BibTeX</a>
 	<?php endif; ?>
 </li>

@@ -1,22 +1,3 @@
-<?php
-require('db.php');
-try {
-	$SQL_CURRENT_COURSES = "SELECT * FROM course WHERE end_date = '1900-01-01';";
-	$current_courses = $conn->query($SQL_CURRENT_COURSES);
-
-	$SQL_FORMER_COURSES = "SELECT * FROM course WHERE end_date > '1900-01-01';";
-	$former_courses = $conn->query($SQL_FORMER_COURSES);
-
-	
-
-	$SQL_ALL_TRAINING = "SELECT * FROM training;";
-	$trainings = $conn->query($SQL_ALL_TRAINING);
-} catch (Exception $e) {
-	var_dump($e);
-}
-
-?>
-
 <!DOCTYPE html>
 
 <html lang="fr">

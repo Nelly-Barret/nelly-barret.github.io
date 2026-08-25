@@ -95,10 +95,10 @@ try {
 		
 		<h1 class="section-title">Publication list</h1>
 
+		<!-- <b>Legend:</b> <i class="fa-solid fa-file-pdf"></i> PDF paper, <i class="fa-solid fa-file-powerpoint"></i> PDF slides, <i class="fa-solid fa-file-invoice"></i> PDF poster, <i class="fa-brands fa-tex"></i> TeX citation -->
+		<!-- <br/> -->
 		<form action="publications.php" method="post">
-		<b>Legend:</b> <i class="fa-solid fa-file-pdf"></i> PDF paper, <i class="fa-solid fa-file-powerpoint"></i> PDF slides, <i class="fa-solid fa-file-invoice"></i> PDF poster, <i class="fa-brands fa-tex"></i> TeX citation
-		<br/>
-		<b>Sort by:</b> <select name="sort-publis" id="sort-publis" onchange="this.form.submit();">
+			<b>Sort by:</b> <select name="sort-publis" id="sort-publis" onchange="this.form.submit();">
 			<option value="category" <?= $_POST["sort-publis"] != "year" ? "selected" : ""?>>Publication type</option>
 			<option value="year" <?= $_POST["sort-publis"] == "year" ? "selected" : ""?>>Year</option>
 		</select>

@@ -9,9 +9,9 @@
 			<?php endif; ?>
 			<td><?=$wg["status"] == 'Current' ? "<b>" : ""?><?=$wg["title"] ?><?=$wg["status"] == 'Current' ? "</b>" : ""?><br/><a href="<?=$wg["webpage"]?>" target="_blank"><?=$wg["webpage"]?></a><br/><span class='badge text-bg-secondary'><?=$wg["involvement"] ?></span><br/><p class="description"><?=$wg["content"] ?></p></td>
 			<?php if($wg["status"] == 'Finished'): ?>
-				<td><span class='badge text-bg-secondary'>Finished</span></td>
+				<td><span class='badge text-bg-secondary status'>Finished</span></td>
 			<?php else: ?>
-				<td><span class='badge text-bg-success'>Current</span></td>
+				<td><span class='badge text-bg-success status'>Current</span></td>
 			<?php endif; ?>
 		</tr>
 	<?php endwhile; ?> 

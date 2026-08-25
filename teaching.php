@@ -2,7 +2,7 @@
 require('db.php');
 require('utils.php');
 try {
-	$SQL_COURSES = "SELECT *, ".$CURRENT_STATUS_SQL." FROM teaching WHERE category = 'course' ORDER BY status ASC, end_date ASC, start_date DESC;";
+	$SQL_COURSES = "SELECT *, ".$CURRENT_STATUS_SQL." FROM teaching WHERE category = 'course' ORDER BY status ASC, end_date DESC, start_date DESC;";
 	$courses = $conn->query($SQL_COURSES);
 } catch (Exception $e) {
 	var_dump($e);

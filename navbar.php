@@ -45,6 +45,18 @@
 		<li class="nav-item">
           <a class="nav-link" href="./personal.php">Personal</a>
         </li>
+		<li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            CV
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="./generate-cv/cv-short-nelly-barret.pdf" target="_blank">Short CV</a></li>
+            <li><a class="dropdown-item" href="./generate-cv/cv-long-nelly-barret.pdf" target="_blank">Long CV</a></li>
+            <li><a class="dropdown-item" href="./docs/short-bio-nelly-barret-EN.txt" target="_blank">Short bio</a></li>
+            <!-- <li><a class="dropdown-item" href="./institutional.php">Institutional service</a></li> -->
+          </ul>
+        </li>
+		
       </ul>
     </div>
   </div>

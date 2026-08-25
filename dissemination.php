@@ -1,15 +1,15 @@
 <?php
 require('db.php');
 try {
-	$SQL_TALKS = "SELECT * FROM dissemination WHERE category = 'Seminar' ORDER BY date DESC, id ASC;";
+	$SQL_TALKS = "SELECT * FROM dissemination WHERE category = 'Seminar' ORDER BY date DESC, did ASC;";
 	$talks = $conn->query($SQL_TALKS);
 
-	$SQL_PANELS = "SELECT * FROM dissemination WHERE category = 'Panel' ORDER BY date DESC, id ASC;";
+	$SQL_PANELS = "SELECT * FROM dissemination WHERE category = 'Panel' ORDER BY date DESC, did ASC;";
 
-	$SQL_VULGARIZATION = "SELECT * FROM dissemination WHERE category = 'Vulgarization' ORDER BY date DESC, id ASC;";
+	$SQL_VULGARIZATION = "SELECT * FROM dissemination WHERE category = 'Vulgarization' ORDER BY date DESC, did ASC;";
 	
 
-	$SQL_EMPOWERMENT = "SELECT * FROM dissemination WHERE category = 'Female empowerment' ORDER BY date DESC, id ASC;";
+	$SQL_EMPOWERMENT = "SELECT * FROM dissemination WHERE category = 'Female empowerment' ORDER BY date DESC, did ASC;";
 	
 } catch (Exception $e) {
 	var_dump($e);

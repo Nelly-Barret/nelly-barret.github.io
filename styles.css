@@ -19,9 +19,25 @@ section {
     padding-top: 50px; /* default Bootstrap navbar height */
 }
 
+h1 {
+    color: black;
+    border-bottom: 2px solid orange;
+	margin-bottom: 2rem;
+}
+
+/* highlight in orange dropdown elements in the navbar */
+.dropdown-menu > li > a:hover {
+    background-image: none;
+    background-color: orange;
+}
+
 /* project cards and their stacked items (project dates, role, grant, website) are of the same background color */
 .card-body, ul.list-group > li {
 	background-color: #F0ECE3 !important;
+}
+
+.card-light {
+	background-color: #f4f4f4 !important;
 }
 
 /* a small space between the project title + tags and the list-group */
@@ -55,9 +71,9 @@ ul.list-group {
 	background-color: transparent;
 }
 
-/* .publications > li { */
-	/* margin: 20px 0; */
-/* } */
+ol.publications > li {
+	margin-top: 1rem;
+}
 
 .inline-span {
 	display: inline;
@@ -131,6 +147,223 @@ ul.list-group {
 a > i {
 	color: black !important;
 }
+
+/* Current/Finished badges that are in tables should be center in the cell  */
+.status {
+	text-align: center !important;
+	display: block;
+}
+
+/* add some space between the badge and its text below */
+.badge-bottom {
+	margin-bottom: 1rem !important;
+}
+
+/* career timeline */
+
+.academic-timeline {
+    width: 100%;
+    margin: 40px 0;
+}
+
+
+/* Each row */
+.academic-timeline-item {
+    display: grid;
+
+    grid-template-columns: 180px 40px 1fr;
+
+    min-height: 120px;
+}
+
+
+/* Date */
+.academic-timeline-date {
+    text-align: right;
+
+    padding-top: 8px;
+    padding-right: 20px;
+
+    color: #777;
+
+    font-size: 0.9rem;
+}
+
+
+/* Line column */
+.academic-timeline-line {
+    position: relative;
+
+    width: 40px;
+
+    min-height: 120px;
+}
+
+
+/* Vertical line */
+.academic-timeline-line::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    bottom: 0;
+
+    left: 19px;
+
+    width: 2px;
+
+    background-color: #cccccc;
+
+    display: block;
+}
+
+
+/* Dot */
+.academic-timeline-dot {
+    position: absolute;
+
+    z-index: 10;
+
+    top: 5px;
+    left: 13px;
+
+    display: block;
+
+    width: 14px;
+    height: 14px;
+
+    background-color: #777777;
+
+    border-radius: 50%;
+
+    border: 3px solid white;
+
+    box-sizing: border-box;
+}
+
+
+/* Current dot */
+.academic-timeline-dot.current {
+    background-color: #198754;
+
+    width: 16px;
+    height: 16px;
+
+    left: 12px;
+}
+
+
+/* Content */
+.academic-timeline-content {
+    padding: 0 0 35px 20px;
+}
+
+
+/* Title */
+.academic-timeline-content h3 {
+    margin: 0 0 5px 0;
+
+    font-size: 1.25rem;
+}
+
+
+/* Institution */
+.academic-timeline-institution {
+    color: #6c757d;
+
+    margin-bottom: 12px;
+
+    font-weight: 500;
+}
+
+
+/* Mobile */
+@media (max-width: 767px) {
+
+    .academic-timeline-item {
+        grid-template-columns: 30px 1fr;
+
+        min-height: 0;
+    }
+
+    .academic-timeline-date {
+        grid-column: 2;
+
+        text-align: left;
+
+        padding: 0 0 5px 15px;
+    }
+
+    .academic-timeline-line {
+        grid-column: 1;
+        grid-row: 1 / span 2;
+
+        width: 30px;
+
+        min-height: 100%;
+    }
+
+    .academic-timeline-line::before {
+        left: 14px;
+    }
+
+    .academic-timeline-dot {
+        left: 8px;
+    }
+
+    .academic-timeline-dot.current {
+        left: 7px;
+    }
+
+    .academic-timeline-content {
+        grid-column: 2;
+
+        padding-left: 15px;
+    }
+}
+
+/* career navigation bar */
+.career-toc {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1.2rem;
+
+    margin: 0 0 2.5rem 0;
+    padding: 0.75rem 0;
+
+    border-bottom: 1px solid #dee2e6;
+}
+
+.career-toc-title {
+    font-weight: 600;
+    color: #555;
+}
+
+.career-toc a {
+    color: #6c757d;
+    text-decoration: none;
+
+    transition: color 0.2s ease;
+}
+
+.career-toc a:hover {
+    color: #198754;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+#academic-positions,
+#awards,
+#training {
+    scroll-margin-top: 80px;
+}
+
+
+
 /* 
 
 a:not(.nav-link, .navbar-brand) {

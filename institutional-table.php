@@ -10,9 +10,9 @@
 			<?php endif; ?>
 			<td><?=$respo["status"] == 'Current' ? "<b>" : ""?><?=$respo["title"] ?><?=$respo["status"] == 'Current' ? "</b>" : ""?></br/><p class="description"><?=$respo["content"] ?></p></td>
 			<?php if($respo["status"] == "Current"): ?>
-				<td><span class='badge text-bg-success'>Current</span></td>
+				<td><span class='badge text-bg-success status'>Current</span></td>
 			<?php else: ?>
-				<td><span class='badge text-bg-secondary'>Finished</span></td>
+				<td><span class='badge text-bg-secondary status'>Finished</span></td>
 			<?php endif; ?>
 		</tr>
 	<?php endwhile; ?> 
