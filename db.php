@@ -17,9 +17,11 @@ if (mysqli_connect_errno()) {
     echo "Failed to connect to MySQL: " . mysqli_connect_error();
 }
 
-// function update_table($conn, $the_id, $the_field, $the_id_field, $the_value, $the_table, $allowedFields) {
+// function update_table($the_conn, $the_id, $the_field, $the_id_field, $the_value, $the_table, $allowedFields) {
 // 	// variables are not global, so $conn needs to be passed to the function
 // 	try {
+// 		$a = 1;
+// 		return $a;
 // 		// Validate field
 // 		if (!in_array($the_field, $allowedFields, true)) {
 // 			throw new Exception('Invalid field.');
@@ -37,7 +39,7 @@ if (mysqli_connect_errno()) {
 // 			WHERE `$the_id_field` = ?
 // 		";
 	
-// 		$stmt = $conn->prepare($sql);
+// 		$stmt = $the_conn->prepare($sql);
 // 		$stmt->bind_param("si", $the_value, $the_id);
 // 		$stmt->execute();
 

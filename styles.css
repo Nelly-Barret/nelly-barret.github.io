@@ -19,10 +19,22 @@ section {
     padding-top: 50px; /* default Bootstrap navbar height */
 }
 
+/* personalized h1 section titles with an orange bar underline */
 h1 {
-    color: black;
-    border-bottom: 2px solid orange;
-	margin-bottom: 2rem;
+    width: fit-content;
+    margin: 0 auto 25px;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+h1::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: -30px;
+    right: -30px;
+    height: 3px;
+    background-color: orange;
 }
 
 /* highlight in orange dropdown elements in the navbar */

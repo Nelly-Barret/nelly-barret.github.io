@@ -8,48 +8,42 @@
     
     <section class="anchor light">
     
-    	<div class="row">
-			<h1 class="section-title page-nav-section">Beyond research</h1>
-			<p class="personal-intro">Outside of research and teaching, I enjoy spending time with my partner, solving puzzles, and discovering the world through cooking recipes, sports association, or computer science challgenges.</p>
+		<h1 class="section-title page-nav-section">Beyond research</h1>
+		<p class="personal-intro">Outside of research and teaching, I enjoy spending time with my partner, solving puzzles, and discovering the world through cooking recipes, sports association, or computer science challgenges.</p>
 
-			<div class="personal-grid">
-				<table style="width:100%">
-					<tr>
-						<td style="width:50%"><b>A new chapter</b></td>
-						<td style="width:50%"><b>Puzzle time</b></td>
-					</tr>
-					<tr>
-						<td style="width:50%"><p>I recently got engaged with my partner.</p></td>
-						<td style="width:50%"><p>One of my favourite ways to disconnect from work is spending an afternoon solving puzzles.</p></td>
-					</tr>
-					<tr>
-						<td style="width:50%"><img src="./img/pacs.jpg" width="18%" style="border-radius: 15px"></td>
-						<td style="width:50%"><img src="./img/puzzle-3.jpeg" width="60%" style="border-radius: 15px"></td>
-					</tr>
-				</table>
-			</div>
+		<div class="personal-grid">
+			<table style="width:100%">
+				<tr>
+					<td style="width:50%"><b>A new chapter</b></td>
+					<td style="width:50%"><b>Puzzle time</b></td>
+				</tr>
+				<tr>
+					<td style="width:50%"><p>I recently got engaged with my partner.</p></td>
+					<td style="width:50%"><p>One of my favourite ways to disconnect from work is spending an afternoon solving puzzles.</p></td>
+				</tr>
+				<tr>
+					<td style="width:50%"><img src="./img/pacs.jpg" width="18%" style="border-radius: 15px"></td>
+					<td style="width:50%"><img src="./img/puzzle-3.jpeg" width="60%" style="border-radius: 15px"></td>
+				</tr>
+			</table>
 		</div>
 
-		<div class="row">
-			<h1 class="section-title page-nav-section">What I'm reading</h1>
+		<h1 class="section-title page-nav-section">What I'm reading</h1>
 
-			<p>
-				A few books that I particularly enjoyed:
-			</p>
+		<p>A few books that I particularly enjoyed:</p>
 
-			<div class="book-list">
-				<div class="book">
-					<div>
-						<b>📖 The Confidence Code</b>by Katty Kay &amp; Claire Shipman
-						<p class="description">I really liked the extensive scientific and social aspect of the book, showing how our DNA, our environment, the society and ourselves impact the confidence.</p>
-					</div>
+		<div class="book-list">
+			<div class="book">
+				<div>
+					<b>📖 The Confidence Code</b>by Katty Kay &amp; Claire Shipman
+					<p class="description">I really liked the extensive scientific and social aspect of the book, showing how our DNA, our environment, the society and ourselves impact the confidence.</p>
 				</div>
+			</div>
 
-				<div class="book">
-					<div>
-						<b>📖 Deep Work</b> by Cal Newport
-						<p class="description">I appreciated the numerous pratical advices proposed by the authors to install deep work habits in a shallow, distracted modern world.</p>
-					</div>
+			<div class="book">
+				<div>
+					<b>📖 Deep Work</b> by Cal Newport
+					<p class="description">I appreciated the numerous pratical advices proposed by the authors to install deep work habits in a shallow, distracted modern world.</p>
 				</div>
 			</div>
 		</div>
