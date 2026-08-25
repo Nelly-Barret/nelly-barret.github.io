@@ -23,7 +23,7 @@ try {
 	<?php include 'navbar.php'; ?>
     
     <section class="anchor light">
-		<h1 class="section-title">Research themes</h1>
+		<h1 class="section-title page-nav-section">Research themes</h1>
 		
 		My research themes lie in the broad area of <b>heterogeneous data integration and exploitation</b>, including heterogeneous and multi-modal data as well as warehouse, data lake and lakehouse architectures.
 
@@ -38,7 +38,7 @@ try {
 
 		My research applies to various domains including sustainable cities, media, and healthcare, with a strong interest in <b>sustainable cities</b>.
 		
-		<h1 class="section-title">Projects and tools</h1>
+		<h1 class="section-title page-nav-section">Projects and tools</h1>
 		
 		
 		<h2 class="subsection-title">Current projects</h2>

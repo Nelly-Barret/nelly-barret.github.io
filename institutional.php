@@ -19,7 +19,7 @@ try {
 	<?php include 'navbar.php'; ?>
     
     <section class="anchor light">
-		<h1 class="section-title">Institutional responsabilities</h1>
+		<h1 class="section-title page-nav-section">Institutional responsabilities</h1>
 		<?php include("institutional-table.php"); ?>
     </section>
 	<?php include('footer.php'); ?>

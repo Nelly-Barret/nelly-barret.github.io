@@ -56,7 +56,11 @@
             <!-- <li><a class="dropdown-item" href="./institutional.php">Institutional service</a></li> -->
           </ul>
         </li>
-		
+		<li class="nav-item dropdown page-nav" id="pageNavContainer">
+			<a class="nav-link dropdown-toggle" href="#" id="pageNavDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">On this page</a>
+			<ul class="dropdown-menu dropdown-menu-end" id="pageNavMenu">
+			</ul>
+		</li>
       </ul>
     </div>
   </div>

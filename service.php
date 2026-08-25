@@ -59,13 +59,13 @@ try {
 	<?php include 'navbar.php'; ?>
     
     <section class="anchor light">
-		<h1 class="section-title">Summary</h1>
+		<h1 class="section-title page-nav-section">Summary</h1>
 
 		<p>
 			I contribute to the research community through conference organization, workshop chairing, program committees, and peer review. Specifically, I have <b>co-organized <?=get_total_count_for_category("organizer")?> conference</b> and served as <b>chair for <?=get_total_count_for_category("chair")?> venues</b>. I have served on <b><?=get_total_count_for_category("pc")?> program committees</b> and as <b>a reviewer for <?=get_total_count_for_category("reviewer")?> venues</b>, including 8 journals and 6 conferences.
 		</p>
 		
-		<h1 class="section-title">Leadership</h1>
+		<h1 class="section-title page-nav-section">Leadership</h1>
 		
 		<h2 class="subsection-title">Conference & workshop organization</h2>
 		<!-- Organisation duties -->
@@ -83,7 +83,7 @@ try {
 		<?php include("service-table.php"); ?>
 		
 		<!-- journal review duties -->
-		<h1 class="section-title">Review responsabilities</h1>
+		<h1 class="section-title page-nav-section">Review responsabilities</h1>
 		<?php $services = $conn->query($SQL_JOURNAL_REVIEW_SERVICES); ?>
 		<h2 class="subsection-title">Journals</h2>
 		<?php include("service-table.php"); ?>

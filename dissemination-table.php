@@ -4,7 +4,7 @@
 		<tr>
 			<td><img src="<?=$talk["logo_filepath"]?>" class="logo"></img></td>
 			<td><?=date('F Y', strtotime($talk["date"])) ?>, <?=$talk["location"]?></td>
-			<td><?=$talk["title"] ?> <?= $talk["language"] == "FR" ? "&#x1f1eb;&#x1f1f7;" : "&#x1f1ec;&#x1f1e7;" ?><br/><span class="badge text-bg-secondary"><?=$talk["crowd"] ?></span></td>
+			<td><?=$talk["title"] ?> <?= $talk["language"] == "FR" ? "&#x1f1eb;&#x1f1f7;" : "&#x1f1ec;&#x1f1e7;" ?>&nbsp;<span class="badge text-bg-secondary"><?=$talk["crowd"] ?></span></td>
 			<?php if($talk["resource"] != ""): ?>
 				<?php if(strpos($talk["resource"], 'youtube') !== false): ?>
 					<td><a href="<?=$talk["resource"]?>" target="_blank">video</a></td>

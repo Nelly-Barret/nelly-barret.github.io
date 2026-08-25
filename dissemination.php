@@ -26,18 +26,18 @@ try {
 	<?php include 'navbar.php'; ?>
     
     <section class="anchor light">
-		<h1 class="section-title">Invited talks</h1>
+		<h1 class="section-title page-nav-section">Invited talks</h1>
 		<?php include("dissemination-table.php"); ?>
 
-		<h1 class="section-title">Panels</h1>
+		<h1 class="section-title page-nav-section">Panels</h1>
 		<?php $talks = $conn->query($SQL_PANELS); ?>
 		<?php include("dissemination-table.php"); ?>
 
-		<h1 class="section-title">Vulgarization talks</h1>
+		<h1 class="section-title page-nav-section">Vulgarization talks</h1>
 		<?php $talks = $conn->query($SQL_VULGARIZATION); ?>
 		<?php include("dissemination-table.php"); ?>
 
-		<h1 class="section-title">Female empowerment talks</h1>
+		<h1 class="section-title page-nav-section">Female empowerment talks</h1>
 		<?php $talks = $conn->query($SQL_EMPOWERMENT); ?>
 		<?php include("dissemination-table.php"); ?>
     </section>

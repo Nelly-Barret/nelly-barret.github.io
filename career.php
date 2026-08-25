@@ -21,30 +21,8 @@ try {
 <body>
 	<?php include 'navbar.php'; ?>
 
-    <section class="anchor light">
-
-	<nav class="career-toc">
-
-    <span class="career-toc-title">
-        On this page:
-    </span>
-
-    <a href="#academic-positions">
-        Academic positions
-    </a>
-
-    <a href="#awards">
-        Awards
-    </a>
-
-    <a href="#training">
-        Training activities
-    </a>
-
-</nav>
-
-	
-		<h1 class="section-title" id="academic-positions">Academic positions</h1>
+    <section class="anchor light">	
+		<h1 class="section-title page-nav-section" id="academic-positions">Academic positions</h1>
 		<div class="academic-timeline">
 			<div class="academic-timeline-item">
 				<div class="academic-timeline-date">Since Sept. 2025</div>
@@ -147,7 +125,7 @@ try {
 			</div>
 		</div>
 
-		<h1 class="section-title" id="awards">Awards</h1>
+		<h1 class="section-title page-nav-section" id="awards">Awards</h1>
 		<table class="table table-striped table-hover my-table-three">
 			<tbody>
 			<?php while($award = $awards->fetch_assoc()): ?>
@@ -164,7 +142,7 @@ try {
 			</tbody>
 		</table>
 	
-		<h1 class="section-title" id="training">Training activities</h1>
+		<h1 class="section-title page-nav-section" id="training">Training activities</h1>
 
 		<h2 class="subsection-title">For research</h2>
 		<?php $trainings = $conn->query($SQL_RESEARCH_TRAINING); ?>

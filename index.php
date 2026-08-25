@@ -147,14 +147,3 @@
 	<?php include('footer.php'); ?>
 </body>
 </html>
-
-<script> 
-const date = new Date();
-let day = date.getDate();
-let month = date.getMonth() + 1;
-let year = date.getFullYear();
-let last_update = `${day}-${month}-${year}`;
-console.log(last_update);
-$("#link-cv-long").append(last_update + ")");
-$("#link-cv-short").append(last_update + ")");
-</script> 

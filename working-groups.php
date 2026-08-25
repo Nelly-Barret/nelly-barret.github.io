@@ -19,7 +19,7 @@ try {
 	<?php include 'navbar.php'; ?>
     
     <section class="anchor light">
-		<h1 class="section-title">Working groups</h1>
+		<h1 class="section-title page-nav-section">Working groups</h1>
 		
 		<?php include("wg-table.php"); ?>
     </section>

@@ -324,42 +324,23 @@ a > i {
 }
 
 /* career navigation bar */
-.career-toc {
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 1.2rem;
-
-    margin: 0 0 2.5rem 0;
-    padding: 0.75rem 0;
-
-    border-bottom: 1px solid #dee2e6;
+.page-nav {
+    margin-left: 15px;
+    padding-left: 15px;
+    border-left: 2px solid #dee2e6;
 }
 
-.career-toc-title {
-    font-weight: 600;
-    color: #555;
+.page-nav .nav-link:hover {
+    color: orange;
 }
 
-.career-toc a {
-    color: #6c757d;
-    text-decoration: none;
-
-    transition: color 0.2s ease;
+.page-nav .dropdown-menu {
+    min-width: 220px;
 }
 
-.career-toc a:hover {
-    color: #198754;
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
-#academic-positions,
-#awards,
-#training {
-    scroll-margin-top: 80px;
+.page-nav .dropdown-item.active {
+    background-color: orange;
+    color: white;
 }
 
 

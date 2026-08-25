@@ -87,13 +87,13 @@ try {
 	<?php include 'navbar.php'; ?>
     
     <section class="anchor light">
-		<h1 class="section-title">Summary</h1>
+		<h1 class="section-title page-nav-section">Summary</h1>
 
 		<p>
 			I regularly publish in peer-reviewed and recognized venues. Specifically, I have published in <b><?=get_total_count_for_category("int_journal")?> journals</b>, including <?= echo_count("int_journal", "Q1") ?> Q1 venues, and in <b><?=get_total_count_for_category("int_conf")?> international conferences</b>, <?= echo_count("int_conf", "A*", "A") ?> of which are ranked A* or A. I have also published <b><?=get_total_count_for_category("int_workshop")?> international workshop</b> papers and <b><?=get_total_count_for_category("demo")?> demonstration</b> papers, as well as <b><?=get_total_count_for_category("nat_conf")?> national conference</b> papers. In addition, I have authored <b><?=get_total_count_for_category("manuscript")?> manuscripts</b> as part of my research work.
 		</p>
 		
-		<h1 class="section-title">Publication list</h1>
+		<h1 class="section-title page-nav-section">Publication list</h1>
 
 		<!-- <b>Legend:</b> <i class="fa-solid fa-file-pdf"></i> PDF paper, <i class="fa-solid fa-file-powerpoint"></i> PDF slides, <i class="fa-solid fa-file-invoice"></i> PDF poster, <i class="fa-brands fa-tex"></i> TeX citation -->
 		<!-- <br/> -->

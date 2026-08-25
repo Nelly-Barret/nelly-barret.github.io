@@ -19,4 +19,7 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="styles.css"/>
     <!-- <link rel="stylesheet" href="w3schools-styles.css"/> -->
+
+	<!-- Automatic "On this page" in the navbar -->
+	<script src="navbar.js"></script>
 </head>
