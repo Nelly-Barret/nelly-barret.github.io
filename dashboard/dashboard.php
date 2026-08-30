@@ -9,7 +9,7 @@ try {
 	$stmt->execute();
 	$projects = $stmt->get_result();
 
-	$SQL_PROJECT_TASKS = "SELECT * FROM project_task pt LEFT JOIN project p ON pt.project_id = p.prid;";
+	$SQL_PROJECT_TASKS = "SELECT *, short_title as title FROM project_task pt LEFT JOIN project p ON pt.project_id = p.prid;";
 	$project_tasks = $conn->query($SQL_PROJECT_TASKS);
 
 	
@@ -20,11 +20,14 @@ try {
 	$project_statuses = str_replace("'", "", $project_statuses); // remove single quotes
     $project_statuses = explode(",", $project_statuses); // get an array of the enum project status values
 
-	$SQL_INTERNSHIPS = "SELECT *, CONCAT(pe.first_name, ' ', pe.last_name) AS the_intern, GROUP_CONCAT(CONCAT(pe2.first_name, ' ', pe2.last_name) ORDER BY ss.person_position ASC SEPARATOR ', ') AS the_team FROM supervision su LEFT JOIN person pe ON su.person_id = pe.peid LEFT JOIN supervision_supervisor ss ON ss.supervision_id = su.suid LEFT JOIN person pe2 ON ss.supervisor_id = pe2.peid WHERE start_date >= ? OR start_date IS NULL GROUP BY su.suid";
+	$SQL_INTERNSHIPS = "SELECT *, CONCAT(pe.first_name, ' ', pe.last_name) AS the_intern, GROUP_CONCAT(pe2.first_name ORDER BY ss.person_position ASC SEPARATOR ', ') AS the_team FROM internship i LEFT JOIN person pe ON i.person_id = pe.peid LEFT JOIN internship_supervisor ss ON ss.internship_id = i.iid LEFT JOIN person pe2 ON ss.supervisor_id = pe2.peid WHERE start_date >= ? OR start_date IS NULL GROUP BY i.iid";
 	$stmt = $conn->prepare($SQL_INTERNSHIPS);
 	$stmt->bind_param("s", $MINIMUM_DATE);
 	$stmt->execute();
 	$internships = $stmt->get_result();
+
+	$SQL_INTERNSHIP_TASKS = "SELECT *, CONCAT(pe.first_name, ' ', pe.last_name) AS title FROM internship_task it LEFT JOIN internship i ON it.internship_id = i.iid LEFT JOIN person pe ON i.person_id = pe.peid;";
+	$internship_tasks = $conn->query($SQL_INTERNSHIP_TASKS);
 
 	$SQL_REVIEWS = "SELECT * FROM service se LEFT JOIN venue v ON se.venue_id = v.vid WHERE (se.category = 'reviewer' OR se.category = 'pc') AND year >= ? OR year IS NULL;";
 
@@ -40,11 +43,17 @@ try {
 	$stmt->execute();
 	$services = $stmt->get_result();
 
+	$SQL_SERVICE_TASKS = "SELECT *, CONCAT(acronym, ' ', year) as title FROM service_task st LEFT JOIN service se ON st.service_id = se.seid LEFT JOIN venue v ON se.venue_id = v.vid;";
+	$service_tasks = $conn->query($SQL_SERVICE_TASKS);
+
 	$SQL_INSTITUTIONAL = "SELECT * FROM responsability WHERE start_date >= ? OR start_date IS NULL;";
 	$stmt = $conn->prepare($SQL_INSTITUTIONAL);
 	$stmt->bind_param("s", $MINIMUM_DATE);
 	$stmt->execute();
 	$admins = $stmt->get_result();
+
+	$SQL_INSTITUTIONAL_TASKS = "SELECT * FROM responsability_task rt LEFT JOIN responsability r ON rt.responsability_id = r.rid;";
+	$institutional_tasks = $conn->query($SQL_INSTITUTIONAL_TASKS);
 
 	$SQL_WG = "SELECT * FROM working_group;";
 	$wgs = $conn->query($SQL_WG);
@@ -70,6 +79,19 @@ try {
 	<!-- Bootstrap -->
 	<link href="../bootstrap-5.3.8-dist/css/bootstrap.min.css" rel="stylesheet">
 	<script src="../bootstrap-5.3.8-dist/js/bootstrap.bundle.min.js"></script>
+
+	<style>
+.alert-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+.deadline {
+      font-weight: bold;
+      color: #6c757d; /* Bootstrap's secondary color */
+      font-size: 0.9rem;
+    }
+	</style>
 </head>
 
 <body>

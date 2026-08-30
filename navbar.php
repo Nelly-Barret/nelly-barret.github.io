@@ -27,7 +27,7 @@
           </a>
           <ul class="dropdown-menu">
             <li><a class="dropdown-item" href="./teaching.php">Courses</a></li>
-            <li><a class="dropdown-item" href="./supervision.php">Student supervision</a></li>
+            <li><a class="dropdown-item" href="./internship.php">Student supervision</a></li>
           </ul>
         </li>
 		<li class="nav-item dropdown">

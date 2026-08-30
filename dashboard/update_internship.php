@@ -21,6 +21,6 @@ $allowedFields = [
 	'notes'
 ];
 
-update_table($conn, $internship_id, $field, "suid", $value, "supervision", $allowedFields);
+update_table($conn, $internship_id, $field, "iid", $value, "internship", $allowedFields);
 
 ?>

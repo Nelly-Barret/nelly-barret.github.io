@@ -35,7 +35,7 @@
 		<div class="book-list">
 			<div class="book">
 				<div>
-					<b>📖 The Confidence Code</b>by Katty Kay &amp; Claire Shipman
+					<b>📖 The Confidence Code</b> by Katty Kay &amp; Claire Shipman
 					<p class="description">I really liked the extensive scientific and social aspect of the book, showing how our DNA, our environment, the society and ourselves impact the confidence.</p>
 				</div>
 			</div>
