@@ -20,13 +20,13 @@
 				</tr>
 				<tr>
 					<td style="width:33%"><p>I recently got engaged with my partner.</p></td>
-					<td style="width:33%"><p>One of my favourite ways to disconnect from work is spending an afternoon solving puzzles.</p></td>
-					<td style="width:33%"><p>One of my favourite ways to disconnect from work is spending an afternoon solving puzzles.</p></td>
+					<td style="width:33%"><p>One of my favourite ways to disconnect from work is riding my motorcycle in the beautiful countryside around Lyon.</p></td>
+					<td style="width:33%"><p>Solving puzzles is also an activity I enjoy, particularly during winters.</p></td>
 				</tr>
 				<tr>
 					<td style="width:33%"><img src="./img/pacs.jpg" width="18%" style="border-radius: 15px"></td>
-					<td style="width:33%"><img src="./img/motor.jpg" width="60%" style="border-radius: 15px"></td>
-					<td style="width:33%"><img src="./img/puzzle-3.jpeg" width="60%" style="border-radius: 15px"></td>
+					<td style="width:33%"><img src="./img/moto.jpg" width="30%" style="border-radius: 15px"></td>
+					<td style="width:33%"><img src="./img/puzzle-3.jpeg" width="68%" style="border-radius: 15px"></td>
 				</tr>
 			</table>
 		</div>

@@ -5,24 +5,51 @@ require('utils.php');
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
+function generate_preambule($the_latex, $conn) {
+	$the_latex .= "\documentclass{article}\n
+	\usepackage{graphicx}\n
+	\usepackage{url}\n
+	\usepackage{hyperref}\n
+	\hypersetup{colorlinks=true,urlcolor=blue}\n
+	\usepackage{enumitem}\n
+	\usepackage{geometry}\n
+	\geometry{left =2cm, right=2cm, top=2cm,bottom=2cm}\n
+	\usepackage{xcolor}\n
+	\definecolor{myorange}{RGB}{255, 128, 0}\n
+	\usepackage{titlesec}\n
+	\\newcommand{\underlinedtitle}[1]{\color{myorange}#1\par\\nobreak\\noindent\\rule{\\textwidth}{1pt}}\n
+	\\titleformat{\section}{\\normalfont\Large\bfseries}{}{0em}{\underlinedtitle}\n
+	\\titlespacing\section{0pt}{12pt plus 4pt minus 2pt}{5pt plus 2pt minus 2pt}\n
+	\\titlespacing\subsection{0pt}{12pt plus 4pt minus 2pt}{5pt plus 2pt minus 2pt}\n
+	\\titlespacing\subsubsection{0pt}{12pt plus 4pt minus 2pt}{5pt plus 2pt minus 2pt}\n
+	\usepackage{enumitem}\n
+	\setlist[itemize]{noitemsep, topsep=0pt}\n
+	\usepackage{fontawesome}\n
+	\usepackage{orcidlink}\n
+	\\renewcommand{\\familydefault}{\sfdefault}\n\n
+	
+	\begin{document}\n";
+
+	return $the_latex;
+}
 
 function generate_header($the_latex, $conn) {
-	$the_latex .= "\\noindent {\Huge Nelly Barret}<br/><br/>";
-	$the_latex .= "\\noindent {\huge Assistant professor in computer science}<br/><br/>";
-	$the_latex .= "\\noindent {\Large LIRIS $\cdot$ INSA Lyon}<br/><br/>";
-	$the_latex .= "\\noindent \\faMapMarker\ Blaise Pascal building, 7 Avenue Jean Capelle, 69100 Villeurbanne, France<br/><br/>";
-	$the_latex .= "\\noindent \\faBuilding\ Office 502.3.21 $|$ \\faEnvelope\ nelly.barret@insa-lyon.fr $|$ \\faLaptop\ https://perso.liris.cnrs.fr/nbarret/ $|$ \orcidlink{0000-0002-3469-4149} \href{https://orcid.org/0000-0002-3469-4149}{0000-0002-3469-4149}<br/><br/>";
+	$the_latex .= "\\noindent {\Huge Nelly Barret}\n\n";
+	$the_latex .= "\\noindent {\huge Assistant professor in computer science}\n\n";
+	$the_latex .= "\\noindent {\Large LIRIS $\cdot$ INSA Lyon}\n\n";
+	$the_latex .= "\\noindent \\faMapMarker\ Blaise Pascal building, 7 Avenue Jean Capelle, 69100 Villeurbanne, France\n\n";
+	$the_latex .= "\\noindent \\faBuilding\ Office 502.3.21 $|$ \\faEnvelope\ nelly.barret@insa-lyon.fr $|$ \\faLaptop\ https://perso.liris.cnrs.fr/nbarret/ $|$ \orcidlink{0000-0002-3469-4149} \href{https://orcid.org/0000-0002-3469-4149}{0000-0002-3469-4149}\n\n";
 	return $the_latex;
 }
 
 function generate_research_interests($the_latex, $conn) {
 	$the_latex .= generate_section("Research interests", "\\faHeart");
-	$the_latex .= "\\noindent My research themes lie in the broad area of heterogeneous data integration and exploitation, including heterogeneous and multi-modal data as well as warehouse, data lake and lakehouse architectures.<br/><br/>\\noindent The general scientific questions that are driving me every day include:<br/>
-	\begin{itemize}<br/>
-		\item How to effectively and efficiently collect, organize and store heterogeneous data produced by various actors?<br/>
-		\item How to explore and exploit large amounts of data, especially for domain experts?<br/>
-		\item How to clean, join, merge, and sementically enrich raw data for better decision making?<br/>
-	\\end{itemize}<br/>
+	$the_latex .= "\\noindent My research themes lie in the broad area of heterogeneous data integration and exploitation, including heterogeneous and multi-modal data as well as warehouse, data lake and lakehouse architectures.\n\n\\noindent The general scientific questions that are driving me every day include:\n
+	\begin{itemize}\n
+		\item How to effectively and efficiently collect, organize and store heterogeneous data produced by various actors?\n
+		\item How to explore and exploit large amounts of data, especially for domain experts?\n
+		\item How to clean, join, merge, and sementically enrich raw data for better decision making?\n
+	\\end{itemize}\n
 	My research applies to various domains including sustainable cities, media, and healthcare, with a strong interest in sustainable cities.";
 	return $the_latex;
 }
@@ -41,18 +68,18 @@ function generate_academic_positions($the_latex, $conn) {
 			if($first == true) {
 				$first = false;
 			} else {
-				$the_latex .= "\\end{itemize}<br/>";
+				$the_latex .= "\\end{itemize}\n";
 			}
 			$the_latex .= generate_title($position["title"], $position["location"], $position["start_date"], $position["end_date"], $first2);
-			$the_latex .= "\\begin{itemize}<br/>";
+			$the_latex .= "\\begin{itemize}\n";
 			$first2 = false;
 		}
-		$the_latex .= "\\item ".$position["text"]."<br/>";
+		$the_latex .= "\\item ".$position["text"]."\n";
 		$previous_jid = $position["jid"];
 		
 	}
 	// last list to close
-	$the_latex .= "\\end{itemize}<br/>";
+	$the_latex .= "\\end{itemize}\n";
 
 	return $the_latex;
 }
@@ -92,9 +119,9 @@ function generate_awards($the_latex, $conn) {
 			$the_latex .= generate_subtitle(["Website" => $award["webpage"]]);
 		}
 		if($award["contents"] != "") {
-			$the_latex .= "\\begin{itemize}<br/>";
-			$the_latex .= "\item ".$award["contents"]."<br/>";
-			$the_latex .= "\\end{itemize}<br/>";
+			$the_latex .= "\\begin{itemize}\n";
+			$the_latex .= "\item ".$award["contents"]."\n";
+			$the_latex .= "\\end{itemize}\n";
 		}
 	}
 
@@ -115,20 +142,20 @@ function generate_projects($the_latex, $conn) {
 		if($project["scientific"] != "" || $project["practical"] != "" || $project["collaboration"] != "") {
 			//if at leadt one of them is non-empty, we start the list
 			// otherwise, there are no scientific, no practical, not collaboration outcome yet, so we don't start the list
-			$the_latex .= "\\begin{itemize}<br/>";
+			$the_latex .= "\\begin{itemize}\n";
 			if($project["scientific"] != "") {
-				$the_latex .= "\\item \\textbf{Scientific outcomes:} ".$project["scientific"]."<br/>";
+				$the_latex .= "\\item \\textbf{Scientific outcomes:} ".$project["scientific"]."\n";
 			}
 			if($project["practical"] != "") {
-				$the_latex .= "\\item \\textbf{Practical outcomes:} ".$project["practical"]."<br/>";
+				$the_latex .= "\\item \\textbf{Practical outcomes:} ".$project["practical"]."\n";
 			}
 			if($project["collaboration"] != "") {
-				$the_latex .= "\\item \\textbf{Collaboration:} ".$project["collaboration"]."<br/>";
+				$the_latex .= "\\item \\textbf{Collaboration:} ".$project["collaboration"]."\n";
 			}
-			$the_latex .= "\\end{itemize}<br/>";
+			$the_latex .= "\\end{itemize}\n";
 		} else {
 			// if there is no result yet, nothing to do
-			// $the_latex .= "\\newline<br/>";
+			// $the_latex .= "\\newline\n";
 		}
 	}
 
@@ -162,9 +189,9 @@ function generate_wgs($the_latex, $conn) {
 		$the_latex .= generate_title($wg["title"], $wg["location"], $wg["start_date"], $wg["end_date"], $first);
 		$the_latex .= generate_subtitle(["Role" => $wg["involvement"], "Website" => $wg["webpage"]]);
 		// assuming there is only one text description per WG (true as of Aug. 2026)
-		$the_latex .= "\\begin{itemize}<br/>";
-		$the_latex .= "\\item ".$wg["text"]."<br/>";
-		$the_latex .= "\\end{itemize}<br/>";
+		$the_latex .= "\\begin{itemize}\n";
+		$the_latex .= "\\item ".$wg["text"]."\n";
+		$the_latex .= "\\end{itemize}\n";
 		$first = false;
 	}
 
@@ -180,15 +207,15 @@ function generate_dissemination($the_latex, $conn) {
 		$SQL_TALKS = "SELECT * FROM dissemination WHERE category = '".$category."' ORDER BY date DESC, did ASC;";
 		$talks = $conn->query($SQL_TALKS);
 	
-		$the_latex .= "\\begin{itemize}<br/>";
+		$the_latex .= "\\begin{itemize}\n";
 		while($talk = $talks->fetch_assoc()) {
 			if($talk["resource"] != "") {
-				$the_latex .= "\\item \\href{".$talk["resource"]."}{".$talk["title"]."}. ".date('M Y', strtotime($talk["date"])).", ".get_entity_from_logo($talk["logo_filepath"]).", ".$talk["location"].".<br/>";
+				$the_latex .= "\\item \\href{".$talk["resource"]."}{".$talk["title"]."}. ".date('M Y', strtotime($talk["date"])).", ".get_entity_from_logo($talk["logo_filepath"]).", ".$talk["location"].".\n";
 			} else {
-				$the_latex .= "\\item ".$talk["title"].". ".date('M Y', strtotime($talk["date"])).", ".$talk["location"].".<br/>";
+				$the_latex .= "\\item ".$talk["title"].". ".date('M Y', strtotime($talk["date"])).", ".$talk["location"].".\n";
 			}
 		}
-		$the_latex .= "\\end{itemize}<br/>";
+		$the_latex .= "\\end{itemize}\n";
 	}
 
 	return $the_latex;
@@ -203,7 +230,7 @@ function generate_teaching($the_latex, $conn) {
 		$SQL_TEACHING = "SELECT * FROM teaching WHERE category = ".$category." ORDER BY start_date DESC, end_date DESC;";
 		$teaching = $conn->query($SQL_TEACHING);
 	
-		$the_latex .= "\\begin{itemize}<br/>";
+		$the_latex .= "\\begin{itemize}\n";
 		while($teach = $teaching->fetch_assoc()) {
 			if($category == "'service'") {
 				// do not print the number of hours for teaching service (only for real courses) nor the level
@@ -218,9 +245,9 @@ function generate_teaching($the_latex, $conn) {
 			} else {
 				$years = "";
 			}
-			$the_latex .= "\\item ".$teach["title"]." (".$years.$hours.$teach["school"].$level."): ".$teach["contents"]."<br/>";
+			$the_latex .= "\\item ".$teach["title"]." (".$years.$hours.$teach["school"].$level."): ".$teach["contents"]."\n";
 		}
-		$the_latex .= "\\end{itemize}<br/>";
+		$the_latex .= "\\end{itemize}\n";
 	}
 
 	return $the_latex;
@@ -244,18 +271,18 @@ function generate_training($the_latex, $conn) {
 			} else {
 				//remove last additional comma
 				$the_latex = substr($the_latex, 0, strlen($the_latex)-2); // remove the space and the comma 
-				$the_latex .= "<br/><br/>"; // specifically for training, we need two newlines because there is no itemize to separate the text form the next title
+				$the_latex .= "\n\n"; // specifically for training, we need two newlines because there is no itemize to separate the text form the next title
 			}
 			$the_latex .= generate_title($training["title"]." (".$training["duration"].")", "", $training["date"], "", $first3);
 			$first3 = false;
 			if($training["webpage"] != "") {
 				$the_latex .= generate_subtitle(["Website" => $training["webpage"]]);
 			}
-			// $the_latex .= "\\begin{itemize}<br/>";
+			// $the_latex .= "\\begin{itemize}\n";
 		}
-		// $the_latex .= "\\item ".$training["text"]."<br/>";
+		// $the_latex .= "\\item ".$training["text"]."\n";
 		if($first2 == true) {
-			$the_latex .= "<br/>"; // specifically for training, we need one more newline because there is no itemize to separate the title form the text
+			$the_latex .= "\n"; // specifically for training, we need one more newline because there is no itemize to separate the title form the text
 			$the_latex .= "\\noindent ";
 			$first2 = false;
 		}
@@ -268,7 +295,7 @@ function generate_training($the_latex, $conn) {
 	//remove last additional comma
 	$the_latex = substr($the_latex, 0, strlen($the_latex)-2); // remove the space and the comma 
 	// last text to sperate from next section
-	$the_latex .= "<br/>";
+	$the_latex .= "\n";
 
 	return $the_latex;
 }
@@ -286,18 +313,18 @@ function generate_visits($the_latex, $conn) {
 		// 	if($first == true) {
 		// 		$first = false;
 		// 	} else {
-			// 		$the_latex .= "\\end{itemize}<br/>";
+			// 		$the_latex .= "\\end{itemize}\n";
 			// 	}
 		$the_latex .= generate_title($visit["location"], "", $visit["start_date"], $visit["end_date"], $first);
-			// $the_latex .= "\\begin{itemize}<br/>";
+			// $the_latex .= "\\begin{itemize}\n";
 			// }
-			// $the_latex .= "\\item ".$visit["text"]."<br/>";
+			// $the_latex .= "\\item ".$visit["text"]."\n";
 			// $previous_vid = $visit["viid"];
 		$first = false;
 		
 	}
 	// last list to close
-	// $the_latex .= "\\end{itemize}<br/>";
+	// $the_latex .= "\\end{itemize}\n";
 
 	return $the_latex;
 }
@@ -326,12 +353,12 @@ function generate_research_service($the_latex, $conn) {
 			$the_latex .= generate_subsection("Review responsabilities");
 		}
 		$the_latex .= generate_subsubsection($category);
-		$the_latex .= "\\begin{itemize}<br/>";
+		$the_latex .= "\\begin{itemize}\n";
 		$the_leadership = $conn->query($SQL);
 		while($leadership = $the_leadership->fetch_assoc()) {
-			$the_latex .= "\\item $[$".$leadership["rank"]."$]$ ".$leadership["acronym"]." (".$leadership["name"]."): ".$leadership["years"]."<br/>";
+			$the_latex .= "\\item $[$".$leadership["rank"]."$]$ ".$leadership["acronym"]." (".$leadership["name"]."): ".$leadership["years"]."\n";
 		}
-		$the_latex .= "\\end{itemize}<br/>";
+		$the_latex .= "\\end{itemize}\n";
 	}
 
 	return $the_latex;
@@ -348,9 +375,9 @@ function generate_institutional($the_latex, $conn) {
 		$the_latex .= generate_title($respo["title"], "", $respo["start_date"], $respo["end_date"], $first);
 		$the_latex .= generate_subtitle(["Role" => $respo["involvement"], "Website" => $respo["webpage"]]);
 		// assuming there is only one text description per reponsability (true as of Aug. 2026)
-		$the_latex .= "\\begin{itemize}<br/>";
-		$the_latex .= "\\item ".$respo["content"]."<br/>";
-		$the_latex .= "\\end{itemize}<br/>";
+		$the_latex .= "\\begin{itemize}\n";
+		$the_latex .= "\\item ".$respo["content"]."\n";
+		$the_latex .= "\\end{itemize}\n";
 		$first = false;
 	}
 
@@ -371,7 +398,7 @@ function generate_publications($the_latex, $conn) {
 	
 	foreach($CATEGORIES as $category => $pretty_category) {
 		$the_latex .= generate_subsection($pretty_category);
-		$the_latex .= "\\begin{enumerate}[resume]<br/>";
+		$the_latex .= "\\begin{enumerate}[resume]\n";
 		$SQL = "SELECT pu.*, v.*, GROUP_CONCAT(CONCAT(pe.first_name, ' ', pe.last_name) ORDER BY author_position ASC SEPARATOR ', ') AS the_authors FROM publication pu LEFT JOIN venue v ON pu.venue = v.vid LEFT JOIN publication_author pa ON pa.publication_id = pu.puid LEFT JOIN person pe ON pa.author_id = pe.peid WHERE category = '".$category."' GROUP BY pa.publication_id ORDER BY pu.year DESC, v.acronym ASC, pa.publication_id ASC, pa.author_position ASC";
 		$the_publications = $conn->query($SQL);
 		while($publication = $the_publications->fetch_assoc()) {
@@ -379,9 +406,9 @@ function generate_publications($the_latex, $conn) {
 			if($publication["main_author"]) {
 				$authors = str_replace("Nelly Barret", "\underline{Nelly Barret}", $authors);
 			}
-			$the_latex .= "\\item ".$authors.". \\href{".$publication["paper_url"]."}{".$publication["title"]."}. ".$publication["name"].". ".$publication["year"]."<br/>";
+			$the_latex .= "\\item ".$authors.". \\href{".$publication["paper_url"]."}{".$publication["title"]."}. ".$publication["name"].". ".$publication["year"]."\n";
 		}
-		$the_latex .= "\\end{enumerate}<br/>";
+		$the_latex .= "\\end{enumerate}\n";
 	}
 
 	return $the_latex;
@@ -401,35 +428,35 @@ function generate_advising($the_latex, $conn) {
 
 	foreach($SQL_ADVISING as $category => $SQL) {
 		$the_latex .= generate_subsection($category);
-		$the_latex .= "\\begin{itemize}<br/>";
+		$the_latex .= "\\begin{itemize}\n";
 		$internships = $conn->query($SQL);
 		while($internship = $internships->fetch_assoc()) {
-			$the_latex .= "\\item ".$internship["the_student"]." on ``".$internship["topic"]."'' (".$internship["semester"]." ".$internship["year"].", ".$internship["school"].")<br/>";
+			$the_latex .= "\\item ".$internship["the_student"]." on ``".$internship["topic"]."'' (".$internship["semester"]." ".$internship["year"].", ".$internship["school"].")\n";
 		}
-		$the_latex .= "\\end{itemize}<br/>";
+		$the_latex .= "\\end{itemize}\n";
 	}
 
 	return $the_latex;
 }
 
 function generate_footer($the_latex, $conn) {
-	$the_latex .= "<br/><br/>\\vspace{3em}\\noindent\centering\\textcolor{gray}{Last update: \\today}<br/><br/>";
+	$the_latex .= "\n\n\\vspace{3em}\\noindent\centering\\textcolor{gray}{Last update: \\today}\n\n";
 	return $the_latex;
 }
 
 function generate_section($title, $icon) {
 	// \\includegraphics[width=1cm]{images/".$icon."}
-	$the_string = "\\section*{".$icon."\\ ".$title."}<br/>";
+	$the_string = "\\section*{".$icon."\\ ".$title."}\n";
 	return $the_string;
 }
 
 function generate_subsection($title) {
-	$the_string = "\\subsection*{".$title."}<br/>";
+	$the_string = "\\subsection*{".$title."}\n";
 	return $the_string;
 }
 
 function generate_subsubsection($title) {
-	$the_string = "\\subsubsection*{".$title."}<br/>";
+	$the_string = "\\subsubsection*{".$title."}\n";
 	return $the_string;
 }
 
@@ -453,13 +480,13 @@ function generate_title($title, $location, $start_date, $end_date, $first) {
 	} else {
 		$the_string .= date('M Y', strtotime($start_date));
 	}
-	$the_string .= "}<br/>";
+	$the_string .= "}\n";
 	return $the_string;
 }
 
 function generate_subtitle($the_assocative_array) {
 	// $the_assocative_array is a "map" with the key being the keyword (role, website, grant_type, ...) and the valeu being the actual value (e.g., contributor, ANR Sources Says, ...)
-	$the_string = "<br/><br/>\\noindent";
+	$the_string = "\n\n\\noindent";
 	$first = true;
 	foreach($the_assocative_array as $key => $value) {
 		// preprocess the value
@@ -480,7 +507,7 @@ function generate_subtitle($the_assocative_array) {
 			}
 		}
 	}
-	$the_string .= "<br/><br/>";
+	$the_string .= "\n\n";
 	return $the_string;
 }
 
@@ -509,32 +536,19 @@ function sanitize_logo($logo_name) {
 	}
 }
 
+function display_for_debug($the_latex) {
+	// by default, $the_latex contains \n lines (but \n do not render in HTML when printed in the navigator)
+	// to debug, call print_r(display_for_debug($the_latex)) instead of print_r($the_latex) to have the <br/> replacing the \n
+	return str_replace("\n", "<br/>", $the_latex);
+}
+
 try {
-	// echo "Current working directory: " . getcwd() . "<br/>";
+	// echo "Current working directory: " . getcwd() . "\n";
 	
-	$the_latex = "\documentclass{article}<br/>
-	\usepackage{graphicx}<br/>
-	\usepackage{url}<br/>
-	\usepackage{hyperref}<br/>
-	\hypersetup{colorlinks=true,urlcolor=blue}<br/>
-	\usepackage{enumitem}<br/>
-	\usepackage{geometry}<br/>
-	\geometry{left =2cm, right=2cm, top=2cm,bottom=2cm}<br/>
-	\usepackage{xcolor}<br/>
-	\definecolor{myorange}{RGB}{255, 128, 0}<br/>
-	\usepackage{titlesec}<br/>
-	\\newcommand{\underlinedtitle}[1]{\color{myorange}#1\par\\nobreak\\noindent\\rule{\\textwidth}{1pt}}<br/>
-	\\titleformat{\section}{\\normalfont\Large\bfseries}{}{0em}{\underlinedtitle}<br/>
-	\\titlespacing\section{0pt}{12pt plus 4pt minus 2pt}{5pt plus 2pt minus 2pt}<br/>
-	\\titlespacing\subsection{0pt}{12pt plus 4pt minus 2pt}{5pt plus 2pt minus 2pt}<br/>
-	\\titlespacing\subsubsection{0pt}{12pt plus 4pt minus 2pt}{5pt plus 2pt minus 2pt}<br/>
-	\usepackage{enumitem}<br/>
-	\setlist[itemize]{noitemsep, topsep=0pt}<br/>
-	\usepackage{fontawesome}<br/>
-	\usepackage{orcidlink}<br/>
-	\\renewcommand{\\familydefault}{\sfdefault}<br/><br/>
-	
-	\begin{document}<br/>";
+	$the_latex = "";
+
+	// generate LaTeX preambule
+	$the_latex = generate_preambule($the_latex, $conn);
 
 	// generate header
 	$the_latex = generate_header($the_latex, $conn);
@@ -589,7 +603,8 @@ try {
 
 	$the_latex .= "\\end{document}";
 
-	print_r($the_latex);
+	print_r($the_latex); // BY DEFAULT
+	// print_r(display_for_debug($the_latex)); // FOR DEBUG ONLY
 
 	// $myfile = fopen("/tmp/test-nbarret.tex", "w") or die("Unable to open file!");
 	// if (!$myfile) {
