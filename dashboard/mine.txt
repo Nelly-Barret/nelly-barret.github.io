@@ -1,5 +1,0 @@
-AuthType Basic
-AuthName "Login LIRIS"
-AuthBasicProvider external
-AuthExternal pwauth
-Require valid-user
