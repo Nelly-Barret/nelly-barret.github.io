@@ -2,7 +2,7 @@
 	<tbody>
 	<?php while($wg = $wgs->fetch_assoc()): ?>
 		<tr>
-			<?php if($wg["end_date"] == "1900-01-01"): ?>
+			<?php if($wg["end_date"] == "2222-01-01"): ?>
 				<td><?= date('M. Y', strtotime($wg["start_date"]))." - now"?></td>
 			<?php else: ?>
 				<td><?= date('M. Y', strtotime($wg["start_date"]))." - ".date('M. Y', strtotime($wg["end_date"]))?></td>

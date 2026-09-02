@@ -3,7 +3,7 @@
 	<?php while($respo = $responsabilities->fetch_assoc()): ?>
 		<tr>
 			<td><img src="<?=$respo["logo_filepath"]?>" class="logo"></img></td>
-			<?php if($respo["end_date"] == "1900-01-01"): ?>
+			<?php if($respo["end_date"] == "2222-01-01"): ?>
 				<td><?= date('M. Y', strtotime($respo["start_date"]))." - now"?></td>
 			<?php else: ?>
 				<td><?= date('M. Y', strtotime($respo["start_date"]))." - ".date('M. Y', strtotime($respo["end_date"])) ?></td>

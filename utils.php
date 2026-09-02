@@ -1,6 +1,6 @@
 <?php 
 
-$CURRENT_STATUS_SQL = "CASE WHEN end_date = '1900-01-01' OR end_date > CURDATE() THEN 'Current' ELSE 'Finished' END AS status";
+$CURRENT_STATUS_SQL = "CASE WHEN end_date = '2222-01-01' OR end_date > CURDATE() THEN 'Current' ELSE 'Finished' END AS status";
 
 function get_total_count_for_category(String $category) {
 	$sum = 0;
@@ -36,7 +36,7 @@ function compute_date_difference($start_date, $end_date) {
 }
 
 function compute_duration($start_date, $end_date, $exact = null) {
-	if($end_date == "1900-01-01") {
+	if($end_date == "2222-01-01") {
 		// the project is not finished yet
 		return "Started since ".$start_date;
 	} else {
@@ -68,7 +68,7 @@ function computeProgress($start_date, $end_date) {
 	$start_date = date_create($start_date);
 	$end_date = date_create($end_date);
 	$today = date_create(date('m/d/Y h:i:s a', time()));
-	if($end_date == "1900-01-01" || $start_date > $today) {
+	if($end_date == "2222-01-01" || $start_date > $today) {
 		// this event is currently ongoing and won't stop
 		// OR the event has not started yet
 		// thus, we set of progress of 0/100

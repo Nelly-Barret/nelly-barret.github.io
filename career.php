@@ -71,7 +71,7 @@ try {
 				<div class="academic-timeline-content">
 					<h3>PhD Student</h3>
 					<div class="academic-timeline-institution">
-					Inria  &amp; Institut Polytechnique de Paris &#x1f1eb;&#x1f1f7;
+					Inria&nbsp;&#183;&nbsp;Institut Polytechnique de Paris &#x1f1eb;&#x1f1f7;
 					</div>
 
 					<div class="description">
@@ -92,7 +92,7 @@ try {
 				<div class="academic-timeline-content">
 					<h3>Master Research Intern</h3>
 					<div class="academic-timeline-institution">
-						LIRIS &#x1f1eb;&#x1f1f7;
+						LIRIS&nbsp;&#183;&nbsp;Universit&eacute; Claude Bernard Lyon 1 &#x1f1eb;&#x1f1f7;
 					</div>
 
 					<div class="description">
@@ -113,7 +113,7 @@ try {
 				<div class="academic-timeline-content">
 					<h3>Bachelor Research Intern</h3>
 					<div class="academic-timeline-institution">
-						LIRIS &#x1f1eb;&#x1f1f7;
+						LIRIS&nbsp;&#183;&nbsp;Universit&eacute; Claude Bernard Lyon 1 &#x1f1eb;&#x1f1f7;
 					</div>
 
 					<div class="description">

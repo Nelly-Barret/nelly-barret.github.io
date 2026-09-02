@@ -2,7 +2,7 @@
 require('db.php');
 require('utils.php');
 try {
-	$SQL_CURRENT_PROJECTS = "SELECT * FROM project  WHERE end_date = '1900-01-01' OR end_date >= CURDATE()";
+	$SQL_CURRENT_PROJECTS = "SELECT * FROM project  WHERE end_date = '2222-01-01' OR end_date >= CURDATE()";
 	$current_projects = $conn->query($SQL_CURRENT_PROJECTS);
 
 	$SQL_FORMER_PROJECTS = "SELECT * FROM project WHERE end_date < CURDATE();";
