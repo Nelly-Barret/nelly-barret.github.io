@@ -20,8 +20,6 @@
 				Previously, I enjoyed working at the <a href="https://www.deib.polimi.it/eng/home-page" target="_blank">DEIB department</a> of <a href="https://www.polimi.it/en" target="_blank">Politecnico di Milano</a> as a post-doctoral researcher and <a href="https://www.inria.fr/fr/centre-inria-saclay-ile-de-france" target="_blank">Inria Saclay</a> as a PhD student supervised by Pr. <a href="https://pages.saclay.inria.fr/ioana.manolescu/" target="_blank">Ioana Manolescu</a>. My thesis was on summarization and exploration of semi-structured datasets.</p> <br/>
 
 				<br/>
-				<!-- <i class="fa-solid fa-file-pdf my-icon-first"></i><a class="linkCollapse" href="./generate-cv/cv-short-nelly-barret.pdf" target="_blank">Short CV</a> | <i class="fa-solid fa-file-pdf my-icon-first"></i><a class="linkCollapse" href="./generate-cv/cv-long-nelly-barret.pdf" target="_blank">Long CV</a> | <i class="fa-solid fa-file-pdf my-icon-first"></i><a class="linkCollapse" href="docs/short-bio-nelly-barret-EN.txt" target="_blank">Short bio (EN)</a> | <i class="fa-solid fa-file-pdf my-icon-first"></i><a class="linkCollapse" href="docs/short-bio-nelly-barret-FR.txt" target="_blank">Short bio (FR)</a> -->
-				<!-- <br/> -->
 			</div>
 			<div class="col-sm-3" style="vertical-align: top; text-align: center;">
                 <img src="img/photo.jpg" class="img_home" style="border-radius: 5%; max-height: 300px;" alt="photo"/>
