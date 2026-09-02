@@ -1,29 +1,366 @@
+.section-title {
+	text-align: center;
+	padding-top: 2rem; 
+	padding-bottom: 1rem; 
+}
+
+.subsection-title {
+	padding-top: 2rem; 
+	padding-bottom: 1rem; 
+}
+
 section {
-    margin: 2rem 2rem 0 2rem; /* top right bottom left */
+    margin-left: 8rem;
+	margin-right: 8rem;
+	margin-top: 2rem;
 }
 
-.old {
-    background-color: gray;
+.anchor {
+    padding-top: 50px; /* default Bootstrap navbar height */
 }
 
-.currentpast {
-    text-align: center;
+/* personalized h1 section titles with an orange bar underline */
+h1 {
+    width: fit-content;
+    margin: 0 auto 25px;
+    position: relative;
+    padding-bottom: 10px;
 }
 
-p {
-    font-size: 16px !important;
+h1::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: -30px;
+    right: -30px;
+    height: 3px;
+    background-color: orange;
 }
+
+/* highlight in orange dropdown elements in the navbar */
+.dropdown-menu > li > a:hover {
+    background-image: none;
+    background-color: orange;
+}
+
+/* project cards and their stacked items (project dates, role, grant, website) are of the same background color */
+.card-body, ul.list-group > li {
+	background-color: #F0ECE3 !important;
+}
+
+.card-light {
+	background-color: #f4f4f4 !important;
+}
+
+/* a small space between the project title + tags and the list-group */
+ul.list-group {
+	margin-top: 15px;
+}
+
+ul.list-group {
+	border: none;
+}
+
+.progress {
+	height: 8px;
+	width: 100px;
+	margin-top: 1rem;
+	margin-bottom: 1rem;
+}
+
+.progress-bar {
+	width: 100%; 
+	background-color: orange !important;
+}
+
+.badge > a {
+	color: white !important;
+	text-decoration: none;
+}
+
+.citation {
+	border: none; 
+	background-color: transparent;
+}
+
+ol.publications > li {
+	margin-top: 1rem;
+}
+
+.inline-span {
+	display: inline;
+}
+
+.description {
+	color: grey;
+}
+
+/* for list descriptions, the color needs to be set on each individual li element */
+.description > ul > li {
+	color: grey;
+}
+
+.logo {
+	width: 50px;
+}
+
+/* tables with the same number of columns have columns of the same size (which is not default in Bootstrap as it fits the content */
+.my-table-two, .my-table-three, .my-table-four {
+    width: 100%;
+    table-layout: fixed;
+}
+
+/* two column tables */
+.my-table-two td:nth-child(1) {
+    width: 85%;
+}
+.my-table-two td:nth-child(2) {
+    width: 15%;
+}
+
+/* three column tables */
+.my-table-three td:nth-child(1) {
+    width: 10%;
+}
+.my-table-three td:nth-child(2) {
+    width: 75%;
+}
+.my-table-three td:nth-child(3) {
+    width: 15%;
+}
+
+/* four column tables */
+.my-table-four td:nth-child(1) {
+    width: 10%;
+}
+.my-table-four td:nth-child(2) {
+    width: 15%;
+}
+.my-table-four td:nth-child(3) {
+    width: 65%;
+}
+.my-table-four td:nth-child(4) {
+    width: 10%;
+}
+
+/* flush right the open details buttons for project cards */
+.card-body > .collapse-button {
+	text-align: right;
+	margin-top: 1rem;
+	margin-bottom: 1rem;
+}
+
+/* add some space between the project card items and the text */
+.list-group-item > i {
+	margin-right: 1rem;
+}
+
+/* black font-awesome icons when there are links */
+a > i {
+	color: black !important;
+}
+
+/* Current/Finished badges that are in tables should be center in the cell  */
+.status {
+	text-align: center !important;
+	display: block;
+}
+
+/* add some space between the badge and its text below */
+.badge-bottom {
+	margin-bottom: 1rem !important;
+}
+
+/* career timeline */
+
+.academic-timeline {
+    width: 100%;
+    margin: 40px 0;
+}
+
+
+/* Each row */
+.academic-timeline-item {
+    display: grid;
+
+    grid-template-columns: 180px 40px 1fr;
+
+    min-height: 120px;
+}
+
+
+/* Date */
+.academic-timeline-date {
+    text-align: right;
+
+    padding-top: 8px;
+    padding-right: 20px;
+
+    color: #777;
+
+    font-size: 0.9rem;
+}
+
+
+/* Line column */
+.academic-timeline-line {
+    position: relative;
+
+    width: 40px;
+
+    min-height: 120px;
+}
+
+
+/* Vertical line */
+.academic-timeline-line::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    bottom: 0;
+
+    left: 19px;
+
+    width: 2px;
+
+    background-color: #cccccc;
+
+    display: block;
+}
+
+
+/* Dot */
+.academic-timeline-dot {
+    position: absolute;
+
+    z-index: 10;
+
+    top: 5px;
+    left: 13px;
+
+    display: block;
+
+    width: 14px;
+    height: 14px;
+
+    background-color: #777777;
+
+    border-radius: 50%;
+
+    border: 3px solid white;
+
+    box-sizing: border-box;
+}
+
+
+/* Current dot */
+.academic-timeline-dot.current {
+    background-color: #198754;
+
+    width: 16px;
+    height: 16px;
+
+    left: 12px;
+}
+
+
+/* Content */
+.academic-timeline-content {
+    padding: 0 0 35px 20px;
+}
+
+
+/* Title */
+.academic-timeline-content h3 {
+    margin: 0 0 5px 0;
+
+    font-size: 1.25rem;
+}
+
+
+/* Institution */
+.academic-timeline-institution {
+    color: #6c757d;
+
+    margin-bottom: 12px;
+
+    font-weight: 500;
+}
+
+
+/* Mobile */
+@media (max-width: 767px) {
+
+    .academic-timeline-item {
+        grid-template-columns: 30px 1fr;
+
+        min-height: 0;
+    }
+
+    .academic-timeline-date {
+        grid-column: 2;
+
+        text-align: left;
+
+        padding: 0 0 5px 15px;
+    }
+
+    .academic-timeline-line {
+        grid-column: 1;
+        grid-row: 1 / span 2;
+
+        width: 30px;
+
+        min-height: 100%;
+    }
+
+    .academic-timeline-line::before {
+        left: 14px;
+    }
+
+    .academic-timeline-dot {
+        left: 8px;
+    }
+
+    .academic-timeline-dot.current {
+        left: 7px;
+    }
+
+    .academic-timeline-content {
+        grid-column: 2;
+
+        padding-left: 15px;
+    }
+}
+
+/* career navigation bar */
+.page-nav {
+    margin-left: 15px;
+    padding-left: 15px;
+    border-left: 2px solid #dee2e6;
+}
+
+.page-nav .nav-link:hover {
+    color: orange;
+}
+
+.page-nav .dropdown-menu {
+    min-width: 220px;
+}
+
+.page-nav .dropdown-item.active {
+    background-color: orange;
+    color: white;
+}
+
+
+
+/* 
 
 a:not(.nav-link, .navbar-brand) {
     color: rgb(0, 0, 255) !important;
-}
-
-.ml-i {
-    margin-left: 1.5rem !important;
-}
-
-.mr-i {
-    margin-right: 0.3rem !important;
 }
 
 .navbar {
@@ -40,18 +377,6 @@ a:not(.nav-link, .navbar-brand) {
     background-color: #ff8000;
     color: black !important;
     border-radius: 5px;
-}
-
-.linkCollapse {
-    margin-right: 1rem;
-}
-
-.right-align {
-    text-align: right;
-}
-
-.anchor {
-    padding-top: 90px;
 }
 
 .social-icons {
@@ -81,25 +406,6 @@ a:not(.nav-link, .navbar-brand) {
 
 }
 
-.my-icon-first {
-    height: 1.25rem;
-    margin-right: 0.2rem;
-    margin-bottom: 0.4rem;
-}
-
-.my-icon {
-    height: 1.25rem;
-    margin-right: 0.2rem;
-    margin-left: 0.6rem;
-    margin-bottom: 0.4rem;
-}
-
-.my-tag {
-    height: 1.15rem;
-    margin-right: 0.2rem;
-    margin-bottom: 0.2rem;
-}
-
 @media only screen and (max-width: 800px) {
     #photo {
         display: none;
@@ -108,48 +414,5 @@ a:not(.nav-link, .navbar-brand) {
         padding-right: 0;
     }
 }
-.img_home {
-    max-width: 100%;
-    margin: 0;
-    padding: 0;
-}
 
-.content {
-    font-size: 0.9rem;
-}
-
-.rotatedImage {
-    transform: rotate(90deg);
-}
-
-.myImage {
-    height: 100%;
-    width: 100%;
-}
-
-table tr td {
-    padding: 0.3rem;
-}
-
-table tr th {
-    padding: 0.3rem;
-}
-
-table.rounded-corners {
-  border-spacing: 0;
-  border-collapse: separate;
-  border-radius: 10px;
-  border: 1px solid black;
-}
-
-/* Apply a border to the right of all but the last column */
-table.rounded-corners th:not(:last-child),
-table.rounded-corners td:not(:last-child) {
- border-right: 1px solid black;
-}
-
-/* Apply a border to the bottom of all but the last row */
-table.rounded-corners>tbody>tr:not(:last-child)>th,
-table.rounded-corners>tbody>tr:not(:last-child)>td {
- border-bottom: 1px solid black;
-}
+*/

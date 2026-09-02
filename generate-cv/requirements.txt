@@ -1,5 +1,0 @@
-docx2pdf
-lxml
-python-docx
-setuptools
-typing-extensions

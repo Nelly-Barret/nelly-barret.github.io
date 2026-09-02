@@ -1,0 +1,8 @@
+@inproceedings{barret2023exploring,
+  title={Exploring heterogeneous data graphs through their entity paths},
+  author={Barret, Nelly and Gauquier, Antoine and Law, Jia Jean and Manolescu, Ioana},
+  booktitle={European Conference on Advances in Databases and Information Systems},
+  pages={163--179},
+  year={2023},
+  organization={Springer}
+}

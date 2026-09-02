@@ -1,0 +1,8 @@
+@inproceedings{barret2025leveraging,
+  title={Leveraging profiling to bridge healthcare silos for federated analyses},
+  author={Barret, Nelly and Bernasconi, Anna and Cappiello, Cinzia and Palu, Giacomo and Pinoli, Pietro},
+  booktitle={International Conference on Advanced Information Systems Engineering},
+  pages={20--28},
+  year={2025},
+  organization={Springer}
+}

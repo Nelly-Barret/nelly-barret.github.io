@@ -1,0 +1,8 @@
+@inproceedings{barret2024finding,
+  title={Finding the PG schema of any (semi) structured dataset: a tale of graphs and abstraction},
+  author={Barret, Nelly and Enache, Tudor and Manolescu, Ioana and Mohanty, Madhulika},
+  booktitle={2024 IEEE 40th International Conference on Data Engineering Workshops (ICDEW)},
+  pages={365--369},
+  year={2024},
+  organization={IEEE}
+}

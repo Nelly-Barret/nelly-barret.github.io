@@ -1,0 +1,209 @@
+A good academic website should minimize navigation depth while making it easy for visitors (students, collaborators, hiring committees, funding agencies) to find the information they care about. Instead of having 15 separate top-level pages, you can group them into a handful of logical sections.
+
+Here's a structure that is commonly used for professional academic websites.
+
+| Main menu    | Includes                                                                                |
+| ------------ | --------------------------------------------------------------------------------------- |
+| **Home**     | Brief biography, research interests, highlights, latest news                            |
+| **About**    | `personal.html`, `education.html`, `positions.html`, `visits.html`, `skills.html`       |
+| **Research** | `projects.html`, `publications.html`, `talks.html`, `working-groups.html`, `tools.html` |
+| **Teaching** | `courses.html`, `students.html`, `training.html`                                        |
+| **Service**  | `institutional-duties.html`, `pc-member.html`                                           |
+| **Honors**   | `awards.html`                                                                           |
+
+## Suggested hierarchy
+
+```
+Home
+│
+├── About
+│   ├── Biography
+│   ├── Education
+│   ├── Academic Positions
+│   ├── Visiting Appointments
+│   └── Skills
+│
+├── Research
+│   ├── Research Projects
+│   ├── Publications
+│   ├── Invited Talks
+│   ├── Software & Tools
+│   └── Working Groups & Collaborations
+│
+├── Teaching
+│   ├── Courses
+│   ├── Student Supervision
+│   └── Training Activities
+│
+├── Academic Service
+│   ├── Institutional Duties
+│   └── Program Committee Memberships
+│
+└── Honors & Awards
+```
+
+```
+Home
+│
+├── About
+│     ├── Topics
+│     ├── Positions
+│     ├── Education
+
+│
+├── Research
+│     ├── Research themes
+│     ├── Projects & software
+│     ├── Dissemination Talks
+│     └── WG
+│
+├── Publications
+│
+├── Teaching
+│     ├── Courses
+│     ├── Students
+│     ├── Training
+│
+├── Service
+│     ├── Institutional duties
+│     ├── PC member
+│     ├── Reviewer
+│
+├── Career
+│     ├── Awards
+│     ├── Research visits
+│     ├── Skills
+│
+└── CV
+```
+
+## Even cleaner (recommended)
+
+Rather than keeping each item as a separate HTML page, merge related content.
+
+```
+index.html
+about.html
+research.html
+teaching.html
+service.html
+awards.html
+publications.html
+```
+
+Then organize the content within each page using sections.
+
+### about.html
+
+* Biography
+* Education
+* Positions
+* Visiting appointments
+* Skills
+
+### research.html
+
+* Research interests
+* Projects
+* Software / Tools
+* Working groups
+* Selected talks
+
+### teaching.html
+
+* Courses
+* Student supervision
+* Training activities
+
+### service.html
+
+* Institutional duties
+* Editorial activities (if applicable)
+* Program committees
+* Reviewing
+
+### publications.html
+
+Keep this as a dedicated page because publications are often the most visited content.
+
+---
+
+## Homepage
+
+Your homepage should summarize everything in one screen.
+
+```
+--------------------------------------------------
+Name
+Professor / Researcher
+Institution
+
+Photo
+
+Short biography (5–8 lines)
+
+Research interests
+
+Recent news
+
+Quick links
+
+• Publications
+• Projects
+• Teaching
+• CV (PDF)
+• Google Scholar
+• ORCID
+• GitHub
+--------------------------------------------------
+```
+
+---
+
+## Navigation bar
+
+```
+Home
+About
+Research
+Publications
+Teaching
+Service
+Awards
+CV
+Contact
+```
+
+This is the navigation style used by many successful academic websites because it keeps the site simple while exposing the information most visitors seek.
+
+## Your current files mapped
+
+```
+About
+ ├── personal
+ ├── education
+ ├── positions
+ ├── visits
+ └── skills
+
+Research
+ ├── projects
+ ├── publications
+ ├── talks
+ ├── tools
+ └── working-groups
+
+Teaching
+ ├── courses
+ ├── students
+ └── training
+
+Service
+ ├── institutional-duties
+ └── pc-member
+
+Recognition
+ └── awards
+```
+
+This organization is concise, professional, and scales well as your career progresses. It also aligns with the structure commonly seen on faculty pages at research universities, making it immediately familiar to academic visitors.

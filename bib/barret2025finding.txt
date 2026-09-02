@@ -1,0 +1,9 @@
+@article{barret2025finding,
+  title={Finding meaningful paths in heterogeneous graphs with PathWays},
+  author={Barret, Nelly and Gauquier, Antoine and Law, Jia-Jean and Manolescu, Ioana},
+  journal={Information Systems},
+  volume={127},
+  pages={102463},
+  year={2025},
+  publisher={Elsevier}
+}

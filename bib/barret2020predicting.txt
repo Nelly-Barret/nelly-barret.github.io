@@ -1,0 +1,8 @@
+@inproceedings{barret2020predicting,
+  title={Predicting the environment of a neighborhood: A use case for france},
+  author={Barret, Nelly and Duchateau, Fabien and Favetta, Franck and Bonneval, Lo{\"\i}c},
+  booktitle={9th International Conference on Data Science, Technology and Applications},
+  pages={294--301},
+  year={2020},
+  organization={SCITEPRESS-Science and Technology Publications}
+}

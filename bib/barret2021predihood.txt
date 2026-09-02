@@ -1,0 +1,9 @@
+@article{barret2021predihood,
+  title={Predihood: an open-source tool for predicting neighbourhoods' information},
+  author={Barret, Nelly and Duchateau, Fabien and Favetta, Franck},
+  journal={Journal of Open Source Software},
+  volume={6},
+  number={61},
+  pages={2805},
+  year={2021}
+}

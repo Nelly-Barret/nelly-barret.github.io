@@ -1,0 +1,8 @@
+@inproceedings{barret2023user,
+  title={User-friendly exploration of highly heterogeneous data lakes},
+  author={Barret, Nelly and Ebel, Simon and Galizzi, Th{\'e}o and Manolescu, Ioana and Mohanty, Madhulika},
+  booktitle={International Conference on Cooperative Information Systems},
+  pages={488--496},
+  year={2023},
+  organization={Springer}
+}

@@ -6,3 +6,7 @@
 .viminfo
 .gitconfig
 Readme.txt
+.cache/*
+.env
+.git-credentials
+.vscode-server/*

@@ -1,0 +1,6 @@
+@inproceedings{barret2026semistructquest,
+  title={SemiStructQuest: Unveiling NoSQL Database Concepts Through Gamified Learning Platform Analyses},
+  author={Barret, Nelly and Verger, M{\'e}lina},
+  booktitle={DataEd workshop at the 29th International Conference on Extending Database Technology},
+  year={2026}
+}

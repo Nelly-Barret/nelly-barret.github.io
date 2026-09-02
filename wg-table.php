@@ -1,0 +1,19 @@
+<table class="table table-striped table-hover my-table-three">
+	<tbody>
+	<?php while($wg = $wgs->fetch_assoc()): ?>
+		<tr>
+			<?php if($wg["end_date"] == "2222-01-01"): ?>
+				<td><?= date('M. Y', strtotime($wg["start_date"]))." - now"?></td>
+			<?php else: ?>
+				<td><?= date('M. Y', strtotime($wg["start_date"]))." - ".date('M. Y', strtotime($wg["end_date"]))?></td>
+			<?php endif; ?>
+			<td><?=$wg["status"] == 'Current' ? "<b>" : ""?><?=$wg["title"] ?><?=$wg["status"] == 'Current' ? "</b>" : ""?><br/><a href="<?=$wg["webpage"]?>" target="_blank"><?=$wg["webpage"]?></a><br/><span class='badge text-bg-secondary'><?=$wg["involvement"] ?></span><br/><p class="description"><?=$wg["content"] ?></p></td>
+			<?php if($wg["status"] == 'Finished'): ?>
+				<td><span class='badge text-bg-secondary status'>Finished</span></td>
+			<?php else: ?>
+				<td><span class='badge text-bg-success status'>Current</span></td>
+			<?php endif; ?>
+		</tr>
+	<?php endwhile; ?> 
+	</tbody>
+</table>

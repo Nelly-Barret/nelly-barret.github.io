@@ -1,0 +1,6 @@
+@inproceedings{barret2024exploration,
+  title={Exploration utilisateur de lacs de donn{\'e}es tr{\`e}s h{\'e}t{\'e}rog{\`e}nes},
+  author={Barret, Nelly and Ebel, Simon and Galizzi, Th{\'e}o and Manolescu, Ioana and Mohanty, Madhulika},
+  booktitle={EGC 2024-24{\`e}me conf{\'e}rence francophone sur l'Extraction et la Gestion des Connaissances},
+  year={2024}
+}

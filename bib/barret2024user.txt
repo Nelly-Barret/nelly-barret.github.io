@@ -1,0 +1,6 @@
+@phdthesis{barret2024user,
+  title={User-oriented exploration of semi-structured datasets},
+  author={Barret, Nelly},
+  year={2024},
+  school={Institut Polytechnique de Paris}
+}
