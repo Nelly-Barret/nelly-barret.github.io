@@ -13,8 +13,16 @@ jobs:
     - name: Create main TeX file
       run: |
         cd docs/
-        curl https://perso.liris.cnrs.fr/nbarret/generate.php > CV-barret.tex
+        curl https://perso.liris.cnrs.fr/nbarret/generate.php > CV-barret-test.tex
     - name: Compile LaTeX document
       uses: dante-ev/latex-action@latest
       with:
-          root_file: docs/CV-barret.tex
+          root_file: docs/CV-barret-test.tex
+    - name: Push generated CV
+      run: |
+          git config --global user.name 'Nelly Barret'
+          git config --global user.email 'nelly.barret@insa-lyon.fr'
+          git add *.pdf
+          git add **/*.pdf
+          git commit -m "Automated CV generation"
+          git push
