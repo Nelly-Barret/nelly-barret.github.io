@@ -52,7 +52,7 @@
           <ul class="dropdown-menu">
             <!-- <li><a class="dropdown-item" href="./generate-cv/cv-short-nelly-barret.pdf" target="_blank">Short CV</a></li> -->
             <li><a class="dropdown-item" href="./docs/CV-barret.pdf" target="_blank">CV</a></li>
-            <li><a class="dropdown-item" href="./docs/short-bio-barret-EN.txt" target="_blank">Short bio</a></li>
+            <li><a class="dropdown-item" href="./docs/short-bio-barret.txt" target="_blank">Short bio</a></li>
             <!-- <li><a class="dropdown-item" href="./institutional.php">Institutional service</a></li> -->
           </ul>
         </li>
