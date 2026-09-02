@@ -9,21 +9,24 @@
     <section class="anchor light">
     
 		<h1 class="section-title page-nav-section">Beyond research</h1>
-		<p class="personal-intro">Outside of research and teaching, I enjoy spending time with my partner, solving puzzles, and discovering the world through cooking recipes, sports association, or computer science challgenges.</p>
+		<p class="personal-intro">Outside of research and teaching, I enjoy spending time with my partner, riding my motorbike, solving puzzles, and discovering the world through cooking recipes.</p>
 
 		<div class="personal-grid">
 			<table style="width:100%">
 				<tr>
-					<td style="width:50%"><b>A new chapter</b></td>
-					<td style="width:50%"><b>Puzzle time</b></td>
+					<td style="width:33%"><b>A new chapter</b></td>
+					<td style="width:33%"><b>On the road</b></td>
+					<td style="width:33%"><b>Puzzle time</b></td>
 				</tr>
 				<tr>
-					<td style="width:50%"><p>I recently got engaged with my partner.</p></td>
-					<td style="width:50%"><p>One of my favourite ways to disconnect from work is spending an afternoon solving puzzles.</p></td>
+					<td style="width:33%"><p>I recently got engaged with my partner.</p></td>
+					<td style="width:33%"><p>One of my favourite ways to disconnect from work is spending an afternoon solving puzzles.</p></td>
+					<td style="width:33%"><p>One of my favourite ways to disconnect from work is spending an afternoon solving puzzles.</p></td>
 				</tr>
 				<tr>
-					<td style="width:50%"><img src="./img/pacs.jpg" width="18%" style="border-radius: 15px"></td>
-					<td style="width:50%"><img src="./img/puzzle-3.jpeg" width="60%" style="border-radius: 15px"></td>
+					<td style="width:33%"><img src="./img/pacs.jpg" width="18%" style="border-radius: 15px"></td>
+					<td style="width:33%"><img src="./img/motor.jpg" width="60%" style="border-radius: 15px"></td>
+					<td style="width:33%"><img src="./img/puzzle-3.jpeg" width="60%" style="border-radius: 15px"></td>
 				</tr>
 			</table>
 		</div>
