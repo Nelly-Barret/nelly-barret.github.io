@@ -1,16 +1,6 @@
 <?php
 require('db.php');
-try {
-	$SQL_AWARDS = "SELECT * FROM award;";
-	$awards = $conn->query($SQL_AWARDS);
-
-	$SQL_RESEARCH_TRAINING = "SELECT *, CONCAT('<ul><li>', GROUP_CONCAT(td.text SEPARATOR '</li><li>'), '</li></ul>') AS content FROM training t LEFT JOIN training_description td ON t.trid=td.training_id WHERE t.category = 'research' GROUP BY t.trid;";
-
-	$SQL_TEACHING_TRAINING = "SELECT *, CONCAT('<ul><li>', GROUP_CONCAT(td.text SEPARATOR '</li><li>'), '</li></ul>') AS content FROM training t LEFT JOIN training_description td ON t.trid=td.training_id WHERE t.category = 'teaching' GROUP BY t.trid;";
-} catch (Exception $e) {
-	var_dump($e);
-}
-
+require('functions.php');
 ?>
 
 <!DOCTYPE html>
@@ -126,31 +116,18 @@ try {
 		</div>
 
 		<h1 class="section-title page-nav-section" id="awards">Awards</h1>
-		<table class="table table-striped table-hover my-table-three">
-			<tbody>
-			<?php while($award = $awards->fetch_assoc()): ?>
-				<tr>
-					<td><?=$award["location"] ?></td>
-					<td><b><?=$award["title"] ?></b> (<?=$award["date"] ?>)<br/><p class="description"><?=$award["contents"] ?></p></td>
-					<?php if($award["webpage"] != ""): ?>
-						<td><a href="<?=$award["webpage"]?>" target="_blank">website</a></td>
-					<?php else: ?>
-						<td></td>
-					<?php endif; ?>
-				</tr>
-			<?php endwhile; ?> 
-			</tbody>
-		</table>
+		<?php $items = get_awards($conn); ?>
+		<?php include("career-award.php"); ?>
 	
 		<h1 class="section-title page-nav-section" id="training">Training activities</h1>
 
 		<h2 class="subsection-title">For research</h2>
-		<?php $trainings = $conn->query($SQL_RESEARCH_TRAINING); ?>
+		<?php $items = get_reasearch_training($conn); ?>
 		<?php include("career-table.php"); ?>
 		
 
 		<h2 class="subsection-title">For teaching</h2>
-		<?php $trainings = $conn->query($SQL_TEACHING_TRAINING); ?>
+		<?php $items = get_teaching_training($conn); ?>
 		<?php include("career-table.php"); ?>
 
     </section>

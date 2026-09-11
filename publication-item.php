@@ -1,39 +1,5 @@
 <li>
-	<!-- publication authors -->
-	<?php 
-		$SQL_AUTHORS = "SELECT * FROM publication_author pa LEFT JOIN person pe ON pa.author_id = pe.peid ORDER BY pa.publication_id ASC, pa.author_position ASC;";
-		$authors = $conn->query($SQL_AUTHORS);
-		$publication_authors = [];
-		while($author = $authors->fetch_assoc()) {
-			if($author["publication_id"] == $publication["puid"]) {
-				$publication_authors[] = $author["last_name"]." ".$author["first_name"][0];
-			}
-		}
-
-		// concat authors with a comma
-		$str_authors = implode(", ", $publication_authors);
-
-		// underline my name if I am the main author
-		if($publication["main_author"] == 1) {
-			$str_authors = str_replace("Barret N", "<u>Barret N</u>", $str_authors);
-		}
-	?>
-
-	<!-- code publication -->
-	<?php 
-		$SQL_CODE = "SELECT * FROM publication_tool pt LEFT JOIN tool t ON pt.tool_id = t.toid;";
-		$codes = $conn->query($SQL_CODE);
-		$the_code = "";
-		$the_code_url = "";
-		while($code = $codes->fetch_assoc()) {
-			if($code["publication_id"] == $publication["puid"]) {
-				$the_code = $code["title"];
-				$the_code_url = $code["repository"];
-			}
-		}
-	?>
-
-	<b><?= $publication["title"] ?></b>. <br/><?= $str_authors ?>. <br/><?=$publication["name"]?>. <?=$publication["year"]?>. <br/>
+	<b><?= $publication["title"] ?></b>. <br/><?= $publication["the_authors"] ?>. <br/><?=$publication["name"]?>. <?=$publication["year"]?>. <br/>
 
 	<!-- publication authors, title , conference and year-->
 	
@@ -72,9 +38,9 @@
 
 
 	<!-- Code link -->
-	<?php if($the_code_url != ""): ?>
+	<?php if($publication["repository"] != ""): ?>
 		&nbsp;&#183;&nbsp;
-		<i class="fa-solid fa-code"></i>&nbsp;<a href="<?=$the_code_url?>" target="_blank" title="Code URL">Code (<?= $the_code ?>)</a>
+		<i class="fa-solid fa-code"></i>&nbsp;<a href="<?=$publication["repository"]?>" target="_blank" title="Code URL">Code (<?= $publication["tool"] ?>)</a>
 	<?php endif; ?>
 
 	

@@ -1,21 +1,9 @@
 <?php
 require('db.php');
 require('utils.php');
+require('functions.php');
 
 try {
-	// GROUP CONCAT to create the list of advisors
-	$GROUP_CONCAT_ADVISORS = "GROUP_CONCAT(CONCAT(pe2.first_name, ' ', pe2.last_name, ' (', ss.supervisor_role, ')') ORDER BY person_position ASC SEPARATOR ', ') AS the_team";
-	$JOINS_FOR_GROUP_CONCAT = "LEFT JOIN internship_supervisor ss ON s.iid = ss.internship_id LEFT JOIN person pe2 ON ss.supervisor_id = pe2.peid ";
-
-	$SQL_ENGINEER_STUDENTS = "SELECT s.*, p.*, CASE WHEN s.year >= YEAR(CURDATE()) THEN 'Current' ELSE 'Finished' END AS status, ".$GROUP_CONCAT_ADVISORS." FROM internship s LEFT JOIN person p ON s.person_id = p.peid ".$JOINS_FOR_GROUP_CONCAT." WHERE s.level LIKE '%Engineer%' GROUP BY s.iid ORDER BY s.year DESC, FIELD (semester, 'winter', 'spring', 'summer', 'fall');";
-	$engineer_internships = $conn->query($SQL_ENGINEER_STUDENTS);
-
-	$SQL_MASTER_STUDENTS = "SELECT s.*, p.*, CASE WHEN s.year >= YEAR(CURDATE()) THEN 'Current' ELSE 'Finished' END AS status, ".$GROUP_CONCAT_ADVISORS." FROM internship s LEFT JOIN person p ON s.person_id = p.peid ".$JOINS_FOR_GROUP_CONCAT." WHERE s.level LIKE '%Master%' GROUP BY s.iid ORDER BY s.year DESC, FIELD (semester, 'winter', 'spring', 'summer', 'fall');";
-	$master_internships = $conn->query($SQL_MASTER_STUDENTS);
-
-	$SQL_BACHELOR_STUDENTS = "SELECT s.*, p.*, CASE WHEN s.year >= YEAR(CURDATE()) THEN 'Current' ELSE 'Finished' END AS status, ".$GROUP_CONCAT_ADVISORS." FROM internship s LEFT JOIN person p ON s.person_id = p.peid ".$JOINS_FOR_GROUP_CONCAT." WHERE s.level  LIKE '%Bachelor%' GROUP BY s.iid ORDER BY s.year DESC, FIELD (semester, 'winter', 'spring', 'summer', 'fall');";
-	$bachelor_internships = $conn->query($SQL_BACHELOR_STUDENTS);
-
 	$SQL_COUNT_BACHELOR_STUDENTS = "SELECT COUNT(DISTINCT person_id) AS nb_bachelors FROM internship WHERE level LIKE '%Bachelor%';"; // count the distinct number of people
 	$nb_bachelors = $conn->query($SQL_COUNT_BACHELOR_STUDENTS);
 	$nb_bachelor = $nb_bachelors->fetch_assoc(); // fetch the first (and only) row with the count
@@ -47,17 +35,17 @@ try {
 
 		<!-- Engineer -->
 		<h2 class="subsection-title">Engineer students</h2>
-		<?php $students = $engineer_internships ?>
+		<?php $items = get_engineer_students($conn); ?>
 		<?php include("internship-table.php"); ?>
 
 		<!-- Master -->
 		<h2 class="subsection-title">Master students</h2>
-		<?php $students = $master_internships ?>
+		<?php $items = get_master_students($conn); ?>
 		<?php include("internship-table.php"); ?>
 
 		<!-- Bachelor -->
 		<h2 class="subsection-title">Bachelor students</h2>
-		<?php $students = $bachelor_internships ?>
+		<?php $items = get_bachelor_students($conn); ?>
 		<?php include("internship-table.php"); ?>
 	</section>
 	<?php include('footer.php'); ?>

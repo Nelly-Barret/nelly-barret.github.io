@@ -1,20 +1,6 @@
 <?php
 require('db.php');
-try {
-	$SQL_TALKS = "SELECT * FROM dissemination WHERE category = 'Seminar' ORDER BY date DESC, did ASC;";
-	$talks = $conn->query($SQL_TALKS);
-
-	$SQL_PANELS = "SELECT * FROM dissemination WHERE category = 'Panel' ORDER BY date DESC, did ASC;";
-
-	$SQL_VULGARIZATION = "SELECT * FROM dissemination WHERE category = 'Vulgarization' ORDER BY date DESC, did ASC;";
-	
-
-	$SQL_EMPOWERMENT = "SELECT * FROM dissemination WHERE category = 'Female empowerment' ORDER BY date DESC, did ASC;";
-	
-} catch (Exception $e) {
-	var_dump($e);
-}
-
+require('functions.php');
 ?>
 
 <!DOCTYPE html>
@@ -27,18 +13,19 @@ try {
     
     <section class="anchor light">
 		<h1 class="section-title page-nav-section">Invited talks</h1>
+		<?php $items = get_invited_talks($conn); ?>
 		<?php include("dissemination-table.php"); ?>
 
 		<h1 class="section-title page-nav-section">Panels</h1>
-		<?php $talks = $conn->query($SQL_PANELS); ?>
+		<?php $items = get_panels($conn); ?>
 		<?php include("dissemination-table.php"); ?>
 
 		<h1 class="section-title page-nav-section">Vulgarization talks</h1>
-		<?php $talks = $conn->query($SQL_VULGARIZATION); ?>
+		<?php $items = get_vulgarization($conn); ?>
 		<?php include("dissemination-table.php"); ?>
 
 		<h1 class="section-title page-nav-section">Female empowerment talks</h1>
-		<?php $talks = $conn->query($SQL_EMPOWERMENT); ?>
+		<?php $items = get_female_talks($conn); ?>
 		<?php include("dissemination-table.php"); ?>
     </section>
 	<?php include('footer.php'); ?>

@@ -1,13 +1,7 @@
 <?php
 require('db.php');
 require('utils.php');
-try {
-	$SQL_COURSES = "SELECT *, ".$CURRENT_STATUS_SQL." FROM teaching WHERE category = 'course' ORDER BY status ASC, end_date DESC, start_date DESC;";
-	$courses = $conn->query($SQL_COURSES);
-} catch (Exception $e) {
-	var_dump($e);
-}
-
+require('functions.php');
 ?>
 
 <!DOCTYPE html>
@@ -20,20 +14,15 @@ try {
     
     <section class="anchor light">
 		<h1 class="section-title page-nav-section">Recurrent courses</h1>
+		<?php $items = get_recurrent_courses($conn); ?>
 		<?php include("teaching-table.php"); ?>
 
 		<h1 class="section-title page-nav-section">Guest Lectures</h1>
-		<?php 
-			$SQL_GUEST_COURSES = "SELECT *, ".$CURRENT_STATUS_SQL." FROM teaching WHERE category = 'guest' ORDER BY status ASC, end_date ASC, start_date DESC;";
-			$courses = $conn->query($SQL_GUEST_COURSES);
-		?>
+		<?php $items = get_guest_courses($conn); ?>
 		<?php include("teaching-table.php"); ?>
 
 		<h1 class="section-title page-nav-section">Teaching service</h1>
-		<?php 
-			$SQL_CURRENT_SERVICE = "SELECT * FROM teaching WHERE category = 'service' ORDER BY start_date DESC;";
-			$courses = $conn->query($SQL_CURRENT_SERVICE);
-		?>
+		<?php $items = get_teaching_service($conn); ?>
 		<?php include("teaching-table.php"); ?>
     </section>
 	<?php include('footer.php'); ?>

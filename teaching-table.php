@@ -1,12 +1,12 @@
 <table class="table table-striped table-hover my-table-four">
 	<tbody>
-	<?php while($course = $courses->fetch_assoc()): ?>
+		<?php foreach($items as $item): ?>
 		<tr>
-			<td><img src="<?=$course["logo_filepath"]?>" class="logo" title="<?= $course['school']?>"></img></td>
-			<td><?= $course["end_date"] == "2222-01-01" ? $course["semester"]." (since ".date('Y', strtotime($course["start_date"])).")" : $course["semester"]." ".date('Y', strtotime($course["start_date"]))?></td>
-			<td><?=$course["status"] == 'Current' ? "<b>" : ""?><?=$course["title"] ?><?=$course["status"] == 'Current' ? "</b>" : ""?> (<?=$course["level"] ?>, <?=$course["hours"] ?>h, <?= $course["language"] == "FR" ? "&#x1f1eb;&#x1f1f7;" : "&#x1f1ec;&#x1f1e7;" ?>)<br/><p class="description"><?=$course["contents"] ?></p></td>
-			<td><?=$course["status"] == 'Finished' ? "<span class='badge text-bg-secondary status'>Finished</span>" : "<span class='badge text-bg-success status'>Current</span>"?></td>
+			<td><img src="<?=$item["logo_filepath"]?>" class="logo" title="<?= $item['school']?>"/></td>
+			<td><?= $item["end_date"] == "2222-01-01" ? $item["semester"]." (since ".date('Y', strtotime($item["start_date"])).")" : $item["semester"]." ".date('Y', strtotime($item["start_date"]))?></td>
+			<td><p data-status="<?=$item['status']?>"><?=$item["title"] ?></p> <?=$item["level"] ?>, <?=$item["hours"] ?>h, <?= $item["language"] == "FR" ? "&#x1f1eb;&#x1f1f7;" : "&#x1f1ec;&#x1f1e7;" ?><p class="description"><?=$item["contents"] ?></p></td>
+			<td><?= status_badge($item["status"]) ?></td>
 		</tr>
-	<?php endwhile; ?> 
+	<?php endforeach; ?> 
 	</tbody>
 </table>

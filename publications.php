@@ -1,6 +1,7 @@
 <?php
 require('db.php');
 require('utils.php');
+require('functions.php');
 
 try {
 	// SUMMARY RECORD
@@ -30,8 +31,7 @@ try {
 		$sort = "FIELD(pu.category, 'int_journal', 'int_conf', 'int_workshop', 'nat_conf', 'demo', 'manuscript'), pu.year DESC, v.acronym ASC";
 	}
 
-	$SQL_PUBLICATIONS = "SELECT pu.*, v.* FROM publication pu LEFT JOIN venue v ON pu.venue = v.vid ORDER BY ".$sort;
-	$publications = $conn->query($SQL_PUBLICATIONS);
+	$publications = get_all_publications($conn, $sort);
 
 	$COLORS = [
 		"int_journal" => "#F54927", 
@@ -57,7 +57,8 @@ try {
 	$the_publications = [];
 	$the_sort = $_POST["sort-publis"] == null ? "category" : $_POST["sort-publis"];
 
-	while($publi = $publications->fetch_assoc()) {
+	// 1. build the dictionary of ordered / categorized publications
+	foreach($publications as $publi) {
 		if($the_sort == "category") {
 			$the_category = $publi["category"];
 			if(!array_key_exists($the_category, $the_publications)) {
@@ -73,6 +74,13 @@ try {
 			$the_publications[$the_year][] = $publi;
 		}
 	}
+
+	// 2. add the author string to each publication
+	// TODO
+	// $SQL_AUTHORS = "SELECT * FROM publication_author pa LEFT JOIN person pe ON pa.author_id = pe.peid WHERE pa.publication_id = ? ORDER BY pa.publication_id ASC, pa.author_position ASC;";
+	
+	
+	// print_r($the_publications);
 } catch (Exception $e) {
 	var_dump($e);
 }

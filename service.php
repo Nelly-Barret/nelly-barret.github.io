@@ -1,6 +1,8 @@
 <?php
 require('db.php');
 require('utils.php');
+require('functions.php');
+
 try {
 
 	// SUMMARY
@@ -16,21 +18,6 @@ try {
 	while($row = $summary->fetch_assoc()) {
 		$counts[$row["category"]][$row["rank"]] = $row["count"];
 	}
-
-	// DETAILED LIST OF SERVICES
-	$TEMPLATE_SERVICE_SELECT = "SELECT s.seid, s.category, v.acronym, v.name, v.rank, s.role, GROUP_CONCAT(CASE WHEN s.role <> '' THEN CONCAT(s.year, ' (', s.role, ')') ELSE s.year END ORDER BY year DESC SEPARATOR ', ') AS years FROM service s LEFT JOIN venue v ON s.venue_id = v.vid";
-	$TEMPLATE_SERVICE_SELECT_WITHOUT_ROLE = "SELECT s.seid, s.category, v.acronym, v.name, v.rank, s.role, GROUP_CONCAT(s.year ORDER BY year DESC SEPARATOR ', ') AS years FROM service s LEFT JOIN venue v ON s.venue_id = v.vid";
-	$TEMPLATE_SERVICE_GROUP_SORT = "GROUP BY category, venue_id ORDER BY s.category, FIELD (v.rank, 'Q1', 'A*', 'A', 'Q2', 'B', 'Q3', 'C', 'Q4', 'D', 'N/A'), s.year DESC, v.acronym ASC;";
-
-	$SQL_ORGA_SERVICES = $TEMPLATE_SERVICE_SELECT." WHERE category = 'organizer' ".$TEMPLATE_SERVICE_GROUP_SORT;
-	$SQL_CHAIR_SERVICES = $TEMPLATE_SERVICE_SELECT." WHERE category = 'chair' ".$TEMPLATE_SERVICE_GROUP_SORT;
-	$SQL_PC_SERVICES = $TEMPLATE_SERVICE_SELECT." WHERE category = 'pc' ".$TEMPLATE_SERVICE_GROUP_SORT;
-	$SQL_JOURNAL_REVIEW_SERVICES = $TEMPLATE_SERVICE_SELECT_WITHOUT_ROLE." WHERE role = 'journal reviewer' ".$TEMPLATE_SERVICE_GROUP_SORT;
-	$SQL_CONFERENCE_REVIEW_SERVICES = $TEMPLATE_SERVICE_SELECT." WHERE category = 'reviewer' AND role <> 'journal reviewer' ".$TEMPLATE_SERVICE_GROUP_SORT;
-
-	
-	$pc_services = $conn->query($SQL_PC_SERVICES);
-	$review_services = $conn->query($SQL_REVIEW_SERVICES);
 
 	$COLORS_RANKS = [
 		"A*" => "#fc4e03",
@@ -69,28 +56,29 @@ try {
 		
 		<h2 class="subsection-title">Conference & workshop organization</h2>
 		<!-- Organisation duties -->
-		<?php $services = $conn->query($SQL_ORGA_SERVICES); ?>
+		<?php $items = get_service_organization($conn); ?>
 		<?php include("service-table.php"); ?>
 
 		<h2 class="subsection-title">Conference & workshop chairing</h2>
 		<!-- Chair duties -->
-		<?php $services = $conn->query($SQL_CHAIR_SERVICES); ?>
+		<?php $items = get_service_chair($conn); ?>
 		<?php include("service-table.php"); ?>
 
 		<!-- PC duties -->
-		<?php $services = $conn->query($SQL_PC_SERVICES); ?>
+		<?php $items = get_service_pc($conn); ?>
 		<h2 class="subsection-title">PC responsabilities</h2>
 		<?php include("service-table.php"); ?>
 		
 		<!-- journal review duties -->
 		<h1 class="section-title page-nav-section">Review responsabilities</h1>
-		<?php $services = $conn->query($SQL_JOURNAL_REVIEW_SERVICES); ?>
+		
 		<h2 class="subsection-title">Journals</h2>
+		<?php $items = get_service_journal_review($conn); ?>
 		<?php include("service-table.php"); ?>
 		
 		<!-- conference review duties -->
-		<?php $services = $conn->query($SQL_CONFERENCE_REVIEW_SERVICES); ?>
 		<h2 class="subsection-title">Conferences</h2>
+		<?php $items = get_service_conf_review($conn); ?>
 		<?php include("service-table.php"); ?>
     </section>
 	<?php include('footer.php'); ?>

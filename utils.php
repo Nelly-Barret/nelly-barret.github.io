@@ -2,6 +2,20 @@
 
 $CURRENT_STATUS_SQL = "CASE WHEN end_date = '2222-01-01' OR end_date > CURDATE() THEN 'Current' ELSE 'Finished' END AS status";
 
+const STATUS_STYLES = [
+    'Finished' => ['class' => 'text-bg-secondary', 'label' => 'Finished'],
+    'default'  => ['class' => 'text-bg-success',   'label' => 'Current'],
+];
+
+function status_badge($status) {
+    $s = STATUS_STYLES[$status] ?? STATUS_STYLES['default'];
+    return sprintf(
+        '<span class="badge status %s">%s</span>',
+        htmlspecialchars($s['class']),
+        htmlspecialchars($s['label'])
+    );
+}
+
 function get_total_count_for_category(String $category) {
 	$sum = 0;
 	// $GLOBALS['counts'] because the variable counts is decalred outside the function, thus is not known inside the function

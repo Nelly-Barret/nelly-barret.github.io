@@ -135,8 +135,8 @@
 
 
         <div class="row">
-            <div class="col-sm-12" style="max-width: 1500px; text-align: center;">
-				<img src="img/word-cloud.png" class="img_home" style="max-width: 600px" alt="word cloud"/>
+            <div class="col-sm-12" style="max-width: 100%; text-align: center;">
+				<img src="img/word-cloud.png" class="img_home" style="max-width: 100%" alt="word cloud"/>
             </div>
         </div>
 

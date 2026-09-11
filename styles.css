@@ -15,6 +15,14 @@ section {
 	margin-top: 2rem;
 }
 
+@media only screen and (max-width: 800px) {
+    section {
+		margin-left: 1rem;
+		margin-right: 1rem;
+		margin-top: 1rem;
+	}
+}
+
 .anchor {
     padding-top: 50px; /* default Bootstrap navbar height */
 }
@@ -171,36 +179,38 @@ a > i {
 	margin-bottom: 1rem !important;
 }
 
-/* career timeline */
+p[data-status='Current'] {
+    margin: 0;
+    padding: 0;
+    font-weight: bold;
+}
 
+p[data-status='Finished'] {
+    margin: 0;
+    padding: 0;
+}
+
+/* career timeline */
 .academic-timeline {
     width: 100%;
     margin: 40px 0;
 }
 
-
 /* Each row */
 .academic-timeline-item {
     display: grid;
-
     grid-template-columns: 180px 40px 1fr;
-
     min-height: 120px;
 }
-
 
 /* Date */
 .academic-timeline-date {
     text-align: right;
-
     padding-top: 8px;
     padding-right: 20px;
-
     color: #777;
-
     font-size: 0.9rem;
 }
-
 
 /* Line column */
 .academic-timeline-line {
@@ -211,108 +221,76 @@ a > i {
     min-height: 120px;
 }
 
-
 /* Vertical line */
 .academic-timeline-line::before {
     content: "";
-
     position: absolute;
-
     top: 0;
     bottom: 0;
-
     left: 19px;
-
     width: 2px;
-
     background-color: #cccccc;
-
     display: block;
 }
-
 
 /* Dot */
 .academic-timeline-dot {
     position: absolute;
-
     z-index: 10;
-
     top: 5px;
     left: 13px;
-
     display: block;
-
     width: 14px;
     height: 14px;
-
     background-color: #777777;
-
     border-radius: 50%;
-
     border: 3px solid white;
-
     box-sizing: border-box;
 }
-
 
 /* Current dot */
 .academic-timeline-dot.current {
     background-color: #198754;
-
     width: 16px;
     height: 16px;
-
     left: 12px;
 }
-
 
 /* Content */
 .academic-timeline-content {
     padding: 0 0 35px 20px;
 }
 
-
 /* Title */
 .academic-timeline-content h3 {
     margin: 0 0 5px 0;
-
     font-size: 1.25rem;
 }
-
 
 /* Institution */
 .academic-timeline-institution {
     color: #6c757d;
-
     margin-bottom: 12px;
-
     font-weight: 500;
 }
 
-
 /* Mobile */
 @media (max-width: 767px) {
-
     .academic-timeline-item {
         grid-template-columns: 30px 1fr;
-
         min-height: 0;
     }
 
     .academic-timeline-date {
         grid-column: 2;
-
         text-align: left;
-
         padding: 0 0 5px 15px;
     }
 
     .academic-timeline-line {
         grid-column: 1;
         grid-row: 1 / span 2;
-
         width: 30px;
-
         min-height: 100%;
     }
 
@@ -330,7 +308,6 @@ a > i {
 
     .academic-timeline-content {
         grid-column: 2;
-
         padding-left: 15px;
     }
 }

@@ -1,26 +1,25 @@
 <table class="table table-striped table-hover my-table-four">
 	<tbody>
-	<?php while($student = $students->fetch_assoc()): ?>
+	<?php foreach($items as $item): ?>
 		<tr>
-			<td><img src="<?=$student["logo_filepath"]?>" class="logo" title="<?= $student['school']?>"></img></td>
-			<td><?= $student["semester"]." ".$student["year"]?></td>
+			<td><img src="<?=$item["logo_filepath"]?>" class="logo" title="<?= $item['school']?>"></img></td>
+			<td><?= $item["semester"]." ".$item["year"]?></td>
 			<td>
-				<?= $student["status"] == 'Current' ? "<b>" : ""?><?=$student["topic"] ?><?=$student["status"] == 'Current' ? "</b>" : ""?>
-				<?php if($student["manuscript"] != ""): ?>
-					<a href="<?=$student["manuscript"]?>" target="_blank"><i class="fa-solid fa-file-pdf black-fa"></i></a>
+				<p data-status="<?=$item['status']?>"><?=$item["topic"] ?></p>
+				<?php if($item["manuscript"] != ""): ?>
+					<a href="<?=$item["manuscript"]?>" target="_blank"><i class="fa-solid fa-file-pdf black-fa"></i></a>
 				<?php endif; ?>
-				<?php if($student["slides"] != ""): ?>
-					<a href="<?=$student["slides"]?>" target="_blank"><i class="fa-solid fa-file-powerpoint black-fa"></i></a>
+				<?php if($item["slides"] != ""): ?>
+					<a href="<?=$item["slides"]?>" target="_blank"><i class="fa-solid fa-file-powerpoint black-fa"></i></a>
 				<?php endif; ?>
-				</br/>
 				<p class="description">
-					<u>Student:</u> <?=$student["first_name"]." ".$student["last_name"] ?> (<?=$student["level"]?>)
+					<u>Student:</u> <?=$item["first_name"]." ".$item["last_name"] ?> (<?=$item["level"]?>)
 					<br/>
-					<u>Supervision team:</u> <?=$student["the_team"]?>
+					<u>Supervision team:</u> <?=$item["the_team"]?>
 				</p>
 			</td>
-			<td><?=$student["status"] == 'Finished' ? "<span class='badge text-bg-secondary status'>Finished</span>" : "<span class='badge text-bg-success status'>Current</span>"?></td>
+			<td><?= status_badge($item["status"]) ?></td>
 		</tr>
-	<?php endwhile; ?> 
+	<?php endforeach; ?> 
 	</tbody>
 </table>
