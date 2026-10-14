@@ -6,20 +6,7 @@ require('functions.php');
 try {
 	// SUMMARY RECORD
 
-	$counts = [
-		"int_journal" => ["Q1" => 0, "Q2" => 0, "Q3" => 0, "Q4" => 0, "N/A" => 0], 
-		"int_conf" => ["A*" => 0, "A" => 0, "B" => 0, "C" => 0, "D" => 0, "N/A" => 0], 
-		"int_workshop" => ["A*" => 0, "A" => 0, "B" => 0, "C" => 0, "D" => 0, "N/A" => 0], 
-		"demo" => ["A*" => 0, "A" => 0, "B" => 0, "C" => 0, "D" => 0, "N/A" => 0],
-		"nat_conf" => ["A*" => 0, "A" => 0, "B" => 0, "C" => 0, "D" => 0, "N/A" => 0],
-		"manuscript" => ["A*" => 0, "A" => 0, "B" => 0, "C" => 0, "D" => 0, "N/A" => 0]
-	];
-
-	$SQL_SUMMARY = "SELECT p.category, v.rank, COUNT(p.puid) AS count FROM publication p LEFT JOIN venue v ON p.venue=v.vid GROUP BY p.category, v.rank";
-	$summary = $conn->query($SQL_SUMMARY);
-	while($row = $summary->fetch_assoc()) {
-		$counts[$row["category"]][$row["rank"]] = $row["count"];
-	}
+	$counts = get_summary_publications($conn);
 
 	// DETAILED LIST OF PUBLICATIONS WITH PREFERED ORDRED
 
@@ -57,7 +44,6 @@ try {
 	$the_publications = [];
 	$the_sort = $_POST["sort-publis"] == null ? "category" : $_POST["sort-publis"];
 
-	// 1. build the dictionary of ordered / categorized publications
 	foreach($publications as $publi) {
 		if($the_sort == "category") {
 			$the_category = $publi["category"];
@@ -74,11 +60,6 @@ try {
 			$the_publications[$the_year][] = $publi;
 		}
 	}
-
-	// 2. add the author string to each publication
-	// TODO
-	// $SQL_AUTHORS = "SELECT * FROM publication_author pa LEFT JOIN person pe ON pa.author_id = pe.peid WHERE pa.publication_id = ? ORDER BY pa.publication_id ASC, pa.author_position ASC;";
-	
 	
 	// print_r($the_publications);
 } catch (Exception $e) {

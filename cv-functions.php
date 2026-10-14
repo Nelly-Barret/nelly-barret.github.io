@@ -1,5 +1,7 @@
 <?php 
 
+require('functions.php');
+
 function generate_preambule($the_latex, $conn) {
 	$the_latex .= "\documentclass{article}\n
 	\usepackage{graphicx}\n
@@ -30,7 +32,7 @@ function generate_preambule($the_latex, $conn) {
 
 function generate_header($the_latex, $conn) {
 	$the_latex .= "\\noindent {\Huge Nelly Barret}\n\n";
-	$the_latex .= "\\noindent {\huge Assistant professor in computer science}\n\n";
+	$the_latex .= "\\noindent {\huge Associate professor in computer science}\n\n";
 	$the_latex .= "\\noindent {\Large LIRIS $\cdot$ INSA Lyon}\n\n";
 	$the_latex .= "\\noindent \\faMapMarker\ Blaise Pascal building, 7 Avenue Jean Capelle, 69100 Villeurbanne, France\n\n";
 	$the_latex .= "\\noindent \\faBuilding\ Office 502.3.21 $|$ \\faEnvelope\ nelly.barret@insa-lyon.fr $|$ \\faLaptop\ https://perso.liris.cnrs.fr/nbarret/ $|$ \orcidlink{0000-0002-3469-4149} \href{https://orcid.org/0000-0002-3469-4149}{0000-0002-3469-4149}\n\n";
@@ -50,15 +52,14 @@ function generate_research_interests($the_latex, $conn) {
 }
 
 function generate_academic_positions($the_latex, $conn) {
-	$SQL_POSITIONS = "SELECT * FROM job j LEFT JOIN job_description jd ON j.jid = jd.job_id ORDER BY start_date DESC, jd.jdid ASC;";
-	$positions = $conn->query($SQL_POSITIONS);
+	$positions = get_academic_positions($conn);
 
 	$the_latex .= generate_section("Academic positions", "\\faBriefcase");
 	
 	$previous_jid = -1;
 	$first = true;
 	$first2 = true;
-	while($position = $positions->fetch_assoc()) {
+	foreach($positions as $position) {
 		if($previous_jid != $position["jid"]) {
 			if($first == true) {
 				$first = false;
@@ -80,13 +81,12 @@ function generate_academic_positions($the_latex, $conn) {
 }
 
 function generate_education($the_latex, $conn) {
-	$SQL_EDUCATION = "SELECT * FROM education ORDER BY start_date DESC;";
-	$education = $conn->query($SQL_EDUCATION);
+	$educations = get_education($conn);
 
 	$the_latex .= generate_section("Education", "\\faGraduationCap");
 	
 	$first = true;
-	while($edu = $education->fetch_assoc()) {
+	foreach($educations as $edu) {
 		$the_latex .= generate_title($edu["title"], $edu["location"], $edu["start_date"], $edu["end_date"], $first);
 		if($edu["specialty"] != "") {
 			$the_latex .= generate_subtitle(["Track" => $edu["track"].", ".$edu["specialty"]]);
@@ -101,13 +101,12 @@ function generate_education($the_latex, $conn) {
 }
 
 function generate_awards($the_latex, $conn) {
-	$SQL_AWARDS = "SELECT * FROM award ORDER BY date DESC;";
-	$awards = $conn->query($SQL_AWARDS);
+	$awards = get_awards($conn);
 
 	$the_latex .= generate_section("Awards", "\\faTrophy");
 	
 	$first = true;
-	while($award = $awards->fetch_assoc()) {
+	foreach($awards as $award) {
 		$the_latex .= generate_title($award["title"], $award["location"], $award["date"], "", $first);
 		$first = false;
 		if($award["webpage"] != "") {
@@ -124,13 +123,12 @@ function generate_awards($the_latex, $conn) {
 }
 
 function generate_projects($the_latex, $conn) {
-	$SQL_PROJECTS = "SELECT * FROM project ORDER BY end_date DESC, start_date DESC;";
-	$projects = $conn->query($SQL_PROJECTS);
+	$projects = get_projects($conn);
 
 	$the_latex .= generate_section("Research projects", "\\faLightbulbO ");
 
 	$first = true;
-	while($project = $projects->fetch_assoc()) {
+	foreach($projects as $project) {
 		$the_latex .= generate_title($project["short_title"].": ".$project["long_title"], "", $project["start_date"], $project["end_date"], $first);
 		$first = false;
 		$the_latex .= generate_subtitle(["Role" => $project["involvement"], "Grant" => $project["grant_type"], "Parnters" => $project["company"], "Website" => $project["webpage"]]);
@@ -158,13 +156,12 @@ function generate_projects($the_latex, $conn) {
 }
 
 function generate_tools($the_latex, $conn) {
-	$SQL_TOOLS = "SELECT * FROM tool ORDER BY end_date DESC, start_date DESC;";
-	$tools = $conn->query($SQL_TOOLS);
+	$tools = get_tools($conn);
 
 	$the_latex .= generate_section("Research tools", "\\faCode");
 
 	$first = true;
-	while($tool = $tools->fetch_assoc()) {
+	foreach($tools as $tool) {
 		$the_latex .= generate_title($tool["title"], "", $tool["start_date"], $tool["end_date"], $first);
 		$the_latex .= generate_subtitle(["Role" => $tool["involvement"], "Language" => $tool["language"], "LOC" => $tool["loc"], "Repository" => $tool["repository"]]);
 		$first = false;
@@ -174,13 +171,12 @@ function generate_tools($the_latex, $conn) {
 }
 
 function generate_wgs($the_latex, $conn) {
-	$SQL_WGS = "SELECT * FROM working_group wg LEFT JOIN working_group_description wgd ON wg.wgid = wgd.wg_id ORDER BY wg.end_date DESC, wg.start_date DESC, wgd.wgdid ASC;";
-	$wgs = $conn->query($SQL_WGS);
+	$wgs = get_wg($conn);
 
 	$the_latex .= generate_section("Working groups", "\\faGroup ");
 
 	$first = true;
-	while($wg = $wgs->fetch_assoc()) {
+	foreach($wgs as $wg) {
 		$the_latex .= generate_title($wg["title"], $wg["location"], $wg["start_date"], $wg["end_date"], $first);
 		$the_latex .= generate_subtitle(["Role" => $wg["involvement"], "Website" => $wg["webpage"]]);
 		// assuming there is only one text description per WG (true as of Aug. 2026)
@@ -195,19 +191,23 @@ function generate_wgs($the_latex, $conn) {
 
 function generate_dissemination($the_latex, $conn) {
 	$the_latex .= generate_section("Talks and Dissemination", "\\faMicrophone");
-	$categories = ["Seminar", "Panel", "Vulgarization", "Female empowerment"];
 
-	foreach($categories as $category) {
+	$categories = [
+		"Seminar" => get_invited_talks($conn), 
+		"Panel" => get_panels($conn), 
+		"Vulgarization" => get_vulgarization($conn), 
+		"Female empowerment" => get_female_talks($conn)
+	];
+
+	foreach($categories as $category => $talks) {
 		$the_latex .= generate_subsection($category);
-		$SQL_TALKS = "SELECT * FROM dissemination WHERE category = '".$category."' ORDER BY date DESC, did ASC;";
-		$talks = $conn->query($SQL_TALKS);
 	
 		$the_latex .= "\\begin{itemize}\n";
-		while($talk = $talks->fetch_assoc()) {
+		foreach($talks as $talk) {
 			if($talk["resource"] != "") {
 				$the_latex .= "\\item \\href{".$talk["resource"]."}{".$talk["title"]."}. ".date('M Y', strtotime($talk["date"])).", ".get_entity_from_logo($talk["logo_filepath"]).", ".$talk["location"].".\n";
 			} else {
-				$the_latex .= "\\item ".$talk["title"].". ".date('M Y', strtotime($talk["date"])).", ".$talk["location"].".\n";
+				$the_latex .= "\\item ".$talk["title"].". ".date('M Y', strtotime($talk["date"])).", ".get_entity_from_logo($talk["logo_filepath"]).", ".$talk["location"].".\n";
 			}
 		}
 		$the_latex .= "\\end{itemize}\n";
@@ -216,18 +216,25 @@ function generate_dissemination($the_latex, $conn) {
 	return $the_latex;
 }
 
+function generate_summary_dissemination($the_latex, $conn) {
+	$the_latex .= generate_section("Talks and Dissemination", "\\faMicrophone");
+	return $the_latex;
+}
+
 function generate_teaching($the_latex, $conn) {
 	$the_latex .= generate_section("Teaching", "\\faSlideshare");
-	$categories = ["'course' AND end_date='2222-01-01'" => "Reccuring courses", "'guest'" => "Guest lectures", "'service'" => "Teaching service", "'course' AND end_date < '2222-01-01'" => "Previous courses"];
+	$categories = [
+		"Recurring courses (in French)" => get_recurrent_courses($conn), 
+		"Guest lectures" => get_guest_courses($conn), 
+		"Teaching service" => get_teaching_service($conn)
+	];
 
-	foreach($categories as $category => $pretty_category) {
-		$the_latex .= generate_subsection($pretty_category);
-		$SQL_TEACHING = "SELECT * FROM teaching WHERE category = ".$category." ORDER BY start_date DESC, end_date DESC;";
-		$teaching = $conn->query($SQL_TEACHING);
+	foreach($categories as $category => $teaching) {
+		$the_latex .= generate_subsection($category);
 	
 		$the_latex .= "\\begin{itemize}\n";
-		while($teach = $teaching->fetch_assoc()) {
-			if($category == "'service'") {
+		foreach($teaching as $teach) {
+			if($category == "Teaching service") {
 				// do not print the number of hours for teaching service (only for real courses) nor the level
 				$hours = "";
 				$level = "";
@@ -249,46 +256,28 @@ function generate_teaching($the_latex, $conn) {
 }
 
 function generate_training($the_latex, $conn) {
-	$SQL_TRAININGS = "SELECT * FROM training t LEFT JOIN training_description td ON t.trid = td.training_id ORDER BY date DESC, td.trdid ASC;";
-	$trainings = $conn->query($SQL_TRAININGS);
+	$CATEGORIES = [
+		"For reasearch" => get_reasearch_training($conn),
+		"For teaching" => get_teaching_training($conn)
+	];
 
 	$the_latex .= generate_section("Training", "\\faWpforms");
 	
-	$previous_tid = -1;
-	$first = true;
-	$first2 = true;
-	$first3 = true;
-	while($training = $trainings->fetch_assoc()) {
-		if($previous_tid != $training["trid"]) {
-			$first2 = true;
-			if($first == true) {
-				$first = false;
-			} else {
-				//remove last additional comma
-				$the_latex = substr($the_latex, 0, strlen($the_latex)-2); // remove the space and the comma 
-				$the_latex .= "\n\n"; // specifically for training, we need two newlines because there is no itemize to separate the text form the next title
-			}
-			$the_latex .= generate_title($training["title"]." (".$training["duration"].")", "", $training["date"], "", $first3);
-			$first3 = false;
+	foreach($CATEGORIES as $category => $trainings) {
+		$the_latex .= generate_subsection($category);
+		
+		foreach($trainings as $training) {
+			$the_latex .= generate_title($training["title"]." (".$training["duration"].")", "", $training["date"], "", true);
 			if($training["webpage"] != "") {
 				$the_latex .= generate_subtitle(["Website" => $training["webpage"]]);
 			}
-			// $the_latex .= "\\begin{itemize}\n";
+			
+			$the_latex .= "\\begin{itemize}\n";
+			$the_latex .= "\\item ".$training["content_cv"];
+			$the_latex .= "\\end{itemize}\n";
 		}
-		// $the_latex .= "\\item ".$training["text"]."\n";
-		if($first2 == true) {
-			$the_latex .= "\n"; // specifically for training, we need one more newline because there is no itemize to separate the title form the text
-			$the_latex .= "\\noindent ";
-			$first2 = false;
-		}
-		
-		$the_latex .= $training["text"]."; ";
-		$previous_tid = $training["trid"];
-		
 	}
 
-	//remove last additional comma
-	$the_latex = substr($the_latex, 0, strlen($the_latex)-2); // remove the space and the comma 
 	// last text to sperate from next section
 	$the_latex .= "\n";
 
@@ -296,62 +285,39 @@ function generate_training($the_latex, $conn) {
 }
 
 function generate_visits($the_latex, $conn) {
-	$SQL_VISITS = "SELECT * FROM visit v LEFT JOIN visit_description vd ON v.viid = vd.research_visit_id ORDER BY start_date DESC, start_date DESC, vd.vidid ASC;";
-	$visits = $conn->query($SQL_VISITS);
+	$visits = get_visits($conn);
 
 	$the_latex .= generate_section("Research visits", "\\faCalendar");
 	
-	$previous_vid = -1;
-	$first = true;
-	while($visit = $visits->fetch_assoc()) {
-		// if($previous_vid != $visit["viid"]) {
-		// 	if($first == true) {
-		// 		$first = false;
-		// 	} else {
-			// 		$the_latex .= "\\end{itemize}\n";
-			// 	}
+	foreach($visits as $visit) {
 		$the_latex .= generate_title($visit["location"], "", $visit["start_date"], $visit["end_date"], $first);
-			// $the_latex .= "\\begin{itemize}\n";
-			// }
-			// $the_latex .= "\\item ".$visit["text"]."\n";
-			// $previous_vid = $visit["viid"];
-		$first = false;
-		
 	}
-	// last list to close
-	// $the_latex .= "\\end{itemize}\n";
 
 	return $the_latex;
 }
 
 function generate_research_service($the_latex, $conn) {
 
-	$TEMPLATE_SERVICE_SELECT = "SELECT s.seid, s.category, v.acronym, v.name, v.rank, s.role, GROUP_CONCAT(CASE WHEN s.role <> '' THEN CONCAT(s.year, ' (', s.role, ')') ELSE s.year END ORDER BY year DESC SEPARATOR ', ') AS years FROM service s LEFT JOIN venue v ON s.venue_id = v.vid";
-	$TEMPLATE_SERVICE_SELECT_WITHOUT_ROLE = "SELECT s.seid, s.category, v.acronym, v.name, v.rank, s.role, GROUP_CONCAT(s.year ORDER BY year DESC SEPARATOR ', ') AS years FROM service s LEFT JOIN venue v ON s.venue_id = v.vid";
-	$TEMPLATE_SERVICE_GROUP_SORT = "GROUP BY category, venue_id ORDER BY s.category, FIELD (v.rank, 'Q1', 'A*', 'A', 'Q2', 'B', 'Q3', 'C', 'Q4', 'D', 'N/A'), s.year DESC, v.acronym ASC;";
-
 	$SQL_LEADERSHIP = [
-		"Conference and workshop organizer" => $TEMPLATE_SERVICE_SELECT." WHERE category = 'organizer' ".$TEMPLATE_SERVICE_GROUP_SORT,
-		"Conference and workshop chair" => $SQL_CHAIR_SERVICES = $TEMPLATE_SERVICE_SELECT." WHERE category = 'chair' ".$TEMPLATE_SERVICE_GROUP_SORT,
-		"PC responsabilities" => $SQL_PC_SERVICES = $TEMPLATE_SERVICE_SELECT." WHERE category = 'pc' ".$TEMPLATE_SERVICE_GROUP_SORT,
-		"Journals" => $SQL_JOURNAL_REVIEW_SERVICES = $TEMPLATE_SERVICE_SELECT_WITHOUT_ROLE." WHERE role = 'journal reviewer' ".$TEMPLATE_SERVICE_GROUP_SORT,
-		"Conferences" => $SQL_CONFERENCE_REVIEW_SERVICES = $TEMPLATE_SERVICE_SELECT." WHERE category = 'reviewer' AND role <> 'journal reviewer' ".$TEMPLATE_SERVICE_GROUP_SORT
+		"Conference and workshop organizer" => get_service_organization($conn),
+		"Conference and workshop chair" => get_service_chair($conn),
+		"PC responsabilities" => get_service_pc($conn),
+		"Journals" => get_service_journal_review($conn),
+		"Conferences" => get_service_conf_review($conn)
 	];
-	
 
 	$the_latex .= generate_section("Service", "\\faGroup");
 	$the_latex .= generate_subsection("Leadership");
 
-	foreach($SQL_LEADERSHIP as $category => $SQL) {
+	foreach($SQL_LEADERSHIP as $category => $services) {
 		if($category == "Journals") {
 			// stop the Leadership section and start the Reviewing section
 			$the_latex .= generate_subsection("Review responsabilities");
 		}
 		$the_latex .= generate_subsubsection($category);
 		$the_latex .= "\\begin{itemize}\n";
-		$the_leadership = $conn->query($SQL);
-		while($leadership = $the_leadership->fetch_assoc()) {
-			$the_latex .= "\\item $[$".$leadership["rank"]."$]$ ".$leadership["acronym"]." (".$leadership["name"]."): ".$leadership["years"]."\n";
+		foreach($services as $service) {
+			$the_latex .= "\\item $[$".$service["rank"]."$]$ ".$service["acronym"]." (".$service["name"]."): ".$service["years"]."\n";
 		}
 		$the_latex .= "\\end{itemize}\n";
 	}
@@ -360,13 +326,12 @@ function generate_research_service($the_latex, $conn) {
 }
 
 function generate_institutional($the_latex, $conn) {
-	$SQL_INSTITUTIONAL = "SELECT * FROM responsability r ORDER BY end_date DESC, start_date DESC;";
-	$institutional_respos = $conn->query($SQL_INSTITUTIONAL);
+	$institutional_respos = get_institutional_responsabilities($conn);
 
 	$the_latex .= generate_section("Institutional responsabilities", "\\faUniversity");
 
 	$first = true;
-	while($respo = $institutional_respos->fetch_assoc()) {
+	foreach($institutional_respos as $respo) {
 		$the_latex .= generate_title($respo["title"], "", $respo["start_date"], $respo["end_date"], $first);
 		$the_latex .= generate_subtitle(["Role" => $respo["involvement"], "Website" => $respo["webpage"]]);
 		// assuming there is only one text description per reponsability (true as of Aug. 2026)
@@ -388,23 +353,58 @@ function generate_publications($the_latex, $conn) {
 		"nat_conf" => "National conferences",
 		"manuscript" => "Manuscripts"
 	];
+	// sort by publication category in the long CV
+	$sort = "FIELD(pu.category, 'int_journal', 'int_conf', 'int_workshop', 'nat_conf', 'demo', 'manuscript'), pu.year DESC, v.acronym ASC";
 
 	$the_latex .= generate_section("Publications", "\\faBook");
+	$publications = get_all_publications($conn, $sort);
 	
-	foreach($CATEGORIES as $category => $pretty_category) {
-		$the_latex .= generate_subsection($pretty_category);
-		$the_latex .= "\\begin{enumerate}[resume]\n";
-		$SQL = "SELECT pu.*, v.*, GROUP_CONCAT(CONCAT(pe.first_name, ' ', pe.last_name) ORDER BY author_position ASC SEPARATOR ', ') AS the_authors FROM publication pu LEFT JOIN venue v ON pu.venue = v.vid LEFT JOIN publication_author pa ON pa.publication_id = pu.puid LEFT JOIN person pe ON pa.author_id = pe.peid WHERE category = '".$category."' GROUP BY pa.publication_id ORDER BY pu.year DESC, v.acronym ASC, pa.publication_id ASC, pa.author_position ASC";
-		$the_publications = $conn->query($SQL);
-		while($publication = $the_publications->fetch_assoc()) {
-			$authors = $publication["the_authors"];
-			if($publication["main_author"]) {
-				$authors = str_replace("Nelly Barret", "\underline{Nelly Barret}", $authors);
-			}
-			$the_latex .= "\\item ".$authors.". \\href{".$publication["paper_url"]."}{".$publication["title"]."}. ".$publication["name"].". ".$publication["year"]."\n";
+	// foreach($CATEGORIES as $category => $pretty_category) {
+	$previous_category = "";
+	$first = true;
+	foreach($publications as $publication) {
+		if($first && $publication["category"] != $previous_category) {
+			// very first category
+			$the_latex .= generate_subsection($CATEGORIES[$publication["category"]]);
+			$the_latex .= "\\begin{enumerate}\n";
+		} else if($publication["category"] != $previous_category) {
+			// other categories
+			$the_latex .= "\\end{enumerate}\n";
+			$the_latex .= generate_subsection($CATEGORIES[$publication["category"]]);
+			$the_latex .= "\\begin{enumerate}[resume]\n";
 		}
-		$the_latex .= "\\end{enumerate}\n";
+		
+		$authors = $publication["the_authors"];
+		if($publication["main_author"]) {
+			$authors = str_replace("Nelly Barret", "\underline{Nelly Barret}", $authors);
+		}
+		$the_latex .= "\\item ".$authors.". \\href{".$publication["paper_url"]."}{".$publication["title"]."}. ".$publication["name"].". ".$publication["year"]."\n";
+		
+		$previous_category = $publication["category"];
+		$first = false;
 	}
+	$the_latex .= "\\end{enumerate}\n";
+
+	return $the_latex;
+}
+
+function generate_summary_publications($the_latex, $conn) {
+	$the_latex .= generate_section("Publications", "\\faBook");
+	$publications = get_summary_publications($conn);
+	
+	// foreach($CATEGORIES as $category => $pretty_category) {
+	$previous_category = "";
+	$the_latex .= "\begin{tabular}{r|r|r|r|r|r}";
+	$the_latex .= "& Top (A*/A, Q1) & Good (B/Q2) & Medium (C, Q3) & Low (D, Q4) & N/A \\newline <br/>";
+	$first_category = true;
+	foreach($publications as $category => $count_ranks) {
+		$the_latex .= $category;	
+		foreach($count_ranks as $rank => $count) {
+			$the_latex .= " & ".$count;
+		}
+		$the_latex .= " \\newline <br/>";
+	}
+	$the_latex .= "\\end{tabular}";
 
 	return $the_latex;
 }
@@ -412,25 +412,26 @@ function generate_publications($the_latex, $conn) {
 function generate_advising($the_latex, $conn) {
 	$the_latex .= generate_section("Student supervision", "\\faCommentsO");
 
-	$GROUP_CONCAT_ADVISORS = "GROUP_CONCAT(CONCAT(pe2.first_name, ' ', pe2.last_name, ' (', ss.supervisor_role, ')') ORDER BY person_position ASC SEPARATOR ', ') AS the_team";
-	$JOINS_FOR_GROUP_CONCAT = "LEFT JOIN internship_supervisor ss ON s.iid = ss.internship_id LEFT JOIN person pe2 ON ss.supervisor_id = pe2.peid ";
-
 	$SQL_ADVISING = [
-		"Engineer students" => "SELECT s.*, p.*, CONCAT(p.first_name, ' ', p.last_name) AS the_student, CASE WHEN s.year >= YEAR(CURDATE()) THEN 'Current' ELSE 'Finished' END AS status, ".$GROUP_CONCAT_ADVISORS." FROM internship s LEFT JOIN person p ON s.person_id = p.peid ".$JOINS_FOR_GROUP_CONCAT." WHERE s.level LIKE '%Engineer%' GROUP BY s.iid ORDER BY s.year DESC, FIELD (semester, 'winter', 'spring', 'summer', 'fall');",
-		"Master students" => "SELECT s.*, p.*, CONCAT(p.first_name, ' ', p.last_name) AS the_student, CASE WHEN s.year >= YEAR(CURDATE()) THEN 'Current' ELSE 'Finished' END AS status, ".$GROUP_CONCAT_ADVISORS." FROM internship s LEFT JOIN person p ON s.person_id = p.peid ".$JOINS_FOR_GROUP_CONCAT." WHERE s.level LIKE '%Master%' GROUP BY s.iid ORDER BY s.year DESC, FIELD (semester, 'winter', 'spring', 'summer', 'fall');",
-		"Bachelor students" => "SELECT s.*, p.*, CONCAT(p.first_name, ' ', p.last_name) AS the_student, CASE WHEN s.year >= YEAR(CURDATE()) THEN 'Current' ELSE 'Finished' END AS status, ".$GROUP_CONCAT_ADVISORS." FROM internship s LEFT JOIN person p ON s.person_id = p.peid ".$JOINS_FOR_GROUP_CONCAT." WHERE s.level  LIKE '%Bachelor%' GROUP BY s.iid ORDER BY s.year DESC, FIELD (semester, 'winter', 'spring', 'summer', 'fall');"
+		"Engineer students" => get_engineer_students($conn), 
+		"Master students" => get_master_students($conn), 
+		"Bachelor students" => get_bachelor_students($conn)
 	];
 
-	foreach($SQL_ADVISING as $category => $SQL) {
+	foreach($SQL_ADVISING as $category => $internships) {
 		$the_latex .= generate_subsection($category);
 		$the_latex .= "\\begin{itemize}\n";
-		$internships = $conn->query($SQL);
-		while($internship = $internships->fetch_assoc()) {
-			$the_latex .= "\\item ".$internship["the_student"]." on ``".$internship["topic"]."'' (".$internship["semester"]." ".$internship["year"].", ".$internship["school"].")\n";
+		foreach($internships as $internship) {
+			$the_latex .= "\\item ".$internship["the_student"]." on ``".$internship["topic"]."'' with ".$internship["the_team"]." - ".$internship["semester"]." ".$internship["year"].", ".$internship["school"]."\n";
 		}
 		$the_latex .= "\\end{itemize}\n";
 	}
 
+	return $the_latex;
+}
+
+function generate_summary_advising($the_latex, $conn) {
+	$the_latex .= generate_section("Student supervision", "\\faCommentsO");
 	return $the_latex;
 }
 
@@ -519,14 +520,11 @@ function get_entity_from_logo($logo_filepath) {
 
 function sanitize_logo($logo_name) {
 	$logo_name = str_replace("-", " ", $logo_name);
-	if(substr_count($logo_name, " ") > 2) {
-		// this is very likely to be a long name, so we only capitalize the first letter of the first word
+	if(substr_count($logo_name, " ") >= 1) {
+		// this is very likely to be a long name or a school name, so we only capitalize the first letter of the first word
 		return ucfirst($logo_name);
-	} else if (substr_count($logo_name, " ") == 2) {
-		// this is very likely to be a lab/school with a city name, so we capitalize the first word and the first letter of the second word
-		return ucwords($logo_name);
 	} else {
-		// this is very likely to be an acronym, so we capitalize it
+		// this is very likely to be an acronym / lab name, so we capitalize it
 		return strtoupper($logo_name);
 	}
 }

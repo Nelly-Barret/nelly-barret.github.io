@@ -68,8 +68,8 @@ try {
 
 	$the_latex .= "\\end{document}";
 
-	print_r($the_latex); // BY DEFAULT
-	// print_r(display_for_debug($the_latex)); // FOR DEBUG ONLY
+	// print_r($the_latex); // BY DEFAULT
+	print_r(display_for_debug($the_latex)); // FOR DEBUG ONLY
 } catch (Exception $e) {
 	print_r($e);
 }

@@ -1,12 +1,10 @@
 <?php
 require('db.php');
 require('utils.php');
+require('functions.php');
 try {
-	$SQL_CURRENT_PROJECTS = "SELECT * FROM project  WHERE end_date = '2222-01-01' OR end_date >= CURDATE()";
-	$current_projects = $conn->query($SQL_CURRENT_PROJECTS);
-
-	$SQL_FORMER_PROJECTS = "SELECT * FROM project WHERE end_date < CURDATE();";
-	$former_projects = $conn->query($SQL_FORMER_PROJECTS);
+	$current_projects = get_projects($conn, "current");
+	$former_projects = get_projects($conn, "former");
 } catch (Exception $e) {
 	var_dump($e);
 }
@@ -41,10 +39,10 @@ try {
 		<h1 class="section-title page-nav-section">Projects and tools</h1>
 		
 		
-		<h2 class="subsection-title">Current projects</h2>
-		<?php while($project = $current_projects->fetch_assoc()): ?>
+		<h2 class="subsection-title">Current and future projects</h2>
+		<?php foreach($current_projects as $project): ?>
 			<?php include("research-card.php") ?>
-		<?php endwhile; ?> 
+		<?php endforeach; ?> 
 		</div>
 
 
@@ -53,11 +51,11 @@ try {
   		
 		<!-- <div class="collapse" id="collapsePastProjects"> -->
 			<div class="row">
-		<?php while($project = $former_projects->fetch_assoc()): ?>
+		<?php foreach($former_projects as $project): ?>
   		<div class="col-sm-6 mb-3 mb-sm-0">
 			<?php include("research-card.php") ?>
 		</div>
-		<?php endwhile; ?> 
+		<?php endforeach; ?> 
 	</div>
     </section>
 	<?php include('footer.php'); ?>

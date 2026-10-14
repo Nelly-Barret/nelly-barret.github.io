@@ -33,86 +33,144 @@ function execute_binded_query($conn, $sql, $value_binds, $type_binds) {
 
 function get_recurrent_courses($conn) {
     global $CURRENT_STATUS_SQL;
-    $SQL = "SELECT *, ".$CURRENT_STATUS_SQL." FROM teaching WHERE category = 'course' ORDER BY status ASC, end_date DESC, start_date DESC;";
+    $SQL = "SELECT *, ".$CURRENT_STATUS_SQL." FROM teaching WHERE category = 'course' AND `show` = 1 ORDER BY status ASC, end_date DESC, start_date DESC;";
     return execute_simple_query($conn, $SQL);
 }
 
 function get_guest_courses($conn) {
     global $CURRENT_STATUS_SQL;
-    $SQL = "SELECT *, ".$CURRENT_STATUS_SQL." FROM teaching WHERE category = 'guest' ORDER BY status ASC, end_date ASC, start_date DESC;";
+    $SQL = "SELECT *, ".$CURRENT_STATUS_SQL." FROM teaching WHERE category = 'guest' AND `show` = 1 ORDER BY status ASC, end_date ASC, start_date DESC;";
     return execute_simple_query($conn, $SQL);
 }
 
 function get_teaching_service($conn) {
-    $SQL = "SELECT * FROM teaching WHERE category = 'service' ORDER BY start_date DESC;";
+    $SQL = "SELECT * FROM teaching WHERE category = 'service' AND `show` = 1 ORDER BY start_date DESC;";
     return execute_simple_query($conn, $SQL);
 }
 
 function get_reasearch_training($conn) {
-    $SQL = "SELECT *, CONCAT('<ul><li>', GROUP_CONCAT(td.text SEPARATOR '</li><li>'), '</li></ul>') AS content FROM training t LEFT JOIN training_description td ON t.trid=td.training_id WHERE t.category = 'research' GROUP BY t.trid;";
+    $SQL = "SELECT *, CONCAT('<ul><li>', GROUP_CONCAT(td.text SEPARATOR '</li><li>'), '</li></ul>') AS content, GROUP_CONCAT(td.text SEPARATOR '; ') AS content_cv FROM training t LEFT JOIN training_description td ON t.trid=td.training_id WHERE t.category = 'research' GROUP BY t.trid;";
     return execute_simple_query($conn, $SQL);
 }
 
 function get_teaching_training($conn) {
-    $SQL = "SELECT *, CONCAT('<ul><li>', GROUP_CONCAT(td.text SEPARATOR '</li><li>'), '</li></ul>') AS content FROM training t LEFT JOIN training_description td ON t.trid=td.training_id WHERE t.category = 'teaching' GROUP BY t.trid;";
+    $SQL = "SELECT *, CONCAT('<ul><li>', GROUP_CONCAT(td.text SEPARATOR '</li><li>'), '</li></ul>') AS content, GROUP_CONCAT(td.text SEPARATOR '; ') AS content_cv FROM training t LEFT JOIN training_description td ON t.trid=td.training_id WHERE t.category = 'teaching' GROUP BY t.trid;";
     return execute_simple_query($conn, $SQL);
 }
 
 function get_awards($conn) {
-    $SQL = "SELECT * FROM award;";
+    $SQL = "SELECT * FROM award ORDER BY date DESC;";
     return execute_simple_query($conn, $SQL);
 }
 
 function get_invited_talks($conn) {
-    $SQL = "SELECT * FROM dissemination WHERE category = 'Seminar' ORDER BY date DESC, did ASC;";
+    $SQL = "SELECT * FROM dissemination WHERE category = 'Seminar' AND `show` = 1 ORDER BY date DESC, did ASC;";
     return execute_simple_query($conn, $SQL);
 }
 
 function get_panels($conn) {
-    $SQL = "SELECT * FROM dissemination WHERE category = 'Panel' ORDER BY date DESC, did ASC;";
+    $SQL = "SELECT * FROM dissemination WHERE category = 'Panel' AND `show` = 1 ORDER BY date DESC, did ASC;";
     return execute_simple_query($conn, $SQL);
 }
 
 function get_vulgarization($conn) {
-    $SQL = "SELECT * FROM dissemination WHERE category = 'Vulgarization' ORDER BY date DESC, did ASC;";
+    $SQL = "SELECT * FROM dissemination WHERE category = 'Vulgarization' AND `show` = 1 ORDER BY date DESC, did ASC;";
 	return execute_simple_query($conn, $SQL);
 }
 
 function get_female_talks($conn) {
-    $SQL = "SELECT * FROM dissemination WHERE category = 'Female empowerment' ORDER BY date DESC, did ASC;";
+    $SQL = "SELECT * FROM dissemination WHERE category = 'Female empowerment' AND `show` = 1 ORDER BY date DESC, did ASC;";
 	return execute_simple_query($conn, $SQL);
+}
+
+function get_summary_disseminations($conn) {
+    $SQL = "";
+    return execute_simple_query($conn, $SQL);
 }
 
 function get_institutional_responsabilities($conn) {
     global $CURRENT_STATUS_SQL;
-    $SQL = "SELECT *, ".$CURRENT_STATUS_SQL." FROM responsability ORDER BY status ASC, end_date ASC, start_date DESC;";
+    $SQL = "SELECT *, ".$CURRENT_STATUS_SQL." FROM responsability WHERE `show` = 1 ORDER BY status ASC, end_date ASC, start_date DESC;";
 	return execute_simple_query($conn, $SQL);
 }
 
 function get_engineer_students($conn) {
     global $GROUP_CONCAT_ADVISORS;
     global $JOINS_FOR_GROUP_CONCAT;
-    $SQL = "SELECT s.*, p.*, CASE WHEN s.year >= YEAR(CURDATE()) THEN 'Current' ELSE 'Finished' END AS status, ".$GROUP_CONCAT_ADVISORS." FROM internship s LEFT JOIN person p ON s.person_id = p.peid ".$JOINS_FOR_GROUP_CONCAT." WHERE s.level LIKE '%Engineer%' GROUP BY s.iid ORDER BY s.year DESC, FIELD (semester, 'winter', 'spring', 'summer', 'fall');";
+    $SQL = "SELECT s.*, p.*, CASE WHEN s.end_date >= CURDATE() THEN 'Current' ELSE 'Finished' END AS status, CONCAT(p.first_name, ' ', p.last_name) AS the_student, ".$GROUP_CONCAT_ADVISORS." FROM internship s LEFT JOIN person p ON s.person_id = p.peid ".$JOINS_FOR_GROUP_CONCAT." WHERE s.level LIKE '%Engineer%' AND s.`show` = 1 GROUP BY s.iid ORDER BY status ASC, FIELD (semester, 'winter', 'spring', 'summer', 'fall');";
 	return execute_simple_query($conn, $SQL);
 }
 
 function get_master_students($conn) {
     global $GROUP_CONCAT_ADVISORS;
     global $JOINS_FOR_GROUP_CONCAT;
-    $SQL = "SELECT s.*, p.*, CASE WHEN s.year >= YEAR(CURDATE()) THEN 'Current' ELSE 'Finished' END AS status, ".$GROUP_CONCAT_ADVISORS." FROM internship s LEFT JOIN person p ON s.person_id = p.peid ".$JOINS_FOR_GROUP_CONCAT." WHERE s.level LIKE '%Master%' GROUP BY s.iid ORDER BY s.year DESC, FIELD (semester, 'winter', 'spring', 'summer', 'fall');";
+    $SQL = "SELECT s.*, p.*, CASE WHEN s.end_date >= CURDATE() THEN 'Current' ELSE 'Finished' END AS status, CONCAT(p.first_name, ' ', p.last_name) AS the_student, ".$GROUP_CONCAT_ADVISORS." FROM internship s LEFT JOIN person p ON s.person_id = p.peid ".$JOINS_FOR_GROUP_CONCAT." WHERE s.level LIKE '%Master%' AND s.`show` = 1 GROUP BY s.iid ORDER BY status ASC, FIELD (semester, 'winter', 'spring', 'summer', 'fall');";
 	return execute_simple_query($conn, $SQL);
 }
 
 function get_bachelor_students($conn) {
     global $GROUP_CONCAT_ADVISORS;
     global $JOINS_FOR_GROUP_CONCAT;
-    $SQL = "SELECT s.*, p.*, CASE WHEN s.year >= YEAR(CURDATE()) THEN 'Current' ELSE 'Finished' END AS status, ".$GROUP_CONCAT_ADVISORS." FROM internship s LEFT JOIN person p ON s.person_id = p.peid ".$JOINS_FOR_GROUP_CONCAT." WHERE s.level  LIKE '%Bachelor%' GROUP BY s.iid ORDER BY s.year DESC, FIELD (semester, 'winter', 'spring', 'summer', 'fall');";
+    $SQL = "SELECT s.*, p.*, CASE WHEN s.end_date >= CURDATE() THEN 'Current' ELSE 'Finished' END AS status, CONCAT(p.first_name, ' ', p.last_name) AS the_student, ".$GROUP_CONCAT_ADVISORS." FROM internship s LEFT JOIN person p ON s.person_id = p.peid ".$JOINS_FOR_GROUP_CONCAT." WHERE s.level  LIKE '%Bachelor%' AND s.`show` = 1 GROUP BY s.iid ORDER BY status ASC, FIELD (semester, 'winter', 'spring', 'summer', 'fall');";
 	return execute_simple_query($conn, $SQL);
 }
 
 function get_all_publications($conn, $sort) {
     $SQL = "SELECT pu.*, v.*, GROUP_CONCAT(CONCAT(pe.last_name, ' ', pe.first_name) ORDER BY author_position ASC SEPARATOR ', ') AS the_authors, t.title as tool, t.repository as repository FROM publication pu LEFT JOIN venue v ON pu.venue = v.vid LEFT JOIN publication_author pa ON pa.publication_id = pu.puid LEFT JOIN person pe ON pe.peid = pa.author_id LEFT JOIN publication_tool pt ON pt.publication_id = pu.puid LEFT JOIN tool t ON t.toid = pt.tool_id GROUP BY pu.puid, pt.publication_id ORDER BY ".$sort;
     return execute_simple_query($conn, $SQL);
+}
+
+function get_publications_by_type($conn, $type, $sort) {
+    return "SELECT pu.*, v.*, GROUP_CONCAT(CONCAT(pe.last_name, ' ', pe.first_name) ORDER BY author_position ASC SEPARATOR ', ') AS the_authors, t.title as tool, t.repository as repository FROM publication pu LEFT JOIN venue v ON pu.venue = v.vid LEFT JOIN publication_author pa ON pa.publication_id = pu.puid LEFT JOIN person pe ON pe.peid = pa.author_id LEFT JOIN publication_tool pt ON pt.publication_id = pu.puid LEFT JOIN tool t ON t.toid = pt.tool_id WHERE category = '".$type."' GROUP BY pu.puid, pt.publication_id ORDER BY ".$sort;
+}
+
+function get_journal_publication($conn, $sort) {
+    return execute_simple_query($conn, get_publications_by_type($conn, 'int_journal', $sort));
+}
+
+function get_int_conf_publication($conn, $sort) {
+    return execute_simple_query($conn, get_publications_by_type($conn, 'int_conf', $sort));
+}
+
+function get_int_workshop_publication($conn, $sort) {
+    return execute_simple_query($conn, get_publications_by_type($conn, 'int_workshop', $sort));
+}
+
+function get_int_demo_publication($conn, $sort) {
+    return execute_simple_query($conn, get_publications_by_type($conn, 'int_demo', $sort));
+}
+
+function get_nat_conf_publication($conn, $sort) {
+    return execute_simple_query($conn, get_publications_by_type($conn, 'nat_conf', $sort));
+}
+
+function get_manuscript_publication($conn, $sort) {
+    return execute_simple_query($conn, get_publications_by_type($conn, 'manuscript', $sort));
+}
+
+function get_summary_publications($conn) {
+    $counts = [
+		"int_journal" => ["Q1" => 0, "Q2" => 0, "Q3" => 0, "Q4" => 0, "N/A" => 0], 
+		"int_conf" => ["A*" => 0, "A" => 0, "B" => 0, "C" => 0, "D" => 0, "N/A" => 0], 
+		"int_workshop" => ["A*" => 0, "A" => 0, "B" => 0, "C" => 0, "D" => 0, "N/A" => 0], 
+		"demo" => ["A*" => 0, "A" => 0, "B" => 0, "C" => 0, "D" => 0, "N/A" => 0],
+		"nat_conf" => ["A*" => 0, "A" => 0, "B" => 0, "C" => 0, "D" => 0, "N/A" => 0],
+		"manuscript" => ["A*" => 0, "A" => 0, "B" => 0, "C" => 0, "D" => 0, "N/A" => 0]
+	];
+
+	$SQL = "SELECT p.category as category, v.rank, COUNT(p.puid) AS count FROM publication p LEFT JOIN venue v ON p.venue=v.vid GROUP BY p.category, v.rank";
+	$summary = execute_simple_query($conn, $SQL);
+	foreach($summary as $row) {
+        $the_category = str_replace("_", "\\_", $row["category"]);
+		if (!array_key_exists($the_category, $counts)) {
+			$counts[$the_category] = [];
+			if(!array_key_exists($row["rank"], $counts[$the_category])) {
+				$counts[$the_category][$row["rank"]] = 0;
+			}
+		}
+		$counts[$the_category][$row["rank"]] = $row["count"];
+	}
+    return $counts;
 }
 
 function get_service_organization($conn) {
@@ -153,6 +211,38 @@ function get_service_conf_review($conn) {
 function get_wg($conn) {
     global $CURRENT_STATUS_SQL;
     $SQL = "SELECT *, ".$CURRENT_STATUS_SQL.", GROUP_CONCAT(wgd.text SEPARATOR ' ') AS content FROM working_group wg LEFT JOIN working_group_description wgd ON wg.wgid = wgd.wg_id GROUP BY wg.wgid ORDER BY status ASC, end_date ASC, start_date DESC;";
+    return execute_simple_query($conn, $SQL);
+}
+
+function get_projects($conn, $type = "") {
+    // $type is "current", or "former", or "" to get all projects
+    $CONDITION = "";
+    if($type == "current") {
+        $CONDITION = " AND (end_date = '2222-01-01' OR end_date >= CURDATE()) ";
+    } else if($type == "former") {
+        $CONDITION = " AND end_date < CURDATE() ";
+    }
+    $SQL = "SELECT * FROM project WHERE `show` = 1 ".$CONDITION." ORDER BY end_date DESC, start_date DESC;";
+    return execute_simple_query($conn, $SQL);
+}
+
+function get_tools($conn) {
+    $SQL = "SELECT * FROM tool ORDER BY end_date DESC, start_date DESC;";
+    return execute_simple_query($conn, $SQL);
+}
+
+function get_visits($conn) {
+    $SQL = "SELECT * FROM visit v LEFT JOIN visit_description vd ON v.viid = vd.research_visit_id ORDER BY start_date DESC, start_date DESC, vd.vidid ASC;";
+    return execute_simple_query($conn, $SQL);
+}
+
+function get_academic_positions($conn) {
+    $SQL = "SELECT * FROM job j LEFT JOIN job_description jd ON j.jid = jd.job_id ORDER BY start_date DESC, jd.jdid ASC;";
+    return execute_simple_query($conn, $SQL);
+}
+
+function get_education($conn) {
+    $SQL = "SELECT * FROM education ORDER BY start_date DESC;";
     return execute_simple_query($conn, $SQL);
 }
 

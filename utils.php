@@ -16,11 +16,19 @@ function status_badge($status) {
     );
 }
 
-function get_total_count_for_category(String $category) {
+function get_total_count_for_category(String $category, String $subcategory = "") {
 	$sum = 0;
-	// $GLOBALS['counts'] because the variable counts is decalred outside the function, thus is not known inside the function
+	// $GLOBALS['counts'] because the variable counts is declared outside the function, thus is not known inside the function
 	foreach($GLOBALS['counts'][$category] as $key => $value) {
-		$sum += $value;
+		if($subcategory != "") {
+			if($subcategory == "journal" && in_array($key, array("Q1", "Q2", "Q3", "Q4"))) {
+				$sum += $value;
+			} else if($subcategory == "conference" && in_array($key, array("A*", "A", "B", "C", "D"))) {
+				$sum += $value;
+			}
+		} else {
+			$sum += $value;
+		}
 	}
 	return $sum;
 }

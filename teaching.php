@@ -13,7 +13,7 @@ require('functions.php');
 	<?php include 'navbar.php'; ?>
     
     <section class="anchor light">
-		<h1 class="section-title page-nav-section">Recurrent courses</h1>
+		<h1 class="section-title page-nav-section">Recurring courses</h1>
 		<?php $items = get_recurrent_courses($conn); ?>
 		<?php include("teaching-table.php"); ?>
 
