@@ -10,3 +10,4 @@ Readme.txt
 .env
 .git-credentials
 .vscode-server/*
+.vscodium-server/*

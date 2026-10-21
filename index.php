@@ -37,10 +37,10 @@
 						<span class="badge text-bg-warning">Featured project</span>
 
 						<h5 class="card-title mt-2">
-							Incoming projects
+							Incoming project: explainable and sovereign LLM
 						</h5>
 
-						<p>Multimodal and heterogeneous data management for healthcare</p>
+						<p>See the Expert-Med-IA project on the project page.</p>
 
 						
 						<p>
