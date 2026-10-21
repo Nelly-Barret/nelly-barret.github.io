@@ -28,7 +28,12 @@ try {
     <!-- SECTION TALKS -->
     <section class="anchor light">
 		<h1 class="section-title page-nav-section">Summary</h1>
-		I supervise student projects and theses in the areas of heterogeneous data management, data integration, data exploration and their applications, notably sustainable cities. So far, I had the pleasure to co-supervise <b><?= $nb_bachelor["nb_bachelors"]; ?> Bachelor</b> students and <b><?= $nb_master["nb_masters"]; ?> Master/Engineer</b> students. I always look for motivated interns and PhD students, so feel free to contact me!<br/><br/>
+		I supervise student projects and theses in the areas of heterogeneous data management, data integration, data exploration and their applications, notably sustainable cities. So far, I had the pleasure to co-supervise <b><?= $nb_bachelor["nb_bachelors"]; ?> Bachelor</b> students and <b><?= $nb_master["nb_masters"]; ?> Master/Engineer</b> students.<br/><br/>
+
+		<div class="alert alert-info" role="alert">
+		I'm always looking for motivated students, so <b>feel free to reach out!</b><br/>
+		<b>Research areas in which I can supervise you</b>: heterogeneous data management, data integration, data exploration, data lakes and lakehouses. 
+		</div>
 
 		<h1 class="section-title page-nav-section">Student supervision</h1>
 		<b>Legend:</b> <i class="fa-solid fa-file-pdf"></i> PDF internship report, <i class="fa-solid fa-file-powerpoint"></i> PDF defense slides
