@@ -12,7 +12,7 @@ jobs:
     - uses: actions/checkout@v4
     - name: Create main TeX file
       run: |
-        curl https://perso.liris.cnrs.fr/nbarret/generate.php > CV-barret.tex
+        curl https://perso.liris.cnrs.fr/nbarret/generate-long.php > CV-barret.tex
     - name: Compile LaTeX document
       uses: dante-ev/latex-action@latest
       with:
