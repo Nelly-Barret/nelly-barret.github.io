@@ -3,8 +3,8 @@ require('db.php');
 require('utils.php');
 require('functions.php');
 try {
-	$current_projects = get_projects($conn, "current");
-	$former_projects = get_projects($conn, "former");
+	$current_projects = get_projects($conn, "current", true);
+	$former_projects = get_projects($conn, "former", true);
 } catch (Exception $e) {
 	var_dump($e);
 }

@@ -123,7 +123,7 @@ function generate_awards($the_latex, $conn) {
 }
 
 function generate_projects($the_latex, $conn) {
-	$projects = get_projects($conn);
+	$projects = get_projects($conn, true);
 
 	$the_latex .= generate_section("Research projects", "\\faLightbulbO ");
 
@@ -326,7 +326,7 @@ function generate_research_service($the_latex, $conn) {
 }
 
 function generate_institutional($the_latex, $conn) {
-	$institutional_respos = get_institutional_responsabilities($conn);
+	$institutional_respos = get_institutional_responsabilities($conn, true);
 
 	$the_latex .= generate_section("Institutional responsabilities", "\\faUniversity");
 

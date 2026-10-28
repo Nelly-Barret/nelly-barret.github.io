@@ -15,7 +15,7 @@ require('functions.php');
     
     <section class="anchor light">
 		<h1 class="section-title page-nav-section">Institutional responsabilities</h1>
-		<?php $items = get_institutional_responsabilities($conn); ?>
+		<?php $items = get_institutional_responsabilities($conn, true); ?>
 		<?php include("institutional-table.php"); ?>
     </section>
 	<?php include('footer.php'); ?>

@@ -18,6 +18,7 @@ function execute_simple_query($conn, $sql) {
     }
 }
 
+// sql is a SQL query with ? at right places
 // value_binds is an array values to bind, e.g., [1, "Nelly", 3.14]
 // type_binds is an array of the value types, e.g., ["i", "s", "d"]
 function execute_binded_query($conn, $sql, $value_binds, $type_binds) {
@@ -88,30 +89,33 @@ function get_summary_disseminations($conn) {
     return execute_simple_query($conn, $SQL);
 }
 
-function get_institutional_responsabilities($conn) {
+function get_institutional_responsabilities($conn, $show_only) {
     global $CURRENT_STATUS_SQL;
-    $SQL = "SELECT *, ".$CURRENT_STATUS_SQL." FROM responsability WHERE `show` = 1 ORDER BY status ASC, end_date ASC, start_date DESC;";
+    $SQL = "SELECT *, ".$CURRENT_STATUS_SQL." FROM responsability ".($show_only ? "WHERE `show` = 1 " : "")."ORDER BY status ASC, end_date ASC, start_date DESC;";
 	return execute_simple_query($conn, $SQL);
 }
 
 function get_engineer_students($conn) {
     global $GROUP_CONCAT_ADVISORS;
     global $JOINS_FOR_GROUP_CONCAT;
-    $SQL = "SELECT s.*, p.*, CASE WHEN s.end_date >= CURDATE() THEN 'Current' ELSE 'Finished' END AS status, CONCAT(p.first_name, ' ', p.last_name) AS the_student, ".$GROUP_CONCAT_ADVISORS." FROM internship s LEFT JOIN person p ON s.person_id = p.peid ".$JOINS_FOR_GROUP_CONCAT." WHERE s.level LIKE '%Engineer%' AND s.`show` = 1 GROUP BY s.iid ORDER BY status ASC, FIELD (semester, 'winter', 'spring', 'summer', 'fall');";
+    global $CURRENT_STATUS_SQL;
+    $SQL = "SELECT s.*, p.*, ".$CURRENT_STATUS_SQL.", CONCAT(p.first_name, ' ', p.last_name) AS the_student, ".$GROUP_CONCAT_ADVISORS." FROM internship s LEFT JOIN person p ON s.person_id = p.peid ".$JOINS_FOR_GROUP_CONCAT." WHERE s.level LIKE '%Engineer%' AND s.`show` = 1 GROUP BY s.iid ORDER BY status ASC, FIELD (semester, 'winter', 'spring', 'summer', 'fall');";
 	return execute_simple_query($conn, $SQL);
 }
 
 function get_master_students($conn) {
     global $GROUP_CONCAT_ADVISORS;
     global $JOINS_FOR_GROUP_CONCAT;
-    $SQL = "SELECT s.*, p.*, CASE WHEN s.end_date >= CURDATE() THEN 'Current' ELSE 'Finished' END AS status, CONCAT(p.first_name, ' ', p.last_name) AS the_student, ".$GROUP_CONCAT_ADVISORS." FROM internship s LEFT JOIN person p ON s.person_id = p.peid ".$JOINS_FOR_GROUP_CONCAT." WHERE s.level LIKE '%Master%' AND s.`show` = 1 GROUP BY s.iid ORDER BY status ASC, FIELD (semester, 'winter', 'spring', 'summer', 'fall');";
+    global $CURRENT_STATUS_SQL;
+    $SQL = "SELECT s.*, p.*, ".$CURRENT_STATUS_SQL.", CONCAT(p.first_name, ' ', p.last_name) AS the_student, ".$GROUP_CONCAT_ADVISORS." FROM internship s LEFT JOIN person p ON s.person_id = p.peid ".$JOINS_FOR_GROUP_CONCAT." WHERE s.level LIKE '%Master%' AND s.`show` = 1 GROUP BY s.iid ORDER BY status ASC, FIELD (semester, 'winter', 'spring', 'summer', 'fall');";
 	return execute_simple_query($conn, $SQL);
 }
 
 function get_bachelor_students($conn) {
     global $GROUP_CONCAT_ADVISORS;
     global $JOINS_FOR_GROUP_CONCAT;
-    $SQL = "SELECT s.*, p.*, CASE WHEN s.end_date >= CURDATE() THEN 'Current' ELSE 'Finished' END AS status, CONCAT(p.first_name, ' ', p.last_name) AS the_student, ".$GROUP_CONCAT_ADVISORS." FROM internship s LEFT JOIN person p ON s.person_id = p.peid ".$JOINS_FOR_GROUP_CONCAT." WHERE s.level  LIKE '%Bachelor%' AND s.`show` = 1 GROUP BY s.iid ORDER BY status ASC, FIELD (semester, 'winter', 'spring', 'summer', 'fall');";
+    global $CURRENT_STATUS_SQL;
+    $SQL = "SELECT s.*, p.*, ".$CURRENT_STATUS_SQL.", CONCAT(p.first_name, ' ', p.last_name) AS the_student, ".$GROUP_CONCAT_ADVISORS." FROM internship s LEFT JOIN person p ON s.person_id = p.peid ".$JOINS_FOR_GROUP_CONCAT." WHERE s.level  LIKE '%Bachelor%' AND s.`show` = 1 GROUP BY s.iid ORDER BY status ASC, FIELD (semester, 'winter', 'spring', 'summer', 'fall');";
 	return execute_simple_query($conn, $SQL);
 }
 
@@ -214,15 +218,15 @@ function get_wg($conn) {
     return execute_simple_query($conn, $SQL);
 }
 
-function get_projects($conn, $type = "") {
+function get_projects($conn, $type = "", $show_only) {
     // $type is "current", or "former", or "" to get all projects
     $CONDITION = "";
     if($type == "current") {
-        $CONDITION = " AND (end_date = '2222-01-01' OR end_date >= CURDATE()) ";
+        $CONDITION = " (end_date = '2222-01-01' OR end_date >= CURDATE()) ";
     } else if($type == "former") {
-        $CONDITION = " AND end_date < CURDATE() ";
+        $CONDITION = " end_date < CURDATE() ";
     }
-    $SQL = "SELECT * FROM project WHERE `show` = 1 ".$CONDITION." ORDER BY end_date DESC, start_date DESC;";
+    $SQL = "SELECT * FROM project WHERE ".($show_only ? "`show` = 1 AND" : "").$CONDITION." ORDER BY end_date DESC, start_date DESC;";
     return execute_simple_query($conn, $SQL);
 }
 
@@ -246,4 +250,68 @@ function get_education($conn) {
     return execute_simple_query($conn, $SQL);
 }
 
+function get_items_for_research($conn, $type = "", $show_only) {
+    // $type is "current", or "former", or "" to get all projects
+    // $CONDITION = "";
+    // if($type == "current") {
+    //     $CONDITION = " (end_date = '2222-01-01' OR end_date >= CURDATE()) ";
+    // } else if($type == "former") {
+    //     $CONDITION = " end_date < CURDATE() ";
+    // }
+    // for research: project and internship data
+    // the_id (project or internship id)
+    // short_title
+    // type (grant type for projects, or school for internships)
+    // opening
+    // deadline1
+    // deadline2
+    // start_date (grant start date / internship start date)
+    // date de fin (grant end date / internship end date)
+    // duration (in months)
+    // pi (grant receiver)
+    // student (the student on the project / internship) TODO: aggregate them if there are several students
+    // involvement (involvement rate)
+    // statut (writing, submitted, next phase, accepted, ongoing, finished, rejected)
+    // notes
+    $SQL = "SELECT pr.prid as the_id, 'project' as `type`, pr.short_title as short_title, pr.grant_type as `type`, pr.opening_date as opening, pr.deadline1 as deadline1, pr.deadline2 as deadline2, pr.start_date as `start_date`, pr.end_date as end_date, 0 as duration, CONCAT(p.first_name, ' ', p.last_name) as pi, null as student, pr.involvement_rate as involvement, null as status, pr.notes as notes FROM project pr LEFT JOIN person p ON pr.leader = p.peid WHERE pr.start_date >= '2025-09-01' UNION SELECT i.iid as the_id, 'internship' as `type`, i.topic as short_title, i.grant_type as `type`, null as opening, null as deadline1, null as deadline2, i.start_date as `start_date`, i.end_date as end_date, 0 as duration, CONCAT(p.first_name, ' ', p.last_name) as pi, CONCAT(p2.first_name, ' ', p2.last_name) as student, i.involvement_rate as involvement, null as status, i.notes as notes FROM internship i LEFT JOIN internship_supervisor isu ON i.iid = isu.internship_id AND supervisor_role = 'Advisor' LEFT JOIN person p ON isu.supervisor_id = p.peid LEFT JOIN person p2 ON i.person_id = p2.peid WHERE i.start_date >= '2025-09-01' ORDER BY end_date DESC, start_date DESC;";
+    return execute_simple_query($conn, $SQL);
+}
+
+function get_tasks_for_research($conn, $type = "", $show_only) {
+    // $type is "current", or "former", or "" to get all projects
+    // $CONDITION = "";
+    // if($type == "current") {
+    //     $CONDITION = " (end_date = '2222-01-01' OR end_date >= CURDATE()) ";
+    // } else if($type == "former") {
+    //     $CONDITION = " end_date < CURDATE() ";
+    // }
+    // for research: project and internship data
+    // the_id (project or internship id)
+    // short_title
+    // type (grant type for projects, or school for internships)
+    // opening
+    // deadline1
+    // deadline2
+    // start_date (grant start date / internship start date)
+    // date de fin (grant end date / internship end date)
+    // duration (in months)
+    // pi (grant receiver)
+    // student (the student on the project / internship) TODO: aggregate them if there are several students
+    // involvement (involvement rate)
+    // statut (writing, submitted, next phase, accepted, ongoing, finished, rejected)
+    // notes
+    $SQL = "SELECT pt.ptid as the_id, pt.prid as fk_id, pt.label as label, pt.deadline as deadline, 'project' as `type` FROM project_task pt LEFT JOIN project pr ON pr.prid = pt.prid UNION SELECT it.itid as the_id, it.iid as fk_id, it.label as label, it.deadline as deadline, 'internship' as `type` FROM internship_task it LEFT JOIN internship i ON it.iid = i.iid;";
+    return execute_simple_query($conn, $SQL);
+}
+
+function insert_research_task($conn, $type, $label, $deadline) {
+    if($type == "PROJECT") {
+		$sql = "INSERT INTO project_task ($label, $deadline) VALUES (?, ?)";
+	} else if($type == "INTERNSHIP") {
+		$sql = "INSERT INTO internship_task ($label, $deadline) VALUES (?, ?)";
+	} else {
+		$sql = "";
+	} 
+	return execute_binded_query($conn, $sql, [$type, $label, $deadline], ["s", "s", "s"]);
+}
 ?>

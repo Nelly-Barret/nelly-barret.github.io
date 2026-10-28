@@ -31,8 +31,11 @@ try {
 		I supervise student projects and theses in the areas of heterogeneous data management, data integration, data exploration and their applications, notably sustainable cities. So far, I had the pleasure to co-supervise <b><?= $nb_bachelor["nb_bachelors"]; ?> Bachelor</b> students and <b><?= $nb_master["nb_masters"]; ?> Master/Engineer</b> students.<br/><br/>
 
 		<div class="alert alert-info" role="alert">
-		I'm always looking for motivated students, so <b>feel free to reach out!</b><br/>
-		<b>Research areas in which I can supervise you</b>: heterogeneous data management, data integration, data exploration, data lakes and lakehouses. 
+		I'm always happy to hear from motivated students, so <b>feel free to reach out!</b><br/>
+		<b>Research areas for supervision you</b>: heterogeneous data management, data integration, data exploration, data lakes and lakehouses.
+		</div>
+		<div class="alert alert-success" role="alert">
+		<b>Academic research is about the journey, not only the outcome</b>: I value authentic intellectual engagement and independant thinking. Therefore, I encourage students —and everyone else— to also value authentic, human-written, imperfect work, rather than relying on AI-generated content that may appear polished but lack a human touch.
 		</div>
 
 		<h1 class="section-title page-nav-section">Student supervision</h1>
