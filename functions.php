@@ -152,7 +152,7 @@ function get_manuscript_publication($conn, $sort) {
     return execute_simple_query($conn, get_publications_by_type($conn, 'manuscript', $sort));
 }
 
-function get_summary_publications($conn) {
+function get_summary_publications($conn, $latex) {
     $counts = [
 		"int_journal" => ["Q1" => 0, "Q2" => 0, "Q3" => 0, "Q4" => 0, "N/A" => 0], 
 		"int_conf" => ["A*" => 0, "A" => 0, "B" => 0, "C" => 0, "D" => 0, "N/A" => 0], 
@@ -165,7 +165,11 @@ function get_summary_publications($conn) {
 	$SQL = "SELECT p.category as category, v.rank, COUNT(p.puid) AS count FROM publication p LEFT JOIN venue v ON p.venue=v.vid GROUP BY p.category, v.rank";
 	$summary = execute_simple_query($conn, $SQL);
 	foreach($summary as $row) {
-        $the_category = str_replace("_", "\\_", $row["category"]);
+        if($latex) {
+            $the_category = str_replace("_", "\\_", $row["category"]);
+        } else {
+            $the_category = $row["category"];
+        }
 		if (!array_key_exists($the_category, $counts)) {
 			$counts[$the_category] = [];
 			if(!array_key_exists($row["rank"], $counts[$the_category])) {

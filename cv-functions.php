@@ -390,7 +390,7 @@ function generate_publications($the_latex, $conn) {
 
 function generate_summary_publications($the_latex, $conn) {
 	$the_latex .= generate_section("Publications", "\\faBook");
-	$publications = get_summary_publications($conn);
+	$publications = get_summary_publications($conn, true);
 	
 	// foreach($CATEGORIES as $category => $pretty_category) {
 	$previous_category = "";

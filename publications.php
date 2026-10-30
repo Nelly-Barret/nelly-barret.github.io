@@ -6,16 +6,16 @@ require('functions.php');
 try {
 	// SUMMARY RECORD
 
-	$counts = get_summary_publications($conn);
+	$counts = get_summary_publications($conn, false);
 
 	// DETAILED LIST OF PUBLICATIONS WITH PREFERED ORDRED
 
 	if($_POST["sort-publis"] == "year") {
 		// there is a parameter, we ask for a specific sort
-		$sort = "pu.year DESC, v.acronym ASC";
+		$sort = "pu.year DESC, FIELD(v.rank, 'Q1', 'A*', 'A', 'Q2', 'B', 'Q3', 'C', 'Q4', 'D', 'N/A')";
 	} else { // if($_POST["sort_variable"] != "category") {
 		// TODO: sort_in_order = ["journal", "int_conf", "int_work", "nat_conf", "demo", "manuscript"]
-		$sort = "FIELD(pu.category, 'int_journal', 'int_conf', 'int_workshop', 'nat_conf', 'demo', 'manuscript'), pu.year DESC, v.acronym ASC";
+		$sort = "FIELD(pu.category, 'int_journal', 'int_conf', 'int_workshop', 'nat_conf', 'demo', 'manuscript'), pu.year DESC, FIELD(v.rank, 'Q1', 'A*', 'A', 'Q2', 'B', 'Q3', 'C', 'Q4', 'D', 'N/A')";
 	}
 
 	$publications = get_all_publications($conn, $sort);
@@ -88,8 +88,8 @@ try {
 		<!-- <br/> -->
 		<form action="publications.php" method="post">
 			<b>Sort by:</b> <select name="sort-publis" id="sort-publis" onchange="this.form.submit();">
-			<option value="category" <?= $_POST["sort-publis"] != "year" ? "selected" : ""?>>Publication type</option>
-			<option value="year" <?= $_POST["sort-publis"] == "year" ? "selected" : ""?>>Year</option>
+			<option value="category" <?= $_POST["sort-publis"] != "year" ? "selected" : ""?>>Publication type, then year</option>
+			<option value="year" <?= $_POST["sort-publis"] == "year" ? "selected" : ""?>>Year, then CORE rank</option>
 		</select>
 		<!-- <input type="submit"> -->
 		<!-- <noscript><input type="submit" value="Submit"></noscript> -->

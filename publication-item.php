@@ -1,11 +1,15 @@
 <li>
+	<!-- publication authors, title , conference and year-->
 	<b><?= $publication["title"] ?></b>. <br/><?= $publication["the_authors"] ?>. <br/><?=$publication["name"]?>. <?=$publication["year"]?>. <br/>
 
-	<!-- publication authors, title , conference and year-->
+	<!-- venue publicaiton type and ranking badge -->
+	 <!-- the substring remove the last S from the pretty category name, e.g. "International conferences" (subsection title) becomes "International conference" for the publication type in the basge -->
+	<span class="badge bg-secondary"><?=substr($CATEGORIES[$publication["category"]], 0, -1)?> [<?=$publication["rank"]?>]</span>
 	
 	<!-- buttons -->
 	<!-- editor url -->
 	<?php if($publication["publication_url"] != ""): ?>
+		&nbsp;&#183;&nbsp;
 		<i class="fa-solid fa-up-right-from-square"></i><a href="<?=$publication["publication_url"]?>" target="_blank">Publisher page</a> 
 	<?php endif; ?>
 
